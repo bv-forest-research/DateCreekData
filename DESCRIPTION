@@ -1,0 +1,11 @@
+Package: DateCreek_DataPrep
+Title: Date Creek Data Processing
+Version: 0.0.0.9000
+Authors@R: 
+    person("Alana", "Clason", "alana.clason@bvcentre.ca", role = c("aut", "cre"))
+Description: This package contains functions to prepare Date Creek data for use within 
+    rsortie along with associated analyses.
+License: `use_gpl3_license()` 
+Encoding: UTF-8
+Roxygen: list(markdown = TRUE)
+RoxygenNote: 7.1.2
