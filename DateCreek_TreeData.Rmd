@@ -1,0 +1,21 @@
+
+
+
+
+
+The idea here is to outline each of the data sources and processing options for Date Creek data
+
+1. Live trees - all remeasurements
+
+1992 data 
+
+
+
+```{r}
+
+
+
+
+
+```
+

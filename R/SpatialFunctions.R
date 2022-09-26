@@ -92,6 +92,7 @@ modifyPartCuts <- function(Gaps_path){
     unzip(target_file, overwrite = T)
     kmz_list[[ii]] <- sf::read_sf('doc.kml')
     fs::file_delete(grep(".xsl",list.files(getwd()), value = TRUE))
+    fs::file_delete('.temp.kml.zip')
     fs::file_delete('doc.kml')
     kmz_list[[ii]]$Id <- c(HR,LR)[ii]
   }
