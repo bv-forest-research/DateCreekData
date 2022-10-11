@@ -124,6 +124,124 @@ modifyPartCuts <- function(Gaps_path){
 }
 
 #'
+#'
+#'
+#'
+#'
+#'
+
+subplot_outputs <- function(out_path, output_end, Units_path, yrs,
+                            dist_edge = 20, num_subplots = 30, size_subplot = 7.98, plot_treatments = TRUE){
+
+  #to add: run through the output names and see which years are missing
+
+  source("../Frontiers-PartialCutting/R/SpatialHarvestPlantsFunction.R", local=TRUE)
+  spatialBlocks <- ReadSpatialBounds(Units_path)
+
+
+  NH<-c("A4", "B1", "C1", "D3") #No harvest
+  LR<-c("A2", "B5", "C3", "D5") # light removal (30% BasalArea)
+  HR<-c("B2", "B3", "C2", "D4") #heavy removal (60% BasalArea)
+  CC<-c("A1", "A3", "B4", "D2") #Clear-cut (100% removal) with some caveats (some deciduous left standing, one small
+
+  # Reading in unit boundaries and creating shapefiles group by removal class
+  Blocks <- c(NH,LR,HR,CC)
+
+  for(j in 1:length(Blocks)){
+    Unit_i <- Blocks[j]
+    TreatType <- ifelse(Unit_i=="A2"||Unit_i=="B5"||Unit_i== "C3"||Unit_i== "D5","LR",
+                        ifelse(Unit_i=="B2"||Unit_i=="B3"||Unit_i=="C2"||Unit_i=="D4","HR",
+                               ifelse(Unit_i=="A1"||Unit_i=="A3"||Unit_i=="B4"||Unit_i=="D2","CC","NH")))
+    if(TreatType =="NH"){
+      Units_incl <- spatialBlocks$NH[[1]]
+      NameEnd <- paste0(output_end,"_nh_det_")
+    }else if(TreatType =="CC"){
+      Units_incl <- spatialBlocks$CC[[1]]
+      NameEnd <- paste0(output_end,"_det_")
+    }else if(TreatType =="HR"){
+      Units_incl <- spatialBlocks$HR[[1]]
+      NameEnd <- paste0(output_end,"_det_")
+    }else{
+      Units_incl <- spatialBlocks$LR[[1]]
+      NameEnd <- paste0(output_end,"_det_")
+    }
+
+    for(ij in 1:length(Units_incl)){
+      dt_table <- data.table()
+      #restrict trees to within the treatment
+      Unit_i <- Units_incl[ij]
+      #Forest size
+      if(TreatType=="LR"){
+        bb <- st_bbox(st_buffer(spatialBlocks$LR %>% filter(Unit==Unit_i), dist = 10))
+        Unit_b <- spatialBlocks$LR %>% filter(Unit==Unit_i)
+      }else if(TreatType=="CC"){
+        bb <- st_bbox(st_buffer(spatialBlocks$CC %>% filter(Unit==Unit_i), dist = 10))
+        Unit_b <- spatialBlocks$CC %>% filter(Unit==Unit_i)
+      }else if(TreatType=="HR"){
+        bb <- st_bbox(st_buffer(spatialBlocks$HR %>% filter(Unit==Unit_i), dist = 10))
+        Unit_b <- spatialBlocks$HR %>% filter(Unit==Unit_i)
+      }else{
+        bb <- st_bbox(st_buffer(spatialBlocks$NH %>% filter(Unit==Unit_i), dist = 10))
+        Unit_b <- spatialBlocks$NH %>% filter(Unit==Unit_i)
+      }
+      #create sample points here so they are the same for every year
+
+      Unit_b_edge <- st_buffer(Unit_b,dist=-dist_edge) #20m from the edge
+      sampPts <- spsample(as_Spatial(Unit_b_edge),n=num_subplots,type="regular")
+      sampPtsSF <- st_as_sf(sampPts)
+      sampPtsSFP <- st_buffer(sampPtsSF, dist=size_subplot)
+
+      if(plot_treatments == TRUE){
+        plot(Unit_b$geometry)
+        plot(Unit_b_edge$geometry, add=TRUE)
+        plot(sampPts,add=TRUE)
+        plot(sampPtsSF$geometry,add=TRUE)
+        plot(sampPtsSFP$geometry,add=TRUE)
+      }
+      sampPtsDT <- as.data.table(sampPtsSFP)
+      sampPtsDT[,SubPlot:=seq(1:length(sampPts))]
+      sampPts <- st_as_sf(sampPtsDT)
+
+      for(i in 1:length(yrs)){
+
+        file_to_read <- paste0(out_path,"ext_ICH-",TreatType,"-",Units_incl[ij],NameEnd,yrs[i])
+
+        if(file.exists(file_to_read)){
+          dt <- fread(file_to_read,sep="\t", header=T,na.strings = "--", skip=1)
+          dt[, ':='(timestep = yrs[i],Treatment = TreatType, Unit=Units_incl[ij])]
+          dt[, ':='(x_utm =bb[1]+X ,y_utm=bb[2]+Y)] #put the SORTIE outputs in the coordinates of sf
+          TreeXY <- st_as_sf(dt, coords = c("x_utm","y_utm"), crs=crs(spatialBlocks[[1]]))
+          plot_trees <- st_intersection(TreeXY,sampPts) #this is the slow part
+          print(paste(TreatType,Units_incl[ij],"year",yrs[i],"sampled"))
+
+          if(nrow(plot_trees)==0){ #if no trees (i.e in a clearcut before a plant)
+            plot_trees <- as.data.table(plot_trees)
+            plot_trees <- rbind(data.table(Species="NA"),plot_trees,fill=TRUE)
+            plot_trees[, ':='(timestep = yrs[i],Treatment = TreatType, Unit=Units_incl[ij])]
+            plot_trees[,geometry:=NULL]
+            print(paste(TreatType,Units_incl[ij],"year",yrs[i],"No trees"))
+          }else{
+            plot_trees <- as.data.table(plot_trees)
+            subPl_area <- length(unique(plot_trees$SubPlot))*(pi*7.98^2)
+            print(paste(TreatType,Units_incl[ij],"year",yrs[i],"Subplot BA =",
+                        round(sum(plot_trees[!is.na(DBH),pi*(DBH/2)^2])/subPl_area,0)))
+
+            plot_trees[,geometry:=NULL]
+          }
+          dt_table <- rbind(dt_table,plot_trees)
+
+        }else{
+          print(paste(file_to_read,"does not exist"))
+          dt_table <- dt_table
+        }
+
+      }
+      write.csv(dt_table,
+                paste0(out_path,TreatType,"-",Units_incl[ij],output_end,".csv"), row.names = FALSE)
+    }
+  }
+
+}
 
 
 
