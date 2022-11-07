@@ -40,3 +40,13 @@ vignettes/*.pdf
 .Rproj.user
 
 .temp.kml.zip
+
+data-raw/CWD/
+
+data-raw/Harvests_Plants/PlantingDensities.csv
+
+data-raw/Harvests_Plants/PlantingPercents.csv
+
+data-raw/Trees/
+
+data-raw/Harvests_Plants/UnitBoundaries/Harvest_PlantLocations/
