@@ -26,11 +26,17 @@ read_keyhole <- function(file) {
 }
 
 
-#' Import the Date Creek treatment boundaries
-#' @param Units_path The directory with the shapefiles that define the edge of the boundaries
-#' @return an sf object with
+
+#' Read the Date Creek spatial unit boundaries
 #'
+#' @param Units_path
+#'
+#' @return
+#' @export
+#'
+#' @examples
 ReadSpatialBounds <- function(Units_path){
+
   ########################## 1. Read in spatial harvests #############################
   ## Date Creek Treatments
   NH<-c("A4", "B1", "C1", "D3") #No harvest
@@ -69,7 +75,11 @@ ReadSpatialBounds <- function(Units_path){
   spatialbounds <- list(NH_blocks,LR_blocks,HR_blocks,CC_blocks)
   names(spatialbounds) <- c("NH","LR","HR","CC")
   return(spatialbounds)
+
 }
+
+
+
 
 #' Modify the Date Creek treatment boundaries for heavy and light removals
 #' @param Gaps_path The directory with the kmls and kmzs that define the cuts
