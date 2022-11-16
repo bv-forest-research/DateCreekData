@@ -29,6 +29,3 @@ calculateSPH <- function(pBands, DBH){
 #'
 #'
 #'
-
-
-
