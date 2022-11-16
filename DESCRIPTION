@@ -1,12 +1,26 @@
-Package: DateCreek_Data
+Package: DateCreekData
 Title: Date Creek Data Processing
 Version: 0.0.0.9000
-Authors@R: c(person("Alana", "Clason", "alana.clason@bvcentre.ca", role = c("aut", "cre")),
-              person("Ingrid", "Farnell", email = "farnellingrid@gmail.com", role = "aut"))
+Authors@R: c(person("Alana", "Clason", email = "alana.clason@bvcentre.ca", role = c("aut", "cre")),
+            person("Ingrid", "Farnell", email = "farnellingrid@gmail.com", role = "aut"))
 Description: This package contains functions to prepare Date Creek data for use within 
     rsortie along with associated analyses.
 License: `use_gpl3_license()` 
 Encoding: UTF-8
 Roxygen: list(markdown = TRUE)
 RoxygenNote: 7.2.1
-Imports:
+Imports: 
+    data.table,
+    dplyr,
+    stringr,
+    tidyr,
+    xml2,
+    parallel
+Suggests: 
+    sf,
+    plyr,
+    raster,
+    fasterize,
+    SpaDES,
+    knitr,
+    rmarkdown
