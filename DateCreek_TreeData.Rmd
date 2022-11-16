@@ -1,4 +1,9 @@
-
+---
+title: "DateCreek_Substrate"
+author: "A. Clason"
+date: "2022-11-10"
+output: html_document
+---
 
 
 
@@ -6,6 +11,20 @@
 The idea here is to outline each of the data sources and processing options for Date Creek data
 
 1. Live trees - all remeasurements
+
+1992 data 
+
+
+
+```{r}
+
+
+
+
+
+```
+
+1. Dead trees - all remeasurements
 
 1992 data 
 

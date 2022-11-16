@@ -123,13 +123,20 @@ modifyPartCuts <- function(Gaps_path){
   LR_Cuts <- do.call(rbind.data.frame, kmz_list[5:8])
 }
 
+#'subplot_outputs
 #'
 #'
 #'
 #'
 #'
-#'
-
+#' @param out_path
+#' @param run_name
+#' @param Units_path
+#' @param yrs
+#' @param dist_edge
+#' @param num_subplots
+#' @param size_subplot
+#' @param plot_treatments
 subplot_outputs <- function(out_path, run_name, Units_path, yrs,
                             dist_edge = 20, num_subplots = 30, size_subplot = 7.98, plot_treatments = TRUE){
 
@@ -223,13 +230,16 @@ subplot_outputs <- function(out_path, run_name, Units_path, yrs,
 
 }
 
+#'Update Harvest Function
 #'
 #'
 #'
 #'
 #'
-#'
-
+#' @param NewxmlPath
+#' @param Units_path
+#' @param Gaps_path
+#' @param ParamFile_Suffix
 UpdateHarvestsFn <- function(NewxmlPath, Units_path, Gaps_path, ParamFile_Suffix){
 
 
