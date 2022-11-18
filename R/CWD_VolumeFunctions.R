@@ -1,4 +1,60 @@
 
+#' Date Creek CWD - all years
+#'
+#' @param dat_loc what is the directory where all data is stored
+#'
+#' @details we expect the directory to contain 6 files: CWD_1992.csv, CWD_1993.csv, CWD_2011.csv, CWD_2018.csv and CWD_2019.csv
+#' @return
+#' @export
+#'
+#' @examples
+CWD_vol_calc <- function(dat_loc, incl_sp_decay = FALSE){
+
+  #calculate volume for all years
+  dc_cwd_92 <- CWD_1992_Vol_calc(CWD_dat = paste0(dat_loc,"CWD_1992.csv"),
+                                 out_carbon_comp = incl_sp_decay)
+  #1993
+  dc_cwd_93 <- CWD_1993_Vol_calc(CWD_dat = paste0(dat_loc,"CWD_1993.csv"),
+                                 out_carbon_comp = incl_sp_decay)
+  #2011
+  dc_cwd_11 <- CWD_2011_Vol_calC(CWD_dat = paste0(dat_loc,"CWD_2011.csv"),
+                                 Horiz_dat = paste0(dat_loc,"CWD_horizontal_dist.csv"),
+                                 out_carbon_comp = incl_sp_decay)
+  #2018
+  dc_cwd_18 <- CWD_2018_Vol_calc(CWD_dat = paste0(dat_loc,"CWD_2018.csv"),
+                                 out_carbon_comp = incl_sp_decay)
+  #2019
+  dc_cwd_19 <- CWD_2019_Vol_calc(CWD_dat = paste0(dat_loc,"CWD_2019.csv"),
+                                 Horiz_dat = paste0(dat_loc,"CWD_horizontal_dist.csv"),
+                                 out_carbon_comp = incl_sp_decay)
+
+  if(incl_sp_decay == FALSE){
+    cd_cwd_allyears <- rbind(dc_cwd_92[,.(Year,Yrs_Post = 0,Unit, VolumeHa)],
+                             dc_cwd_93[,.(Year,Yrs_Post = 1,Unit = Stand, VolumeHa)],
+                             dc_cwd_11[,.(Year = 2011, Yrs_Post = 19,Unit, VolumeHa)],
+                             dc_cwd_18[,.(Year = 2018, Yrs_Post = 26,Unit, VolumeHa)],
+                             dc_cwd_19[,.(Year = 2019, Yrs_Post = 27,Unit, VolumeHa)])
+
+  }else{
+    cd_cwd_allyears <- rbind(dc_cwd_92[,.(Year,Yrs_Post = 0,Unit, Sp, Decay, VolumeHa)],
+                             dc_cwd_93[,.(Year,Yrs_Post = 1,Unit = Stand, Sp, Decay, VolumeHa)],
+                             dc_cwd_11[,.(Year = 2011, Yrs_Post = 19,Unit, Sp, Decay, VolumeHa)],
+                             dc_cwd_18[,.(Year = 2018, Yrs_Post = 26,Unit, Sp, Decay, VolumeHa)],
+                             dc_cwd_19[,.(Year = 2019, Yrs_Post = 27,Unit, Sp, Decay = Decay_2019, VolumeHa)])
+  }
+
+
+  return(cd_cwd_allyears)
+
+}
+
+
+
+
+
+
+
+
 #' 1992 CWD volume calculation
 #'
 #' @param CWD_dat
@@ -16,7 +72,7 @@
 #' so that cos (A) = 1 for all pieces in those years.
 #'
 #' @examples
-CWD_1992_Vol_calc <- function(CWD_dat){
+CWD_1992_Vol_calc <- function(CWD_dat, out_carbon_comp = FALSE){
   #-----------------------Prepare data -----------------------------------------#
   # Import 1992
   CWD.1992<- fread(CWD_dat)
@@ -25,8 +81,14 @@ CWD_1992_Vol_calc <- function(CWD_dat){
   CWD.1992[, D2_cosA:= Diam_cm^2]
 
   # Convert individual piece to plot summary for L (length of total transect horizontal distance)
-  CWD.1992_plot<- CWD.1992[, .(D2cosA = sum(D2_cosA)), by =c("Year", "Unit", "Block", "Treatment", "Unique_plot")]
-
+  if(out_carbon_comp == FALSE){
+    CWD.1992_plot <- CWD.1992[, .(D2cosA = sum(D2_cosA)),
+                              by =c("Year", "Unit", "Block", "Treatment", "Unique_plot")]
+  }else{
+    #if volume will be used for carbon, need to keep species and decay class columns
+    CWD.1992_plot <- CWD.1992[, .(D2cosA = sum(D2_cosA)),
+                              by =c("Year", "Unit","Sp", "Decay","Block", "Treatment", "Unique_plot")]
+  }
 
   # Volume (m3/ha) calculation
   CWD.1992_plot[, VolumeHa:= (pi^2/(8*90)) * D2cosA]
@@ -56,16 +118,22 @@ CWD_1992_Vol_calc <- function(CWD_dat){
 #'
 #'
 #' @examples
-CWD_1993_Vol_calc <- function(CWD_dat){
+CWD_1993_Vol_calc <- function(CWD_dat, out_carbon_comp = FALSE){
 
   CWD.1993 <- fread(CWD_dat)
-
 
   # Square diameter
   CWD.1993[, D2_cosA:= Diam_cm^2]
 
   # Convert individual piece to plot summary for L (length of total transect horizontal distance)
-  CWD.1993_plot<- CWD.1993[, .(D2cosA = sum(D2_cosA)), by =c("Year", "Unit", "Block", "Treatment", "Unique_plot")]
+  if(out_carbon_comp == FALSE){
+    CWD.1993_plot <- CWD.1993[, .(D2cosA = sum(D2_cosA)),
+                              by =c("Year", "Stand", "Block", "Treatment", "Unique_plot")]
+  }else{
+    #if volume will be used for carbon, need to keep species and decay class columns
+    CWD.1993_plot <- CWD.1993[, .(D2cosA = sum(D2_cosA)),
+                              by =c("Year", "Stand","Sp", "Decay","Block", "Treatment", "Unique_plot")]
+  }
 
   # Volume (m3/ha) calculation
   CWD.1993_plot[, VolumeHa:= (pi^2/(8*90)) * D2cosA]
@@ -89,31 +157,39 @@ CWD_1993_Vol_calc <- function(CWD_dat){
 #'                                         A = tilt angle from horizontal for each piece (degrees)
 #' @details There is only one horizontal distance file - works for both 2011 and 2018?
 #' @examples
-CWD_2011_Vol_cal <- function(CWD_dat, Horiz_dat){
+CWD_2011_Vol_calC <- function(CWD_dat, Horiz_dat, out_carbon_comp = FALSE){
   # Import Data
-  CWD.2011<- fread(CWD_dat)
+  CWD.2011<- fread(CWD_dat, na.strings = "x") #AC: trying ot make x na so that the str makes more sense at import
 
   # Remove rows that are place-holders for transects with no CWD by subsetting data (but they will be accounted for later)
-  CWD.2011 <- CWD.2011[Diam_cm != "x",]
-  CWD.2011[, Diam_cm:= as.numeric(Diam_cm)]
-  #CWD.2011$Dist_m[which(CWD.2011$Dist_m == "x")]
-  CWD.2011 <- CWD.2011[Dist_m != "x"]
-
   # Only include pieces >= 10 cm diameter
-  CWD.2011 <- CWD.2011[Diam_cm >= 10]
+  CWD.2011 <- CWD.2011[!is.na(Diam_cm) & !is.na(Dist_m) & Diam_cm >= 10]
 
-  #-------------------------Calculate volume ------------------------------------#
+  #CWD.2011 <- CWD.2011[Diam_cm != "x",]
+  #CWD.2011[, Diam_cm:= as.numeric(Diam_cm)] #If switch backt to x, need to do this
+  #CWD.2011$Dist_m[which(CWD.2011$Dist_m == "x")]
+  #CWD.2011 <- CWD.2011[Dist_m != "x"]
 
-  # diameter square/cos(A)
-  CWD.2011[, Tilt_deg:= as.numeric(Tilt_deg)]
-  CWD.2011[, D2_cosA:= Diam_cm^2 /cos(Tilt_deg)]
-
-  # Convert individual piece to plot summary for L (length of total transect horizontal distance)
-  CWD.2011_plot <- CWD.2011[, .(D2cosA = sum(D2_cosA)), by =c("Unit", "Block", "Treatment", "Unique_plot")]
 
   # Import horizontal transect csv file then convert individual lines to plot summary
   transect <- fread(Horiz_dat)
   transectPlot <- transect[, .(HorDist = sum(Horizontal_distance)), by =c("Unit", "Unique_plot")]
+
+  #-------------------------Calculate volume ------------------------------------#
+  # diameter square/cos(A)
+  # Convert deg to radians -- if you don't you will get a negative value
+  CWD.2011[, Tilt.radians:= pi/180*Tilt_deg]
+  CWD.2011[, D2_cosA:= Diam_cm^2 /cos(Tilt.radians)]
+
+  # Convert individual piece to plot summary for L (length of total transect horizontal distance)
+  if(out_carbon_comp == FALSE){
+    CWD.2011_plot <- CWD.2011[, .(D2cosA = sum(D2_cosA)),
+                              by =c("Unit", "Block", "Treatment", "Unique_plot")]
+
+  }else{
+    CWD.2011_plot <- CWD.2011[, .(D2cosA = sum(D2_cosA)),
+                              by =c("Year", "Unit","Sp", "Decay","Block", "Treatment", "Unique_plot")]
+  }
 
   # Merge horizontal distances with all CWD at the plot level
   CWD.2011_plot <- merge(CWD.2011_plot, transectPlot, by = c("Unit", "Unique_plot"))
@@ -136,12 +212,6 @@ CWD_2011_Vol_cal <- function(CWD_dat, Horiz_dat){
 #' @details Alternative volume calculation (not used - but here just in case want to play with)
 #' Volume calculation - taper volume equation (used in Gove paper)Using the taper equation results in the most similar volume values as the volume from transects
 #' Functions for calculating gove volume
-#' taper_volume <- function (du,db,L,r,il){
-#'   p1 <- (du^2)*il + L*((db-du)^2)*(r/(r+4))*(1-(1-(il/L)^((r+4)/r)))
-#'   p2 <- 2*L*du*(db-du)*(r/(r+2))*(1-(1-(1-(il/L)^((r+2)/r))))
-#'   v  <- (pi/4)*(p1+p2)
-#'   return(v)
-#' }
 #'
 #' Using conic-parabloid equation from Fraver et al. 2013
 #' length and diameter in meters
@@ -159,21 +229,22 @@ CWD_2011_Vol_cal <- function(CWD_dat, Horiz_dat){
 #'
 #' @param CWD_dat
 #'
-#'
+#' @export
 #'
 #' @return data.table with total volume of CWD by plot and Unit
 #'
 #'
-CWD_2018_Vol_calc <- function(CWD_dat){
+CWD_2018_Vol_calc <- function(CWD_dat, out_carbon_comp = FALSE){
   #Import Data
 
   CWD.2018 <- fread(CWD_dat)
   CWD.2018[,Plot:=as.factor(Plot)]#changing plot to be a factor
 
   # For time series calculation, use only pieces with at least one diameter > 10 cm to match with previous years data
-  CWD.2018<- subset(CWD.2018, CWD.2018$Diam1m >= 0.10 | CWD.2018$Diam2m >= 0.10)
+  CWD.2018 <- CWD.2018[Diam1m >= 0.10| Diam2m >= 0.10]
+  #CWD.2018<- subset(CWD.2018, CWD.2018$Diam1m >= 0.10 | CWD.2018$Diam2m >= 0.10)
 
-  CWD.2018[Decay ==0] <- 1 #Putting pieces that were decay 0 into decay 1
+  CWD.2018[Decay ==0, Decay := 1]# <- 1 #Putting pieces that were decay 0 into decay 1
   #min(CWD.2018$Decay)
 
   # check all plots for CWD pieces
@@ -213,18 +284,27 @@ CWD_2018_Vol_calc <- function(CWD_dat){
 
   #------------------ Convert volume to plot level ------------------------------#
   # Convert individual piece to plot summary
-  CWD.2018_plot <- CWD.2018[, .(volume = sum(Volume_inclus_ind)), by= c("Block", "Treatment", "TreatmentType", "TreatmentUnitType","Unit")]
+  if(out_carbon_comp == FALSE){
+    CWD.2018_plot <- CWD.2018[, .(volume = sum(Volume_inclus_ind)),
+                              by= c("Block", "Treatment", "TreatmentType", "TreatmentUnitType","Unit")]
+
+  }else{
+    CWD.2018_plot <- CWD.2018[, .(volume = sum(Volume_inclus_ind)),
+                              by= c("Block", "Treatment", "TreatmentType","Sp", "Decay","TreatmentUnitType","Unit")]
+  }
+
 
 
   # Add row for plot without CWD
   #table(CWD.2018_plot$Treatment, CWD.2018_plot$Block) # missing a clearcut mesic mature plot = B4-0
 
   # Create and add B4-0
-  `B4-0` <- data.table("Block" = "mesic mature", "Treatment" = "clearcut", "TreatmentType" = "B4-0", "TreatmentUnitType" = "B4", "Unit" = "B4-0", "volume" = 0)
-  CWD.2018_plot <- rbindlist(list(CWD.2018_plot, `B4-0`))
+  `B4-0` <- data.table("Block" = "mesic mature", "Treatment" = "clearcut", "TreatmentType" = "B4-0",
+                       "TreatmentUnitType" = "B4", "Unit" = "B4-0", "volume" = 0)
+  CWD.2018_plot <- rbind(CWD.2018_plot, `B4-0`, fill=TRUE)
 
-  # Convert volume into volume/ha
-  CWD.2018_plot[, volumeHa:= volume* 10000] # I think this conversion is correct - I think the a_s makes it /m2 ** check with Erica**
+  # Convert volume into volume/ha (unweighted by treatment)
+  CWD.2018_plot[, UnW_VolHa:= volume* 10000] # I think this conversion is correct - I think the a_s makes it /m2 ** check with Erica**
   #CWD.2018_plot[, volumeHa:= volume/100* 10000] #each plot is 100 m2 and there are 10,000 m2 per ha
 
 
@@ -260,19 +340,27 @@ CWD_2018_Vol_calc <- function(CWD_dat){
   v <- vector()
   for(i in 1:nrow(CWD.2018_plot)){
     v[i] <- TreatmentWeightFN(TreatmentUnitType = CWD.2018_plot[i,TreatmentUnitType],
-                              volumeHa= CWD.2018_plot[i,volumeHa])
+                              volumeHa= CWD.2018_plot[i,UnW_VolHa])
   }
 
+  #update the volume by treatment weight
   CWD.2018_plot[, VolumeHa:= v]
 
-
   # Create new rows that will be the gap and the matrix added
-  CWD.2018_Plot <- CWD.2018_plot[, .(VolumeHa = sum(VolumeHa)), by=c("Block", "Treatment", "TreatmentType")]
+  if(out_carbon_comp == FALSE){
+    CWD.2018_Plot <- CWD.2018_plot[, .(VolumeHa = sum(VolumeHa)), by=c("Block", "Treatment", "TreatmentType")]
 
-  return(CWD.2018_plot)
+  }else{
+    CWD.2018_Plot <- CWD.2018_plot[, .(VolumeHa = sum(VolumeHa)), by=c("Block", "Treatment", "TreatmentType",
+                                                                       "Sp","Decay")]
+  }
+
+  #add Unit to match other years
+  CWD.2018_Plot[, c("Unit") := tstrsplit(TreatmentType, "-", fixed=TRUE, keep=1L)]
+
+  return(CWD.2018_Plot)
 
 }
-
 
 
 
@@ -293,8 +381,9 @@ CWD_2018_Vol_calc <- function(CWD_dat){
 #'
 #' @return data.table with total volume of CWD by plot and Unit
 #'
+#' @export
 #'
-CWD_2019_Vol_calc <- function(CWD_dat, Horiz_dat){
+CWD_2019_Vol_calc <- function(CWD_dat, Horiz_dat, out_carbon_comp = FALSE){
 
   # Import data
   CWD.2019<- fread(CWD_dat)
@@ -302,7 +391,12 @@ CWD_2019_Vol_calc <- function(CWD_dat, Horiz_dat){
   CWD.2019[, D2_cosA:= Diam_2019_cm^2]
 
   # Convert individual piece to plot summary for L (length of total transect horizontal distance)
-  CWD2019_plot <- CWD.2019[, .(D2cosA = sum(D2_cosA)), by =c("Unit", "Block", "Treatment", "Unique_plot")]
+  if(out_carbon_comp == FALSE){
+    CWD2019_plot <- CWD.2019[, .(D2cosA = sum(D2_cosA)), by =c("Unit", "Block", "Treatment", "Unique_plot")]
+  }else{
+    CWD2019_plot <- CWD.2019[, .(D2cosA = sum(D2_cosA)), by =c("Unit", "Block", "Treatment", "Unique_plot",
+                                                               "Sp", "Decay_2019")]
+  }
 
 
   # Import horizontal transect csv file then convert individual lines to plot summary
@@ -310,7 +404,7 @@ CWD_2019_Vol_calc <- function(CWD_dat, Horiz_dat){
   transectPlot <- transect[, .(HorDist = sum(Horizontal_distance)), by =c("Unit", "Unique_plot")]
 
   # Merge horizontal distances with all CWD at the plot level
-  CWD2019_plot <-merge(CWD2019_plot, transectPlot, by = c("Unit", "Unique_plot"))
+  CWD2019_plot <- merge(CWD2019_plot, transectPlot, by = c("Unit", "Unique_plot"))
 
   # Volume (m3/ha) calculation
   CWD2019_plot[, VolumeHa:= pi^2/(8*HorDist) * D2cosA]
