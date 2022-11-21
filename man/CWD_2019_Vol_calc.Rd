@@ -4,7 +4,7 @@
 \alias{CWD_2019_Vol_calc}
 \title{2019 function:}
 \usage{
-CWD_2019_Vol_calc(CWD_dat, Horiz_dat)
+CWD_2019_Vol_calc(CWD_dat, Horiz_dat, out_carbon_comp = FALSE)
 }
 \arguments{
 \item{Horiz_dat}{}

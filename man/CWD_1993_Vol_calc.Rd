@@ -4,7 +4,7 @@
 \alias{CWD_1993_Vol_calc}
 \title{1993 CWD volume calculation}
 \usage{
-CWD_1993_Vol_calc(CWD_dat)
+CWD_1993_Vol_calc(CWD_dat, out_carbon_comp = FALSE)
 }
 \arguments{
 \item{CWD_dat}{}

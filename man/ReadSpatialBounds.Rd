@@ -2,16 +2,13 @@
 % Please edit documentation in R/SpatialFunctions.R
 \name{ReadSpatialBounds}
 \alias{ReadSpatialBounds}
-\title{Import the Date Creek treatment boundaries}
+\title{Read the Date Creek spatial unit boundaries}
 \usage{
 ReadSpatialBounds(Units_path)
 }
 \arguments{
-\item{Units_path}{The directory with the shapefiles that define the edge of the boundaries}
-}
-\value{
-an sf object with
+\item{Units_path}{}
 }
 \description{
-Import the Date Creek treatment boundaries
+Read the Date Creek spatial unit boundaries
 }

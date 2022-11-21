@@ -26,11 +26,17 @@ read_keyhole <- function(file) {
 }
 
 
-#' Import the Date Creek treatment boundaries
-#' @param Units_path The directory with the shapefiles that define the edge of the boundaries
-#' @return an sf object with
+
+#' Read the Date Creek spatial unit boundaries
 #'
+#' @param Units_path
+#'
+#' @return
+#' @export
+#'
+#' @examples
 ReadSpatialBounds <- function(Units_path){
+
   ########################## 1. Read in spatial harvests #############################
   ## Date Creek Treatments
   NH<-c("A4", "B1", "C1", "D3") #No harvest
@@ -69,11 +75,18 @@ ReadSpatialBounds <- function(Units_path){
   spatialbounds <- list(NH_blocks,LR_blocks,HR_blocks,CC_blocks)
   names(spatialbounds) <- c("NH","LR","HR","CC")
   return(spatialbounds)
+
 }
 
+
+
 #' Modify the Date Creek treatment boundaries for heavy and light removals
+#'
 #' @param Gaps_path The directory with the kmls and kmzs that define the cuts
+#' @export
+#'
 #' @return an sf object
+#' @examples
 #'
 modifyPartCuts <- function(Gaps_path){
 
@@ -121,7 +134,14 @@ modifyPartCuts <- function(Gaps_path){
   #### Light removals gaps
   #we are going to ignore the gap boundaries, but use unit boundaries to harvest BA within
   LR_Cuts <- do.call(rbind.data.frame, kmz_list[5:8])
+
+  HR_Cuts_clean <- rbind(HR_Cuts_B2,HR_Cuts_B3,HR_Cuts_C2,HR_Cuts_D4)
+
+  return(HR_Cuts_clean)
+
 }
+
+
 
 #'subplot_outputs
 #'
@@ -230,16 +250,106 @@ subplot_outputs <- function(out_path, run_name, Units_path, yrs,
 
 }
 
-#'Update Harvest Function
+
+
+#' Sample the Date Creek Grid outputs from SORTIE
 #'
+#' @param Blocks
+#' @param UnitBounds
+#' @param HR_gaps
+#' @param sampl_rast
+#' @param NoCells_ToSample
 #'
+#' @return
+#' @export
 #'
+#' @examples
+SampleDateCreekGrids <- function(Blocks,UnitBounds,HR_gaps, NoCells_ToSample, sampl_rast = "Y"){
+  samp_table_dt <- c()
+
+  for(ii in 1: length(Blocks)){
+    #change the sortie grid to real space
+    UnitBounds_l <- UnitBounds %>% filter(Unit== Blocks[ii])
+    bb <- st_bbox(UnitBounds_l)
+    bbb <- c(bb[1],bb[3],bb[2],bb[4])
+    ext(rast_i[[Blocks[[ii]]]]) <- bbb
+
+    #mask by the unit boundaries - all units
+    rast_unit <- mask(rast_i[[Blocks[[ii]]]], UnitBounds_l)
+
+    #make a raster for gaps and a raster for matrix for HR
+    if(Blocks[ii] %in% c("B2", "B3", "C2", "D4")){
+      gap_mask <- HR_gaps %>% filter(Id==Blocks[[ii]])
+      gaps_rast <- mask(rast_unit, gap_mask) #matrix = NA
+      matrix_rast <- mask(rast_unit, gap_mask, inverse=TRUE) #gaps = NA
+    }else{
+      gaps_rast <- c()
+      matrix_rast <- c()
+    }
+
+    #convert to data.table for each year and export
+
+    #sample the unit for comparison to field data
+    if(sampl_rast == "Y"){
+
+      if(Blocks[ii] %in% c("B2", "B3", "C2", "D4")){
+        #the point locations stay the same for all the rasters in the list
+        gap_pts <- spatSample(gaps_rast, size = NoCells_ToSample*0.5, na.rm=TRUE,as.points=TRUE)
+        gap_table_geom <- as.data.table(geom(gap_pts))
+        gap_table_dat <- as.data.table(gap_pts)
+        gap_table <- cbind(gap_table_dat,gap_table_geom[,.(x,y)])
+        gap_table[, ':=' (Unit = Blocks[ii], OpenType = "Gap")]
+
+        matrix_pts <- spatSample(matrix_rast, size = NoCells_ToSample*0.5, na.rm=TRUE,as.points=TRUE)
+        matrix_table_geom <- as.data.table(geom(matrix_pts))
+        matrix_table_dat <- as.data.table(matrix_pts)
+        matrix_table <- cbind(matrix_table_dat,matrix_table_geom[,.(x,y)])
+        matrix_table[, ':=' (Unit = Blocks[ii], OpenType = "Matrix")]
+
+        samp_table_gm <- rbind(gap_table,matrix_table)
+        samp_table <- melt(samp_table_gm,id.vars = c("Unit","OpenType","x","y"),
+                           variable.name = "timestep",
+                           value.name = grid_to_output)
+
+
+      }else{
+        #sample anywhere in the unit
+        unit_pts <- spatSample(rast_unit, size = NoCells_ToSample, na.rm=TRUE, as.points=TRUE)
+
+        #store the samples in a table
+        samp_table_geom <- as.data.table(geom(unit_pts))
+
+        samp_table_dat <- as.data.table(unit_pts)
+        samp_table_u <- cbind(samp_table_dat,samp_table_geom[,.(x,y)])
+        samp_table_u[, ':=' (Unit =Blocks[ii], OpenType = "Unit")]
+
+        samp_table <- melt(samp_table_u,id.vars = c("Unit","OpenType","x","y"),
+                           variable.name = "timestep",
+                           value.name = grid_to_output)
+      }
+    }
+
+    samp_table_dt <- rbind(samp_table_dt, samp_table)
+
+  }
+
+  return(samp_table_dt)
+}
+
+
+
+
+#' Update Harvest Function
 #'
+#' @param NewxmlPath string - directory where the newly created parameter files are located
+#' @param Units_path string - directory where the spatial files for each unit is located
+#' @param Gaps_path string - directory where the spatial files for the gap curs are located
+#' @param ParamFile_Suffix string - what is the ending of the parameter files - represents a given parameter file update
 #'
-#' @param NewxmlPath
-#' @param Units_path
-#' @param Gaps_path
-#' @param ParamFile_Suffix
+#' @return
+#' @export
+#'
+#' @examples
 UpdateHarvestsFn <- function(NewxmlPath, Units_path, Gaps_path, ParamFile_Suffix){
 
 

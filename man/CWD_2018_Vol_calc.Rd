@@ -4,7 +4,7 @@
 \alias{CWD_2018_Vol_calc}
 \title{2018 CWD function}
 \usage{
-CWD_2018_Vol_calc(CWD_dat)
+CWD_2018_Vol_calc(CWD_dat, out_carbon_comp = FALSE)
 }
 \arguments{
 \item{CWD_dat}{}
@@ -16,17 +16,11 @@ data.table with total volume of CWD by plot and Unit
 \code{CWD_2018_Vol_calc()}
 }
 \details{
-2018 Date Creek coarse woody transects
+2018 Date Creek coarse woody SQUARE PLOTS (not transects)
 
 Alternative volume calculation (not used - but here just in case want to play with)
 Volume calculation - taper volume equation (used in Gove paper)Using the taper equation results in the most similar volume values as the volume from transects
 Functions for calculating gove volume
-taper_volume <- function (du,db,L,r,il){
-p1 <- (du^2)\emph{il + L}((db-du)^2)\emph{(r/(r+4))}(1-(1-(il/L)^((r+4)/r)))
-p2 <- 2\emph{L}du*(db-du)\emph{(r/(r+2))}(1-(1-(1-(il/L)^((r+2)/r))))
-v  <- (pi/4)*(p1+p2)
-return(v)
-}
 
 Using conic-parabloid equation from Fraver et al. 2013
 length and diameter in meters
