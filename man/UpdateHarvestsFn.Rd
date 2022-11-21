@@ -6,6 +6,15 @@
 \usage{
 UpdateHarvestsFn(NewxmlPath, Units_path, Gaps_path, ParamFile_Suffix)
 }
+\arguments{
+\item{NewxmlPath}{string - directory where the newly created parameter files are located}
+
+\item{Units_path}{string - directory where the spatial files for each unit is located}
+
+\item{Gaps_path}{string - directory where the spatial files for the gap curs are located}
+
+\item{ParamFile_Suffix}{string - what is the ending of the parameter files - represents a given parameter file update}
+}
 \description{
 Update Harvest Function
 }

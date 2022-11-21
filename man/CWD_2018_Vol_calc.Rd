@@ -16,7 +16,7 @@ data.table with total volume of CWD by plot and Unit
 \code{CWD_2018_Vol_calc()}
 }
 \details{
-2018 Date Creek coarse woody transects
+2018 Date Creek coarse woody SQUARE PLOTS (not transects)
 
 Alternative volume calculation (not used - but here just in case want to play with)
 Volume calculation - taper volume equation (used in Gove paper)Using the taper equation results in the most similar volume values as the volume from transects

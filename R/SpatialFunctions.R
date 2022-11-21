@@ -338,16 +338,18 @@ SampleDateCreekGrids <- function(Blocks,UnitBounds,HR_gaps, NoCells_ToSample, sa
 
 
 
-#'Update Harvest Function
+
+#' Update Harvest Function
 #'
+#' @param NewxmlPath string - directory where the newly created parameter files are located
+#' @param Units_path string - directory where the spatial files for each unit is located
+#' @param Gaps_path string - directory where the spatial files for the gap curs are located
+#' @param ParamFile_Suffix string - what is the ending of the parameter files - represents a given parameter file update
 #'
+#' @return
+#' @export
 #'
-#'
-#'
-#' @param NewxmlPath
-#' @param Units_path
-#' @param Gaps_path
-#' @param ParamFile_Suffix
+#' @examples
 UpdateHarvestsFn <- function(NewxmlPath, Units_path, Gaps_path, ParamFile_Suffix){
 
 

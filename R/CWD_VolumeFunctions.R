@@ -20,9 +20,10 @@ CWD_vol_calc <- function(dat_loc, incl_sp_decay = FALSE){
   dc_cwd_11 <- CWD_2011_Vol_calC(CWD_dat = paste0(dat_loc,"CWD_2011.csv"),
                                  Horiz_dat = paste0(dat_loc,"CWD_horizontal_dist.csv"),
                                  out_carbon_comp = incl_sp_decay)
-  #2018
-  dc_cwd_18 <- CWD_2018_Vol_calc(CWD_dat = paste0(dat_loc,"CWD_2018.csv"),
-                                 out_carbon_comp = incl_sp_decay)
+  #2018 - 2018 transect data only occurred in CC and is in the 2019 data. 2018 csv contains plot data, not suitable for
+  #time series analysis
+  #dc_cwd_18 <- CWD_2018_Vol_calc(CWD_dat = paste0(dat_loc,"CWD_2018.csv"),
+   #                              out_carbon_comp = incl_sp_decay)
   #2019
   dc_cwd_19 <- CWD_2019_Vol_calc(CWD_dat = paste0(dat_loc,"CWD_2019.csv"),
                                  Horiz_dat = paste0(dat_loc,"CWD_horizontal_dist.csv"),
@@ -32,14 +33,12 @@ CWD_vol_calc <- function(dat_loc, incl_sp_decay = FALSE){
     cd_cwd_allyears <- rbind(dc_cwd_92[,.(Year,Yrs_Post = 0,Unit, VolumeHa)],
                              dc_cwd_93[,.(Year,Yrs_Post = 1,Unit = Stand, VolumeHa)],
                              dc_cwd_11[,.(Year = 2011, Yrs_Post = 19,Unit, VolumeHa)],
-                             dc_cwd_18[,.(Year = 2018, Yrs_Post = 26,Unit, VolumeHa)],
                              dc_cwd_19[,.(Year = 2019, Yrs_Post = 27,Unit, VolumeHa)])
 
   }else{
     cd_cwd_allyears <- rbind(dc_cwd_92[,.(Year,Yrs_Post = 0,Unit, Sp, Decay, VolumeHa)],
                              dc_cwd_93[,.(Year,Yrs_Post = 1,Unit = Stand, Sp, Decay, VolumeHa)],
                              dc_cwd_11[,.(Year = 2011, Yrs_Post = 19,Unit, Sp, Decay, VolumeHa)],
-                             dc_cwd_18[,.(Year = 2018, Yrs_Post = 26,Unit, Sp, Decay, VolumeHa)],
                              dc_cwd_19[,.(Year = 2019, Yrs_Post = 27,Unit, Sp, Decay = Decay_2019, VolumeHa)])
   }
 
@@ -208,7 +207,7 @@ CWD_2011_Vol_calC <- function(CWD_dat, Horiz_dat, out_carbon_comp = FALSE){
 #'
 #' @description `CWD_2018_Vol_calc()`
 #' @author Ingrid Farnell
-#' @details 2018 Date Creek coarse woody transects
+#' @details 2018 Date Creek coarse woody SQUARE PLOTS (not transects)
 #' @details Alternative volume calculation (not used - but here just in case want to play with)
 #' Volume calculation - taper volume equation (used in Gove paper)Using the taper equation results in the most similar volume values as the volume from transects
 #' Functions for calculating gove volume
