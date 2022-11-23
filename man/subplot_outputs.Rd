@@ -9,11 +9,23 @@ subplot_outputs(
   run_name,
   Units_path,
   yrs,
+  Units_to_output = "all",
   dist_edge = 20,
   num_subplots = 30,
   size_subplot = 7.98,
-  plot_treatments = TRUE
+  plotting = TRUE
 )
+}
+\arguments{
+\item{Units_to_output}{a vector of character names for which units to include for subplotting outputs}
+
+\item{dist_edge}{\code{\link[=numeric]{numeric()}} how far from unit boundary to allow subplots (in m)}
+
+\item{num_subplots}{\code{\link[=numeric]{numeric()}} how many subplots}
+
+\item{size_subplot}{\code{\link[=numeric]{numeric()}} radius of plot (standard is 7.98m)}
+
+\item{plotting}{TRUE/FALSE - whether or not to display plots with the unit and subplot location}
 }
 \description{
 subplot_outputs
