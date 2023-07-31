@@ -146,34 +146,35 @@ modifyPartCuts <- function(Gaps_path){
 #'subplot_outputs
 #'
 #'
-#'
+#' @export
 #'
 #'
 #' @param out_path
 #' @param run_name
 #' @param Units_path
 #' @param yrs
-#' @param dist_edge
-#' @param num_subplots
-#' @param size_subplot
-#' @param plot_treatments
-subplot_outputs <- function(out_path, run_name, Units_path, yrs,
-                            dist_edge = 20, num_subplots = 30, size_subplot = 7.98, plot_treatments = TRUE){
+#' @param Units_to_output a vector of character names for which units to include for subplotting outputs
+#' @param dist_edge [numeric()] how far from unit boundary to allow subplots (in m)
+#' @param num_subplots [numeric()] how many subplots
+#' @param size_subplot [numeric()] radius of plot (standard is 7.98m)
+#' @param plotting TRUE/FALSE - whether or not to display plots with the unit and subplot location
+subplot_outputs <- function(out_path, run_name, Units_path, yrs, Units_to_output = "all",
+                            dist_edge = 20, num_subplots = 30, size_subplot = 7.98, plotting = TRUE){
+
+  # Reading in unit boundaries and creating shapefiles group by removal class
 
   #to add: run through the output names and see which years are missing
+  #to add: instead of passing years as a parameter, get it from the file names (would solve the above)
 
-  source("../Frontiers-PartialCutting/R/SpatialHarvestPlantsFunction.R", local=TRUE)
   spatialBlocks <- ReadSpatialBounds(Units_path)
   spatialBlocks <- do.call(rbind, spatialBlocks)
 
+  if(Units_to_output == "all"){
+    Blocks <- c("A4", "B1", "C1", "D3", "A2", "B5", "C3", "D5","B2", "B3", "C2", "D4","A1", "A3", "B4", "D2")
 
-  NH<-c("A4", "B1", "C1", "D3") #No harvest
-  LR<-c("A2", "B5", "C3", "D5") # light removal (30% BasalArea)
-  HR<-c("B2", "B3", "C2", "D4") #heavy removal (60% BasalArea)
-  CC<-c("A1", "A3", "B4", "D2") #Clear-cut (100% removal) with some caveats (some deciduous left standing, one small
-
-  # Reading in unit boundaries and creating shapefiles group by removal class
-  Blocks <- c(NH,LR,HR,CC)
+  }else{
+    Blocks <- Units_to_output
+  }
 
   for(ij in 1:length(Blocks)){
     dt_table <- data.table()
@@ -198,7 +199,7 @@ subplot_outputs <- function(out_path, run_name, Units_path, yrs,
     sampPtsSF <- st_as_sf(sampPts)
     sampPtsSFP <- st_buffer(sampPtsSF, dist=size_subplot)
 
-    if(plot_treatments == TRUE){
+    if(plotting == TRUE){
       plot(Unit_b$geometry)
       plot(Unit_b_edge$geometry, add=TRUE)
       plot(sampPts,add=TRUE)

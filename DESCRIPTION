@@ -13,6 +13,7 @@ Imports:
     data.table,
     dplyr,
     stringr,
+    sf,
     tidyr,
     xml2,
     parallel
