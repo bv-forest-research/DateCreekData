@@ -6,7 +6,7 @@
 \alias{DateCreekData-package}
 \title{DateCreekData: Date Creek Data Processing}
 \description{
-This package contains functions to prepare Date Creek data for use within rsortie along with associated analyses.
+Functions to prepare Date Creek data for common summaries and use with sortie and analyses including carbon accounting.
 }
 \author{
 \strong{Maintainer}: Alana Clason \email{alana.clason@bvcentre.ca}
