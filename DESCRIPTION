@@ -1,10 +1,12 @@
 Package: DateCreekData
 Title: Date Creek Data Processing
 Version: 0.0.0.9000
-Authors@R: c(person("Alana", "Clason", email = "alana.clason@bvcentre.ca", role = c("aut", "cre")),
-            person("Ingrid", "Farnell", email = "farnellingrid@gmail.com", role = "aut"))
-Description: This package contains functions to prepare Date Creek data for use within 
-    rsortie along with associated analyses.
+Authors@R: c(person("Alana", "Clason", email = "alana.clason@bvcentre.ca", 
+              role = c("aut", "cre")),
+            person("Ingrid", "Farnell", email = "farnellingrid@gmail.com",
+              role = "aut"))
+Description: Functions to prepare Date Creek data for common summaries and
+              use with sortie and analyses including carbon accounting.
 License: `use_gpl3_license()` 
 Encoding: UTF-8
 Roxygen: list(markdown = TRUE)
@@ -16,7 +18,9 @@ Imports:
     sf,
     plyr,
     raster,
-    fasterize
-Depends: 
-    R (>= 2.10)
-LazyData: true
+    fasterize,
+    SpaDES,
+    knitr,
+    rmarkdown,
+    testthat (>= 3.0.0)
+Config/testthat/edition: 3

@@ -39,6 +39,9 @@ createTreeListSortie <- function(diam_sizeClass =2.5, dateCreek92_data, dateCree
                                       dateCreek_92_tallies = dateCreek_92_tallies,
                                       liveTrees = liveTrees)
 
+  #keep only needed columns and rename to match 2018 data
+  dat92 <- dat92[,.(Unit = BLOCK, PrismBands = MAIN_BAF, Ht = CRUISED_HEIGHT,
+                    Spp = SPECIES,DBH, TC = TREE_CLASS,PlotNum)]
 
   SummaryDataTable[,Spp:=ifelse(Spp=="Hw","Western_Hemlock",
                       ifelse(Spp=="Cw","Western_redcedar",
