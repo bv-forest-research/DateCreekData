@@ -16,5 +16,7 @@ UpdateHarvestsFn(NewxmlPath, Units_path, Gaps_path, ParamFile_Suffix)
 \item{ParamFile_Suffix}{string - what is the ending of the parameter files - represents a given parameter file update}
 }
 \description{
-Update Harvest Function
+Formerly UpdateHarvestsFn, This function adds the spatial harvest details for each block
+with brushing. This function will be removed if we no longer wish to brush and replace with retained
+deciduous trees in clear cuts (addSpatialHarvest)
 }

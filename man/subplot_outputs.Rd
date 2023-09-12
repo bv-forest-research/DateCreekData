@@ -9,6 +9,7 @@ subplot_outputs(
   run_name,
   Units_path,
   yrs,
+  subplot_type = multiple,
   Units_to_output = "all",
   dist_edge = 20,
   num_subplots = 30,

@@ -6,9 +6,6 @@
 \usage{
 ReadSpatialBounds(Units_path)
 }
-\arguments{
-\item{Units_path}{}
-}
 \description{
 Read the Date Creek spatial unit boundaries
 }

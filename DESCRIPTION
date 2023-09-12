@@ -8,20 +8,15 @@ Description: This package contains functions to prepare Date Creek data for use 
 License: `use_gpl3_license()` 
 Encoding: UTF-8
 Roxygen: list(markdown = TRUE)
-RoxygenNote: 7.2.1
+RoxygenNote: 7.2.3
 Imports: 
     data.table,
     dplyr,
     stringr,
     sf,
-    tidyr,
-    xml2,
-    parallel
-Suggests: 
-    sf,
     plyr,
     raster,
-    fasterize,
-    SpaDES,
-    knitr,
-    rmarkdown
+    fasterize
+Depends: 
+    R (>= 2.10)
+LazyData: true

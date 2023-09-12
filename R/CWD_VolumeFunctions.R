@@ -42,6 +42,12 @@ CWD_vol_calc <- function(dat_loc, incl_sp_decay = FALSE){
                              dc_cwd_19[,.(Year = 2019, Yrs_Post = 27,Unit, Sp, Decay = Decay_2019, VolumeHa)])
   }
 
+  #clean the species columns
+  cd_cwd_allyears[, Sp := ifelse(Sp=="u","U",
+                           ifelse(Sp == "", "U",
+                            ifelse(Sp == "ep", "Ep",
+                             ifelse(Sp == "Act","Ac",Sp))))]
+
 
   return(cd_cwd_allyears)
 
