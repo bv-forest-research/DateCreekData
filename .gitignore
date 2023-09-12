@@ -41,10 +41,6 @@ vignettes/*.pdf
 
 .temp.kml.zip
 
-data-raw/CWD/
-
-data-raw/Trees/
-
 data-raw/Harvests_Plants/UnitBoundaries/Harvest_PlantLocations/
 .Rdata
 .DS_Store
