@@ -32,7 +32,6 @@ prepSpatialBounds <- function(Units_path, Gaps_path){
 #' Read the Date Creek spatial unit boundaries
 #'
 #' @param Units_path
-#' @importFrom dplyr %>%
 #' @return
 #' @export
 #'
@@ -67,7 +66,6 @@ readBlockBounds <- function(Units_path){
 #' Modify the Date Creek treatment boundaries for heavy and light removals
 #'
 #' @param Gaps_path The directory with the kmls and kmzs that define the cuts
-#' @importFrom dplyr %>%
 #' @export
 #'
 #' @return an sf object

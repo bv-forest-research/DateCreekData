@@ -2,13 +2,18 @@
 % Please edit documentation in R/Trees.R
 \name{trees_2022}
 \alias{trees_2022}
-\title{Title}
+\title{2022 data}
 \usage{
-trees_2022(data, calc_height = TRUE)
+trees_2022(
+  large_trees = "./data-raw/Trees/11.2022 large trees.csv",
+  inter_trees = "./data-raw/Trees/12.2022 intermediate trees.csv",
+  small_trees = "./data-raw/Trees/13.2022 small trees.csv",
+  calc_height = TRUE
+)
 }
 \arguments{
 \item{calc_height}{}
 }
 \description{
-Title
+2022 data
 }

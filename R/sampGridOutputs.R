@@ -12,12 +12,11 @@
 #'
 #' @return
 #' @export
-#' @import terra
 #'
 #' @examples
 maskGrids <- function(Blocks = DateCreekData::Treatments$Unit,
                       Units_path = Units_path, Gaps_path = Gaps_path,
-                      NoCells_ToSample = NA,
+                      NoCells_ToSample = NA, include_xy = FALSE,
                       grid_dat, output = "table",
                       grid_to_output){
 
@@ -28,8 +27,8 @@ maskGrids <- function(Blocks = DateCreekData::Treatments$Unit,
 
   #get the rasters, and put them in the right crs
   for(i in 1:length(Blocks)){
-    UnitBounds_l <- UnitBounds %>% filter(Unit== Blocks[i])
-    bb <- st_bbox(UnitBounds_l)
+    UnitBounds_l <- UnitBounds %>% dplyr::filter(Unit== Blocks[i])
+    bb <- sf::st_bbox(UnitBounds_l)
     grid_dat[Unit==Blocks[i],
              ':='(x_utm = bb[1]+(x*8), y_utm = bb[2]+(y*8))]
   }
@@ -42,19 +41,19 @@ maskGrids <- function(Blocks = DateCreekData::Treatments$Unit,
     rast_t_dt <- c()
 
     rast_g <- grid_dat[colnames == grid_to_output[j]] %>%
-      arrange(.$timestep) %>%
+      dplyr::arrange(.$timestep) %>%
       split(.$Unit) %>%
       lapply(., function(x) {x <- x %>% tidyr::pivot_wider(names_from = timestep, values_from = values)})%>%
       lapply(., function(x) {x <- x %>% dplyr::select(-c("Unit","point_id","mapnm","colnames"))}) %>%
-      purrr::map(.,rast)
+      purrr::map(.,terra::rast)
 
     for(ii in 1: length(Blocks)){
       #mask by unit
-      UnitBounds_l <- UnitBounds %>% filter(Unit== Blocks[ii])
+      UnitBounds_l <- UnitBounds %>% dplyr::filter(Unit== Blocks[ii])
       rasts_i <- rast_g[[Blocks[ii]]]
       crs(rasts_i) <- crs(UnitBounds_l)
       #mask by the unit boundaries - all units
-      rast_unit <- mask(rasts_i, UnitBounds_l)
+      rast_unit <- terra::mask(rasts_i, UnitBounds_l)
 
       if(output == "raster"){
         rast_l[[ii]] <- rast_unit
@@ -63,9 +62,9 @@ maskGrids <- function(Blocks = DateCreekData::Treatments$Unit,
       if(output == "table"){
         #make a raster for gaps and a raster for matrix for HR
         if(Blocks[ii] %in% c("B2", "B3", "C2", "D4")){
-          gap_mask <- HR_gaps %>% filter(Id==Blocks[[ii]])
-          gaps_rast <- mask(rast_unit, gap_mask) #matrix = NA
-          matrix_rast <- mask(rast_unit, gap_mask, inverse=TRUE) #gaps = NA
+          gap_mask <- HR_gaps %>% dplyr::filter(Id==Blocks[[ii]])
+          gaps_rast <- terra::mask(rast_unit, gap_mask) #matrix = NA
+          matrix_rast <- terra::mask(rast_unit, gap_mask, inverse=TRUE) #gaps = NA
         }
 
         #do you want to sample the unit or export all non-na values?
@@ -84,6 +83,7 @@ maskGrids <- function(Blocks = DateCreekData::Treatments$Unit,
             rast_t <- rbind(gap_table,matrix_table)
             rast_ti <- melt(rast_t,id.vars = c("Unit","OpenType"),
                             variable.name = "timestep",
+                            variable.factor = FALSE,
                             value.name = grid_to_output[j])
           }else{
             #sample anywhere in the unit
@@ -96,6 +96,7 @@ maskGrids <- function(Blocks = DateCreekData::Treatments$Unit,
 
             rast_ti <- melt(samp_table_u,id.vars = c("Unit","OpenType"),
                             variable.name = "timestep",
+                            variable.factor = FALSE,
                             value.name = grid_to_output[j])
           }
         }else{
@@ -107,20 +108,59 @@ maskGrids <- function(Blocks = DateCreekData::Treatments$Unit,
             matrix_table <- as.data.table(matrix_rast)
             matrix_table[, ':=' (Unit = Blocks[ii], OpenType = "Matrix")]
 
-            rast_t <- rbind(gap_table,matrix_table)
-            rast_ti <- melt(rast_t,id.vars = c("Unit","OpenType"),
-                            variable.name = "timestep",
-                            value.name = grid_to_output[j])
+            rast_tg <- rbind(gap_table,matrix_table)
+            if(include_xy == TRUE){
+              #get the xys
+              rast_pt <- as.points(rast_unit)
+              rast_t <- cbind(as.data.table(extract(rast_unit,
+                                              rast_pt, xy = TRUE)),
+                              rast_tg[,.(Unit,OpenType)])
+              yr_colnames <- colnames(rast_t)
+              yr_colnames <- yr_colnames[!yr_colnames %in%
+                                           c("ID","x","y","Unit","OpenType")]
+
+              rast_ti <- melt(rast_t,id.vars = c("Unit","OpenType","ID","x","y"),
+                              measure.vars = yr_colnames,
+                              variable.name = "timestep",
+                              variable.factor = FALSE,
+                              value.name = grid_to_output[j])
+
+            }else{
+              rast_t <- rast_tg
+              yr_colnames <- colnames(rast_t)
+              yr_colnames <- yr_colnames[!yr_colnames %in%
+                                           c("Unit","OpenType")]
+
+              rast_ti <- melt(rast_t,id.vars = c("Unit","OpenType"),
+                                   measure.vars = yr_colnames,
+                                   variable.name = "timestep",
+                                   variable.factor = FALSE,
+                                   value.name = grid_to_output[j])
+            }
 
           }else{
-            #create data.table with just cells that are not NA
-            rast_t <- as.data.table(rast_unit)
-            rast_ti <- melt(rast_t, measure.vars = colnames(rast_t),
-                            value.name = grid_to_output[j],
-                            variable.name = "timestep")
-            rast_ti[,`:=`(Unit = Blocks[[ii]], OpenType = "Unit")]
+            if(include_xy == TRUE){
+              rast_pt <- as.points(rast_unit)
+              rast_t <- as.data.table(extract(rast_unit,
+                                    rast_pt, xy = TRUE))
+              yr_colnames <- colnames(rast_t)
+              yr_colnames <- yr_colnames[!yr_colnames %in% c("ID","x","y")]
+              rast_ti <- melt(rast_t, measure.vars = yr_colnames,
+                              value.name = grid_to_output[j],
+                              variable.name = "timestep",
+                              variable.factor = FALSE)
+              rast_ti[,`:=`(Unit = Blocks[[ii]], OpenType = "Unit")]
+            }else{
+              rast_t <- as.data.table(rast_unit)
+              yr_colnames <- colnames(rast_t)
+              yr_colnames <- yr_colnames[!yr_colnames %in% c("x","y")]
+              rast_ti <- melt(rast_t, measure.vars = yr_colnames,
+                              value.name = grid_to_output[j],
+                              variable.name = "timestep",
+                              variable.factor = FALSE)
+              rast_ti[,`:=`(Unit = Blocks[[ii]], OpenType = "Unit")]
+            }
           }
-
 
 
         }

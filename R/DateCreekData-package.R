@@ -2,9 +2,11 @@
 "_PACKAGE"
 
 ## usethis namespace: start
+#' @import dplyr
 #' @import data.table
-#' @import plyr
-#' @importFrom dplyr %>%
+#' @import terra
 #' @import sf
+#' @importFrom raster crs
+#' @importFrom plyr ddply
 ## usethis namespace: end
 NULL

@@ -2,13 +2,13 @@
 % Please edit documentation in R/Trees.R
 \name{trees_1993}
 \alias{trees_1993}
-\title{Title}
+\title{Clean 1993 tree data}
 \usage{
-trees_1993(data, calc_height = TRUE)
+trees_1993(data = "./data-raw/Trees/3.SS93forR.csv", calc_height = TRUE)
 }
 \arguments{
 \item{calc_height}{}
 }
 \description{
-Title
+Clean 1993 tree data
 }

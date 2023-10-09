@@ -15,11 +15,6 @@
 #' @param size_subplot [numeric()] radius of plot (standard is 7.98m)
 #' @param plotting TRUE/FALSE - whether or not to display plots with the unit and subplot location
 #'
-#' @import data.table
-#' @import sf
-#' @import dplyr
-#' @importFrom raster crs
-#'
 #'
 subplot_outputs <- function(out_path, run_name, Units_path, yrs, subplot_type = multiple , Units_to_output = "all",
                             dist_edge = 20, num_subplots = 30, size_subplot = 7.98, plotting = TRUE){
