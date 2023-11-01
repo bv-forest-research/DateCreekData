@@ -1,4 +1,3 @@
-#' @import sf
 
 
 #'
@@ -86,7 +85,6 @@ ReadSpatialBounds <- function(Units_path){
 #'
 #' @param Gaps_path The directory with the kmls and kmzs that define the cuts
 #' @export
-#' @importFrom dplyr %>%
 #'
 #' @return an sf object
 #' @examples
@@ -161,11 +159,6 @@ modifyPartCuts <- function(Gaps_path){
 #' @param num_subplots [numeric()] how many subplots
 #' @param size_subplot [numeric()] radius of plot (standard is 7.98m)
 #' @param plotting TRUE/FALSE - whether or not to display plots with the unit and subplot location
-#'
-#' @import data.table
-#' @import sf
-#' @import dplyr
-#' @importFrom raster crs
 #'
 #'
 subplot_outputs <- function(out_path, run_name, Units_path, yrs, subplot_type = multiple , Units_to_output = "all",
@@ -288,7 +281,6 @@ subplot_outputs <- function(out_path, run_name, Units_path, yrs, subplot_type = 
 #'
 #' @return
 #' @export
-#' @import terra
 #'
 #' @examples
 maskGrids <- function(Blocks = DateCreekData::Treatments$Unit,

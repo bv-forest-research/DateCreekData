@@ -18,7 +18,6 @@ clean_trees_all_yrs <- function(){
 #'
 #' @return
 #' @export
-#' @importFrom plyr ddply
 #' @description
 #' cleans tree data and calculates heights (if height = TRUE)
 #' can't get this working because of ddply - needs to be updated to either dplyr or data.table
@@ -428,7 +427,8 @@ trees_2010 <- function(lrg_trees = "./data-raw/Trees/4.Data Creek 2010 Data larg
 #' @examples
 trees_201x <- function(data_2018 = "./data-raw/Trees/7.Data Creek 2018 Data large trees.csv",
                        data_2019 = "./data-raw/Trees/8.Data Creek 2019 Data large trees.csv",
-                       small_trees = "./data-raw/Trees/9.2018-19intermediatetrees.csv",
+                       int_trees = "./data-raw/Trees/9.2018-19intermediatetrees.csv",
+                       sm_trees = "./data-raw/Trees/10.Small trees 2018 2019 KHP.csv",
                        calc_height = TRUE){
 
   ###################
@@ -461,9 +461,9 @@ trees_201x <- function(data_2018 = "./data-raw/Trees/7.Data Creek 2018 Data larg
   dat.201x <- dat.201x %>%
     dplyr::select(Unit, Gd.Pt, Tree.No, Plot.Size, Spp, DBH, Tree.Class)
 
-  ###################
-  ### SMALL TREES ###
-  ###################
+  ##########################
+  ### INTERMEDIATE TREES ###
+  ##########################
 
   # Read in the data for small trees
   dat.201x.sm <- read.csv(small_trees, stringsAsFactors = FALSE)
@@ -504,6 +504,10 @@ trees_201x <- function(data_2018 = "./data-raw/Trees/7.Data Creek 2018 Data larg
   setnames(dat.201x_all, "Gd.Pt", "PlotNum")
   dat.201x_all <- dat.201x_all[,.(Unit,Year=2018,PlotNum, Spp, Tree.Class, DBH, Height, BA, PHF)]
 
+  ###################
+  ### SMALL TREES ###
+  ###################
+
 }
 
 #' 2022 data
@@ -515,9 +519,9 @@ trees_201x <- function(data_2018 = "./data-raw/Trees/7.Data Creek 2018 Data larg
 #' @export
 #'
 #' @examples
-trees_2022 <- function(large_trees = "./data-raw/Trees/10.2022 large trees.csv",
-                       inter_trees = "./data-raw/Trees/11.2022 intermediate trees.csv",
-                       small_trees = "./data-raw/Trees/12.2022 small trees.csv",
+trees_2022 <- function(large_trees = "./data-raw/Trees/11.2022 large trees.csv",
+                       inter_trees = "./data-raw/Trees/12.2022 intermediate trees.csv",
+                       small_trees = "./data-raw/Trees/13.2022 small trees.csv",
                        calc_height = TRUE){
 
   #LARGE TREES

@@ -5,8 +5,8 @@
     <rt_timestep>0</rt_timestep>
     <randomSeed>0</randomSeed>
     <yearsPerTimestep>1.0</yearsPerTimestep>
-    <plot_lenX>552</plot_lenX>
-    <plot_lenY>552</plot_lenY>
+    <plot_lenX>632</plot_lenX>
+    <plot_lenY>632</plot_lenY>
     <plot_latitude>55.37</plot_latitude>
     <plot_precip_mm_yr>0.0</plot_precip_mm_yr>
     <plot_seasonal_precipitation>0.0</plot_seasonal_precipitation>
@@ -137,30 +137,30 @@
     </tr_sizeClasses>
     <tr_initialDensities>
       <tr_idVals whatSpecies="Western_Hemlock">
-        <tr_initialDensity sizeClass="Seedling">300</tr_initialDensity>
-        <tr_initialDensity sizeClass="s2.5">28.6</tr_initialDensity>
-        <tr_initialDensity sizeClass="s5.0">0</tr_initialDensity>
-        <tr_initialDensity sizeClass="s7.5">14.28571429</tr_initialDensity>
+        <tr_initialDensity sizeClass="Seedling">620</tr_initialDensity>
+        <tr_initialDensity sizeClass="s2.5">0</tr_initialDensity>
+        <tr_initialDensity sizeClass="s5.0">20</tr_initialDensity>
+        <tr_initialDensity sizeClass="s7.5">0</tr_initialDensity>
         <tr_initialDensity sizeClass="s10.0">0</tr_initialDensity>
         <tr_initialDensity sizeClass="s12.5">0</tr_initialDensity>
-        <tr_initialDensity sizeClass="s15.0">74.8457724649973</tr_initialDensity>
-        <tr_initialDensity sizeClass="s17.5">53.3416931304177</tr_initialDensity>
-        <tr_initialDensity sizeClass="s20.0">19.6487584064068</tr_initialDensity>
-        <tr_initialDensity sizeClass="s22.5">56.9415353841375</tr_initialDensity>
-        <tr_initialDensity sizeClass="s25.0">69.230602884429</tr_initialDensity>
-        <tr_initialDensity sizeClass="s27.5">56.7926064843606</tr_initialDensity>
-        <tr_initialDensity sizeClass="s30.0">38.2188660732843</tr_initialDensity>
-        <tr_initialDensity sizeClass="s32.5">52.2203491861123</tr_initialDensity>
-        <tr_initialDensity sizeClass="s35.0">27.979135313619</tr_initialDensity>
-        <tr_initialDensity sizeClass="s37.5">14.0057934088607</tr_initialDensity>
-        <tr_initialDensity sizeClass="s40.0">21.6877370860255</tr_initialDensity>
-        <tr_initialDensity sizeClass="s42.5">26.0344243881666</tr_initialDensity>
-        <tr_initialDensity sizeClass="s45.0">3.27342913892659</tr_initialDensity>
-        <tr_initialDensity sizeClass="s47.5">0</tr_initialDensity>
-        <tr_initialDensity sizeClass="s50.0">0</tr_initialDensity>
-        <tr_initialDensity sizeClass="s52.5">2.51619417636361</tr_initialDensity>
-        <tr_initialDensity sizeClass="s55.0">2.3097316004266</tr_initialDensity>
-        <tr_initialDensity sizeClass="s57.5">1.93221895484825</tr_initialDensity>
+        <tr_initialDensity sizeClass="s15.0">0</tr_initialDensity>
+        <tr_initialDensity sizeClass="s17.5">31.9884428425932</tr_initialDensity>
+        <tr_initialDensity sizeClass="s20.0">0</tr_initialDensity>
+        <tr_initialDensity sizeClass="s22.5">0</tr_initialDensity>
+        <tr_initialDensity sizeClass="s25.0">32.2122982580899</tr_initialDensity>
+        <tr_initialDensity sizeClass="s27.5">38.9388858485602</tr_initialDensity>
+        <tr_initialDensity sizeClass="s30.0">41.9859119521694</tr_initialDensity>
+        <tr_initialDensity sizeClass="s32.5">36.1260895517483</tr_initialDensity>
+        <tr_initialDensity sizeClass="s35.0">31.2360656709396</tr_initialDensity>
+        <tr_initialDensity sizeClass="s37.5">40.8176611288127</tr_initialDensity>
+        <tr_initialDensity sizeClass="s40.0">29.53800805382</tr_initialDensity>
+        <tr_initialDensity sizeClass="s42.5">21.0816238332922</tr_initialDensity>
+        <tr_initialDensity sizeClass="s45.0">14.0262051728602</tr_initialDensity>
+        <tr_initialDensity sizeClass="s47.5">8.40455118816524</tr_initialDensity>
+        <tr_initialDensity sizeClass="s50.0">3.68630748018993</tr_initialDensity>
+        <tr_initialDensity sizeClass="s52.5">0</tr_initialDensity>
+        <tr_initialDensity sizeClass="s55.0">0</tr_initialDensity>
+        <tr_initialDensity sizeClass="s57.5">2.74184662918637</tr_initialDensity>
         <tr_initialDensity sizeClass="s60.0">0</tr_initialDensity>
         <tr_initialDensity sizeClass="s62.5">0</tr_initialDensity>
         <tr_initialDensity sizeClass="s65.0">0</tr_initialDensity>
@@ -245,26 +245,26 @@
         <tr_initialDensity sizeClass="s262.5">0</tr_initialDensity>
       </tr_idVals>
       <tr_idVals whatSpecies="Western_redcedar">
-        <tr_initialDensity sizeClass="Seedling">1100</tr_initialDensity>
-        <tr_initialDensity sizeClass="s2.5">271.4</tr_initialDensity>
-        <tr_initialDensity sizeClass="s5.0">114.3</tr_initialDensity>
-        <tr_initialDensity sizeClass="s7.5">114.2857143</tr_initialDensity>
-        <tr_initialDensity sizeClass="s10.0">0</tr_initialDensity>
-        <tr_initialDensity sizeClass="s12.5">49.8566663299852</tr_initialDensity>
-        <tr_initialDensity sizeClass="s15.0">0</tr_initialDensity>
-        <tr_initialDensity sizeClass="s17.5">52.6708792946613</tr_initialDensity>
-        <tr_initialDensity sizeClass="s20.0">35.3431533335794</tr_initialDensity>
-        <tr_initialDensity sizeClass="s22.5">28.9108262018377</tr_initialDensity>
-        <tr_initialDensity sizeClass="s25.0">12.3545920232797</tr_initialDensity>
-        <tr_initialDensity sizeClass="s27.5">47.3587173652485</tr_initialDensity>
-        <tr_initialDensity sizeClass="s30.0">30.2407520305651</tr_initialDensity>
-        <tr_initialDensity sizeClass="s32.5">6.84353423668456</tr_initialDensity>
-        <tr_initialDensity sizeClass="s35.0">5.44286936465563</tr_initialDensity>
+        <tr_initialDensity sizeClass="Seedling">1880</tr_initialDensity>
+        <tr_initialDensity sizeClass="s2.5">500</tr_initialDensity>
+        <tr_initialDensity sizeClass="s5.0">860</tr_initialDensity>
+        <tr_initialDensity sizeClass="s7.5">360</tr_initialDensity>
+        <tr_initialDensity sizeClass="s10.0">237.538924676815</tr_initialDensity>
+        <tr_initialDensity sizeClass="s12.5">419.785788958869</tr_initialDensity>
+        <tr_initialDensity sizeClass="s15.0">205.690174421766</tr_initialDensity>
+        <tr_initialDensity sizeClass="s17.5">102.463282071686</tr_initialDensity>
+        <tr_initialDensity sizeClass="s20.0">71.1589502666152</tr_initialDensity>
+        <tr_initialDensity sizeClass="s22.5">58.3145412850082</tr_initialDensity>
+        <tr_initialDensity sizeClass="s25.0">0</tr_initialDensity>
+        <tr_initialDensity sizeClass="s27.5">25.3933648952507</tr_initialDensity>
+        <tr_initialDensity sizeClass="s30.0">22.6515443256126</tr_initialDensity>
+        <tr_initialDensity sizeClass="s32.5">0</tr_initialDensity>
+        <tr_initialDensity sizeClass="s35.0">7.36303861614569</tr_initialDensity>
         <tr_initialDensity sizeClass="s37.5">0</tr_initialDensity>
-        <tr_initialDensity sizeClass="s40.0">8.66717810786942</tr_initialDensity>
-        <tr_initialDensity sizeClass="s42.5">3.67869228670246</tr_initialDensity>
+        <tr_initialDensity sizeClass="s40.0">0</tr_initialDensity>
+        <tr_initialDensity sizeClass="s42.5">0</tr_initialDensity>
         <tr_initialDensity sizeClass="s45.0">0</tr_initialDensity>
-        <tr_initialDensity sizeClass="s47.5">3.11604164562408</tr_initialDensity>
+        <tr_initialDensity sizeClass="s47.5">0</tr_initialDensity>
         <tr_initialDensity sizeClass="s50.0">0</tr_initialDensity>
         <tr_initialDensity sizeClass="s52.5">0</tr_initialDensity>
         <tr_initialDensity sizeClass="s55.0">0</tr_initialDensity>
@@ -359,7 +359,7 @@
         <tr_initialDensity sizeClass="s7.5">0</tr_initialDensity>
         <tr_initialDensity sizeClass="s10.0">0</tr_initialDensity>
         <tr_initialDensity sizeClass="s12.5">0</tr_initialDensity>
-        <tr_initialDensity sizeClass="s15.0">32.480600630999</tr_initialDensity>
+        <tr_initialDensity sizeClass="s15.0">0</tr_initialDensity>
         <tr_initialDensity sizeClass="s17.5">0</tr_initialDensity>
         <tr_initialDensity sizeClass="s20.0">0</tr_initialDensity>
         <tr_initialDensity sizeClass="s22.5">0</tr_initialDensity>
@@ -367,14 +367,14 @@
         <tr_initialDensity sizeClass="s27.5">0</tr_initialDensity>
         <tr_initialDensity sizeClass="s30.0">0</tr_initialDensity>
         <tr_initialDensity sizeClass="s32.5">0</tr_initialDensity>
-        <tr_initialDensity sizeClass="s35.0">5.47483916003114</tr_initialDensity>
-        <tr_initialDensity sizeClass="s37.5">4.57575180133244</tr_initialDensity>
+        <tr_initialDensity sizeClass="s35.0">0</tr_initialDensity>
+        <tr_initialDensity sizeClass="s37.5">0</tr_initialDensity>
         <tr_initialDensity sizeClass="s40.0">0</tr_initialDensity>
         <tr_initialDensity sizeClass="s42.5">0</tr_initialDensity>
-        <tr_initialDensity sizeClass="s45.0">3.171933655371</tr_initialDensity>
+        <tr_initialDensity sizeClass="s45.0">0</tr_initialDensity>
         <tr_initialDensity sizeClass="s47.5">0</tr_initialDensity>
         <tr_initialDensity sizeClass="s50.0">0</tr_initialDensity>
-        <tr_initialDensity sizeClass="s52.5">2.44759620287421</tr_initialDensity>
+        <tr_initialDensity sizeClass="s52.5">0</tr_initialDensity>
         <tr_initialDensity sizeClass="s55.0">0</tr_initialDensity>
         <tr_initialDensity sizeClass="s57.5">0</tr_initialDensity>
         <tr_initialDensity sizeClass="s60.0">0</tr_initialDensity>
@@ -461,9 +461,9 @@
         <tr_initialDensity sizeClass="s262.5">0</tr_initialDensity>
       </tr_idVals>
       <tr_idVals whatSpecies="Subalpine_Fir">
-        <tr_initialDensity sizeClass="Seedling">171.4285714</tr_initialDensity>
-        <tr_initialDensity sizeClass="s2.5">14.3</tr_initialDensity>
-        <tr_initialDensity sizeClass="s5.0">14.3</tr_initialDensity>
+        <tr_initialDensity sizeClass="Seedling">140</tr_initialDensity>
+        <tr_initialDensity sizeClass="s2.5">0</tr_initialDensity>
+        <tr_initialDensity sizeClass="s5.0">0</tr_initialDensity>
         <tr_initialDensity sizeClass="s7.5">0</tr_initialDensity>
         <tr_initialDensity sizeClass="s10.0">0</tr_initialDensity>
         <tr_initialDensity sizeClass="s12.5">0</tr_initialDensity>
@@ -583,19 +583,19 @@
         <tr_initialDensity sizeClass="s27.5">0</tr_initialDensity>
         <tr_initialDensity sizeClass="s30.0">0</tr_initialDensity>
         <tr_initialDensity sizeClass="s32.5">0</tr_initialDensity>
-        <tr_initialDensity sizeClass="s35.0">5.77569106880154</tr_initialDensity>
-        <tr_initialDensity sizeClass="s37.5">9.5464095448585</tr_initialDensity>
-        <tr_initialDensity sizeClass="s40.0">0</tr_initialDensity>
+        <tr_initialDensity sizeClass="s35.0">0</tr_initialDensity>
+        <tr_initialDensity sizeClass="s37.5">0</tr_initialDensity>
+        <tr_initialDensity sizeClass="s40.0">5.79535523320511</tr_initialDensity>
         <tr_initialDensity sizeClass="s42.5">0</tr_initialDensity>
-        <tr_initialDensity sizeClass="s45.0">3.37987519573351</tr_initialDensity>
+        <tr_initialDensity sizeClass="s45.0">4.83452183125283</tr_initialDensity>
         <tr_initialDensity sizeClass="s47.5">0</tr_initialDensity>
-        <tr_initialDensity sizeClass="s50.0">0</tr_initialDensity>
+        <tr_initialDensity sizeClass="s50.0">3.89040997709597</tr_initialDensity>
         <tr_initialDensity sizeClass="s52.5">0</tr_initialDensity>
         <tr_initialDensity sizeClass="s55.0">0</tr_initialDensity>
         <tr_initialDensity sizeClass="s57.5">0</tr_initialDensity>
         <tr_initialDensity sizeClass="s60.0">0</tr_initialDensity>
         <tr_initialDensity sizeClass="s62.5">0</tr_initialDensity>
-        <tr_initialDensity sizeClass="s65.0">1.56400726301722</tr_initialDensity>
+        <tr_initialDensity sizeClass="s65.0">0</tr_initialDensity>
         <tr_initialDensity sizeClass="s67.5">0</tr_initialDensity>
         <tr_initialDensity sizeClass="s70.0">0</tr_initialDensity>
         <tr_initialDensity sizeClass="s72.5">0</tr_initialDensity>
@@ -685,17 +685,17 @@
         <tr_initialDensity sizeClass="s12.5">0</tr_initialDensity>
         <tr_initialDensity sizeClass="s15.0">0</tr_initialDensity>
         <tr_initialDensity sizeClass="s17.5">0</tr_initialDensity>
-        <tr_initialDensity sizeClass="s20.0">16.9151815380907</tr_initialDensity>
+        <tr_initialDensity sizeClass="s20.0">0</tr_initialDensity>
         <tr_initialDensity sizeClass="s22.5">0</tr_initialDensity>
         <tr_initialDensity sizeClass="s25.0">0</tr_initialDensity>
-        <tr_initialDensity sizeClass="s27.5">9.06542929679717</tr_initialDensity>
-        <tr_initialDensity sizeClass="s30.0">15.4780341964059</tr_initialDensity>
+        <tr_initialDensity sizeClass="s27.5">0</tr_initialDensity>
+        <tr_initialDensity sizeClass="s30.0">0</tr_initialDensity>
         <tr_initialDensity sizeClass="s32.5">0</tr_initialDensity>
-        <tr_initialDensity sizeClass="s35.0">5.53962959222058</tr_initialDensity>
-        <tr_initialDensity sizeClass="s37.5">4.88501294777957</tr_initialDensity>
-        <tr_initialDensity sizeClass="s40.0">4.33992850430217</tr_initialDensity>
-        <tr_initialDensity sizeClass="s42.5">3.69644228403299</tr_initialDensity>
-        <tr_initialDensity sizeClass="s45.0">0</tr_initialDensity>
+        <tr_initialDensity sizeClass="s35.0">8.24354039568777</tr_initialDensity>
+        <tr_initialDensity sizeClass="s37.5">6.91628440372617</tr_initialDensity>
+        <tr_initialDensity sizeClass="s40.0">6.1043873335907</tr_initialDensity>
+        <tr_initialDensity sizeClass="s42.5">0</tr_initialDensity>
+        <tr_initialDensity sizeClass="s45.0">4.51195476633616</tr_initialDensity>
         <tr_initialDensity sizeClass="s47.5">0</tr_initialDensity>
         <tr_initialDensity sizeClass="s50.0">0</tr_initialDensity>
         <tr_initialDensity sizeClass="s52.5">0</tr_initialDensity>
@@ -795,16 +795,16 @@
         <tr_initialDensity sizeClass="s17.5">0</tr_initialDensity>
         <tr_initialDensity sizeClass="s20.0">0</tr_initialDensity>
         <tr_initialDensity sizeClass="s22.5">0</tr_initialDensity>
-        <tr_initialDensity sizeClass="s25.0">0</tr_initialDensity>
+        <tr_initialDensity sizeClass="s25.0">16.0982089811253</tr_initialDensity>
         <tr_initialDensity sizeClass="s27.5">0</tr_initialDensity>
-        <tr_initialDensity sizeClass="s30.0">7.31536653108396</tr_initialDensity>
-        <tr_initialDensity sizeClass="s32.5">6.06443160691569</tr_initialDensity>
-        <tr_initialDensity sizeClass="s35.0">5.41117878067456</tr_initialDensity>
+        <tr_initialDensity sizeClass="s30.0">10.3381677023186</tr_initialDensity>
+        <tr_initialDensity sizeClass="s32.5">0</tr_initialDensity>
+        <tr_initialDensity sizeClass="s35.0">0</tr_initialDensity>
         <tr_initialDensity sizeClass="s37.5">0</tr_initialDensity>
-        <tr_initialDensity sizeClass="s40.0">0</tr_initialDensity>
+        <tr_initialDensity sizeClass="s40.0">6.00913177518763</tr_initialDensity>
         <tr_initialDensity sizeClass="s42.5">0</tr_initialDensity>
         <tr_initialDensity sizeClass="s45.0">0</tr_initialDensity>
-        <tr_initialDensity sizeClass="s47.5">0</tr_initialDensity>
+        <tr_initialDensity sizeClass="s47.5">4.27658954651991</tr_initialDensity>
         <tr_initialDensity sizeClass="s50.0">0</tr_initialDensity>
         <tr_initialDensity sizeClass="s52.5">0</tr_initialDensity>
         <tr_initialDensity sizeClass="s55.0">0</tr_initialDensity>
@@ -905,17 +905,17 @@
         <tr_initialDensity sizeClass="s22.5">0</tr_initialDensity>
         <tr_initialDensity sizeClass="s25.0">0</tr_initialDensity>
         <tr_initialDensity sizeClass="s27.5">0</tr_initialDensity>
-        <tr_initialDensity sizeClass="s30.0">15.4276738947688</tr_initialDensity>
+        <tr_initialDensity sizeClass="s30.0">0</tr_initialDensity>
         <tr_initialDensity sizeClass="s32.5">0</tr_initialDensity>
         <tr_initialDensity sizeClass="s35.0">0</tr_initialDensity>
-        <tr_initialDensity sizeClass="s37.5">4.80482257855015</tr_initialDensity>
+        <tr_initialDensity sizeClass="s37.5">0</tr_initialDensity>
         <tr_initialDensity sizeClass="s40.0">0</tr_initialDensity>
         <tr_initialDensity sizeClass="s42.5">0</tr_initialDensity>
-        <tr_initialDensity sizeClass="s45.0">3.27342913892659</tr_initialDensity>
+        <tr_initialDensity sizeClass="s45.0">0</tr_initialDensity>
         <tr_initialDensity sizeClass="s47.5">0</tr_initialDensity>
         <tr_initialDensity sizeClass="s50.0">0</tr_initialDensity>
-        <tr_initialDensity sizeClass="s52.5">2.43802594340394</tr_initialDensity>
-        <tr_initialDensity sizeClass="s55.0">2.27493388162414</tr_initialDensity>
+        <tr_initialDensity sizeClass="s52.5">0</tr_initialDensity>
+        <tr_initialDensity sizeClass="s55.0">0</tr_initialDensity>
         <tr_initialDensity sizeClass="s57.5">0</tr_initialDensity>
         <tr_initialDensity sizeClass="s60.0">0</tr_initialDensity>
         <tr_initialDensity sizeClass="s62.5">0</tr_initialDensity>
@@ -1001,7 +1001,7 @@
         <tr_initialDensity sizeClass="s262.5">0</tr_initialDensity>
       </tr_idVals>
       <tr_idVals whatSpecies="Paper_Birch">
-        <tr_initialDensity sizeClass="Seedling">0</tr_initialDensity>
+        <tr_initialDensity sizeClass="Seedling">380</tr_initialDensity>
         <tr_initialDensity sizeClass="s2.5">0</tr_initialDensity>
         <tr_initialDensity sizeClass="s5.0">0</tr_initialDensity>
         <tr_initialDensity sizeClass="s7.5">0</tr_initialDensity>
@@ -1010,15 +1010,15 @@
         <tr_initialDensity sizeClass="s15.0">0</tr_initialDensity>
         <tr_initialDensity sizeClass="s17.5">0</tr_initialDensity>
         <tr_initialDensity sizeClass="s20.0">0</tr_initialDensity>
-        <tr_initialDensity sizeClass="s22.5">13.273696802977</tr_initialDensity>
-        <tr_initialDensity sizeClass="s25.0">0</tr_initialDensity>
-        <tr_initialDensity sizeClass="s27.5">0</tr_initialDensity>
-        <tr_initialDensity sizeClass="s30.0">14.3869687562477</tr_initialDensity>
-        <tr_initialDensity sizeClass="s32.5">0</tr_initialDensity>
+        <tr_initialDensity sizeClass="s22.5">0</tr_initialDensity>
+        <tr_initialDensity sizeClass="s25.0">14.4482540440017</tr_initialDensity>
+        <tr_initialDensity sizeClass="s27.5">13.1404351600378</tr_initialDensity>
+        <tr_initialDensity sizeClass="s30.0">33.1371646590202</tr_initialDensity>
+        <tr_initialDensity sizeClass="s32.5">8.94025651112111</tr_initialDensity>
         <tr_initialDensity sizeClass="s35.0">0</tr_initialDensity>
         <tr_initialDensity sizeClass="s37.5">0</tr_initialDensity>
         <tr_initialDensity sizeClass="s40.0">0</tr_initialDensity>
-        <tr_initialDensity sizeClass="s42.5">0</tr_initialDensity>
+        <tr_initialDensity sizeClass="s42.5">5.42749189374048</tr_initialDensity>
         <tr_initialDensity sizeClass="s45.0">0</tr_initialDensity>
         <tr_initialDensity sizeClass="s47.5">0</tr_initialDensity>
         <tr_initialDensity sizeClass="s50.0">0</tr_initialDensity>
@@ -1116,7 +1116,7 @@
         <tr_snagInitialDensity sizeClass="s12.5">0</tr_snagInitialDensity>
         <tr_snagInitialDensity sizeClass="s15.0">0</tr_snagInitialDensity>
         <tr_snagInitialDensity sizeClass="s17.5">0</tr_snagInitialDensity>
-        <tr_snagInitialDensity sizeClass="s20.0">0</tr_snagInitialDensity>
+        <tr_snagInitialDensity sizeClass="s20.0">28.4566609946571</tr_snagInitialDensity>
         <tr_snagInitialDensity sizeClass="s22.5">0</tr_snagInitialDensity>
         <tr_snagInitialDensity sizeClass="s25.0">0</tr_snagInitialDensity>
         <tr_snagInitialDensity sizeClass="s27.5">0</tr_snagInitialDensity>
@@ -1150,7 +1150,6 @@
         <tr_snagInitialDensity sizeClass="s97.5">0</tr_snagInitialDensity>
         <tr_snagInitialDensity sizeClass="s100.0">0</tr_snagInitialDensity>
         <tr_snagInitialDensity sizeClass="s102.5">0</tr_snagInitialDensity>
-        <tr_snagInitialDensity sizeClass="s105.0">0</tr_snagInitialDensity>
         <tr_snagInitialDensity sizeClass="s107.5">0</tr_snagInitialDensity>
         <tr_snagInitialDensity sizeClass="s110.0">0</tr_snagInitialDensity>
         <tr_snagInitialDensity sizeClass="s112.5">0</tr_snagInitialDensity>
@@ -1225,9 +1224,9 @@
         <tr_snagInitialDensity sizeClass="s22.5">0</tr_snagInitialDensity>
         <tr_snagInitialDensity sizeClass="s25.0">0</tr_snagInitialDensity>
         <tr_snagInitialDensity sizeClass="s27.5">0</tr_snagInitialDensity>
-        <tr_snagInitialDensity sizeClass="s30.0">0</tr_snagInitialDensity>
+        <tr_snagInitialDensity sizeClass="s30.0">11.2432848338074</tr_snagInitialDensity>
         <tr_snagInitialDensity sizeClass="s32.5">0</tr_snagInitialDensity>
-        <tr_snagInitialDensity sizeClass="s35.0">0</tr_snagInitialDensity>
+        <tr_snagInitialDensity sizeClass="s35.0">8.34531153581536</tr_snagInitialDensity>
         <tr_snagInitialDensity sizeClass="s37.5">0</tr_snagInitialDensity>
         <tr_snagInitialDensity sizeClass="s40.0">0</tr_snagInitialDensity>
         <tr_snagInitialDensity sizeClass="s42.5">0</tr_snagInitialDensity>
@@ -1953,12 +1952,12 @@
       <tr_sidVals whatSpecies="Paper_Birch">
         <tr_snagInitialDensity sizeClass="s7.5">0</tr_snagInitialDensity>
         <tr_snagInitialDensity sizeClass="s10.0">0</tr_snagInitialDensity>
-        <tr_snagInitialDensity sizeClass="s12.5">0</tr_snagInitialDensity>
+        <tr_snagInitialDensity sizeClass="s12.5">88.1473530970497</tr_snagInitialDensity>
         <tr_snagInitialDensity sizeClass="s15.0">0</tr_snagInitialDensity>
         <tr_snagInitialDensity sizeClass="s17.5">0</tr_snagInitialDensity>
         <tr_snagInitialDensity sizeClass="s20.0">0</tr_snagInitialDensity>
         <tr_snagInitialDensity sizeClass="s22.5">0</tr_snagInitialDensity>
-        <tr_snagInitialDensity sizeClass="s25.0">0</tr_snagInitialDensity>
+        <tr_snagInitialDensity sizeClass="s25.0">15.5616399083839</tr_snagInitialDensity>
         <tr_snagInitialDensity sizeClass="s27.5">0</tr_snagInitialDensity>
         <tr_snagInitialDensity sizeClass="s30.0">0</tr_snagInitialDensity>
         <tr_snagInitialDensity sizeClass="s32.5">0</tr_snagInitialDensity>
@@ -2122,9 +2121,14 @@
       <listPosition>1</listPosition>
     </behavior>
     <behavior>
-      <behaviorName>QuadratLight</behaviorName>
+      <behaviorName>GLIMapCreator</behaviorName>
       <version>1.0</version>
       <listPosition>2</listPosition>
+    </behavior>
+    <behavior>
+      <behaviorName>QuadratLight</behaviorName>
+      <version>1.0</version>
+      <listPosition>3</listPosition>
       <applyTo species="Hybrid_spruce" type="Seedling"/>
       <applyTo species="Lodgepole_Pine" type="Seedling"/>
       <applyTo species="Subalpine_Fir" type="Seedling"/>
@@ -2138,7 +2142,7 @@
     <behavior>
       <behaviorName>GLILight</behaviorName>
       <version>1.0</version>
-      <listPosition>3</listPosition>
+      <listPosition>4</listPosition>
       <applyTo species="Western_Hemlock" type="Sapling"/>
       <applyTo species="Western_redcedar" type="Sapling"/>
       <applyTo species="Amabalis_Fir" type="Sapling"/>
@@ -2152,7 +2156,7 @@
     <behavior>
       <behaviorName>SailLight</behaviorName>
       <version>1.0</version>
-      <listPosition>4</listPosition>
+      <listPosition>5</listPosition>
       <applyTo species="Western_Hemlock" type="Adult"/>
       <applyTo species="Western_redcedar" type="Adult"/>
       <applyTo species="Amabalis_Fir" type="Adult"/>
@@ -2166,7 +2170,7 @@
     <behavior>
       <behaviorName>NCIMasterGrowth</behaviorName>
       <version>3.0</version>
-      <listPosition>5</listPosition>
+      <listPosition>6</listPosition>
       <applyTo species="Western_Hemlock" type="Seedling"/>
       <applyTo species="Western_redcedar" type="Seedling"/>
       <applyTo species="Amabalis_Fir" type="Seedling"/>
@@ -2180,7 +2184,7 @@
     <behavior>
       <behaviorName>NCIMasterGrowth</behaviorName>
       <version>3.0</version>
-      <listPosition>6</listPosition>
+      <listPosition>7</listPosition>
       <applyTo species="Western_Hemlock" type="Sapling"/>
       <applyTo species="Western_redcedar" type="Sapling"/>
       <applyTo species="Amabalis_Fir" type="Sapling"/>
@@ -2194,7 +2198,7 @@
     <behavior>
       <behaviorName>NCIMasterGrowth</behaviorName>
       <version>3.0</version>
-      <listPosition>7</listPosition>
+      <listPosition>8</listPosition>
       <applyTo species="Western_Hemlock" type="Adult"/>
       <applyTo species="Western_redcedar" type="Adult"/>
       <applyTo species="Amabalis_Fir" type="Adult"/>
@@ -2208,7 +2212,7 @@
     <behavior>
       <behaviorName>CompetitionMortality</behaviorName>
       <version>1.0</version>
-      <listPosition>8</listPosition>
+      <listPosition>9</listPosition>
       <applyTo species="Western_Hemlock" type="Adult"/>
       <applyTo species="Western_redcedar" type="Adult"/>
       <applyTo species="Amabalis_Fir" type="Adult"/>
@@ -2222,7 +2226,7 @@
     <behavior>
       <behaviorName>BCMortality</behaviorName>
       <version>1.0</version>
-      <listPosition>9</listPosition>
+      <listPosition>10</listPosition>
       <applyTo species="Trembling_Aspen" type="Seedling"/>
       <applyTo species="Hybrid_spruce" type="Seedling"/>
       <applyTo species="Lodgepole_Pine" type="Seedling"/>
@@ -2245,20 +2249,6 @@
     <behavior>
       <behaviorName>Senescence</behaviorName>
       <version>1.0</version>
-      <listPosition>10</listPosition>
-      <applyTo species="Western_Hemlock" type="Adult"/>
-      <applyTo species="Western_redcedar" type="Adult"/>
-      <applyTo species="Amabalis_Fir" type="Adult"/>
-      <applyTo species="Subalpine_Fir" type="Adult"/>
-      <applyTo species="Hybrid_spruce" type="Adult"/>
-      <applyTo species="Lodgepole_Pine" type="Adult"/>
-      <applyTo species="Trembling_Aspen" type="Adult"/>
-      <applyTo species="Black_Cottonwood" type="Adult"/>
-      <applyTo species="Paper_Birch" type="Adult"/>
-    </behavior>
-    <behavior>
-      <behaviorName>StochasticMortality</behaviorName>
-      <version>1.0</version>
       <listPosition>11</listPosition>
       <applyTo species="Western_Hemlock" type="Adult"/>
       <applyTo species="Western_redcedar" type="Adult"/>
@@ -2274,6 +2264,20 @@
       <behaviorName>StochasticMortality</behaviorName>
       <version>1.0</version>
       <listPosition>12</listPosition>
+      <applyTo species="Western_Hemlock" type="Adult"/>
+      <applyTo species="Western_redcedar" type="Adult"/>
+      <applyTo species="Amabalis_Fir" type="Adult"/>
+      <applyTo species="Subalpine_Fir" type="Adult"/>
+      <applyTo species="Hybrid_spruce" type="Adult"/>
+      <applyTo species="Lodgepole_Pine" type="Adult"/>
+      <applyTo species="Trembling_Aspen" type="Adult"/>
+      <applyTo species="Black_Cottonwood" type="Adult"/>
+      <applyTo species="Paper_Birch" type="Adult"/>
+    </behavior>
+    <behavior>
+      <behaviorName>StochasticMortality</behaviorName>
+      <version>1.0</version>
+      <listPosition>13</listPosition>
       <applyTo species="Western_Hemlock" type="Sapling"/>
       <applyTo species="Western_redcedar" type="Sapling"/>
       <applyTo species="Amabalis_Fir" type="Sapling"/>
@@ -2287,7 +2291,7 @@
     <behavior>
       <behaviorName>StochasticMortality</behaviorName>
       <version>1.0</version>
-      <listPosition>13</listPosition>
+      <listPosition>14</listPosition>
       <applyTo species="Western_Hemlock" type="Seedling"/>
       <applyTo species="Western_redcedar" type="Seedling"/>
       <applyTo species="Amabalis_Fir" type="Seedling"/>
@@ -2301,13 +2305,13 @@
     <behavior>
       <behaviorName>DensitySelfThinning</behaviorName>
       <version>1.0</version>
-      <listPosition>14</listPosition>
+      <listPosition>15</listPosition>
       <applyTo species="Trembling_Aspen" type="Seedling"/>
     </behavior>
     <behavior>
       <behaviorName>SnagDecayClassDynamics</behaviorName>
       <version>2.0</version>
-      <listPosition>15</listPosition>
+      <listPosition>16</listPosition>
       <applyTo species="Western_Hemlock" type="Snag"/>
       <applyTo species="Western_redcedar" type="Snag"/>
       <applyTo species="Amabalis_Fir" type="Snag"/>
@@ -2330,7 +2334,7 @@
     <behavior>
       <behaviorName>DetailedSubstrate</behaviorName>
       <version>1.0</version>
-      <listPosition>16</listPosition>
+      <listPosition>17</listPosition>
       <applyTo species="Western_Hemlock" type="Snag"/>
       <applyTo species="Western_redcedar" type="Snag"/>
       <applyTo species="Amabalis_Fir" type="Snag"/>
@@ -2353,7 +2357,7 @@
     <behavior>
       <behaviorName>RemoveDead</behaviorName>
       <version>3.0</version>
-      <listPosition>17</listPosition>
+      <listPosition>18</listPosition>
       <applyTo species="Western_Hemlock" type="Adult"/>
       <applyTo species="Western_redcedar" type="Adult"/>
       <applyTo species="Amabalis_Fir" type="Adult"/>
@@ -2394,7 +2398,7 @@
     <behavior>
       <behaviorName>GapDisperse</behaviorName>
       <version>1.0</version>
-      <listPosition>18</listPosition>
+      <listPosition>19</listPosition>
       <applyTo species="Western_Hemlock" type="Adult"/>
       <applyTo species="Western_redcedar" type="Adult"/>
       <applyTo species="Amabalis_Fir" type="Adult"/>
@@ -2411,7 +2415,7 @@
     <behavior>
       <behaviorName>NonSpatialDisperse</behaviorName>
       <version>1.0</version>
-      <listPosition>19</listPosition>
+      <listPosition>20</listPosition>
       <applyTo species="Western_Hemlock" type="Adult"/>
       <applyTo species="Western_redcedar" type="Adult"/>
       <applyTo species="Amabalis_Fir" type="Adult"/>
@@ -2425,7 +2429,7 @@
     <behavior>
       <behaviorName>GapSubstrateSeedSurvival</behaviorName>
       <version>1.1</version>
-      <listPosition>20</listPosition>
+      <listPosition>21</listPosition>
       <applyTo species="Western_Hemlock" type="Seed"/>
       <applyTo species="Western_redcedar" type="Seed"/>
       <applyTo species="Amabalis_Fir" type="Seed"/>
@@ -2439,7 +2443,7 @@
     <behavior>
       <behaviorName>Establishment</behaviorName>
       <version>1.0</version>
-      <listPosition>21</listPosition>
+      <listPosition>22</listPosition>
       <applyTo species="Western_Hemlock" type="Seed"/>
       <applyTo species="Western_redcedar" type="Seed"/>
       <applyTo species="Amabalis_Fir" type="Seed"/>
@@ -2453,17 +2457,17 @@
     <behavior>
       <behaviorName>Plant</behaviorName>
       <version>1.0</version>
-      <listPosition>22</listPosition>
+      <listPosition>23</listPosition>
     </behavior>
     <behavior>
       <behaviorName>ShortOutput</behaviorName>
       <version>1.0</version>
-      <listPosition>24</listPosition>
+      <listPosition>25</listPosition>
     </behavior>
     <behavior>
       <behaviorName>Output</behaviorName>
       <version>1.0</version>
-      <listPosition>23</listPosition>
+      <listPosition>24</listPosition>
       <applyTo species="Western_Hemlock" type="Seedling"/>
       <applyTo species="Western_redcedar" type="Seedling"/>
       <applyTo species="Amabalis_Fir" type="Seedling"/>
@@ -2941,2224 +2945,17 @@
       <ha_applyToSpecies species="Subalpine_Fir"/>
       <ha_applyToSpecies species="Hybrid_spruce"/>
       <ha_applyToSpecies species="Lodgepole_Pine"/>
-      <ha_timestep>1</ha_timestep>
-      <ha_cutType>clear</ha_cutType>
-      <ha_cutAmountType>percent of density</ha_cutAmountType>
-      <ha_tallestFirst>1</ha_tallestFirst>
-      <ha_dbhRange>
-        <ha_low>0.0</ha_low>
-        <ha_high>3000.0</ha_high>
-        <ha_amountToCut>100.0</ha_amountToCut>
-      </ha_dbhRange>
-      <ha_percentSeedlingsDie>
-        <ha_psdVal species="Western_Hemlock">100.0</ha_psdVal>
-        <ha_psdVal species="Western_redcedar">100.0</ha_psdVal>
-        <ha_psdVal species="Amabalis_Fir">100.0</ha_psdVal>
-        <ha_psdVal species="Subalpine_Fir">100.0</ha_psdVal>
-        <ha_psdVal species="Hybrid_spruce">100.0</ha_psdVal>
-        <ha_psdVal species="Lodgepole_Pine">100.0</ha_psdVal>
-        <ha_psdVal species="Trembling_Aspen">100.0</ha_psdVal>
-        <ha_psdVal species="Black_Cottonwood">100.0</ha_psdVal>
-        <ha_psdVal species="Paper_Birch">100.0</ha_psdVal>
-      </ha_percentSeedlingsDie>
-      <ha_applyToCell x="1" y="1"/>
-      <ha_applyToCell x="1" y="2"/>
-      <ha_applyToCell x="1" y="3"/>
-      <ha_applyToCell x="1" y="4"/>
-      <ha_applyToCell x="1" y="5"/>
-      <ha_applyToCell x="1" y="6"/>
-      <ha_applyToCell x="1" y="7"/>
-      <ha_applyToCell x="1" y="8"/>
-      <ha_applyToCell x="1" y="9"/>
-      <ha_applyToCell x="1" y="10"/>
-      <ha_applyToCell x="1" y="11"/>
-      <ha_applyToCell x="1" y="12"/>
-      <ha_applyToCell x="1" y="13"/>
-      <ha_applyToCell x="1" y="14"/>
-      <ha_applyToCell x="1" y="15"/>
-      <ha_applyToCell x="1" y="16"/>
-      <ha_applyToCell x="1" y="17"/>
-      <ha_applyToCell x="1" y="18"/>
-      <ha_applyToCell x="1" y="19"/>
-      <ha_applyToCell x="1" y="20"/>
-      <ha_applyToCell x="1" y="21"/>
-      <ha_applyToCell x="1" y="22"/>
-      <ha_applyToCell x="1" y="23"/>
-      <ha_applyToCell x="2" y="1"/>
-      <ha_applyToCell x="2" y="2"/>
-      <ha_applyToCell x="2" y="3"/>
-      <ha_applyToCell x="2" y="4"/>
-      <ha_applyToCell x="2" y="5"/>
-      <ha_applyToCell x="2" y="6"/>
-      <ha_applyToCell x="2" y="7"/>
-      <ha_applyToCell x="2" y="8"/>
-      <ha_applyToCell x="2" y="9"/>
-      <ha_applyToCell x="2" y="10"/>
-      <ha_applyToCell x="2" y="11"/>
-      <ha_applyToCell x="2" y="12"/>
-      <ha_applyToCell x="2" y="13"/>
-      <ha_applyToCell x="2" y="14"/>
-      <ha_applyToCell x="2" y="15"/>
-      <ha_applyToCell x="2" y="16"/>
-      <ha_applyToCell x="2" y="17"/>
-      <ha_applyToCell x="2" y="18"/>
-      <ha_applyToCell x="2" y="19"/>
-      <ha_applyToCell x="2" y="20"/>
-      <ha_applyToCell x="2" y="21"/>
-      <ha_applyToCell x="2" y="22"/>
-      <ha_applyToCell x="2" y="23"/>
-      <ha_applyToCell x="3" y="1"/>
-      <ha_applyToCell x="3" y="2"/>
-      <ha_applyToCell x="3" y="3"/>
-      <ha_applyToCell x="3" y="4"/>
-      <ha_applyToCell x="3" y="5"/>
-      <ha_applyToCell x="3" y="6"/>
-      <ha_applyToCell x="3" y="7"/>
-      <ha_applyToCell x="3" y="8"/>
-      <ha_applyToCell x="3" y="9"/>
-      <ha_applyToCell x="3" y="10"/>
-      <ha_applyToCell x="3" y="11"/>
-      <ha_applyToCell x="3" y="12"/>
-      <ha_applyToCell x="3" y="13"/>
-      <ha_applyToCell x="3" y="14"/>
-      <ha_applyToCell x="3" y="15"/>
-      <ha_applyToCell x="3" y="16"/>
-      <ha_applyToCell x="3" y="17"/>
-      <ha_applyToCell x="3" y="18"/>
-      <ha_applyToCell x="3" y="19"/>
-      <ha_applyToCell x="3" y="20"/>
-      <ha_applyToCell x="3" y="21"/>
-      <ha_applyToCell x="3" y="22"/>
-      <ha_applyToCell x="3" y="23"/>
-      <ha_applyToCell x="4" y="1"/>
-      <ha_applyToCell x="4" y="2"/>
-      <ha_applyToCell x="4" y="3"/>
-      <ha_applyToCell x="4" y="4"/>
-      <ha_applyToCell x="4" y="5"/>
-      <ha_applyToCell x="4" y="6"/>
-      <ha_applyToCell x="4" y="7"/>
-      <ha_applyToCell x="4" y="8"/>
-      <ha_applyToCell x="4" y="9"/>
-      <ha_applyToCell x="4" y="10"/>
-      <ha_applyToCell x="4" y="11"/>
-      <ha_applyToCell x="4" y="12"/>
-      <ha_applyToCell x="4" y="13"/>
-      <ha_applyToCell x="4" y="14"/>
-      <ha_applyToCell x="4" y="15"/>
-      <ha_applyToCell x="4" y="16"/>
-      <ha_applyToCell x="4" y="17"/>
-      <ha_applyToCell x="4" y="18"/>
-      <ha_applyToCell x="4" y="19"/>
-      <ha_applyToCell x="4" y="20"/>
-      <ha_applyToCell x="4" y="21"/>
-      <ha_applyToCell x="4" y="22"/>
-      <ha_applyToCell x="4" y="23"/>
-      <ha_applyToCell x="5" y="1"/>
-      <ha_applyToCell x="5" y="2"/>
-      <ha_applyToCell x="5" y="3"/>
-      <ha_applyToCell x="5" y="4"/>
-      <ha_applyToCell x="5" y="5"/>
-      <ha_applyToCell x="5" y="6"/>
-      <ha_applyToCell x="5" y="7"/>
-      <ha_applyToCell x="5" y="8"/>
-      <ha_applyToCell x="5" y="9"/>
-      <ha_applyToCell x="5" y="10"/>
-      <ha_applyToCell x="5" y="11"/>
-      <ha_applyToCell x="5" y="12"/>
-      <ha_applyToCell x="5" y="13"/>
-      <ha_applyToCell x="5" y="14"/>
-      <ha_applyToCell x="5" y="15"/>
-      <ha_applyToCell x="5" y="16"/>
-      <ha_applyToCell x="5" y="17"/>
-      <ha_applyToCell x="5" y="18"/>
-      <ha_applyToCell x="5" y="19"/>
-      <ha_applyToCell x="5" y="20"/>
-      <ha_applyToCell x="5" y="21"/>
-      <ha_applyToCell x="5" y="22"/>
-      <ha_applyToCell x="5" y="23"/>
-      <ha_applyToCell x="6" y="1"/>
-      <ha_applyToCell x="6" y="2"/>
-      <ha_applyToCell x="6" y="3"/>
-      <ha_applyToCell x="6" y="4"/>
-      <ha_applyToCell x="6" y="5"/>
-      <ha_applyToCell x="6" y="6"/>
-      <ha_applyToCell x="6" y="7"/>
-      <ha_applyToCell x="6" y="8"/>
-      <ha_applyToCell x="6" y="9"/>
-      <ha_applyToCell x="6" y="10"/>
-      <ha_applyToCell x="6" y="11"/>
-      <ha_applyToCell x="6" y="12"/>
-      <ha_applyToCell x="6" y="13"/>
-      <ha_applyToCell x="6" y="14"/>
-      <ha_applyToCell x="6" y="15"/>
-      <ha_applyToCell x="6" y="16"/>
-      <ha_applyToCell x="6" y="17"/>
-      <ha_applyToCell x="6" y="18"/>
-      <ha_applyToCell x="6" y="19"/>
-      <ha_applyToCell x="6" y="20"/>
-      <ha_applyToCell x="6" y="21"/>
-      <ha_applyToCell x="6" y="22"/>
-      <ha_applyToCell x="6" y="23"/>
-      <ha_applyToCell x="7" y="1"/>
-      <ha_applyToCell x="7" y="2"/>
-      <ha_applyToCell x="7" y="3"/>
-      <ha_applyToCell x="7" y="4"/>
-      <ha_applyToCell x="7" y="5"/>
-      <ha_applyToCell x="7" y="6"/>
-      <ha_applyToCell x="7" y="7"/>
-      <ha_applyToCell x="7" y="8"/>
-      <ha_applyToCell x="7" y="9"/>
-      <ha_applyToCell x="7" y="10"/>
-      <ha_applyToCell x="7" y="11"/>
-      <ha_applyToCell x="7" y="12"/>
-      <ha_applyToCell x="7" y="13"/>
-      <ha_applyToCell x="7" y="14"/>
-      <ha_applyToCell x="7" y="15"/>
-      <ha_applyToCell x="7" y="16"/>
-      <ha_applyToCell x="7" y="17"/>
-      <ha_applyToCell x="7" y="18"/>
-      <ha_applyToCell x="7" y="19"/>
-      <ha_applyToCell x="7" y="20"/>
-      <ha_applyToCell x="7" y="21"/>
-      <ha_applyToCell x="7" y="22"/>
-      <ha_applyToCell x="7" y="23"/>
-      <ha_applyToCell x="8" y="1"/>
-      <ha_applyToCell x="8" y="2"/>
-      <ha_applyToCell x="8" y="3"/>
-      <ha_applyToCell x="8" y="4"/>
-      <ha_applyToCell x="8" y="5"/>
-      <ha_applyToCell x="8" y="6"/>
-      <ha_applyToCell x="8" y="7"/>
-      <ha_applyToCell x="8" y="8"/>
-      <ha_applyToCell x="8" y="9"/>
-      <ha_applyToCell x="8" y="10"/>
-      <ha_applyToCell x="8" y="11"/>
-      <ha_applyToCell x="8" y="12"/>
-      <ha_applyToCell x="8" y="13"/>
-      <ha_applyToCell x="8" y="14"/>
-      <ha_applyToCell x="8" y="15"/>
-      <ha_applyToCell x="8" y="16"/>
-      <ha_applyToCell x="8" y="17"/>
-      <ha_applyToCell x="8" y="18"/>
-      <ha_applyToCell x="8" y="19"/>
-      <ha_applyToCell x="8" y="20"/>
-      <ha_applyToCell x="8" y="21"/>
-      <ha_applyToCell x="8" y="22"/>
-      <ha_applyToCell x="8" y="23"/>
-      <ha_applyToCell x="9" y="1"/>
-      <ha_applyToCell x="9" y="2"/>
-      <ha_applyToCell x="9" y="3"/>
-      <ha_applyToCell x="9" y="4"/>
-      <ha_applyToCell x="9" y="5"/>
-      <ha_applyToCell x="9" y="6"/>
-      <ha_applyToCell x="9" y="7"/>
-      <ha_applyToCell x="9" y="8"/>
-      <ha_applyToCell x="9" y="9"/>
-      <ha_applyToCell x="9" y="10"/>
-      <ha_applyToCell x="9" y="11"/>
-      <ha_applyToCell x="9" y="12"/>
-      <ha_applyToCell x="9" y="13"/>
-      <ha_applyToCell x="9" y="14"/>
-      <ha_applyToCell x="9" y="15"/>
-      <ha_applyToCell x="9" y="16"/>
-      <ha_applyToCell x="9" y="17"/>
-      <ha_applyToCell x="9" y="18"/>
-      <ha_applyToCell x="9" y="19"/>
-      <ha_applyToCell x="9" y="20"/>
-      <ha_applyToCell x="9" y="21"/>
-      <ha_applyToCell x="9" y="22"/>
-      <ha_applyToCell x="9" y="23"/>
-      <ha_applyToCell x="10" y="1"/>
-      <ha_applyToCell x="10" y="2"/>
-      <ha_applyToCell x="10" y="3"/>
-      <ha_applyToCell x="10" y="4"/>
-      <ha_applyToCell x="10" y="5"/>
-      <ha_applyToCell x="10" y="6"/>
-      <ha_applyToCell x="10" y="7"/>
-      <ha_applyToCell x="10" y="8"/>
-      <ha_applyToCell x="10" y="9"/>
-      <ha_applyToCell x="10" y="10"/>
-      <ha_applyToCell x="10" y="11"/>
-      <ha_applyToCell x="10" y="12"/>
-      <ha_applyToCell x="10" y="13"/>
-      <ha_applyToCell x="10" y="14"/>
-      <ha_applyToCell x="10" y="15"/>
-      <ha_applyToCell x="10" y="16"/>
-      <ha_applyToCell x="10" y="17"/>
-      <ha_applyToCell x="10" y="18"/>
-      <ha_applyToCell x="10" y="19"/>
-      <ha_applyToCell x="10" y="20"/>
-      <ha_applyToCell x="10" y="21"/>
-      <ha_applyToCell x="10" y="22"/>
-      <ha_applyToCell x="10" y="23"/>
-      <ha_applyToCell x="11" y="1"/>
-      <ha_applyToCell x="11" y="2"/>
-      <ha_applyToCell x="11" y="3"/>
-      <ha_applyToCell x="11" y="4"/>
-      <ha_applyToCell x="11" y="5"/>
-      <ha_applyToCell x="11" y="6"/>
-      <ha_applyToCell x="11" y="7"/>
-      <ha_applyToCell x="11" y="8"/>
-      <ha_applyToCell x="11" y="9"/>
-      <ha_applyToCell x="11" y="10"/>
-      <ha_applyToCell x="11" y="11"/>
-      <ha_applyToCell x="11" y="12"/>
-      <ha_applyToCell x="11" y="13"/>
-      <ha_applyToCell x="11" y="14"/>
-      <ha_applyToCell x="11" y="15"/>
-      <ha_applyToCell x="11" y="16"/>
-      <ha_applyToCell x="11" y="17"/>
-      <ha_applyToCell x="11" y="18"/>
-      <ha_applyToCell x="11" y="19"/>
-      <ha_applyToCell x="11" y="20"/>
-      <ha_applyToCell x="11" y="21"/>
-      <ha_applyToCell x="11" y="22"/>
-      <ha_applyToCell x="11" y="23"/>
-      <ha_applyToCell x="12" y="1"/>
-      <ha_applyToCell x="12" y="2"/>
-      <ha_applyToCell x="12" y="3"/>
-      <ha_applyToCell x="12" y="4"/>
-      <ha_applyToCell x="12" y="5"/>
-      <ha_applyToCell x="12" y="6"/>
-      <ha_applyToCell x="12" y="7"/>
-      <ha_applyToCell x="12" y="8"/>
-      <ha_applyToCell x="12" y="9"/>
-      <ha_applyToCell x="12" y="10"/>
-      <ha_applyToCell x="12" y="11"/>
-      <ha_applyToCell x="12" y="12"/>
-      <ha_applyToCell x="12" y="13"/>
-      <ha_applyToCell x="12" y="14"/>
-      <ha_applyToCell x="12" y="15"/>
-      <ha_applyToCell x="12" y="16"/>
-      <ha_applyToCell x="12" y="17"/>
-      <ha_applyToCell x="12" y="18"/>
-      <ha_applyToCell x="12" y="19"/>
-      <ha_applyToCell x="12" y="20"/>
-      <ha_applyToCell x="12" y="21"/>
-      <ha_applyToCell x="12" y="22"/>
-      <ha_applyToCell x="12" y="23"/>
-      <ha_applyToCell x="13" y="1"/>
-      <ha_applyToCell x="13" y="2"/>
-      <ha_applyToCell x="13" y="3"/>
-      <ha_applyToCell x="13" y="4"/>
-      <ha_applyToCell x="13" y="5"/>
-      <ha_applyToCell x="13" y="6"/>
-      <ha_applyToCell x="13" y="7"/>
-      <ha_applyToCell x="13" y="8"/>
-      <ha_applyToCell x="13" y="9"/>
-      <ha_applyToCell x="13" y="10"/>
-      <ha_applyToCell x="13" y="11"/>
-      <ha_applyToCell x="13" y="12"/>
-      <ha_applyToCell x="13" y="13"/>
-      <ha_applyToCell x="13" y="14"/>
-      <ha_applyToCell x="13" y="15"/>
-      <ha_applyToCell x="13" y="16"/>
-      <ha_applyToCell x="13" y="17"/>
-      <ha_applyToCell x="13" y="18"/>
-      <ha_applyToCell x="13" y="19"/>
-      <ha_applyToCell x="13" y="20"/>
-      <ha_applyToCell x="13" y="21"/>
-      <ha_applyToCell x="13" y="22"/>
-      <ha_applyToCell x="13" y="23"/>
-      <ha_applyToCell x="14" y="1"/>
-      <ha_applyToCell x="14" y="2"/>
-      <ha_applyToCell x="14" y="3"/>
-      <ha_applyToCell x="14" y="4"/>
-      <ha_applyToCell x="14" y="5"/>
-      <ha_applyToCell x="14" y="6"/>
-      <ha_applyToCell x="14" y="7"/>
-      <ha_applyToCell x="14" y="8"/>
-      <ha_applyToCell x="14" y="9"/>
-      <ha_applyToCell x="14" y="10"/>
-      <ha_applyToCell x="14" y="11"/>
-      <ha_applyToCell x="14" y="12"/>
-      <ha_applyToCell x="14" y="13"/>
-      <ha_applyToCell x="14" y="14"/>
-      <ha_applyToCell x="14" y="15"/>
-      <ha_applyToCell x="14" y="16"/>
-      <ha_applyToCell x="14" y="17"/>
-      <ha_applyToCell x="14" y="18"/>
-      <ha_applyToCell x="14" y="19"/>
-      <ha_applyToCell x="14" y="20"/>
-      <ha_applyToCell x="14" y="21"/>
-      <ha_applyToCell x="14" y="22"/>
-      <ha_applyToCell x="14" y="23"/>
-      <ha_applyToCell x="15" y="1"/>
-      <ha_applyToCell x="15" y="2"/>
-      <ha_applyToCell x="15" y="3"/>
-      <ha_applyToCell x="15" y="4"/>
-      <ha_applyToCell x="15" y="5"/>
-      <ha_applyToCell x="15" y="6"/>
-      <ha_applyToCell x="15" y="7"/>
-      <ha_applyToCell x="15" y="8"/>
-      <ha_applyToCell x="15" y="9"/>
-      <ha_applyToCell x="15" y="10"/>
-      <ha_applyToCell x="15" y="11"/>
-      <ha_applyToCell x="15" y="12"/>
-      <ha_applyToCell x="15" y="13"/>
-      <ha_applyToCell x="15" y="14"/>
-      <ha_applyToCell x="15" y="15"/>
-      <ha_applyToCell x="15" y="16"/>
-      <ha_applyToCell x="15" y="17"/>
-      <ha_applyToCell x="15" y="18"/>
-      <ha_applyToCell x="15" y="19"/>
-      <ha_applyToCell x="15" y="20"/>
-      <ha_applyToCell x="15" y="21"/>
-      <ha_applyToCell x="15" y="22"/>
-      <ha_applyToCell x="15" y="23"/>
-      <ha_applyToCell x="16" y="1"/>
-      <ha_applyToCell x="16" y="2"/>
-      <ha_applyToCell x="16" y="3"/>
-      <ha_applyToCell x="16" y="4"/>
-      <ha_applyToCell x="16" y="5"/>
-      <ha_applyToCell x="16" y="6"/>
-      <ha_applyToCell x="16" y="7"/>
-      <ha_applyToCell x="16" y="8"/>
-      <ha_applyToCell x="16" y="9"/>
-      <ha_applyToCell x="16" y="10"/>
-      <ha_applyToCell x="16" y="11"/>
-      <ha_applyToCell x="16" y="12"/>
-      <ha_applyToCell x="16" y="13"/>
-      <ha_applyToCell x="16" y="14"/>
-      <ha_applyToCell x="16" y="15"/>
-      <ha_applyToCell x="16" y="16"/>
-      <ha_applyToCell x="16" y="17"/>
-      <ha_applyToCell x="16" y="18"/>
-      <ha_applyToCell x="16" y="19"/>
-      <ha_applyToCell x="16" y="20"/>
-      <ha_applyToCell x="16" y="21"/>
-      <ha_applyToCell x="16" y="22"/>
-      <ha_applyToCell x="16" y="23"/>
-      <ha_applyToCell x="17" y="1"/>
-      <ha_applyToCell x="17" y="2"/>
-      <ha_applyToCell x="17" y="3"/>
-      <ha_applyToCell x="17" y="4"/>
-      <ha_applyToCell x="17" y="5"/>
-      <ha_applyToCell x="17" y="6"/>
-      <ha_applyToCell x="17" y="7"/>
-      <ha_applyToCell x="17" y="8"/>
-      <ha_applyToCell x="17" y="9"/>
-      <ha_applyToCell x="17" y="10"/>
-      <ha_applyToCell x="17" y="11"/>
-      <ha_applyToCell x="17" y="12"/>
-      <ha_applyToCell x="17" y="13"/>
-      <ha_applyToCell x="17" y="14"/>
-      <ha_applyToCell x="17" y="15"/>
-      <ha_applyToCell x="17" y="16"/>
-      <ha_applyToCell x="17" y="17"/>
-      <ha_applyToCell x="17" y="18"/>
-      <ha_applyToCell x="17" y="19"/>
-      <ha_applyToCell x="17" y="20"/>
-      <ha_applyToCell x="17" y="21"/>
-      <ha_applyToCell x="17" y="22"/>
-      <ha_applyToCell x="17" y="23"/>
-      <ha_applyToCell x="18" y="1"/>
-      <ha_applyToCell x="18" y="2"/>
-      <ha_applyToCell x="18" y="3"/>
-      <ha_applyToCell x="18" y="4"/>
-      <ha_applyToCell x="18" y="5"/>
-      <ha_applyToCell x="18" y="6"/>
-      <ha_applyToCell x="18" y="7"/>
-      <ha_applyToCell x="18" y="8"/>
-      <ha_applyToCell x="18" y="9"/>
-      <ha_applyToCell x="18" y="10"/>
-      <ha_applyToCell x="18" y="11"/>
-      <ha_applyToCell x="18" y="12"/>
-      <ha_applyToCell x="18" y="13"/>
-      <ha_applyToCell x="18" y="14"/>
-      <ha_applyToCell x="18" y="15"/>
-      <ha_applyToCell x="18" y="16"/>
-      <ha_applyToCell x="18" y="17"/>
-      <ha_applyToCell x="18" y="18"/>
-      <ha_applyToCell x="18" y="19"/>
-      <ha_applyToCell x="18" y="20"/>
-      <ha_applyToCell x="18" y="21"/>
-      <ha_applyToCell x="18" y="22"/>
-      <ha_applyToCell x="18" y="23"/>
-      <ha_applyToCell x="19" y="1"/>
-      <ha_applyToCell x="19" y="2"/>
-      <ha_applyToCell x="19" y="3"/>
-      <ha_applyToCell x="19" y="4"/>
-      <ha_applyToCell x="19" y="5"/>
-      <ha_applyToCell x="19" y="6"/>
-      <ha_applyToCell x="19" y="7"/>
-      <ha_applyToCell x="19" y="8"/>
-      <ha_applyToCell x="19" y="9"/>
-      <ha_applyToCell x="19" y="10"/>
-      <ha_applyToCell x="19" y="11"/>
-      <ha_applyToCell x="19" y="12"/>
-      <ha_applyToCell x="19" y="13"/>
-      <ha_applyToCell x="19" y="14"/>
-      <ha_applyToCell x="19" y="15"/>
-      <ha_applyToCell x="19" y="16"/>
-      <ha_applyToCell x="19" y="17"/>
-      <ha_applyToCell x="19" y="18"/>
-      <ha_applyToCell x="19" y="19"/>
-      <ha_applyToCell x="19" y="20"/>
-      <ha_applyToCell x="19" y="21"/>
-      <ha_applyToCell x="19" y="22"/>
-      <ha_applyToCell x="19" y="23"/>
-      <ha_applyToCell x="20" y="1"/>
-      <ha_applyToCell x="20" y="2"/>
-      <ha_applyToCell x="20" y="3"/>
-      <ha_applyToCell x="20" y="4"/>
-      <ha_applyToCell x="20" y="5"/>
-      <ha_applyToCell x="20" y="6"/>
-      <ha_applyToCell x="20" y="7"/>
-      <ha_applyToCell x="20" y="8"/>
-      <ha_applyToCell x="20" y="9"/>
-      <ha_applyToCell x="20" y="10"/>
-      <ha_applyToCell x="20" y="11"/>
-      <ha_applyToCell x="20" y="12"/>
-      <ha_applyToCell x="20" y="13"/>
-      <ha_applyToCell x="20" y="14"/>
-      <ha_applyToCell x="20" y="15"/>
-      <ha_applyToCell x="20" y="16"/>
-      <ha_applyToCell x="20" y="17"/>
-      <ha_applyToCell x="20" y="18"/>
-      <ha_applyToCell x="20" y="19"/>
-      <ha_applyToCell x="20" y="20"/>
-      <ha_applyToCell x="20" y="21"/>
-      <ha_applyToCell x="20" y="22"/>
-      <ha_applyToCell x="20" y="23"/>
-      <ha_applyToCell x="21" y="1"/>
-      <ha_applyToCell x="21" y="2"/>
-      <ha_applyToCell x="21" y="3"/>
-      <ha_applyToCell x="21" y="4"/>
-      <ha_applyToCell x="21" y="5"/>
-      <ha_applyToCell x="21" y="6"/>
-      <ha_applyToCell x="21" y="7"/>
-      <ha_applyToCell x="21" y="8"/>
-      <ha_applyToCell x="21" y="9"/>
-      <ha_applyToCell x="21" y="10"/>
-      <ha_applyToCell x="21" y="11"/>
-      <ha_applyToCell x="21" y="12"/>
-      <ha_applyToCell x="21" y="13"/>
-      <ha_applyToCell x="21" y="14"/>
-      <ha_applyToCell x="21" y="15"/>
-      <ha_applyToCell x="21" y="16"/>
-      <ha_applyToCell x="21" y="17"/>
-      <ha_applyToCell x="21" y="18"/>
-      <ha_applyToCell x="21" y="19"/>
-      <ha_applyToCell x="21" y="20"/>
-      <ha_applyToCell x="21" y="21"/>
-      <ha_applyToCell x="21" y="22"/>
-      <ha_applyToCell x="21" y="23"/>
-      <ha_applyToCell x="22" y="1"/>
-      <ha_applyToCell x="22" y="2"/>
-      <ha_applyToCell x="22" y="3"/>
-      <ha_applyToCell x="22" y="4"/>
-      <ha_applyToCell x="22" y="5"/>
-      <ha_applyToCell x="22" y="6"/>
-      <ha_applyToCell x="22" y="7"/>
-      <ha_applyToCell x="22" y="8"/>
-      <ha_applyToCell x="22" y="9"/>
-      <ha_applyToCell x="22" y="10"/>
-      <ha_applyToCell x="22" y="11"/>
-      <ha_applyToCell x="22" y="12"/>
-      <ha_applyToCell x="22" y="13"/>
-      <ha_applyToCell x="22" y="14"/>
-      <ha_applyToCell x="22" y="15"/>
-      <ha_applyToCell x="22" y="16"/>
-      <ha_applyToCell x="22" y="17"/>
-      <ha_applyToCell x="22" y="18"/>
-      <ha_applyToCell x="22" y="19"/>
-      <ha_applyToCell x="22" y="20"/>
-      <ha_applyToCell x="22" y="21"/>
-      <ha_applyToCell x="22" y="22"/>
-      <ha_applyToCell x="22" y="23"/>
-      <ha_applyToCell x="23" y="1"/>
-      <ha_applyToCell x="23" y="2"/>
-      <ha_applyToCell x="23" y="3"/>
-      <ha_applyToCell x="23" y="4"/>
-      <ha_applyToCell x="23" y="5"/>
-      <ha_applyToCell x="23" y="6"/>
-      <ha_applyToCell x="23" y="7"/>
-      <ha_applyToCell x="23" y="8"/>
-      <ha_applyToCell x="23" y="9"/>
-      <ha_applyToCell x="23" y="10"/>
-      <ha_applyToCell x="23" y="11"/>
-      <ha_applyToCell x="23" y="12"/>
-      <ha_applyToCell x="23" y="13"/>
-      <ha_applyToCell x="23" y="14"/>
-      <ha_applyToCell x="23" y="15"/>
-      <ha_applyToCell x="23" y="16"/>
-      <ha_applyToCell x="23" y="17"/>
-      <ha_applyToCell x="23" y="18"/>
-      <ha_applyToCell x="23" y="19"/>
-      <ha_applyToCell x="23" y="20"/>
-      <ha_applyToCell x="23" y="21"/>
-      <ha_applyToCell x="23" y="22"/>
-      <ha_applyToCell x="23" y="23"/>
-    </ha_cutEvent>
-    <ha_cutEvent>
-      <ha_applyToSpecies species="Trembling_Aspen"/>
-      <ha_timestep>1</ha_timestep>
-      <ha_cutType>clear</ha_cutType>
-      <ha_cutAmountType>percent of density</ha_cutAmountType>
-      <ha_tallestFirst>1</ha_tallestFirst>
-      <ha_dbhRange>
-        <ha_low>0.0</ha_low>
-        <ha_high>3000.0</ha_high>
-        <ha_amountToCut>100.0</ha_amountToCut>
-      </ha_dbhRange>
-      <ha_percentSeedlingsDie>
-        <ha_psdVal species="Western_Hemlock">100.0</ha_psdVal>
-        <ha_psdVal species="Western_redcedar">100.0</ha_psdVal>
-        <ha_psdVal species="Amabalis_Fir">100.0</ha_psdVal>
-        <ha_psdVal species="Subalpine_Fir">100.0</ha_psdVal>
-        <ha_psdVal species="Hybrid_spruce">100.0</ha_psdVal>
-        <ha_psdVal species="Lodgepole_Pine">100.0</ha_psdVal>
-        <ha_psdVal species="Trembling_Aspen">100.0</ha_psdVal>
-        <ha_psdVal species="Black_Cottonwood">100.0</ha_psdVal>
-        <ha_psdVal species="Paper_Birch">100.0</ha_psdVal>
-      </ha_percentSeedlingsDie>
-      <ha_applyToCell x="1" y="1"/>
-      <ha_applyToCell x="1" y="2"/>
-      <ha_applyToCell x="1" y="3"/>
-      <ha_applyToCell x="1" y="4"/>
-      <ha_applyToCell x="1" y="5"/>
-      <ha_applyToCell x="1" y="6"/>
-      <ha_applyToCell x="1" y="7"/>
-      <ha_applyToCell x="1" y="8"/>
-      <ha_applyToCell x="1" y="9"/>
-      <ha_applyToCell x="1" y="10"/>
-      <ha_applyToCell x="1" y="11"/>
-      <ha_applyToCell x="1" y="12"/>
-      <ha_applyToCell x="1" y="13"/>
-      <ha_applyToCell x="1" y="14"/>
-      <ha_applyToCell x="1" y="15"/>
-      <ha_applyToCell x="1" y="16"/>
-      <ha_applyToCell x="1" y="17"/>
-      <ha_applyToCell x="1" y="18"/>
-      <ha_applyToCell x="1" y="19"/>
-      <ha_applyToCell x="1" y="20"/>
-      <ha_applyToCell x="1" y="21"/>
-      <ha_applyToCell x="1" y="22"/>
-      <ha_applyToCell x="1" y="23"/>
-      <ha_applyToCell x="2" y="1"/>
-      <ha_applyToCell x="2" y="2"/>
-      <ha_applyToCell x="2" y="3"/>
-      <ha_applyToCell x="2" y="4"/>
-      <ha_applyToCell x="2" y="5"/>
-      <ha_applyToCell x="2" y="6"/>
-      <ha_applyToCell x="2" y="7"/>
-      <ha_applyToCell x="2" y="8"/>
-      <ha_applyToCell x="2" y="9"/>
-      <ha_applyToCell x="2" y="10"/>
-      <ha_applyToCell x="2" y="11"/>
-      <ha_applyToCell x="2" y="12"/>
-      <ha_applyToCell x="2" y="13"/>
-      <ha_applyToCell x="2" y="14"/>
-      <ha_applyToCell x="2" y="15"/>
-      <ha_applyToCell x="2" y="16"/>
-      <ha_applyToCell x="2" y="17"/>
-      <ha_applyToCell x="2" y="18"/>
-      <ha_applyToCell x="2" y="19"/>
-      <ha_applyToCell x="2" y="20"/>
-      <ha_applyToCell x="2" y="21"/>
-      <ha_applyToCell x="2" y="22"/>
-      <ha_applyToCell x="2" y="23"/>
-      <ha_applyToCell x="3" y="1"/>
-      <ha_applyToCell x="3" y="2"/>
-      <ha_applyToCell x="3" y="3"/>
-      <ha_applyToCell x="3" y="4"/>
-      <ha_applyToCell x="3" y="5"/>
-      <ha_applyToCell x="3" y="6"/>
-      <ha_applyToCell x="3" y="7"/>
-      <ha_applyToCell x="3" y="8"/>
-      <ha_applyToCell x="3" y="9"/>
-      <ha_applyToCell x="3" y="10"/>
-      <ha_applyToCell x="3" y="11"/>
-      <ha_applyToCell x="3" y="12"/>
-      <ha_applyToCell x="3" y="13"/>
-      <ha_applyToCell x="3" y="14"/>
-      <ha_applyToCell x="3" y="15"/>
-      <ha_applyToCell x="3" y="16"/>
-      <ha_applyToCell x="3" y="17"/>
-      <ha_applyToCell x="3" y="18"/>
-      <ha_applyToCell x="3" y="19"/>
-      <ha_applyToCell x="3" y="20"/>
-      <ha_applyToCell x="3" y="21"/>
-      <ha_applyToCell x="3" y="22"/>
-      <ha_applyToCell x="3" y="23"/>
-      <ha_applyToCell x="4" y="1"/>
-      <ha_applyToCell x="4" y="2"/>
-      <ha_applyToCell x="4" y="3"/>
-      <ha_applyToCell x="4" y="4"/>
-      <ha_applyToCell x="4" y="5"/>
-      <ha_applyToCell x="4" y="6"/>
-      <ha_applyToCell x="4" y="7"/>
-      <ha_applyToCell x="4" y="8"/>
-      <ha_applyToCell x="4" y="9"/>
-      <ha_applyToCell x="4" y="10"/>
-      <ha_applyToCell x="4" y="11"/>
-      <ha_applyToCell x="4" y="12"/>
-      <ha_applyToCell x="4" y="13"/>
-      <ha_applyToCell x="4" y="14"/>
-      <ha_applyToCell x="4" y="15"/>
-      <ha_applyToCell x="4" y="16"/>
-      <ha_applyToCell x="4" y="17"/>
-      <ha_applyToCell x="4" y="18"/>
-      <ha_applyToCell x="4" y="19"/>
-      <ha_applyToCell x="4" y="20"/>
-      <ha_applyToCell x="4" y="21"/>
-      <ha_applyToCell x="4" y="22"/>
-      <ha_applyToCell x="4" y="23"/>
-      <ha_applyToCell x="5" y="1"/>
-      <ha_applyToCell x="5" y="2"/>
-      <ha_applyToCell x="5" y="3"/>
-      <ha_applyToCell x="5" y="4"/>
-      <ha_applyToCell x="5" y="5"/>
-      <ha_applyToCell x="5" y="6"/>
-      <ha_applyToCell x="5" y="7"/>
-      <ha_applyToCell x="5" y="8"/>
-      <ha_applyToCell x="5" y="9"/>
-      <ha_applyToCell x="5" y="10"/>
-      <ha_applyToCell x="5" y="11"/>
-      <ha_applyToCell x="5" y="12"/>
-      <ha_applyToCell x="5" y="13"/>
-      <ha_applyToCell x="5" y="14"/>
-      <ha_applyToCell x="5" y="15"/>
-      <ha_applyToCell x="5" y="16"/>
-      <ha_applyToCell x="5" y="17"/>
-      <ha_applyToCell x="5" y="18"/>
-      <ha_applyToCell x="5" y="19"/>
-      <ha_applyToCell x="5" y="20"/>
-      <ha_applyToCell x="5" y="21"/>
-      <ha_applyToCell x="5" y="22"/>
-      <ha_applyToCell x="5" y="23"/>
-      <ha_applyToCell x="6" y="1"/>
-      <ha_applyToCell x="6" y="2"/>
-      <ha_applyToCell x="6" y="3"/>
-      <ha_applyToCell x="6" y="4"/>
-      <ha_applyToCell x="6" y="5"/>
-      <ha_applyToCell x="6" y="6"/>
-      <ha_applyToCell x="6" y="7"/>
-      <ha_applyToCell x="6" y="8"/>
-      <ha_applyToCell x="6" y="9"/>
-      <ha_applyToCell x="6" y="10"/>
-      <ha_applyToCell x="6" y="11"/>
-      <ha_applyToCell x="6" y="12"/>
-      <ha_applyToCell x="6" y="13"/>
-      <ha_applyToCell x="6" y="14"/>
-      <ha_applyToCell x="6" y="15"/>
-      <ha_applyToCell x="6" y="16"/>
-      <ha_applyToCell x="6" y="17"/>
-      <ha_applyToCell x="6" y="18"/>
-      <ha_applyToCell x="6" y="19"/>
-      <ha_applyToCell x="6" y="20"/>
-      <ha_applyToCell x="6" y="21"/>
-      <ha_applyToCell x="6" y="22"/>
-      <ha_applyToCell x="6" y="23"/>
-      <ha_applyToCell x="7" y="1"/>
-      <ha_applyToCell x="7" y="2"/>
-      <ha_applyToCell x="7" y="3"/>
-      <ha_applyToCell x="7" y="4"/>
-      <ha_applyToCell x="7" y="5"/>
-      <ha_applyToCell x="7" y="6"/>
-      <ha_applyToCell x="7" y="7"/>
-      <ha_applyToCell x="7" y="8"/>
-      <ha_applyToCell x="7" y="9"/>
-      <ha_applyToCell x="7" y="10"/>
-      <ha_applyToCell x="7" y="11"/>
-      <ha_applyToCell x="7" y="12"/>
-      <ha_applyToCell x="7" y="13"/>
-      <ha_applyToCell x="7" y="14"/>
-      <ha_applyToCell x="7" y="15"/>
-      <ha_applyToCell x="7" y="16"/>
-      <ha_applyToCell x="7" y="17"/>
-      <ha_applyToCell x="7" y="18"/>
-      <ha_applyToCell x="7" y="19"/>
-      <ha_applyToCell x="7" y="20"/>
-      <ha_applyToCell x="7" y="21"/>
-      <ha_applyToCell x="7" y="22"/>
-      <ha_applyToCell x="7" y="23"/>
-      <ha_applyToCell x="8" y="1"/>
-      <ha_applyToCell x="8" y="2"/>
-      <ha_applyToCell x="8" y="3"/>
-      <ha_applyToCell x="8" y="4"/>
-      <ha_applyToCell x="8" y="5"/>
-      <ha_applyToCell x="8" y="6"/>
-      <ha_applyToCell x="8" y="7"/>
-      <ha_applyToCell x="8" y="8"/>
-      <ha_applyToCell x="8" y="9"/>
-      <ha_applyToCell x="8" y="10"/>
-      <ha_applyToCell x="8" y="11"/>
-      <ha_applyToCell x="8" y="12"/>
-      <ha_applyToCell x="8" y="13"/>
-      <ha_applyToCell x="8" y="14"/>
-      <ha_applyToCell x="8" y="15"/>
-      <ha_applyToCell x="8" y="16"/>
-      <ha_applyToCell x="8" y="17"/>
-      <ha_applyToCell x="8" y="18"/>
-      <ha_applyToCell x="8" y="19"/>
-      <ha_applyToCell x="8" y="20"/>
-      <ha_applyToCell x="8" y="21"/>
-      <ha_applyToCell x="8" y="22"/>
-      <ha_applyToCell x="8" y="23"/>
-      <ha_applyToCell x="9" y="1"/>
-      <ha_applyToCell x="9" y="2"/>
-      <ha_applyToCell x="9" y="3"/>
-      <ha_applyToCell x="9" y="4"/>
-      <ha_applyToCell x="9" y="5"/>
-      <ha_applyToCell x="9" y="6"/>
-      <ha_applyToCell x="9" y="7"/>
-      <ha_applyToCell x="9" y="8"/>
-      <ha_applyToCell x="9" y="9"/>
-      <ha_applyToCell x="9" y="10"/>
-      <ha_applyToCell x="9" y="11"/>
-      <ha_applyToCell x="9" y="12"/>
-      <ha_applyToCell x="9" y="13"/>
-      <ha_applyToCell x="9" y="14"/>
-      <ha_applyToCell x="9" y="15"/>
-      <ha_applyToCell x="9" y="16"/>
-      <ha_applyToCell x="9" y="17"/>
-      <ha_applyToCell x="9" y="18"/>
-      <ha_applyToCell x="9" y="19"/>
-      <ha_applyToCell x="9" y="20"/>
-      <ha_applyToCell x="9" y="21"/>
-      <ha_applyToCell x="9" y="22"/>
-      <ha_applyToCell x="9" y="23"/>
-      <ha_applyToCell x="10" y="1"/>
-      <ha_applyToCell x="10" y="2"/>
-      <ha_applyToCell x="10" y="3"/>
-      <ha_applyToCell x="10" y="4"/>
-      <ha_applyToCell x="10" y="5"/>
-      <ha_applyToCell x="10" y="6"/>
-      <ha_applyToCell x="10" y="7"/>
-      <ha_applyToCell x="10" y="8"/>
-      <ha_applyToCell x="10" y="9"/>
-      <ha_applyToCell x="10" y="10"/>
-      <ha_applyToCell x="10" y="11"/>
-      <ha_applyToCell x="10" y="12"/>
-      <ha_applyToCell x="10" y="13"/>
-      <ha_applyToCell x="10" y="14"/>
-      <ha_applyToCell x="10" y="15"/>
-      <ha_applyToCell x="10" y="16"/>
-      <ha_applyToCell x="10" y="17"/>
-      <ha_applyToCell x="10" y="18"/>
-      <ha_applyToCell x="10" y="19"/>
-      <ha_applyToCell x="10" y="20"/>
-      <ha_applyToCell x="10" y="21"/>
-      <ha_applyToCell x="10" y="22"/>
-      <ha_applyToCell x="10" y="23"/>
-      <ha_applyToCell x="11" y="1"/>
-      <ha_applyToCell x="11" y="2"/>
-      <ha_applyToCell x="11" y="3"/>
-      <ha_applyToCell x="11" y="4"/>
-      <ha_applyToCell x="11" y="5"/>
-      <ha_applyToCell x="11" y="6"/>
-      <ha_applyToCell x="11" y="7"/>
-      <ha_applyToCell x="11" y="8"/>
-      <ha_applyToCell x="11" y="9"/>
-      <ha_applyToCell x="11" y="10"/>
-      <ha_applyToCell x="11" y="11"/>
-      <ha_applyToCell x="11" y="12"/>
-      <ha_applyToCell x="11" y="13"/>
-      <ha_applyToCell x="11" y="14"/>
-      <ha_applyToCell x="11" y="15"/>
-      <ha_applyToCell x="11" y="16"/>
-      <ha_applyToCell x="11" y="17"/>
-      <ha_applyToCell x="11" y="18"/>
-      <ha_applyToCell x="11" y="19"/>
-      <ha_applyToCell x="11" y="20"/>
-      <ha_applyToCell x="11" y="21"/>
-      <ha_applyToCell x="11" y="22"/>
-      <ha_applyToCell x="11" y="23"/>
-      <ha_applyToCell x="12" y="1"/>
-      <ha_applyToCell x="12" y="2"/>
-      <ha_applyToCell x="12" y="3"/>
-      <ha_applyToCell x="12" y="4"/>
-      <ha_applyToCell x="12" y="5"/>
-      <ha_applyToCell x="12" y="6"/>
-      <ha_applyToCell x="12" y="7"/>
-      <ha_applyToCell x="12" y="8"/>
-      <ha_applyToCell x="12" y="9"/>
-      <ha_applyToCell x="12" y="10"/>
-      <ha_applyToCell x="12" y="11"/>
-      <ha_applyToCell x="12" y="12"/>
-      <ha_applyToCell x="12" y="13"/>
-      <ha_applyToCell x="12" y="14"/>
-      <ha_applyToCell x="12" y="15"/>
-      <ha_applyToCell x="12" y="16"/>
-      <ha_applyToCell x="12" y="17"/>
-      <ha_applyToCell x="12" y="18"/>
-      <ha_applyToCell x="12" y="19"/>
-      <ha_applyToCell x="12" y="20"/>
-      <ha_applyToCell x="12" y="21"/>
-      <ha_applyToCell x="12" y="22"/>
-      <ha_applyToCell x="12" y="23"/>
-      <ha_applyToCell x="13" y="1"/>
-      <ha_applyToCell x="13" y="2"/>
-      <ha_applyToCell x="13" y="3"/>
-      <ha_applyToCell x="13" y="4"/>
-      <ha_applyToCell x="13" y="5"/>
-      <ha_applyToCell x="13" y="6"/>
-      <ha_applyToCell x="13" y="7"/>
-      <ha_applyToCell x="13" y="8"/>
-      <ha_applyToCell x="13" y="9"/>
-      <ha_applyToCell x="13" y="10"/>
-      <ha_applyToCell x="13" y="11"/>
-      <ha_applyToCell x="13" y="12"/>
-      <ha_applyToCell x="13" y="13"/>
-      <ha_applyToCell x="13" y="14"/>
-      <ha_applyToCell x="13" y="15"/>
-      <ha_applyToCell x="13" y="16"/>
-      <ha_applyToCell x="13" y="17"/>
-      <ha_applyToCell x="13" y="18"/>
-      <ha_applyToCell x="13" y="19"/>
-      <ha_applyToCell x="13" y="20"/>
-      <ha_applyToCell x="13" y="21"/>
-      <ha_applyToCell x="13" y="22"/>
-      <ha_applyToCell x="13" y="23"/>
-      <ha_applyToCell x="14" y="1"/>
-      <ha_applyToCell x="14" y="2"/>
-      <ha_applyToCell x="14" y="3"/>
-      <ha_applyToCell x="14" y="4"/>
-      <ha_applyToCell x="14" y="5"/>
-      <ha_applyToCell x="14" y="6"/>
-      <ha_applyToCell x="14" y="7"/>
-      <ha_applyToCell x="14" y="8"/>
-      <ha_applyToCell x="14" y="9"/>
-      <ha_applyToCell x="14" y="10"/>
-      <ha_applyToCell x="14" y="11"/>
-      <ha_applyToCell x="14" y="12"/>
-      <ha_applyToCell x="14" y="13"/>
-      <ha_applyToCell x="14" y="14"/>
-      <ha_applyToCell x="14" y="15"/>
-      <ha_applyToCell x="14" y="16"/>
-      <ha_applyToCell x="14" y="17"/>
-      <ha_applyToCell x="14" y="18"/>
-      <ha_applyToCell x="14" y="19"/>
-      <ha_applyToCell x="14" y="20"/>
-      <ha_applyToCell x="14" y="21"/>
-      <ha_applyToCell x="14" y="22"/>
-      <ha_applyToCell x="14" y="23"/>
-      <ha_applyToCell x="15" y="1"/>
-      <ha_applyToCell x="15" y="2"/>
-      <ha_applyToCell x="15" y="3"/>
-      <ha_applyToCell x="15" y="4"/>
-      <ha_applyToCell x="15" y="5"/>
-      <ha_applyToCell x="15" y="6"/>
-      <ha_applyToCell x="15" y="7"/>
-      <ha_applyToCell x="15" y="8"/>
-      <ha_applyToCell x="15" y="9"/>
-      <ha_applyToCell x="15" y="10"/>
-      <ha_applyToCell x="15" y="11"/>
-      <ha_applyToCell x="15" y="12"/>
-      <ha_applyToCell x="15" y="13"/>
-      <ha_applyToCell x="15" y="14"/>
-      <ha_applyToCell x="15" y="15"/>
-      <ha_applyToCell x="15" y="16"/>
-      <ha_applyToCell x="15" y="17"/>
-      <ha_applyToCell x="15" y="18"/>
-      <ha_applyToCell x="15" y="19"/>
-      <ha_applyToCell x="15" y="20"/>
-      <ha_applyToCell x="15" y="21"/>
-      <ha_applyToCell x="15" y="22"/>
-      <ha_applyToCell x="15" y="23"/>
-      <ha_applyToCell x="16" y="1"/>
-      <ha_applyToCell x="16" y="2"/>
-      <ha_applyToCell x="16" y="3"/>
-      <ha_applyToCell x="16" y="4"/>
-      <ha_applyToCell x="16" y="5"/>
-      <ha_applyToCell x="16" y="6"/>
-      <ha_applyToCell x="16" y="7"/>
-      <ha_applyToCell x="16" y="8"/>
-      <ha_applyToCell x="16" y="9"/>
-      <ha_applyToCell x="16" y="10"/>
-      <ha_applyToCell x="16" y="11"/>
-      <ha_applyToCell x="16" y="12"/>
-      <ha_applyToCell x="16" y="13"/>
-      <ha_applyToCell x="16" y="14"/>
-      <ha_applyToCell x="16" y="15"/>
-      <ha_applyToCell x="16" y="16"/>
-      <ha_applyToCell x="16" y="17"/>
-      <ha_applyToCell x="16" y="18"/>
-      <ha_applyToCell x="16" y="19"/>
-      <ha_applyToCell x="16" y="20"/>
-      <ha_applyToCell x="16" y="21"/>
-      <ha_applyToCell x="16" y="22"/>
-      <ha_applyToCell x="16" y="23"/>
-      <ha_applyToCell x="17" y="1"/>
-      <ha_applyToCell x="17" y="2"/>
-      <ha_applyToCell x="17" y="3"/>
-      <ha_applyToCell x="17" y="4"/>
-      <ha_applyToCell x="17" y="5"/>
-      <ha_applyToCell x="17" y="6"/>
-      <ha_applyToCell x="17" y="7"/>
-      <ha_applyToCell x="17" y="8"/>
-      <ha_applyToCell x="17" y="9"/>
-      <ha_applyToCell x="17" y="10"/>
-      <ha_applyToCell x="17" y="11"/>
-      <ha_applyToCell x="17" y="12"/>
-      <ha_applyToCell x="17" y="13"/>
-      <ha_applyToCell x="17" y="14"/>
-      <ha_applyToCell x="17" y="15"/>
-      <ha_applyToCell x="17" y="16"/>
-      <ha_applyToCell x="17" y="17"/>
-      <ha_applyToCell x="17" y="18"/>
-      <ha_applyToCell x="17" y="19"/>
-      <ha_applyToCell x="17" y="20"/>
-      <ha_applyToCell x="17" y="21"/>
-      <ha_applyToCell x="17" y="22"/>
-      <ha_applyToCell x="17" y="23"/>
-      <ha_applyToCell x="18" y="1"/>
-      <ha_applyToCell x="18" y="2"/>
-      <ha_applyToCell x="18" y="3"/>
-      <ha_applyToCell x="18" y="4"/>
-      <ha_applyToCell x="18" y="5"/>
-      <ha_applyToCell x="18" y="6"/>
-      <ha_applyToCell x="18" y="7"/>
-      <ha_applyToCell x="18" y="8"/>
-      <ha_applyToCell x="18" y="9"/>
-      <ha_applyToCell x="18" y="10"/>
-      <ha_applyToCell x="18" y="11"/>
-      <ha_applyToCell x="18" y="12"/>
-      <ha_applyToCell x="18" y="13"/>
-      <ha_applyToCell x="18" y="14"/>
-      <ha_applyToCell x="18" y="15"/>
-      <ha_applyToCell x="18" y="16"/>
-      <ha_applyToCell x="18" y="17"/>
-      <ha_applyToCell x="18" y="18"/>
-      <ha_applyToCell x="18" y="19"/>
-      <ha_applyToCell x="18" y="20"/>
-      <ha_applyToCell x="18" y="21"/>
-      <ha_applyToCell x="18" y="22"/>
-      <ha_applyToCell x="18" y="23"/>
-      <ha_applyToCell x="19" y="1"/>
-      <ha_applyToCell x="19" y="2"/>
-      <ha_applyToCell x="19" y="3"/>
-      <ha_applyToCell x="19" y="4"/>
-      <ha_applyToCell x="19" y="5"/>
-      <ha_applyToCell x="19" y="6"/>
-      <ha_applyToCell x="19" y="7"/>
-      <ha_applyToCell x="19" y="8"/>
-      <ha_applyToCell x="19" y="9"/>
-      <ha_applyToCell x="19" y="10"/>
-      <ha_applyToCell x="19" y="11"/>
-      <ha_applyToCell x="19" y="12"/>
-      <ha_applyToCell x="19" y="13"/>
-      <ha_applyToCell x="19" y="14"/>
-      <ha_applyToCell x="19" y="15"/>
-      <ha_applyToCell x="19" y="16"/>
-      <ha_applyToCell x="19" y="17"/>
-      <ha_applyToCell x="19" y="18"/>
-      <ha_applyToCell x="19" y="19"/>
-      <ha_applyToCell x="19" y="20"/>
-      <ha_applyToCell x="19" y="21"/>
-      <ha_applyToCell x="19" y="22"/>
-      <ha_applyToCell x="19" y="23"/>
-      <ha_applyToCell x="20" y="1"/>
-      <ha_applyToCell x="20" y="2"/>
-      <ha_applyToCell x="20" y="3"/>
-      <ha_applyToCell x="20" y="4"/>
-      <ha_applyToCell x="20" y="5"/>
-      <ha_applyToCell x="20" y="6"/>
-      <ha_applyToCell x="20" y="7"/>
-      <ha_applyToCell x="20" y="8"/>
-      <ha_applyToCell x="20" y="9"/>
-      <ha_applyToCell x="20" y="10"/>
-      <ha_applyToCell x="20" y="11"/>
-      <ha_applyToCell x="20" y="12"/>
-      <ha_applyToCell x="20" y="13"/>
-      <ha_applyToCell x="20" y="14"/>
-      <ha_applyToCell x="20" y="15"/>
-      <ha_applyToCell x="20" y="16"/>
-      <ha_applyToCell x="20" y="17"/>
-      <ha_applyToCell x="20" y="18"/>
-      <ha_applyToCell x="20" y="19"/>
-      <ha_applyToCell x="20" y="20"/>
-      <ha_applyToCell x="20" y="21"/>
-      <ha_applyToCell x="20" y="22"/>
-      <ha_applyToCell x="20" y="23"/>
-      <ha_applyToCell x="21" y="1"/>
-      <ha_applyToCell x="21" y="2"/>
-      <ha_applyToCell x="21" y="3"/>
-      <ha_applyToCell x="21" y="4"/>
-      <ha_applyToCell x="21" y="5"/>
-      <ha_applyToCell x="21" y="6"/>
-      <ha_applyToCell x="21" y="7"/>
-      <ha_applyToCell x="21" y="8"/>
-      <ha_applyToCell x="21" y="9"/>
-      <ha_applyToCell x="21" y="10"/>
-      <ha_applyToCell x="21" y="11"/>
-      <ha_applyToCell x="21" y="12"/>
-      <ha_applyToCell x="21" y="13"/>
-      <ha_applyToCell x="21" y="14"/>
-      <ha_applyToCell x="21" y="15"/>
-      <ha_applyToCell x="21" y="16"/>
-      <ha_applyToCell x="21" y="17"/>
-      <ha_applyToCell x="21" y="18"/>
-      <ha_applyToCell x="21" y="19"/>
-      <ha_applyToCell x="21" y="20"/>
-      <ha_applyToCell x="21" y="21"/>
-      <ha_applyToCell x="21" y="22"/>
-      <ha_applyToCell x="21" y="23"/>
-      <ha_applyToCell x="22" y="1"/>
-      <ha_applyToCell x="22" y="2"/>
-      <ha_applyToCell x="22" y="3"/>
-      <ha_applyToCell x="22" y="4"/>
-      <ha_applyToCell x="22" y="5"/>
-      <ha_applyToCell x="22" y="6"/>
-      <ha_applyToCell x="22" y="7"/>
-      <ha_applyToCell x="22" y="8"/>
-      <ha_applyToCell x="22" y="9"/>
-      <ha_applyToCell x="22" y="10"/>
-      <ha_applyToCell x="22" y="11"/>
-      <ha_applyToCell x="22" y="12"/>
-      <ha_applyToCell x="22" y="13"/>
-      <ha_applyToCell x="22" y="14"/>
-      <ha_applyToCell x="22" y="15"/>
-      <ha_applyToCell x="22" y="16"/>
-      <ha_applyToCell x="22" y="17"/>
-      <ha_applyToCell x="22" y="18"/>
-      <ha_applyToCell x="22" y="19"/>
-      <ha_applyToCell x="22" y="20"/>
-      <ha_applyToCell x="22" y="21"/>
-      <ha_applyToCell x="22" y="22"/>
-      <ha_applyToCell x="22" y="23"/>
-      <ha_applyToCell x="23" y="1"/>
-      <ha_applyToCell x="23" y="2"/>
-      <ha_applyToCell x="23" y="3"/>
-      <ha_applyToCell x="23" y="4"/>
-      <ha_applyToCell x="23" y="5"/>
-      <ha_applyToCell x="23" y="6"/>
-      <ha_applyToCell x="23" y="7"/>
-      <ha_applyToCell x="23" y="8"/>
-      <ha_applyToCell x="23" y="9"/>
-      <ha_applyToCell x="23" y="10"/>
-      <ha_applyToCell x="23" y="11"/>
-      <ha_applyToCell x="23" y="12"/>
-      <ha_applyToCell x="23" y="13"/>
-      <ha_applyToCell x="23" y="14"/>
-      <ha_applyToCell x="23" y="15"/>
-      <ha_applyToCell x="23" y="16"/>
-      <ha_applyToCell x="23" y="17"/>
-      <ha_applyToCell x="23" y="18"/>
-      <ha_applyToCell x="23" y="19"/>
-      <ha_applyToCell x="23" y="20"/>
-      <ha_applyToCell x="23" y="21"/>
-      <ha_applyToCell x="23" y="22"/>
-      <ha_applyToCell x="23" y="23"/>
-    </ha_cutEvent>
-    <ha_cutEvent>
-      <ha_applyToSpecies species="Black_Cottonwood"/>
-      <ha_timestep>1</ha_timestep>
-      <ha_cutType>clear</ha_cutType>
-      <ha_cutAmountType>percent of density</ha_cutAmountType>
-      <ha_tallestFirst>1</ha_tallestFirst>
-      <ha_dbhRange>
-        <ha_low>0.0</ha_low>
-        <ha_high>3000.0</ha_high>
-        <ha_amountToCut>100.0</ha_amountToCut>
-      </ha_dbhRange>
-      <ha_percentSeedlingsDie>
-        <ha_psdVal species="Western_Hemlock">100.0</ha_psdVal>
-        <ha_psdVal species="Western_redcedar">100.0</ha_psdVal>
-        <ha_psdVal species="Amabalis_Fir">100.0</ha_psdVal>
-        <ha_psdVal species="Subalpine_Fir">100.0</ha_psdVal>
-        <ha_psdVal species="Hybrid_spruce">100.0</ha_psdVal>
-        <ha_psdVal species="Lodgepole_Pine">100.0</ha_psdVal>
-        <ha_psdVal species="Trembling_Aspen">100.0</ha_psdVal>
-        <ha_psdVal species="Black_Cottonwood">100.0</ha_psdVal>
-        <ha_psdVal species="Paper_Birch">100.0</ha_psdVal>
-      </ha_percentSeedlingsDie>
-      <ha_applyToCell x="1" y="1"/>
-      <ha_applyToCell x="1" y="2"/>
-      <ha_applyToCell x="1" y="3"/>
-      <ha_applyToCell x="1" y="4"/>
-      <ha_applyToCell x="1" y="5"/>
-      <ha_applyToCell x="1" y="6"/>
-      <ha_applyToCell x="1" y="7"/>
-      <ha_applyToCell x="1" y="8"/>
-      <ha_applyToCell x="1" y="9"/>
-      <ha_applyToCell x="1" y="10"/>
-      <ha_applyToCell x="1" y="11"/>
-      <ha_applyToCell x="1" y="12"/>
-      <ha_applyToCell x="1" y="13"/>
-      <ha_applyToCell x="1" y="14"/>
-      <ha_applyToCell x="1" y="15"/>
-      <ha_applyToCell x="1" y="16"/>
-      <ha_applyToCell x="1" y="17"/>
-      <ha_applyToCell x="1" y="18"/>
-      <ha_applyToCell x="1" y="19"/>
-      <ha_applyToCell x="1" y="20"/>
-      <ha_applyToCell x="1" y="21"/>
-      <ha_applyToCell x="1" y="22"/>
-      <ha_applyToCell x="1" y="23"/>
-      <ha_applyToCell x="2" y="1"/>
-      <ha_applyToCell x="2" y="2"/>
-      <ha_applyToCell x="2" y="3"/>
-      <ha_applyToCell x="2" y="4"/>
-      <ha_applyToCell x="2" y="5"/>
-      <ha_applyToCell x="2" y="6"/>
-      <ha_applyToCell x="2" y="7"/>
-      <ha_applyToCell x="2" y="8"/>
-      <ha_applyToCell x="2" y="9"/>
-      <ha_applyToCell x="2" y="10"/>
-      <ha_applyToCell x="2" y="11"/>
-      <ha_applyToCell x="2" y="12"/>
-      <ha_applyToCell x="2" y="13"/>
-      <ha_applyToCell x="2" y="14"/>
-      <ha_applyToCell x="2" y="15"/>
-      <ha_applyToCell x="2" y="16"/>
-      <ha_applyToCell x="2" y="17"/>
-      <ha_applyToCell x="2" y="18"/>
-      <ha_applyToCell x="2" y="19"/>
-      <ha_applyToCell x="2" y="20"/>
-      <ha_applyToCell x="2" y="21"/>
-      <ha_applyToCell x="2" y="22"/>
-      <ha_applyToCell x="2" y="23"/>
-      <ha_applyToCell x="3" y="1"/>
-      <ha_applyToCell x="3" y="2"/>
-      <ha_applyToCell x="3" y="3"/>
-      <ha_applyToCell x="3" y="4"/>
-      <ha_applyToCell x="3" y="5"/>
-      <ha_applyToCell x="3" y="6"/>
-      <ha_applyToCell x="3" y="7"/>
-      <ha_applyToCell x="3" y="8"/>
-      <ha_applyToCell x="3" y="9"/>
-      <ha_applyToCell x="3" y="10"/>
-      <ha_applyToCell x="3" y="11"/>
-      <ha_applyToCell x="3" y="12"/>
-      <ha_applyToCell x="3" y="13"/>
-      <ha_applyToCell x="3" y="14"/>
-      <ha_applyToCell x="3" y="15"/>
-      <ha_applyToCell x="3" y="16"/>
-      <ha_applyToCell x="3" y="17"/>
-      <ha_applyToCell x="3" y="18"/>
-      <ha_applyToCell x="3" y="19"/>
-      <ha_applyToCell x="3" y="20"/>
-      <ha_applyToCell x="3" y="21"/>
-      <ha_applyToCell x="3" y="22"/>
-      <ha_applyToCell x="3" y="23"/>
-      <ha_applyToCell x="4" y="1"/>
-      <ha_applyToCell x="4" y="2"/>
-      <ha_applyToCell x="4" y="3"/>
-      <ha_applyToCell x="4" y="4"/>
-      <ha_applyToCell x="4" y="5"/>
-      <ha_applyToCell x="4" y="6"/>
-      <ha_applyToCell x="4" y="7"/>
-      <ha_applyToCell x="4" y="8"/>
-      <ha_applyToCell x="4" y="9"/>
-      <ha_applyToCell x="4" y="10"/>
-      <ha_applyToCell x="4" y="11"/>
-      <ha_applyToCell x="4" y="12"/>
-      <ha_applyToCell x="4" y="13"/>
-      <ha_applyToCell x="4" y="14"/>
-      <ha_applyToCell x="4" y="15"/>
-      <ha_applyToCell x="4" y="16"/>
-      <ha_applyToCell x="4" y="17"/>
-      <ha_applyToCell x="4" y="18"/>
-      <ha_applyToCell x="4" y="19"/>
-      <ha_applyToCell x="4" y="20"/>
-      <ha_applyToCell x="4" y="21"/>
-      <ha_applyToCell x="4" y="22"/>
-      <ha_applyToCell x="4" y="23"/>
-      <ha_applyToCell x="5" y="1"/>
-      <ha_applyToCell x="5" y="2"/>
-      <ha_applyToCell x="5" y="3"/>
-      <ha_applyToCell x="5" y="4"/>
-      <ha_applyToCell x="5" y="5"/>
-      <ha_applyToCell x="5" y="6"/>
-      <ha_applyToCell x="5" y="7"/>
-      <ha_applyToCell x="5" y="8"/>
-      <ha_applyToCell x="5" y="9"/>
-      <ha_applyToCell x="5" y="10"/>
-      <ha_applyToCell x="5" y="11"/>
-      <ha_applyToCell x="5" y="12"/>
-      <ha_applyToCell x="5" y="13"/>
-      <ha_applyToCell x="5" y="14"/>
-      <ha_applyToCell x="5" y="15"/>
-      <ha_applyToCell x="5" y="16"/>
-      <ha_applyToCell x="5" y="17"/>
-      <ha_applyToCell x="5" y="18"/>
-      <ha_applyToCell x="5" y="19"/>
-      <ha_applyToCell x="5" y="20"/>
-      <ha_applyToCell x="5" y="21"/>
-      <ha_applyToCell x="5" y="22"/>
-      <ha_applyToCell x="5" y="23"/>
-      <ha_applyToCell x="6" y="1"/>
-      <ha_applyToCell x="6" y="2"/>
-      <ha_applyToCell x="6" y="3"/>
-      <ha_applyToCell x="6" y="4"/>
-      <ha_applyToCell x="6" y="5"/>
-      <ha_applyToCell x="6" y="6"/>
-      <ha_applyToCell x="6" y="7"/>
-      <ha_applyToCell x="6" y="8"/>
-      <ha_applyToCell x="6" y="9"/>
-      <ha_applyToCell x="6" y="10"/>
-      <ha_applyToCell x="6" y="11"/>
-      <ha_applyToCell x="6" y="12"/>
-      <ha_applyToCell x="6" y="13"/>
-      <ha_applyToCell x="6" y="14"/>
-      <ha_applyToCell x="6" y="15"/>
-      <ha_applyToCell x="6" y="16"/>
-      <ha_applyToCell x="6" y="17"/>
-      <ha_applyToCell x="6" y="18"/>
-      <ha_applyToCell x="6" y="19"/>
-      <ha_applyToCell x="6" y="20"/>
-      <ha_applyToCell x="6" y="21"/>
-      <ha_applyToCell x="6" y="22"/>
-      <ha_applyToCell x="6" y="23"/>
-      <ha_applyToCell x="7" y="1"/>
-      <ha_applyToCell x="7" y="2"/>
-      <ha_applyToCell x="7" y="3"/>
-      <ha_applyToCell x="7" y="4"/>
-      <ha_applyToCell x="7" y="5"/>
-      <ha_applyToCell x="7" y="6"/>
-      <ha_applyToCell x="7" y="7"/>
-      <ha_applyToCell x="7" y="8"/>
-      <ha_applyToCell x="7" y="9"/>
-      <ha_applyToCell x="7" y="10"/>
-      <ha_applyToCell x="7" y="11"/>
-      <ha_applyToCell x="7" y="12"/>
-      <ha_applyToCell x="7" y="13"/>
-      <ha_applyToCell x="7" y="14"/>
-      <ha_applyToCell x="7" y="15"/>
-      <ha_applyToCell x="7" y="16"/>
-      <ha_applyToCell x="7" y="17"/>
-      <ha_applyToCell x="7" y="18"/>
-      <ha_applyToCell x="7" y="19"/>
-      <ha_applyToCell x="7" y="20"/>
-      <ha_applyToCell x="7" y="21"/>
-      <ha_applyToCell x="7" y="22"/>
-      <ha_applyToCell x="7" y="23"/>
-      <ha_applyToCell x="8" y="1"/>
-      <ha_applyToCell x="8" y="2"/>
-      <ha_applyToCell x="8" y="3"/>
-      <ha_applyToCell x="8" y="4"/>
-      <ha_applyToCell x="8" y="5"/>
-      <ha_applyToCell x="8" y="6"/>
-      <ha_applyToCell x="8" y="7"/>
-      <ha_applyToCell x="8" y="8"/>
-      <ha_applyToCell x="8" y="9"/>
-      <ha_applyToCell x="8" y="10"/>
-      <ha_applyToCell x="8" y="11"/>
-      <ha_applyToCell x="8" y="12"/>
-      <ha_applyToCell x="8" y="13"/>
-      <ha_applyToCell x="8" y="14"/>
-      <ha_applyToCell x="8" y="15"/>
-      <ha_applyToCell x="8" y="16"/>
-      <ha_applyToCell x="8" y="17"/>
-      <ha_applyToCell x="8" y="18"/>
-      <ha_applyToCell x="8" y="19"/>
-      <ha_applyToCell x="8" y="20"/>
-      <ha_applyToCell x="8" y="21"/>
-      <ha_applyToCell x="8" y="22"/>
-      <ha_applyToCell x="8" y="23"/>
-      <ha_applyToCell x="9" y="1"/>
-      <ha_applyToCell x="9" y="2"/>
-      <ha_applyToCell x="9" y="3"/>
-      <ha_applyToCell x="9" y="4"/>
-      <ha_applyToCell x="9" y="5"/>
-      <ha_applyToCell x="9" y="6"/>
-      <ha_applyToCell x="9" y="7"/>
-      <ha_applyToCell x="9" y="8"/>
-      <ha_applyToCell x="9" y="9"/>
-      <ha_applyToCell x="9" y="10"/>
-      <ha_applyToCell x="9" y="11"/>
-      <ha_applyToCell x="9" y="12"/>
-      <ha_applyToCell x="9" y="13"/>
-      <ha_applyToCell x="9" y="14"/>
-      <ha_applyToCell x="9" y="15"/>
-      <ha_applyToCell x="9" y="16"/>
-      <ha_applyToCell x="9" y="17"/>
-      <ha_applyToCell x="9" y="18"/>
-      <ha_applyToCell x="9" y="19"/>
-      <ha_applyToCell x="9" y="20"/>
-      <ha_applyToCell x="9" y="21"/>
-      <ha_applyToCell x="9" y="22"/>
-      <ha_applyToCell x="9" y="23"/>
-      <ha_applyToCell x="10" y="1"/>
-      <ha_applyToCell x="10" y="2"/>
-      <ha_applyToCell x="10" y="3"/>
-      <ha_applyToCell x="10" y="4"/>
-      <ha_applyToCell x="10" y="5"/>
-      <ha_applyToCell x="10" y="6"/>
-      <ha_applyToCell x="10" y="7"/>
-      <ha_applyToCell x="10" y="8"/>
-      <ha_applyToCell x="10" y="9"/>
-      <ha_applyToCell x="10" y="10"/>
-      <ha_applyToCell x="10" y="11"/>
-      <ha_applyToCell x="10" y="12"/>
-      <ha_applyToCell x="10" y="13"/>
-      <ha_applyToCell x="10" y="14"/>
-      <ha_applyToCell x="10" y="15"/>
-      <ha_applyToCell x="10" y="16"/>
-      <ha_applyToCell x="10" y="17"/>
-      <ha_applyToCell x="10" y="18"/>
-      <ha_applyToCell x="10" y="19"/>
-      <ha_applyToCell x="10" y="20"/>
-      <ha_applyToCell x="10" y="21"/>
-      <ha_applyToCell x="10" y="22"/>
-      <ha_applyToCell x="10" y="23"/>
-      <ha_applyToCell x="11" y="1"/>
-      <ha_applyToCell x="11" y="2"/>
-      <ha_applyToCell x="11" y="3"/>
-      <ha_applyToCell x="11" y="4"/>
-      <ha_applyToCell x="11" y="5"/>
-      <ha_applyToCell x="11" y="6"/>
-      <ha_applyToCell x="11" y="7"/>
-      <ha_applyToCell x="11" y="8"/>
-      <ha_applyToCell x="11" y="9"/>
-      <ha_applyToCell x="11" y="10"/>
-      <ha_applyToCell x="11" y="11"/>
-      <ha_applyToCell x="11" y="12"/>
-      <ha_applyToCell x="11" y="13"/>
-      <ha_applyToCell x="11" y="14"/>
-      <ha_applyToCell x="11" y="15"/>
-      <ha_applyToCell x="11" y="16"/>
-      <ha_applyToCell x="11" y="17"/>
-      <ha_applyToCell x="11" y="18"/>
-      <ha_applyToCell x="11" y="19"/>
-      <ha_applyToCell x="11" y="20"/>
-      <ha_applyToCell x="11" y="21"/>
-      <ha_applyToCell x="11" y="22"/>
-      <ha_applyToCell x="11" y="23"/>
-      <ha_applyToCell x="12" y="1"/>
-      <ha_applyToCell x="12" y="2"/>
-      <ha_applyToCell x="12" y="3"/>
-      <ha_applyToCell x="12" y="4"/>
-      <ha_applyToCell x="12" y="5"/>
-      <ha_applyToCell x="12" y="6"/>
-      <ha_applyToCell x="12" y="7"/>
-      <ha_applyToCell x="12" y="8"/>
-      <ha_applyToCell x="12" y="9"/>
-      <ha_applyToCell x="12" y="10"/>
-      <ha_applyToCell x="12" y="11"/>
-      <ha_applyToCell x="12" y="12"/>
-      <ha_applyToCell x="12" y="13"/>
-      <ha_applyToCell x="12" y="14"/>
-      <ha_applyToCell x="12" y="15"/>
-      <ha_applyToCell x="12" y="16"/>
-      <ha_applyToCell x="12" y="17"/>
-      <ha_applyToCell x="12" y="18"/>
-      <ha_applyToCell x="12" y="19"/>
-      <ha_applyToCell x="12" y="20"/>
-      <ha_applyToCell x="12" y="21"/>
-      <ha_applyToCell x="12" y="22"/>
-      <ha_applyToCell x="12" y="23"/>
-      <ha_applyToCell x="13" y="1"/>
-      <ha_applyToCell x="13" y="2"/>
-      <ha_applyToCell x="13" y="3"/>
-      <ha_applyToCell x="13" y="4"/>
-      <ha_applyToCell x="13" y="5"/>
-      <ha_applyToCell x="13" y="6"/>
-      <ha_applyToCell x="13" y="7"/>
-      <ha_applyToCell x="13" y="8"/>
-      <ha_applyToCell x="13" y="9"/>
-      <ha_applyToCell x="13" y="10"/>
-      <ha_applyToCell x="13" y="11"/>
-      <ha_applyToCell x="13" y="12"/>
-      <ha_applyToCell x="13" y="13"/>
-      <ha_applyToCell x="13" y="14"/>
-      <ha_applyToCell x="13" y="15"/>
-      <ha_applyToCell x="13" y="16"/>
-      <ha_applyToCell x="13" y="17"/>
-      <ha_applyToCell x="13" y="18"/>
-      <ha_applyToCell x="13" y="19"/>
-      <ha_applyToCell x="13" y="20"/>
-      <ha_applyToCell x="13" y="21"/>
-      <ha_applyToCell x="13" y="22"/>
-      <ha_applyToCell x="13" y="23"/>
-      <ha_applyToCell x="14" y="1"/>
-      <ha_applyToCell x="14" y="2"/>
-      <ha_applyToCell x="14" y="3"/>
-      <ha_applyToCell x="14" y="4"/>
-      <ha_applyToCell x="14" y="5"/>
-      <ha_applyToCell x="14" y="6"/>
-      <ha_applyToCell x="14" y="7"/>
-      <ha_applyToCell x="14" y="8"/>
-      <ha_applyToCell x="14" y="9"/>
-      <ha_applyToCell x="14" y="10"/>
-      <ha_applyToCell x="14" y="11"/>
-      <ha_applyToCell x="14" y="12"/>
-      <ha_applyToCell x="14" y="13"/>
-      <ha_applyToCell x="14" y="14"/>
-      <ha_applyToCell x="14" y="15"/>
-      <ha_applyToCell x="14" y="16"/>
-      <ha_applyToCell x="14" y="17"/>
-      <ha_applyToCell x="14" y="18"/>
-      <ha_applyToCell x="14" y="19"/>
-      <ha_applyToCell x="14" y="20"/>
-      <ha_applyToCell x="14" y="21"/>
-      <ha_applyToCell x="14" y="22"/>
-      <ha_applyToCell x="14" y="23"/>
-      <ha_applyToCell x="15" y="1"/>
-      <ha_applyToCell x="15" y="2"/>
-      <ha_applyToCell x="15" y="3"/>
-      <ha_applyToCell x="15" y="4"/>
-      <ha_applyToCell x="15" y="5"/>
-      <ha_applyToCell x="15" y="6"/>
-      <ha_applyToCell x="15" y="7"/>
-      <ha_applyToCell x="15" y="8"/>
-      <ha_applyToCell x="15" y="9"/>
-      <ha_applyToCell x="15" y="10"/>
-      <ha_applyToCell x="15" y="11"/>
-      <ha_applyToCell x="15" y="12"/>
-      <ha_applyToCell x="15" y="13"/>
-      <ha_applyToCell x="15" y="14"/>
-      <ha_applyToCell x="15" y="15"/>
-      <ha_applyToCell x="15" y="16"/>
-      <ha_applyToCell x="15" y="17"/>
-      <ha_applyToCell x="15" y="18"/>
-      <ha_applyToCell x="15" y="19"/>
-      <ha_applyToCell x="15" y="20"/>
-      <ha_applyToCell x="15" y="21"/>
-      <ha_applyToCell x="15" y="22"/>
-      <ha_applyToCell x="15" y="23"/>
-      <ha_applyToCell x="16" y="1"/>
-      <ha_applyToCell x="16" y="2"/>
-      <ha_applyToCell x="16" y="3"/>
-      <ha_applyToCell x="16" y="4"/>
-      <ha_applyToCell x="16" y="5"/>
-      <ha_applyToCell x="16" y="6"/>
-      <ha_applyToCell x="16" y="7"/>
-      <ha_applyToCell x="16" y="8"/>
-      <ha_applyToCell x="16" y="9"/>
-      <ha_applyToCell x="16" y="10"/>
-      <ha_applyToCell x="16" y="11"/>
-      <ha_applyToCell x="16" y="12"/>
-      <ha_applyToCell x="16" y="13"/>
-      <ha_applyToCell x="16" y="14"/>
-      <ha_applyToCell x="16" y="15"/>
-      <ha_applyToCell x="16" y="16"/>
-      <ha_applyToCell x="16" y="17"/>
-      <ha_applyToCell x="16" y="18"/>
-      <ha_applyToCell x="16" y="19"/>
-      <ha_applyToCell x="16" y="20"/>
-      <ha_applyToCell x="16" y="21"/>
-      <ha_applyToCell x="16" y="22"/>
-      <ha_applyToCell x="16" y="23"/>
-      <ha_applyToCell x="17" y="1"/>
-      <ha_applyToCell x="17" y="2"/>
-      <ha_applyToCell x="17" y="3"/>
-      <ha_applyToCell x="17" y="4"/>
-      <ha_applyToCell x="17" y="5"/>
-      <ha_applyToCell x="17" y="6"/>
-      <ha_applyToCell x="17" y="7"/>
-      <ha_applyToCell x="17" y="8"/>
-      <ha_applyToCell x="17" y="9"/>
-      <ha_applyToCell x="17" y="10"/>
-      <ha_applyToCell x="17" y="11"/>
-      <ha_applyToCell x="17" y="12"/>
-      <ha_applyToCell x="17" y="13"/>
-      <ha_applyToCell x="17" y="14"/>
-      <ha_applyToCell x="17" y="15"/>
-      <ha_applyToCell x="17" y="16"/>
-      <ha_applyToCell x="17" y="17"/>
-      <ha_applyToCell x="17" y="18"/>
-      <ha_applyToCell x="17" y="19"/>
-      <ha_applyToCell x="17" y="20"/>
-      <ha_applyToCell x="17" y="21"/>
-      <ha_applyToCell x="17" y="22"/>
-      <ha_applyToCell x="17" y="23"/>
-      <ha_applyToCell x="18" y="1"/>
-      <ha_applyToCell x="18" y="2"/>
-      <ha_applyToCell x="18" y="3"/>
-      <ha_applyToCell x="18" y="4"/>
-      <ha_applyToCell x="18" y="5"/>
-      <ha_applyToCell x="18" y="6"/>
-      <ha_applyToCell x="18" y="7"/>
-      <ha_applyToCell x="18" y="8"/>
-      <ha_applyToCell x="18" y="9"/>
-      <ha_applyToCell x="18" y="10"/>
-      <ha_applyToCell x="18" y="11"/>
-      <ha_applyToCell x="18" y="12"/>
-      <ha_applyToCell x="18" y="13"/>
-      <ha_applyToCell x="18" y="14"/>
-      <ha_applyToCell x="18" y="15"/>
-      <ha_applyToCell x="18" y="16"/>
-      <ha_applyToCell x="18" y="17"/>
-      <ha_applyToCell x="18" y="18"/>
-      <ha_applyToCell x="18" y="19"/>
-      <ha_applyToCell x="18" y="20"/>
-      <ha_applyToCell x="18" y="21"/>
-      <ha_applyToCell x="18" y="22"/>
-      <ha_applyToCell x="18" y="23"/>
-      <ha_applyToCell x="19" y="1"/>
-      <ha_applyToCell x="19" y="2"/>
-      <ha_applyToCell x="19" y="3"/>
-      <ha_applyToCell x="19" y="4"/>
-      <ha_applyToCell x="19" y="5"/>
-      <ha_applyToCell x="19" y="6"/>
-      <ha_applyToCell x="19" y="7"/>
-      <ha_applyToCell x="19" y="8"/>
-      <ha_applyToCell x="19" y="9"/>
-      <ha_applyToCell x="19" y="10"/>
-      <ha_applyToCell x="19" y="11"/>
-      <ha_applyToCell x="19" y="12"/>
-      <ha_applyToCell x="19" y="13"/>
-      <ha_applyToCell x="19" y="14"/>
-      <ha_applyToCell x="19" y="15"/>
-      <ha_applyToCell x="19" y="16"/>
-      <ha_applyToCell x="19" y="17"/>
-      <ha_applyToCell x="19" y="18"/>
-      <ha_applyToCell x="19" y="19"/>
-      <ha_applyToCell x="19" y="20"/>
-      <ha_applyToCell x="19" y="21"/>
-      <ha_applyToCell x="19" y="22"/>
-      <ha_applyToCell x="19" y="23"/>
-      <ha_applyToCell x="20" y="1"/>
-      <ha_applyToCell x="20" y="2"/>
-      <ha_applyToCell x="20" y="3"/>
-      <ha_applyToCell x="20" y="4"/>
-      <ha_applyToCell x="20" y="5"/>
-      <ha_applyToCell x="20" y="6"/>
-      <ha_applyToCell x="20" y="7"/>
-      <ha_applyToCell x="20" y="8"/>
-      <ha_applyToCell x="20" y="9"/>
-      <ha_applyToCell x="20" y="10"/>
-      <ha_applyToCell x="20" y="11"/>
-      <ha_applyToCell x="20" y="12"/>
-      <ha_applyToCell x="20" y="13"/>
-      <ha_applyToCell x="20" y="14"/>
-      <ha_applyToCell x="20" y="15"/>
-      <ha_applyToCell x="20" y="16"/>
-      <ha_applyToCell x="20" y="17"/>
-      <ha_applyToCell x="20" y="18"/>
-      <ha_applyToCell x="20" y="19"/>
-      <ha_applyToCell x="20" y="20"/>
-      <ha_applyToCell x="20" y="21"/>
-      <ha_applyToCell x="20" y="22"/>
-      <ha_applyToCell x="20" y="23"/>
-      <ha_applyToCell x="21" y="1"/>
-      <ha_applyToCell x="21" y="2"/>
-      <ha_applyToCell x="21" y="3"/>
-      <ha_applyToCell x="21" y="4"/>
-      <ha_applyToCell x="21" y="5"/>
-      <ha_applyToCell x="21" y="6"/>
-      <ha_applyToCell x="21" y="7"/>
-      <ha_applyToCell x="21" y="8"/>
-      <ha_applyToCell x="21" y="9"/>
-      <ha_applyToCell x="21" y="10"/>
-      <ha_applyToCell x="21" y="11"/>
-      <ha_applyToCell x="21" y="12"/>
-      <ha_applyToCell x="21" y="13"/>
-      <ha_applyToCell x="21" y="14"/>
-      <ha_applyToCell x="21" y="15"/>
-      <ha_applyToCell x="21" y="16"/>
-      <ha_applyToCell x="21" y="17"/>
-      <ha_applyToCell x="21" y="18"/>
-      <ha_applyToCell x="21" y="19"/>
-      <ha_applyToCell x="21" y="20"/>
-      <ha_applyToCell x="21" y="21"/>
-      <ha_applyToCell x="21" y="22"/>
-      <ha_applyToCell x="21" y="23"/>
-      <ha_applyToCell x="22" y="1"/>
-      <ha_applyToCell x="22" y="2"/>
-      <ha_applyToCell x="22" y="3"/>
-      <ha_applyToCell x="22" y="4"/>
-      <ha_applyToCell x="22" y="5"/>
-      <ha_applyToCell x="22" y="6"/>
-      <ha_applyToCell x="22" y="7"/>
-      <ha_applyToCell x="22" y="8"/>
-      <ha_applyToCell x="22" y="9"/>
-      <ha_applyToCell x="22" y="10"/>
-      <ha_applyToCell x="22" y="11"/>
-      <ha_applyToCell x="22" y="12"/>
-      <ha_applyToCell x="22" y="13"/>
-      <ha_applyToCell x="22" y="14"/>
-      <ha_applyToCell x="22" y="15"/>
-      <ha_applyToCell x="22" y="16"/>
-      <ha_applyToCell x="22" y="17"/>
-      <ha_applyToCell x="22" y="18"/>
-      <ha_applyToCell x="22" y="19"/>
-      <ha_applyToCell x="22" y="20"/>
-      <ha_applyToCell x="22" y="21"/>
-      <ha_applyToCell x="22" y="22"/>
-      <ha_applyToCell x="22" y="23"/>
-      <ha_applyToCell x="23" y="1"/>
-      <ha_applyToCell x="23" y="2"/>
-      <ha_applyToCell x="23" y="3"/>
-      <ha_applyToCell x="23" y="4"/>
-      <ha_applyToCell x="23" y="5"/>
-      <ha_applyToCell x="23" y="6"/>
-      <ha_applyToCell x="23" y="7"/>
-      <ha_applyToCell x="23" y="8"/>
-      <ha_applyToCell x="23" y="9"/>
-      <ha_applyToCell x="23" y="10"/>
-      <ha_applyToCell x="23" y="11"/>
-      <ha_applyToCell x="23" y="12"/>
-      <ha_applyToCell x="23" y="13"/>
-      <ha_applyToCell x="23" y="14"/>
-      <ha_applyToCell x="23" y="15"/>
-      <ha_applyToCell x="23" y="16"/>
-      <ha_applyToCell x="23" y="17"/>
-      <ha_applyToCell x="23" y="18"/>
-      <ha_applyToCell x="23" y="19"/>
-      <ha_applyToCell x="23" y="20"/>
-      <ha_applyToCell x="23" y="21"/>
-      <ha_applyToCell x="23" y="22"/>
-      <ha_applyToCell x="23" y="23"/>
-    </ha_cutEvent>
-    <ha_cutEvent>
-      <ha_applyToSpecies species="Paper_Birch"/>
-      <ha_timestep>1</ha_timestep>
-      <ha_cutType>clear</ha_cutType>
-      <ha_cutAmountType>percent of density</ha_cutAmountType>
-      <ha_tallestFirst>1</ha_tallestFirst>
-      <ha_dbhRange>
-        <ha_low>0.0</ha_low>
-        <ha_high>3000.0</ha_high>
-        <ha_amountToCut>100.0</ha_amountToCut>
-      </ha_dbhRange>
-      <ha_percentSeedlingsDie>
-        <ha_psdVal species="Western_Hemlock">100.0</ha_psdVal>
-        <ha_psdVal species="Western_redcedar">100.0</ha_psdVal>
-        <ha_psdVal species="Amabalis_Fir">100.0</ha_psdVal>
-        <ha_psdVal species="Subalpine_Fir">100.0</ha_psdVal>
-        <ha_psdVal species="Hybrid_spruce">100.0</ha_psdVal>
-        <ha_psdVal species="Lodgepole_Pine">100.0</ha_psdVal>
-        <ha_psdVal species="Trembling_Aspen">100.0</ha_psdVal>
-        <ha_psdVal species="Black_Cottonwood">100.0</ha_psdVal>
-        <ha_psdVal species="Paper_Birch">100.0</ha_psdVal>
-      </ha_percentSeedlingsDie>
-      <ha_applyToCell x="1" y="1"/>
-      <ha_applyToCell x="1" y="2"/>
-      <ha_applyToCell x="1" y="3"/>
-      <ha_applyToCell x="1" y="4"/>
-      <ha_applyToCell x="1" y="5"/>
-      <ha_applyToCell x="1" y="6"/>
-      <ha_applyToCell x="1" y="7"/>
-      <ha_applyToCell x="1" y="8"/>
-      <ha_applyToCell x="1" y="9"/>
-      <ha_applyToCell x="1" y="10"/>
-      <ha_applyToCell x="1" y="11"/>
-      <ha_applyToCell x="1" y="12"/>
-      <ha_applyToCell x="1" y="13"/>
-      <ha_applyToCell x="1" y="14"/>
-      <ha_applyToCell x="1" y="15"/>
-      <ha_applyToCell x="1" y="16"/>
-      <ha_applyToCell x="1" y="17"/>
-      <ha_applyToCell x="1" y="18"/>
-      <ha_applyToCell x="1" y="19"/>
-      <ha_applyToCell x="1" y="20"/>
-      <ha_applyToCell x="1" y="21"/>
-      <ha_applyToCell x="1" y="22"/>
-      <ha_applyToCell x="1" y="23"/>
-      <ha_applyToCell x="2" y="1"/>
-      <ha_applyToCell x="2" y="2"/>
-      <ha_applyToCell x="2" y="3"/>
-      <ha_applyToCell x="2" y="4"/>
-      <ha_applyToCell x="2" y="5"/>
-      <ha_applyToCell x="2" y="6"/>
-      <ha_applyToCell x="2" y="7"/>
-      <ha_applyToCell x="2" y="8"/>
-      <ha_applyToCell x="2" y="9"/>
-      <ha_applyToCell x="2" y="10"/>
-      <ha_applyToCell x="2" y="11"/>
-      <ha_applyToCell x="2" y="12"/>
-      <ha_applyToCell x="2" y="13"/>
-      <ha_applyToCell x="2" y="14"/>
-      <ha_applyToCell x="2" y="15"/>
-      <ha_applyToCell x="2" y="16"/>
-      <ha_applyToCell x="2" y="17"/>
-      <ha_applyToCell x="2" y="18"/>
-      <ha_applyToCell x="2" y="19"/>
-      <ha_applyToCell x="2" y="20"/>
-      <ha_applyToCell x="2" y="21"/>
-      <ha_applyToCell x="2" y="22"/>
-      <ha_applyToCell x="2" y="23"/>
-      <ha_applyToCell x="3" y="1"/>
-      <ha_applyToCell x="3" y="2"/>
-      <ha_applyToCell x="3" y="3"/>
-      <ha_applyToCell x="3" y="4"/>
-      <ha_applyToCell x="3" y="5"/>
-      <ha_applyToCell x="3" y="6"/>
-      <ha_applyToCell x="3" y="7"/>
-      <ha_applyToCell x="3" y="8"/>
-      <ha_applyToCell x="3" y="9"/>
-      <ha_applyToCell x="3" y="10"/>
-      <ha_applyToCell x="3" y="11"/>
-      <ha_applyToCell x="3" y="12"/>
-      <ha_applyToCell x="3" y="13"/>
-      <ha_applyToCell x="3" y="14"/>
-      <ha_applyToCell x="3" y="15"/>
-      <ha_applyToCell x="3" y="16"/>
-      <ha_applyToCell x="3" y="17"/>
-      <ha_applyToCell x="3" y="18"/>
-      <ha_applyToCell x="3" y="19"/>
-      <ha_applyToCell x="3" y="20"/>
-      <ha_applyToCell x="3" y="21"/>
-      <ha_applyToCell x="3" y="22"/>
-      <ha_applyToCell x="3" y="23"/>
-      <ha_applyToCell x="4" y="1"/>
-      <ha_applyToCell x="4" y="2"/>
-      <ha_applyToCell x="4" y="3"/>
-      <ha_applyToCell x="4" y="4"/>
-      <ha_applyToCell x="4" y="5"/>
-      <ha_applyToCell x="4" y="6"/>
-      <ha_applyToCell x="4" y="7"/>
-      <ha_applyToCell x="4" y="8"/>
-      <ha_applyToCell x="4" y="9"/>
-      <ha_applyToCell x="4" y="10"/>
-      <ha_applyToCell x="4" y="11"/>
-      <ha_applyToCell x="4" y="12"/>
-      <ha_applyToCell x="4" y="13"/>
-      <ha_applyToCell x="4" y="14"/>
-      <ha_applyToCell x="4" y="15"/>
-      <ha_applyToCell x="4" y="16"/>
-      <ha_applyToCell x="4" y="17"/>
-      <ha_applyToCell x="4" y="18"/>
-      <ha_applyToCell x="4" y="19"/>
-      <ha_applyToCell x="4" y="20"/>
-      <ha_applyToCell x="4" y="21"/>
-      <ha_applyToCell x="4" y="22"/>
-      <ha_applyToCell x="4" y="23"/>
-      <ha_applyToCell x="5" y="1"/>
-      <ha_applyToCell x="5" y="2"/>
-      <ha_applyToCell x="5" y="3"/>
-      <ha_applyToCell x="5" y="4"/>
-      <ha_applyToCell x="5" y="5"/>
-      <ha_applyToCell x="5" y="6"/>
-      <ha_applyToCell x="5" y="7"/>
-      <ha_applyToCell x="5" y="8"/>
-      <ha_applyToCell x="5" y="9"/>
-      <ha_applyToCell x="5" y="10"/>
-      <ha_applyToCell x="5" y="11"/>
-      <ha_applyToCell x="5" y="12"/>
-      <ha_applyToCell x="5" y="13"/>
-      <ha_applyToCell x="5" y="14"/>
-      <ha_applyToCell x="5" y="15"/>
-      <ha_applyToCell x="5" y="16"/>
-      <ha_applyToCell x="5" y="17"/>
-      <ha_applyToCell x="5" y="18"/>
-      <ha_applyToCell x="5" y="19"/>
-      <ha_applyToCell x="5" y="20"/>
-      <ha_applyToCell x="5" y="21"/>
-      <ha_applyToCell x="5" y="22"/>
-      <ha_applyToCell x="5" y="23"/>
-      <ha_applyToCell x="6" y="1"/>
-      <ha_applyToCell x="6" y="2"/>
-      <ha_applyToCell x="6" y="3"/>
-      <ha_applyToCell x="6" y="4"/>
-      <ha_applyToCell x="6" y="5"/>
-      <ha_applyToCell x="6" y="6"/>
-      <ha_applyToCell x="6" y="7"/>
-      <ha_applyToCell x="6" y="8"/>
-      <ha_applyToCell x="6" y="9"/>
-      <ha_applyToCell x="6" y="10"/>
-      <ha_applyToCell x="6" y="11"/>
-      <ha_applyToCell x="6" y="12"/>
-      <ha_applyToCell x="6" y="13"/>
-      <ha_applyToCell x="6" y="14"/>
-      <ha_applyToCell x="6" y="15"/>
-      <ha_applyToCell x="6" y="16"/>
-      <ha_applyToCell x="6" y="17"/>
-      <ha_applyToCell x="6" y="18"/>
-      <ha_applyToCell x="6" y="19"/>
-      <ha_applyToCell x="6" y="20"/>
-      <ha_applyToCell x="6" y="21"/>
-      <ha_applyToCell x="6" y="22"/>
-      <ha_applyToCell x="6" y="23"/>
-      <ha_applyToCell x="7" y="1"/>
-      <ha_applyToCell x="7" y="2"/>
-      <ha_applyToCell x="7" y="3"/>
-      <ha_applyToCell x="7" y="4"/>
-      <ha_applyToCell x="7" y="5"/>
-      <ha_applyToCell x="7" y="6"/>
-      <ha_applyToCell x="7" y="7"/>
-      <ha_applyToCell x="7" y="8"/>
-      <ha_applyToCell x="7" y="9"/>
-      <ha_applyToCell x="7" y="10"/>
-      <ha_applyToCell x="7" y="11"/>
-      <ha_applyToCell x="7" y="12"/>
-      <ha_applyToCell x="7" y="13"/>
-      <ha_applyToCell x="7" y="14"/>
-      <ha_applyToCell x="7" y="15"/>
-      <ha_applyToCell x="7" y="16"/>
-      <ha_applyToCell x="7" y="17"/>
-      <ha_applyToCell x="7" y="18"/>
-      <ha_applyToCell x="7" y="19"/>
-      <ha_applyToCell x="7" y="20"/>
-      <ha_applyToCell x="7" y="21"/>
-      <ha_applyToCell x="7" y="22"/>
-      <ha_applyToCell x="7" y="23"/>
-      <ha_applyToCell x="8" y="1"/>
-      <ha_applyToCell x="8" y="2"/>
-      <ha_applyToCell x="8" y="3"/>
-      <ha_applyToCell x="8" y="4"/>
-      <ha_applyToCell x="8" y="5"/>
-      <ha_applyToCell x="8" y="6"/>
-      <ha_applyToCell x="8" y="7"/>
-      <ha_applyToCell x="8" y="8"/>
-      <ha_applyToCell x="8" y="9"/>
-      <ha_applyToCell x="8" y="10"/>
-      <ha_applyToCell x="8" y="11"/>
-      <ha_applyToCell x="8" y="12"/>
-      <ha_applyToCell x="8" y="13"/>
-      <ha_applyToCell x="8" y="14"/>
-      <ha_applyToCell x="8" y="15"/>
-      <ha_applyToCell x="8" y="16"/>
-      <ha_applyToCell x="8" y="17"/>
-      <ha_applyToCell x="8" y="18"/>
-      <ha_applyToCell x="8" y="19"/>
-      <ha_applyToCell x="8" y="20"/>
-      <ha_applyToCell x="8" y="21"/>
-      <ha_applyToCell x="8" y="22"/>
-      <ha_applyToCell x="8" y="23"/>
-      <ha_applyToCell x="9" y="1"/>
-      <ha_applyToCell x="9" y="2"/>
-      <ha_applyToCell x="9" y="3"/>
-      <ha_applyToCell x="9" y="4"/>
-      <ha_applyToCell x="9" y="5"/>
-      <ha_applyToCell x="9" y="6"/>
-      <ha_applyToCell x="9" y="7"/>
-      <ha_applyToCell x="9" y="8"/>
-      <ha_applyToCell x="9" y="9"/>
-      <ha_applyToCell x="9" y="10"/>
-      <ha_applyToCell x="9" y="11"/>
-      <ha_applyToCell x="9" y="12"/>
-      <ha_applyToCell x="9" y="13"/>
-      <ha_applyToCell x="9" y="14"/>
-      <ha_applyToCell x="9" y="15"/>
-      <ha_applyToCell x="9" y="16"/>
-      <ha_applyToCell x="9" y="17"/>
-      <ha_applyToCell x="9" y="18"/>
-      <ha_applyToCell x="9" y="19"/>
-      <ha_applyToCell x="9" y="20"/>
-      <ha_applyToCell x="9" y="21"/>
-      <ha_applyToCell x="9" y="22"/>
-      <ha_applyToCell x="9" y="23"/>
-      <ha_applyToCell x="10" y="1"/>
-      <ha_applyToCell x="10" y="2"/>
-      <ha_applyToCell x="10" y="3"/>
-      <ha_applyToCell x="10" y="4"/>
-      <ha_applyToCell x="10" y="5"/>
-      <ha_applyToCell x="10" y="6"/>
-      <ha_applyToCell x="10" y="7"/>
-      <ha_applyToCell x="10" y="8"/>
-      <ha_applyToCell x="10" y="9"/>
-      <ha_applyToCell x="10" y="10"/>
-      <ha_applyToCell x="10" y="11"/>
-      <ha_applyToCell x="10" y="12"/>
-      <ha_applyToCell x="10" y="13"/>
-      <ha_applyToCell x="10" y="14"/>
-      <ha_applyToCell x="10" y="15"/>
-      <ha_applyToCell x="10" y="16"/>
-      <ha_applyToCell x="10" y="17"/>
-      <ha_applyToCell x="10" y="18"/>
-      <ha_applyToCell x="10" y="19"/>
-      <ha_applyToCell x="10" y="20"/>
-      <ha_applyToCell x="10" y="21"/>
-      <ha_applyToCell x="10" y="22"/>
-      <ha_applyToCell x="10" y="23"/>
-      <ha_applyToCell x="11" y="1"/>
-      <ha_applyToCell x="11" y="2"/>
-      <ha_applyToCell x="11" y="3"/>
-      <ha_applyToCell x="11" y="4"/>
-      <ha_applyToCell x="11" y="5"/>
-      <ha_applyToCell x="11" y="6"/>
-      <ha_applyToCell x="11" y="7"/>
-      <ha_applyToCell x="11" y="8"/>
-      <ha_applyToCell x="11" y="9"/>
-      <ha_applyToCell x="11" y="10"/>
-      <ha_applyToCell x="11" y="11"/>
-      <ha_applyToCell x="11" y="12"/>
-      <ha_applyToCell x="11" y="13"/>
-      <ha_applyToCell x="11" y="14"/>
-      <ha_applyToCell x="11" y="15"/>
-      <ha_applyToCell x="11" y="16"/>
-      <ha_applyToCell x="11" y="17"/>
-      <ha_applyToCell x="11" y="18"/>
-      <ha_applyToCell x="11" y="19"/>
-      <ha_applyToCell x="11" y="20"/>
-      <ha_applyToCell x="11" y="21"/>
-      <ha_applyToCell x="11" y="22"/>
-      <ha_applyToCell x="11" y="23"/>
-      <ha_applyToCell x="12" y="1"/>
-      <ha_applyToCell x="12" y="2"/>
-      <ha_applyToCell x="12" y="3"/>
-      <ha_applyToCell x="12" y="4"/>
-      <ha_applyToCell x="12" y="5"/>
-      <ha_applyToCell x="12" y="6"/>
-      <ha_applyToCell x="12" y="7"/>
-      <ha_applyToCell x="12" y="8"/>
-      <ha_applyToCell x="12" y="9"/>
-      <ha_applyToCell x="12" y="10"/>
-      <ha_applyToCell x="12" y="11"/>
-      <ha_applyToCell x="12" y="12"/>
-      <ha_applyToCell x="12" y="13"/>
-      <ha_applyToCell x="12" y="14"/>
-      <ha_applyToCell x="12" y="15"/>
-      <ha_applyToCell x="12" y="16"/>
-      <ha_applyToCell x="12" y="17"/>
-      <ha_applyToCell x="12" y="18"/>
-      <ha_applyToCell x="12" y="19"/>
-      <ha_applyToCell x="12" y="20"/>
-      <ha_applyToCell x="12" y="21"/>
-      <ha_applyToCell x="12" y="22"/>
-      <ha_applyToCell x="12" y="23"/>
-      <ha_applyToCell x="13" y="1"/>
-      <ha_applyToCell x="13" y="2"/>
-      <ha_applyToCell x="13" y="3"/>
-      <ha_applyToCell x="13" y="4"/>
-      <ha_applyToCell x="13" y="5"/>
-      <ha_applyToCell x="13" y="6"/>
-      <ha_applyToCell x="13" y="7"/>
-      <ha_applyToCell x="13" y="8"/>
-      <ha_applyToCell x="13" y="9"/>
-      <ha_applyToCell x="13" y="10"/>
-      <ha_applyToCell x="13" y="11"/>
-      <ha_applyToCell x="13" y="12"/>
-      <ha_applyToCell x="13" y="13"/>
-      <ha_applyToCell x="13" y="14"/>
-      <ha_applyToCell x="13" y="15"/>
-      <ha_applyToCell x="13" y="16"/>
-      <ha_applyToCell x="13" y="17"/>
-      <ha_applyToCell x="13" y="18"/>
-      <ha_applyToCell x="13" y="19"/>
-      <ha_applyToCell x="13" y="20"/>
-      <ha_applyToCell x="13" y="21"/>
-      <ha_applyToCell x="13" y="22"/>
-      <ha_applyToCell x="13" y="23"/>
-      <ha_applyToCell x="14" y="1"/>
-      <ha_applyToCell x="14" y="2"/>
-      <ha_applyToCell x="14" y="3"/>
-      <ha_applyToCell x="14" y="4"/>
-      <ha_applyToCell x="14" y="5"/>
-      <ha_applyToCell x="14" y="6"/>
-      <ha_applyToCell x="14" y="7"/>
-      <ha_applyToCell x="14" y="8"/>
-      <ha_applyToCell x="14" y="9"/>
-      <ha_applyToCell x="14" y="10"/>
-      <ha_applyToCell x="14" y="11"/>
-      <ha_applyToCell x="14" y="12"/>
-      <ha_applyToCell x="14" y="13"/>
-      <ha_applyToCell x="14" y="14"/>
-      <ha_applyToCell x="14" y="15"/>
-      <ha_applyToCell x="14" y="16"/>
-      <ha_applyToCell x="14" y="17"/>
-      <ha_applyToCell x="14" y="18"/>
-      <ha_applyToCell x="14" y="19"/>
-      <ha_applyToCell x="14" y="20"/>
-      <ha_applyToCell x="14" y="21"/>
-      <ha_applyToCell x="14" y="22"/>
-      <ha_applyToCell x="14" y="23"/>
-      <ha_applyToCell x="15" y="1"/>
-      <ha_applyToCell x="15" y="2"/>
-      <ha_applyToCell x="15" y="3"/>
-      <ha_applyToCell x="15" y="4"/>
-      <ha_applyToCell x="15" y="5"/>
-      <ha_applyToCell x="15" y="6"/>
-      <ha_applyToCell x="15" y="7"/>
-      <ha_applyToCell x="15" y="8"/>
-      <ha_applyToCell x="15" y="9"/>
-      <ha_applyToCell x="15" y="10"/>
-      <ha_applyToCell x="15" y="11"/>
-      <ha_applyToCell x="15" y="12"/>
-      <ha_applyToCell x="15" y="13"/>
-      <ha_applyToCell x="15" y="14"/>
-      <ha_applyToCell x="15" y="15"/>
-      <ha_applyToCell x="15" y="16"/>
-      <ha_applyToCell x="15" y="17"/>
-      <ha_applyToCell x="15" y="18"/>
-      <ha_applyToCell x="15" y="19"/>
-      <ha_applyToCell x="15" y="20"/>
-      <ha_applyToCell x="15" y="21"/>
-      <ha_applyToCell x="15" y="22"/>
-      <ha_applyToCell x="15" y="23"/>
-      <ha_applyToCell x="16" y="1"/>
-      <ha_applyToCell x="16" y="2"/>
-      <ha_applyToCell x="16" y="3"/>
-      <ha_applyToCell x="16" y="4"/>
-      <ha_applyToCell x="16" y="5"/>
-      <ha_applyToCell x="16" y="6"/>
-      <ha_applyToCell x="16" y="7"/>
-      <ha_applyToCell x="16" y="8"/>
-      <ha_applyToCell x="16" y="9"/>
-      <ha_applyToCell x="16" y="10"/>
-      <ha_applyToCell x="16" y="11"/>
-      <ha_applyToCell x="16" y="12"/>
-      <ha_applyToCell x="16" y="13"/>
-      <ha_applyToCell x="16" y="14"/>
-      <ha_applyToCell x="16" y="15"/>
-      <ha_applyToCell x="16" y="16"/>
-      <ha_applyToCell x="16" y="17"/>
-      <ha_applyToCell x="16" y="18"/>
-      <ha_applyToCell x="16" y="19"/>
-      <ha_applyToCell x="16" y="20"/>
-      <ha_applyToCell x="16" y="21"/>
-      <ha_applyToCell x="16" y="22"/>
-      <ha_applyToCell x="16" y="23"/>
-      <ha_applyToCell x="17" y="1"/>
-      <ha_applyToCell x="17" y="2"/>
-      <ha_applyToCell x="17" y="3"/>
-      <ha_applyToCell x="17" y="4"/>
-      <ha_applyToCell x="17" y="5"/>
-      <ha_applyToCell x="17" y="6"/>
-      <ha_applyToCell x="17" y="7"/>
-      <ha_applyToCell x="17" y="8"/>
-      <ha_applyToCell x="17" y="9"/>
-      <ha_applyToCell x="17" y="10"/>
-      <ha_applyToCell x="17" y="11"/>
-      <ha_applyToCell x="17" y="12"/>
-      <ha_applyToCell x="17" y="13"/>
-      <ha_applyToCell x="17" y="14"/>
-      <ha_applyToCell x="17" y="15"/>
-      <ha_applyToCell x="17" y="16"/>
-      <ha_applyToCell x="17" y="17"/>
-      <ha_applyToCell x="17" y="18"/>
-      <ha_applyToCell x="17" y="19"/>
-      <ha_applyToCell x="17" y="20"/>
-      <ha_applyToCell x="17" y="21"/>
-      <ha_applyToCell x="17" y="22"/>
-      <ha_applyToCell x="17" y="23"/>
-      <ha_applyToCell x="18" y="1"/>
-      <ha_applyToCell x="18" y="2"/>
-      <ha_applyToCell x="18" y="3"/>
-      <ha_applyToCell x="18" y="4"/>
-      <ha_applyToCell x="18" y="5"/>
-      <ha_applyToCell x="18" y="6"/>
-      <ha_applyToCell x="18" y="7"/>
-      <ha_applyToCell x="18" y="8"/>
-      <ha_applyToCell x="18" y="9"/>
-      <ha_applyToCell x="18" y="10"/>
-      <ha_applyToCell x="18" y="11"/>
-      <ha_applyToCell x="18" y="12"/>
-      <ha_applyToCell x="18" y="13"/>
-      <ha_applyToCell x="18" y="14"/>
-      <ha_applyToCell x="18" y="15"/>
-      <ha_applyToCell x="18" y="16"/>
-      <ha_applyToCell x="18" y="17"/>
-      <ha_applyToCell x="18" y="18"/>
-      <ha_applyToCell x="18" y="19"/>
-      <ha_applyToCell x="18" y="20"/>
-      <ha_applyToCell x="18" y="21"/>
-      <ha_applyToCell x="18" y="22"/>
-      <ha_applyToCell x="18" y="23"/>
-      <ha_applyToCell x="19" y="1"/>
-      <ha_applyToCell x="19" y="2"/>
-      <ha_applyToCell x="19" y="3"/>
-      <ha_applyToCell x="19" y="4"/>
-      <ha_applyToCell x="19" y="5"/>
-      <ha_applyToCell x="19" y="6"/>
-      <ha_applyToCell x="19" y="7"/>
-      <ha_applyToCell x="19" y="8"/>
-      <ha_applyToCell x="19" y="9"/>
-      <ha_applyToCell x="19" y="10"/>
-      <ha_applyToCell x="19" y="11"/>
-      <ha_applyToCell x="19" y="12"/>
-      <ha_applyToCell x="19" y="13"/>
-      <ha_applyToCell x="19" y="14"/>
-      <ha_applyToCell x="19" y="15"/>
-      <ha_applyToCell x="19" y="16"/>
-      <ha_applyToCell x="19" y="17"/>
-      <ha_applyToCell x="19" y="18"/>
-      <ha_applyToCell x="19" y="19"/>
-      <ha_applyToCell x="19" y="20"/>
-      <ha_applyToCell x="19" y="21"/>
-      <ha_applyToCell x="19" y="22"/>
-      <ha_applyToCell x="19" y="23"/>
-      <ha_applyToCell x="20" y="1"/>
-      <ha_applyToCell x="20" y="2"/>
-      <ha_applyToCell x="20" y="3"/>
-      <ha_applyToCell x="20" y="4"/>
-      <ha_applyToCell x="20" y="5"/>
-      <ha_applyToCell x="20" y="6"/>
-      <ha_applyToCell x="20" y="7"/>
-      <ha_applyToCell x="20" y="8"/>
-      <ha_applyToCell x="20" y="9"/>
-      <ha_applyToCell x="20" y="10"/>
-      <ha_applyToCell x="20" y="11"/>
-      <ha_applyToCell x="20" y="12"/>
-      <ha_applyToCell x="20" y="13"/>
-      <ha_applyToCell x="20" y="14"/>
-      <ha_applyToCell x="20" y="15"/>
-      <ha_applyToCell x="20" y="16"/>
-      <ha_applyToCell x="20" y="17"/>
-      <ha_applyToCell x="20" y="18"/>
-      <ha_applyToCell x="20" y="19"/>
-      <ha_applyToCell x="20" y="20"/>
-      <ha_applyToCell x="20" y="21"/>
-      <ha_applyToCell x="20" y="22"/>
-      <ha_applyToCell x="20" y="23"/>
-      <ha_applyToCell x="21" y="1"/>
-      <ha_applyToCell x="21" y="2"/>
-      <ha_applyToCell x="21" y="3"/>
-      <ha_applyToCell x="21" y="4"/>
-      <ha_applyToCell x="21" y="5"/>
-      <ha_applyToCell x="21" y="6"/>
-      <ha_applyToCell x="21" y="7"/>
-      <ha_applyToCell x="21" y="8"/>
-      <ha_applyToCell x="21" y="9"/>
-      <ha_applyToCell x="21" y="10"/>
-      <ha_applyToCell x="21" y="11"/>
-      <ha_applyToCell x="21" y="12"/>
-      <ha_applyToCell x="21" y="13"/>
-      <ha_applyToCell x="21" y="14"/>
-      <ha_applyToCell x="21" y="15"/>
-      <ha_applyToCell x="21" y="16"/>
-      <ha_applyToCell x="21" y="17"/>
-      <ha_applyToCell x="21" y="18"/>
-      <ha_applyToCell x="21" y="19"/>
-      <ha_applyToCell x="21" y="20"/>
-      <ha_applyToCell x="21" y="21"/>
-      <ha_applyToCell x="21" y="22"/>
-      <ha_applyToCell x="21" y="23"/>
-      <ha_applyToCell x="22" y="1"/>
-      <ha_applyToCell x="22" y="2"/>
-      <ha_applyToCell x="22" y="3"/>
-      <ha_applyToCell x="22" y="4"/>
-      <ha_applyToCell x="22" y="5"/>
-      <ha_applyToCell x="22" y="6"/>
-      <ha_applyToCell x="22" y="7"/>
-      <ha_applyToCell x="22" y="8"/>
-      <ha_applyToCell x="22" y="9"/>
-      <ha_applyToCell x="22" y="10"/>
-      <ha_applyToCell x="22" y="11"/>
-      <ha_applyToCell x="22" y="12"/>
-      <ha_applyToCell x="22" y="13"/>
-      <ha_applyToCell x="22" y="14"/>
-      <ha_applyToCell x="22" y="15"/>
-      <ha_applyToCell x="22" y="16"/>
-      <ha_applyToCell x="22" y="17"/>
-      <ha_applyToCell x="22" y="18"/>
-      <ha_applyToCell x="22" y="19"/>
-      <ha_applyToCell x="22" y="20"/>
-      <ha_applyToCell x="22" y="21"/>
-      <ha_applyToCell x="22" y="22"/>
-      <ha_applyToCell x="22" y="23"/>
-      <ha_applyToCell x="23" y="1"/>
-      <ha_applyToCell x="23" y="2"/>
-      <ha_applyToCell x="23" y="3"/>
-      <ha_applyToCell x="23" y="4"/>
-      <ha_applyToCell x="23" y="5"/>
-      <ha_applyToCell x="23" y="6"/>
-      <ha_applyToCell x="23" y="7"/>
-      <ha_applyToCell x="23" y="8"/>
-      <ha_applyToCell x="23" y="9"/>
-      <ha_applyToCell x="23" y="10"/>
-      <ha_applyToCell x="23" y="11"/>
-      <ha_applyToCell x="23" y="12"/>
-      <ha_applyToCell x="23" y="13"/>
-      <ha_applyToCell x="23" y="14"/>
-      <ha_applyToCell x="23" y="15"/>
-      <ha_applyToCell x="23" y="16"/>
-      <ha_applyToCell x="23" y="17"/>
-      <ha_applyToCell x="23" y="18"/>
-      <ha_applyToCell x="23" y="19"/>
-      <ha_applyToCell x="23" y="20"/>
-      <ha_applyToCell x="23" y="21"/>
-      <ha_applyToCell x="23" y="22"/>
-      <ha_applyToCell x="23" y="23"/>
-    </ha_cutEvent>
-    <ha_cutEvent>
       <ha_applyToSpecies species="Trembling_Aspen"/>
       <ha_applyToSpecies species="Black_Cottonwood"/>
       <ha_applyToSpecies species="Paper_Birch"/>
-      <ha_timestep>10</ha_timestep>
+      <ha_timestep>1</ha_timestep>
       <ha_cutType>partial</ha_cutType>
       <ha_cutAmountType>percent of density</ha_cutAmountType>
       <ha_tallestFirst>1</ha_tallestFirst>
       <ha_dbhRange>
-        <ha_low>3.0</ha_low>
-        <ha_high>10.0</ha_high>
-        <ha_amountToCut>98.0</ha_amountToCut>
+        <ha_low>17.5</ha_low>
+        <ha_high>3000.0</ha_high>
+        <ha_amountToCut>30.0</ha_amountToCut>
       </ha_dbhRange>
       <ha_percentSeedlingsDie>
         <ha_psdVal species="Western_Hemlock">0.0</ha_psdVal>
@@ -5702,6 +3499,12 @@
       <ha_applyToCell x="23" y="23"/>
     </ha_cutEvent>
   </Harvest1>
+  <GLIMapCreator2>
+    <li_numAziGrids>18</li_numAziGrids>
+    <li_numAltGrids>12</li_numAltGrids>
+    <li_minSunAngle>0.785</li_minSunAngle>
+    <li_mapLightHeight>1.3</li_mapLightHeight>
+  </GLIMapCreator2>
   <GeneralLight>
     <li_lightExtinctionCoefficient>
       <li_lecVal species="Western_Hemlock">0.08</li_lecVal>
@@ -5754,26 +3557,26 @@
     <li_snagAgeClass1>7</li_snagAgeClass1>
     <li_snagAgeClass2>17</li_snagAgeClass2>
   </GeneralLight>
-  <QuadratLight2>
+  <QuadratLight3>
     <li_numAziGrids>18</li_numAziGrids>
     <li_numAltGrids>12</li_numAltGrids>
     <li_minSunAngle>0.785</li_minSunAngle>
     <li_quadratLightHeight>0.675</li_quadratLightHeight>
     <li_quadratAllGLIs>0</li_quadratAllGLIs>
-  </QuadratLight2>
-  <GLILight3>
+  </QuadratLight3>
+  <GLILight4>
     <li_numAziGrids>18</li_numAziGrids>
     <li_numAltGrids>12</li_numAltGrids>
     <li_minSunAngle>0.785</li_minSunAngle>
     <li_heightOfFishEyePhoto>0</li_heightOfFishEyePhoto>
-  </GLILight3>
-  <SailLight4>
+  </GLILight4>
+  <SailLight5>
     <li_skyMaskAngle>30.0</li_skyMaskAngle>
     <li_maxShadingRadius>15.0</li_maxShadingRadius>
     <li_crownFracOfHeight>0</li_crownFracOfHeight>
     <li_heightOfFishEyePhoto>0</li_heightOfFishEyePhoto>
-  </SailLight4>
-  <NCIMasterGrowth5>
+  </SailLight5>
+  <NCIMasterGrowth6>
     <nciWhichShadingEffect>2</nciWhichShadingEffect>
     <nciWhichCrowdingEffect>0</nciWhichCrowdingEffect>
     <nciWhichNCITerm>0</nciWhichNCITerm>
@@ -5874,8 +3677,8 @@
       <nsedVal species="Paper_Birch">0.0</nsedVal>
     </nciSizeEffectD>
     <nciSizeEffectSizeScaler>0.01</nciSizeEffectSizeScaler>
-  </NCIMasterGrowth5>
-  <NCIMasterGrowth6>
+  </NCIMasterGrowth6>
+  <NCIMasterGrowth7>
     <nciWhichShadingEffect>2</nciWhichShadingEffect>
     <nciWhichCrowdingEffect>0</nciWhichCrowdingEffect>
     <nciWhichNCITerm>0</nciWhichNCITerm>
@@ -5896,7 +3699,7 @@
       <gr_nmpgVal species="Black_Cottonwood">1.03</gr_nmpgVal>
       <gr_nmpgVal species="Paper_Birch">1.52</gr_nmpgVal>
     </gr_nciMaxPotentialGrowth>
-    <gr_stochGrowthMethod>0</gr_stochGrowthMethod>
+    <gr_stochGrowthMethod>3</gr_stochGrowthMethod>
     <gr_standardDeviation>
       <gr_sdVal species="Western_Hemlock">1.39</gr_sdVal>
       <gr_sdVal species="Western_redcedar">1.29</gr_sdVal>
@@ -5976,8 +3779,8 @@
       <nsedVal species="Paper_Birch">0.0</nsedVal>
     </nciSizeEffectD>
     <nciSizeEffectSizeScaler>0.01</nciSizeEffectSizeScaler>
-  </NCIMasterGrowth6>
-  <NCIMasterGrowth7>
+  </NCIMasterGrowth7>
+  <NCIMasterGrowth8>
     <nciWhichShadingEffect>1</nciWhichShadingEffect>
     <nciWhichCrowdingEffect>1</nciWhichCrowdingEffect>
     <nciWhichNCITerm>2</nciWhichNCITerm>
@@ -6265,8 +4068,8 @@
       <nsefdVal species="Black_Cottonwood">1.0</nsefdVal>
       <nsefdVal species="Paper_Birch">1.0</nsefdVal>
     </nciStormEffFullDmg>
-  </NCIMasterGrowth7>
-  <CompetitionMortality8>
+  </NCIMasterGrowth8>
+  <CompetitionMortality9>
     <mo_CompMort>
       <mo_cmVal species="Western_Hemlock">3.00E-06</mo_cmVal>
       <mo_cmVal species="Western_redcedar">3.00E-06</mo_cmVal>
@@ -6289,8 +4092,8 @@
       <mo_cmmVal species="Black_Cottonwood">0.25</mo_cmmVal>
       <mo_cmmVal species="Paper_Birch">0.25</mo_cmmVal>
     </mo_CompMortMax>
-  </CompetitionMortality8>
-  <BCMortality9>
+  </CompetitionMortality9>
+  <BCMortality10>
     <mo_mortAtZeroGrowth>
       <mo_mazgVal species="Western_Hemlock">1.0</mo_mazgVal>
       <mo_mazgVal species="Western_redcedar">1.0</mo_mazgVal>
@@ -6313,8 +4116,8 @@
       <mo_ldmVal species="Black_Cottonwood">2.3449</mo_ldmVal>
       <mo_ldmVal species="Paper_Birch">2.0931</mo_ldmVal>
     </mo_lightDependentMortality>
-  </BCMortality9>
-  <Senescence10>
+  </BCMortality10>
+  <Senescence11>
     <mo_senescenceAlpha>
       <mo_saVal species="Western_Hemlock">-3.7</mo_saVal>
       <mo_saVal species="Western_redcedar">-3.7</mo_saVal>
@@ -6349,8 +4152,8 @@
       <mo_daoosVal species="Paper_Birch">1000</mo_daoosVal>
     </mo_dbhAtOnsetOfSenescence>
     <mo_dbhAtAsympMaxMort>2000</mo_dbhAtAsympMaxMort>
-  </Senescence10>
-  <StochasticMortality11>
+  </Senescence11>
+  <StochasticMortality12>
     <mo_stochasticMortRate>
       <mo_smrVal species="Western_Hemlock">5.0E-4</mo_smrVal>
       <mo_smrVal species="Western_redcedar">5.0E-4</mo_smrVal>
@@ -6362,8 +4165,8 @@
       <mo_smrVal species="Black_Cottonwood">0.009</mo_smrVal>
       <mo_smrVal species="Paper_Birch">0.009</mo_smrVal>
     </mo_stochasticMortRate>
-  </StochasticMortality11>
-  <StochasticMortality12>
+  </StochasticMortality12>
+  <StochasticMortality13>
     <mo_stochasticMortRate>
       <mo_smrVal species="Western_Hemlock">0.01</mo_smrVal>
       <mo_smrVal species="Western_redcedar">0.01</mo_smrVal>
@@ -6375,8 +4178,8 @@
       <mo_smrVal species="Black_Cottonwood">0.01</mo_smrVal>
       <mo_smrVal species="Paper_Birch">0.01</mo_smrVal>
     </mo_stochasticMortRate>
-  </StochasticMortality12>
-  <StochasticMortality13>
+  </StochasticMortality13>
+  <StochasticMortality14>
     <mo_stochasticMortRate>
       <mo_smrVal species="Western_Hemlock">0.06</mo_smrVal>
       <mo_smrVal species="Western_redcedar">0.06</mo_smrVal>
@@ -6388,8 +4191,8 @@
       <mo_smrVal species="Black_Cottonwood">0.06</mo_smrVal>
       <mo_smrVal species="Paper_Birch">0.06</mo_smrVal>
     </mo_stochasticMortRate>
-  </StochasticMortality13>
-  <DensitySelfThinning14>
+  </StochasticMortality14>
+  <DensitySelfThinning15>
     <mo_selfThinAsymptote>
       <mo_staVal species="Trembling_Aspen">0.1019</mo_staVal>
     </mo_selfThinAsymptote>
@@ -6405,8 +4208,8 @@
     <mo_selfThinRadius>
       <mo_strVal species="Trembling_Aspen">5.0</mo_strVal>
     </mo_selfThinRadius>
-  </DensitySelfThinning14>
-  <SnagDecayClassDynamics15>
+  </DensitySelfThinning15>
+  <SnagDecayClassDynamics16>
     <sd_snagDecompTreefallAlpha>-100.0</sd_snagDecompTreefallAlpha>
     <sd_snagDecompTreefallBeta>
       <sd_sdtbVal species="Western_Hemlock">1.151</sd_sdtbVal>
@@ -6466,8 +4269,8 @@
     <sd_maxSnagBreakHeight>10.0</sd_maxSnagBreakHeight>
     <sd_snagDecomp5To5Prob>1.0</sd_snagDecomp5To5Prob>
     <sd_snagDecompInitialClasses/>
-  </SnagDecayClassDynamics15>
-  <DetailedSubstrate16>
+  </SnagDecayClassDynamics16>
+  <DetailedSubstrate17>
     <su_logSpGroupAssignment>
       <su_lsgaVal species="Western_Hemlock">1</su_lsgaVal>
       <su_lsgaVal species="Western_redcedar">2</su_lsgaVal>
@@ -6582,8 +4385,8 @@
     <su_logSpGroup3LargeDecayClass3DecayBeta>0.1</su_logSpGroup3LargeDecayClass3DecayBeta>
     <su_logSpGroup3LargeDecayClass4DecayBeta>0.1</su_logSpGroup3LargeDecayClass4DecayBeta>
     <su_logSpGroup3LargeDecayClass5DecayBeta>0.1</su_logSpGroup3LargeDecayClass5DecayBeta>
-    <su_initialSmallLogMeanDiameter>10</su_initialSmallLogMeanDiameter>
-    <su_initialLargeLogMeanDiameter>30</su_initialLargeLogMeanDiameter>
+    <su_initialSmallLogMeanDiameter>14</su_initialSmallLogMeanDiameter>
+    <su_initialLargeLogMeanDiameter>32</su_initialLargeLogMeanDiameter>
     <su_initialLogSpGroup1SmallDecayClass1>0.0036</su_initialLogSpGroup1SmallDecayClass1>
     <su_initialLogSpGroup1SmallDecayClass2>0.00588</su_initialLogSpGroup1SmallDecayClass2>
     <su_initialLogSpGroup1SmallDecayClass3>0.0078</su_initialLogSpGroup1SmallDecayClass3>
@@ -6710,15 +4513,15 @@
     <su_clearCutLogSpGroup3LargeDecayClass3>0.004176849</su_clearCutLogSpGroup3LargeDecayClass3>
     <su_clearCutLogSpGroup3LargeDecayClass4>0.001315027</su_clearCutLogSpGroup3LargeDecayClass4>
     <su_clearCutLogSpGroup3LargeDecayClass5>0</su_clearCutLogSpGroup3LargeDecayClass5>
-    <su_partialCutSmallLogMeanDiameter>10</su_partialCutSmallLogMeanDiameter>
-    <su_partialCutLargeLogMeanDiameter>30</su_partialCutLargeLogMeanDiameter>
-    <su_gapCutSmallLogMeanDiameter>10</su_gapCutSmallLogMeanDiameter>
-    <su_gapCutLargeLogMeanDiameter>30</su_gapCutLargeLogMeanDiameter>
-    <su_clearCutSmallLogMeanDiameter>10</su_clearCutSmallLogMeanDiameter>
-    <su_clearCutLargeLogMeanDiameter>30</su_clearCutLargeLogMeanDiameter>
-  </DetailedSubstrate16>
-  <RemoveDead17/>
-  <GapDisperse18>
+    <su_partialCutSmallLogMeanDiameter>14</su_partialCutSmallLogMeanDiameter>
+    <su_partialCutLargeLogMeanDiameter>32</su_partialCutLargeLogMeanDiameter>
+    <su_gapCutSmallLogMeanDiameter>14</su_gapCutSmallLogMeanDiameter>
+    <su_gapCutLargeLogMeanDiameter>32</su_gapCutLargeLogMeanDiameter>
+    <su_clearCutSmallLogMeanDiameter>14</su_clearCutSmallLogMeanDiameter>
+    <su_clearCutLargeLogMeanDiameter>32</su_clearCutLargeLogMeanDiameter>
+  </DetailedSubstrate17>
+  <RemoveDead18/>
+  <GapDisperse19>
     <di_seedDistributionMethod>0</di_seedDistributionMethod>
     <di_standardDeviation>
       <di_sdVal species="Western_Hemlock">0</di_sdVal>
@@ -6788,8 +4591,8 @@
       <di_cfVal species="Paper_Birch">0</di_cfVal>
     </di_canopyFunction>
     <di_weibullCanopySTR>
-      <di_wcsVal species="Western_Hemlock">64</di_wcsVal>
-      <di_wcsVal species="Western_redcedar">41</di_wcsVal>
+      <di_wcsVal species="Western_Hemlock">644</di_wcsVal>
+      <di_wcsVal species="Western_redcedar">409</di_wcsVal>
       <di_wcsVal species="Amabalis_Fir">221</di_wcsVal>
       <di_wcsVal species="Subalpine_Fir">81</di_wcsVal>
       <di_wcsVal species="Hybrid_spruce">574</di_wcsVal>
@@ -6840,7 +4643,7 @@
       <di_wgbVal species="Lodgepole_Pine">2</di_wgbVal>
       <di_wgbVal species="Trembling_Aspen">2</di_wgbVal>
       <di_wgbVal species="Black_Cottonwood">2</di_wgbVal>
-      <di_wgbVal species="Paper_Birch">2</di_wgbVal>
+      <di_wgbVal species="Paper_Birch"/>
     </di_weibullGapBeta>
     <di_weibullCanopyTheta>
       <di_wctVal species="Western_Hemlock">3</di_wctVal>
@@ -6930,8 +4733,8 @@
       <di_lgx0Val species="Black_Cottonwood">0</di_lgx0Val>
       <di_lgx0Val species="Paper_Birch">0</di_lgx0Val>
     </di_lognormalGapX0>
-  </GapDisperse18>
-  <NonSpatialDisperse19>
+  </GapDisperse19>
+  <NonSpatialDisperse20>
     <di_seedDistributionMethod>0</di_seedDistributionMethod>
     <di_standardDeviation>
       <di_sdVal species="Western_Hemlock">0.0</di_sdVal>
@@ -6988,8 +4791,8 @@
       <di_nsiolVal species="Black_Cottonwood">0.0</di_nsiolVal>
       <di_nsiolVal species="Paper_Birch">0.0</di_nsiolVal>
     </di_nonSpatialInterceptOfLambda>
-  </NonSpatialDisperse19>
-  <SubstrateDependentSeedSurvival20>
+  </NonSpatialDisperse20>
+  <SubstrateDependentSeedSurvival21>
     <es_freshLogCanopyFav>
       <es_flcfVal species="Western_Hemlock">0</es_flcfVal>
       <es_flcfVal species="Western_redcedar">0</es_flcfVal>
@@ -7122,9 +4925,9 @@
       <es_ffmgfVal species="Black_Cottonwood">0</es_ffmgfVal>
       <es_ffmgfVal species="Paper_Birch">0</es_ffmgfVal>
     </es_forestFloorMossGapFav>
-  </SubstrateDependentSeedSurvival20>
-  <Establishment21/>
-  <Plant22>
+  </SubstrateDependentSeedSurvival21>
+  <Establishment22/>
+  <Plant23>
     <pl_initialDiam10>
       <pl_idVal species="Western_Hemlock">0.1</pl_idVal>
       <pl_idVal species="Western_redcedar">0.1</pl_idVal>
@@ -7148,14 +4951,14 @@
       <pl_applyToSpecies species="Paper_Birch"/>
       <pl_timestep>2</pl_timestep>
       <pl_spaceType>random</pl_spaceType>
-      <pl_distanceOrDensity>1936</pl_distanceOrDensity>
+      <pl_distanceOrDensity>332</pl_distanceOrDensity>
       <pl_amountToPlant>
-        <pl_atpVal species="Western_Hemlock">33</pl_atpVal>
-        <pl_atpVal species="Western_redcedar">1</pl_atpVal>
+        <pl_atpVal species="Western_Hemlock">0</pl_atpVal>
+        <pl_atpVal species="Western_redcedar">52</pl_atpVal>
         <pl_atpVal species="Amabalis_Fir">0</pl_atpVal>
         <pl_atpVal species="Subalpine_Fir">0</pl_atpVal>
-        <pl_atpVal species="Hybrid_spruce">33</pl_atpVal>
-        <pl_atpVal species="Lodgepole_Pine">33</pl_atpVal>
+        <pl_atpVal species="Hybrid_spruce">48</pl_atpVal>
+        <pl_atpVal species="Lodgepole_Pine">0</pl_atpVal>
         <pl_atpVal species="Trembling_Aspen">0</pl_atpVal>
         <pl_atpVal species="Black_Cottonwood">0</pl_atpVal>
         <pl_atpVal species="Paper_Birch">0</pl_atpVal>
@@ -7690,106 +5493,15 @@
       <pl_applyToCell x="23" y="22"/>
       <pl_applyToCell x="23" y="23"/>
     </pl_plantEvent>
-  </Plant22>
+  </Plant23>
   <Output>
-    <ou_filename>D:\GitHub\SORTIEparams\Outputs\ICH\JuvGrowth\ICH-CC-A1_L-jp-stoch_det.gz.tar</ou_filename>
-    <ou_treeInfo species="Western_Hemlock" type="Adult">
-      <ou_saveFreq>1</ou_saveFreq>
-      <ou_int>dead</ou_int>
-      <ou_float>X</ou_float>
-      <ou_float>Y</ou_float>
-      <ou_float>DBH</ou_float>
-      <ou_float>Height</ou_float>
-      <ou_float>Growth</ou_float>
-      <ou_bool>Fall</ou_bool>
-    </ou_treeInfo>
-    <ou_treeInfo species="Western_redcedar" type="Adult">
-      <ou_saveFreq>1</ou_saveFreq>
-      <ou_int>dead</ou_int>
-      <ou_float>X</ou_float>
-      <ou_float>Y</ou_float>
-      <ou_float>DBH</ou_float>
-      <ou_float>Height</ou_float>
-      <ou_float>Growth</ou_float>
-      <ou_bool>Fall</ou_bool>
-    </ou_treeInfo>
-    <ou_treeInfo species="Amabalis_Fir" type="Adult">
-      <ou_saveFreq>1</ou_saveFreq>
-      <ou_int>dead</ou_int>
-      <ou_float>X</ou_float>
-      <ou_float>Y</ou_float>
-      <ou_float>DBH</ou_float>
-      <ou_float>Height</ou_float>
-      <ou_float>Growth</ou_float>
-      <ou_bool>Fall</ou_bool>
-    </ou_treeInfo>
-    <ou_treeInfo species="Subalpine_Fir" type="Adult">
-      <ou_saveFreq>1</ou_saveFreq>
-      <ou_int>dead</ou_int>
-      <ou_float>X</ou_float>
-      <ou_float>Y</ou_float>
-      <ou_float>DBH</ou_float>
-      <ou_float>Height</ou_float>
-      <ou_float>Growth</ou_float>
-      <ou_bool>Fall</ou_bool>
-    </ou_treeInfo>
-    <ou_treeInfo species="Hybrid_spruce" type="Adult">
-      <ou_saveFreq>1</ou_saveFreq>
-      <ou_int>dead</ou_int>
-      <ou_float>X</ou_float>
-      <ou_float>Y</ou_float>
-      <ou_float>DBH</ou_float>
-      <ou_float>Height</ou_float>
-      <ou_float>Growth</ou_float>
-      <ou_bool>Fall</ou_bool>
-    </ou_treeInfo>
-    <ou_treeInfo species="Lodgepole_Pine" type="Adult">
-      <ou_saveFreq>1</ou_saveFreq>
-      <ou_int>dead</ou_int>
-      <ou_float>X</ou_float>
-      <ou_float>Y</ou_float>
-      <ou_float>DBH</ou_float>
-      <ou_float>Height</ou_float>
-      <ou_float>Growth</ou_float>
-      <ou_bool>Fall</ou_bool>
-    </ou_treeInfo>
-    <ou_treeInfo species="Trembling_Aspen" type="Adult">
-      <ou_saveFreq>1</ou_saveFreq>
-      <ou_int>dead</ou_int>
-      <ou_float>X</ou_float>
-      <ou_float>Y</ou_float>
-      <ou_float>DBH</ou_float>
-      <ou_float>Height</ou_float>
-      <ou_float>Growth</ou_float>
-      <ou_bool>Fall</ou_bool>
-    </ou_treeInfo>
-    <ou_treeInfo species="Black_Cottonwood" type="Adult">
-      <ou_saveFreq>1</ou_saveFreq>
-      <ou_int>dead</ou_int>
-      <ou_float>X</ou_float>
-      <ou_float>Y</ou_float>
-      <ou_float>DBH</ou_float>
-      <ou_float>Height</ou_float>
-      <ou_float>Growth</ou_float>
-      <ou_bool>Fall</ou_bool>
-    </ou_treeInfo>
-    <ou_treeInfo species="Paper_Birch" type="Adult">
-      <ou_saveFreq>1</ou_saveFreq>
-      <ou_int>dead</ou_int>
-      <ou_float>X</ou_float>
-      <ou_float>Y</ou_float>
-      <ou_float>DBH</ou_float>
-      <ou_float>Height</ou_float>
-      <ou_float>Growth</ou_float>
-      <ou_bool>Fall</ou_bool>
-    </ou_treeInfo>
+    <ou_filename>D:\GitHub\SORTIEparams\Outputs\ICH\Snags\ICH-LR-B5-sn_d_init_det.gz.tar</ou_filename>
     <ou_treeInfo species="Western_Hemlock" type="Seedling">
       <ou_saveFreq>1</ou_saveFreq>
       <ou_float>X</ou_float>
       <ou_float>Y</ou_float>
       <ou_float>Diam10</ou_float>
       <ou_float>Height</ou_float>
-      <ou_float>Growth</ou_float>
     </ou_treeInfo>
     <ou_treeInfo species="Western_redcedar" type="Seedling">
       <ou_saveFreq>1</ou_saveFreq>
@@ -7797,7 +5509,6 @@
       <ou_float>Y</ou_float>
       <ou_float>Diam10</ou_float>
       <ou_float>Height</ou_float>
-      <ou_float>Growth</ou_float>
     </ou_treeInfo>
     <ou_treeInfo species="Amabalis_Fir" type="Seedling">
       <ou_saveFreq>1</ou_saveFreq>
@@ -7805,7 +5516,6 @@
       <ou_float>Y</ou_float>
       <ou_float>Diam10</ou_float>
       <ou_float>Height</ou_float>
-      <ou_float>Growth</ou_float>
     </ou_treeInfo>
     <ou_treeInfo species="Subalpine_Fir" type="Seedling">
       <ou_saveFreq>1</ou_saveFreq>
@@ -7813,7 +5523,6 @@
       <ou_float>Y</ou_float>
       <ou_float>Diam10</ou_float>
       <ou_float>Height</ou_float>
-      <ou_float>Growth</ou_float>
     </ou_treeInfo>
     <ou_treeInfo species="Hybrid_spruce" type="Seedling">
       <ou_saveFreq>1</ou_saveFreq>
@@ -7821,7 +5530,6 @@
       <ou_float>Y</ou_float>
       <ou_float>Diam10</ou_float>
       <ou_float>Height</ou_float>
-      <ou_float>Growth</ou_float>
     </ou_treeInfo>
     <ou_treeInfo species="Lodgepole_Pine" type="Seedling">
       <ou_saveFreq>1</ou_saveFreq>
@@ -7829,7 +5537,6 @@
       <ou_float>Y</ou_float>
       <ou_float>Diam10</ou_float>
       <ou_float>Height</ou_float>
-      <ou_float>Growth</ou_float>
     </ou_treeInfo>
     <ou_treeInfo species="Trembling_Aspen" type="Seedling">
       <ou_saveFreq>1</ou_saveFreq>
@@ -7837,7 +5544,6 @@
       <ou_float>Y</ou_float>
       <ou_float>Diam10</ou_float>
       <ou_float>Height</ou_float>
-      <ou_float>Growth</ou_float>
     </ou_treeInfo>
     <ou_treeInfo species="Black_Cottonwood" type="Seedling">
       <ou_saveFreq>1</ou_saveFreq>
@@ -7845,7 +5551,6 @@
       <ou_float>Y</ou_float>
       <ou_float>Diam10</ou_float>
       <ou_float>Height</ou_float>
-      <ou_float>Growth</ou_float>
     </ou_treeInfo>
     <ou_treeInfo species="Paper_Birch" type="Seedling">
       <ou_saveFreq>1</ou_saveFreq>
@@ -7853,96 +5558,158 @@
       <ou_float>Y</ou_float>
       <ou_float>Diam10</ou_float>
       <ou_float>Height</ou_float>
-      <ou_float>Growth</ou_float>
     </ou_treeInfo>
     <ou_treeInfo species="Western_Hemlock" type="Sapling">
       <ou_saveFreq>1</ou_saveFreq>
-      <ou_int>dead</ou_int>
       <ou_float>X</ou_float>
       <ou_float>Y</ou_float>
       <ou_float>Diam10</ou_float>
       <ou_float>DBH</ou_float>
       <ou_float>Height</ou_float>
-      <ou_float>Growth</ou_float>
     </ou_treeInfo>
     <ou_treeInfo species="Western_redcedar" type="Sapling">
       <ou_saveFreq>1</ou_saveFreq>
-      <ou_int>dead</ou_int>
       <ou_float>X</ou_float>
       <ou_float>Y</ou_float>
       <ou_float>Diam10</ou_float>
       <ou_float>DBH</ou_float>
       <ou_float>Height</ou_float>
-      <ou_float>Growth</ou_float>
     </ou_treeInfo>
     <ou_treeInfo species="Amabalis_Fir" type="Sapling">
       <ou_saveFreq>1</ou_saveFreq>
-      <ou_int>dead</ou_int>
       <ou_float>X</ou_float>
       <ou_float>Y</ou_float>
       <ou_float>Diam10</ou_float>
       <ou_float>DBH</ou_float>
       <ou_float>Height</ou_float>
-      <ou_float>Growth</ou_float>
     </ou_treeInfo>
     <ou_treeInfo species="Subalpine_Fir" type="Sapling">
       <ou_saveFreq>1</ou_saveFreq>
-      <ou_int>dead</ou_int>
       <ou_float>X</ou_float>
       <ou_float>Y</ou_float>
       <ou_float>Diam10</ou_float>
       <ou_float>DBH</ou_float>
       <ou_float>Height</ou_float>
-      <ou_float>Growth</ou_float>
     </ou_treeInfo>
     <ou_treeInfo species="Hybrid_spruce" type="Sapling">
       <ou_saveFreq>1</ou_saveFreq>
-      <ou_int>dead</ou_int>
       <ou_float>X</ou_float>
       <ou_float>Y</ou_float>
       <ou_float>Diam10</ou_float>
       <ou_float>DBH</ou_float>
       <ou_float>Height</ou_float>
-      <ou_float>Growth</ou_float>
     </ou_treeInfo>
     <ou_treeInfo species="Lodgepole_Pine" type="Sapling">
       <ou_saveFreq>1</ou_saveFreq>
-      <ou_int>dead</ou_int>
       <ou_float>X</ou_float>
       <ou_float>Y</ou_float>
       <ou_float>Diam10</ou_float>
       <ou_float>DBH</ou_float>
       <ou_float>Height</ou_float>
-      <ou_float>Growth</ou_float>
     </ou_treeInfo>
     <ou_treeInfo species="Trembling_Aspen" type="Sapling">
       <ou_saveFreq>1</ou_saveFreq>
-      <ou_int>dead</ou_int>
       <ou_float>X</ou_float>
       <ou_float>Y</ou_float>
       <ou_float>Diam10</ou_float>
       <ou_float>DBH</ou_float>
       <ou_float>Height</ou_float>
-      <ou_float>Growth</ou_float>
     </ou_treeInfo>
     <ou_treeInfo species="Black_Cottonwood" type="Sapling">
       <ou_saveFreq>1</ou_saveFreq>
-      <ou_int>dead</ou_int>
       <ou_float>X</ou_float>
       <ou_float>Y</ou_float>
       <ou_float>Diam10</ou_float>
       <ou_float>DBH</ou_float>
       <ou_float>Height</ou_float>
-      <ou_float>Growth</ou_float>
     </ou_treeInfo>
     <ou_treeInfo species="Paper_Birch" type="Sapling">
       <ou_saveFreq>1</ou_saveFreq>
-      <ou_int>dead</ou_int>
       <ou_float>X</ou_float>
       <ou_float>Y</ou_float>
       <ou_float>Diam10</ou_float>
       <ou_float>DBH</ou_float>
       <ou_float>Height</ou_float>
+    </ou_treeInfo>
+    <ou_treeInfo species="Western_Hemlock" type="Adult">
+      <ou_saveFreq>1</ou_saveFreq>
+      <ou_float>X</ou_float>
+      <ou_float>Y</ou_float>
+      <ou_float>DBH</ou_float>
+      <ou_float>Height</ou_float>
+      <ou_float>Crown Radius</ou_float>
+      <ou_float>Growth</ou_float>
+    </ou_treeInfo>
+    <ou_treeInfo species="Western_redcedar" type="Adult">
+      <ou_saveFreq>1</ou_saveFreq>
+      <ou_float>X</ou_float>
+      <ou_float>Y</ou_float>
+      <ou_float>DBH</ou_float>
+      <ou_float>Height</ou_float>
+      <ou_float>Crown Radius</ou_float>
+      <ou_float>Growth</ou_float>
+    </ou_treeInfo>
+    <ou_treeInfo species="Amabalis_Fir" type="Adult">
+      <ou_saveFreq>1</ou_saveFreq>
+      <ou_float>X</ou_float>
+      <ou_float>Y</ou_float>
+      <ou_float>DBH</ou_float>
+      <ou_float>Height</ou_float>
+      <ou_float>Crown Radius</ou_float>
+      <ou_float>Growth</ou_float>
+    </ou_treeInfo>
+    <ou_treeInfo species="Subalpine_Fir" type="Adult">
+      <ou_saveFreq>1</ou_saveFreq>
+      <ou_float>X</ou_float>
+      <ou_float>Y</ou_float>
+      <ou_float>DBH</ou_float>
+      <ou_float>Height</ou_float>
+      <ou_float>Crown Radius</ou_float>
+      <ou_float>Growth</ou_float>
+    </ou_treeInfo>
+    <ou_treeInfo species="Hybrid_spruce" type="Adult">
+      <ou_saveFreq>1</ou_saveFreq>
+      <ou_float>X</ou_float>
+      <ou_float>Y</ou_float>
+      <ou_float>DBH</ou_float>
+      <ou_float>Height</ou_float>
+      <ou_float>Crown Radius</ou_float>
+      <ou_float>Growth</ou_float>
+    </ou_treeInfo>
+    <ou_treeInfo species="Lodgepole_Pine" type="Adult">
+      <ou_saveFreq>1</ou_saveFreq>
+      <ou_float>X</ou_float>
+      <ou_float>Y</ou_float>
+      <ou_float>DBH</ou_float>
+      <ou_float>Height</ou_float>
+      <ou_float>Crown Radius</ou_float>
+      <ou_float>Growth</ou_float>
+    </ou_treeInfo>
+    <ou_treeInfo species="Trembling_Aspen" type="Adult">
+      <ou_saveFreq>1</ou_saveFreq>
+      <ou_float>X</ou_float>
+      <ou_float>Y</ou_float>
+      <ou_float>DBH</ou_float>
+      <ou_float>Height</ou_float>
+      <ou_float>Crown Radius</ou_float>
+      <ou_float>Growth</ou_float>
+    </ou_treeInfo>
+    <ou_treeInfo species="Black_Cottonwood" type="Adult">
+      <ou_saveFreq>1</ou_saveFreq>
+      <ou_float>X</ou_float>
+      <ou_float>Y</ou_float>
+      <ou_float>DBH</ou_float>
+      <ou_float>Height</ou_float>
+      <ou_float>Crown Radius</ou_float>
+      <ou_float>Growth</ou_float>
+    </ou_treeInfo>
+    <ou_treeInfo species="Paper_Birch" type="Adult">
+      <ou_saveFreq>1</ou_saveFreq>
+      <ou_float>X</ou_float>
+      <ou_float>Y</ou_float>
+      <ou_float>DBH</ou_float>
+      <ou_float>Height</ou_float>
+      <ou_float>Crown Radius</ou_float>
       <ou_float>Growth</ou_float>
     </ou_treeInfo>
     <ou_treeInfo species="Western_Hemlock" type="Snag">
@@ -7951,9 +5718,6 @@
       <ou_float>X</ou_float>
       <ou_float>Y</ou_float>
       <ou_float>DBH</ou_float>
-      <ou_float>Height</ou_float>
-      <ou_float>NewBreakHeight</ou_float>
-      <ou_float>SnagOldBreakHeight</ou_float>
     </ou_treeInfo>
     <ou_treeInfo species="Western_redcedar" type="Snag">
       <ou_saveFreq>1</ou_saveFreq>
@@ -7961,9 +5725,6 @@
       <ou_float>X</ou_float>
       <ou_float>Y</ou_float>
       <ou_float>DBH</ou_float>
-      <ou_float>Height</ou_float>
-      <ou_float>NewBreakHeight</ou_float>
-      <ou_float>SnagOldBreakHeight</ou_float>
     </ou_treeInfo>
     <ou_treeInfo species="Amabalis_Fir" type="Snag">
       <ou_saveFreq>1</ou_saveFreq>
@@ -7971,9 +5732,6 @@
       <ou_float>X</ou_float>
       <ou_float>Y</ou_float>
       <ou_float>DBH</ou_float>
-      <ou_float>Height</ou_float>
-      <ou_float>NewBreakHeight</ou_float>
-      <ou_float>SnagOldBreakHeight</ou_float>
     </ou_treeInfo>
     <ou_treeInfo species="Subalpine_Fir" type="Snag">
       <ou_saveFreq>1</ou_saveFreq>
@@ -7981,9 +5739,6 @@
       <ou_float>X</ou_float>
       <ou_float>Y</ou_float>
       <ou_float>DBH</ou_float>
-      <ou_float>Height</ou_float>
-      <ou_float>NewBreakHeight</ou_float>
-      <ou_float>SnagOldBreakHeight</ou_float>
     </ou_treeInfo>
     <ou_treeInfo species="Hybrid_spruce" type="Snag">
       <ou_saveFreq>1</ou_saveFreq>
@@ -7991,9 +5746,6 @@
       <ou_float>X</ou_float>
       <ou_float>Y</ou_float>
       <ou_float>DBH</ou_float>
-      <ou_float>Height</ou_float>
-      <ou_float>NewBreakHeight</ou_float>
-      <ou_float>SnagOldBreakHeight</ou_float>
     </ou_treeInfo>
     <ou_treeInfo species="Lodgepole_Pine" type="Snag">
       <ou_saveFreq>1</ou_saveFreq>
@@ -8001,9 +5753,6 @@
       <ou_float>X</ou_float>
       <ou_float>Y</ou_float>
       <ou_float>DBH</ou_float>
-      <ou_float>Height</ou_float>
-      <ou_float>NewBreakHeight</ou_float>
-      <ou_float>SnagOldBreakHeight</ou_float>
     </ou_treeInfo>
     <ou_treeInfo species="Trembling_Aspen" type="Snag">
       <ou_saveFreq>1</ou_saveFreq>
@@ -8011,9 +5760,6 @@
       <ou_float>X</ou_float>
       <ou_float>Y</ou_float>
       <ou_float>DBH</ou_float>
-      <ou_float>Height</ou_float>
-      <ou_float>NewBreakHeight</ou_float>
-      <ou_float>SnagOldBreakHeight</ou_float>
     </ou_treeInfo>
     <ou_treeInfo species="Black_Cottonwood" type="Snag">
       <ou_saveFreq>1</ou_saveFreq>
@@ -8021,9 +5767,6 @@
       <ou_float>X</ou_float>
       <ou_float>Y</ou_float>
       <ou_float>DBH</ou_float>
-      <ou_float>Height</ou_float>
-      <ou_float>NewBreakHeight</ou_float>
-      <ou_float>SnagOldBreakHeight</ou_float>
     </ou_treeInfo>
     <ou_treeInfo species="Paper_Birch" type="Snag">
       <ou_saveFreq>1</ou_saveFreq>
@@ -8031,9 +5774,6 @@
       <ou_float>X</ou_float>
       <ou_float>Y</ou_float>
       <ou_float>DBH</ou_float>
-      <ou_float>Height</ou_float>
-      <ou_float>NewBreakHeight</ou_float>
-      <ou_float>SnagOldBreakHeight</ou_float>
     </ou_treeInfo>
     <ou_deadTreeInfo species="Western_Hemlock" type="Snag" code="natural">
       <ou_saveFreq>1</ou_saveFreq>
@@ -8041,9 +5781,6 @@
       <ou_float>X</ou_float>
       <ou_float>Y</ou_float>
       <ou_float>DBH</ou_float>
-      <ou_float>Height</ou_float>
-      <ou_float>NewBreakHeight</ou_float>
-      <ou_float>SnagOldBreakHeight</ou_float>
     </ou_deadTreeInfo>
     <ou_deadTreeInfo species="Western_Hemlock" type="Snag" code="harvest">
       <ou_saveFreq>1</ou_saveFreq>
@@ -8051,9 +5788,6 @@
       <ou_float>X</ou_float>
       <ou_float>Y</ou_float>
       <ou_float>DBH</ou_float>
-      <ou_float>Height</ou_float>
-      <ou_float>NewBreakHeight</ou_float>
-      <ou_float>SnagOldBreakHeight</ou_float>
     </ou_deadTreeInfo>
     <ou_deadTreeInfo species="Western_redcedar" type="Snag" code="natural">
       <ou_saveFreq>1</ou_saveFreq>
@@ -8061,9 +5795,6 @@
       <ou_float>X</ou_float>
       <ou_float>Y</ou_float>
       <ou_float>DBH</ou_float>
-      <ou_float>Height</ou_float>
-      <ou_float>NewBreakHeight</ou_float>
-      <ou_float>SnagOldBreakHeight</ou_float>
     </ou_deadTreeInfo>
     <ou_deadTreeInfo species="Western_redcedar" type="Snag" code="harvest">
       <ou_saveFreq>1</ou_saveFreq>
@@ -8071,9 +5802,6 @@
       <ou_float>X</ou_float>
       <ou_float>Y</ou_float>
       <ou_float>DBH</ou_float>
-      <ou_float>Height</ou_float>
-      <ou_float>NewBreakHeight</ou_float>
-      <ou_float>SnagOldBreakHeight</ou_float>
     </ou_deadTreeInfo>
     <ou_deadTreeInfo species="Amabalis_Fir" type="Snag" code="natural">
       <ou_saveFreq>1</ou_saveFreq>
@@ -8081,9 +5809,6 @@
       <ou_float>X</ou_float>
       <ou_float>Y</ou_float>
       <ou_float>DBH</ou_float>
-      <ou_float>Height</ou_float>
-      <ou_float>NewBreakHeight</ou_float>
-      <ou_float>SnagOldBreakHeight</ou_float>
     </ou_deadTreeInfo>
     <ou_deadTreeInfo species="Amabalis_Fir" type="Snag" code="harvest">
       <ou_saveFreq>1</ou_saveFreq>
@@ -8091,9 +5816,6 @@
       <ou_float>X</ou_float>
       <ou_float>Y</ou_float>
       <ou_float>DBH</ou_float>
-      <ou_float>Height</ou_float>
-      <ou_float>NewBreakHeight</ou_float>
-      <ou_float>SnagOldBreakHeight</ou_float>
     </ou_deadTreeInfo>
     <ou_deadTreeInfo species="Subalpine_Fir" type="Snag" code="natural">
       <ou_saveFreq>1</ou_saveFreq>
@@ -8101,9 +5823,6 @@
       <ou_float>X</ou_float>
       <ou_float>Y</ou_float>
       <ou_float>DBH</ou_float>
-      <ou_float>Height</ou_float>
-      <ou_float>NewBreakHeight</ou_float>
-      <ou_float>SnagOldBreakHeight</ou_float>
     </ou_deadTreeInfo>
     <ou_deadTreeInfo species="Subalpine_Fir" type="Snag" code="harvest">
       <ou_saveFreq>1</ou_saveFreq>
@@ -8111,9 +5830,6 @@
       <ou_float>X</ou_float>
       <ou_float>Y</ou_float>
       <ou_float>DBH</ou_float>
-      <ou_float>Height</ou_float>
-      <ou_float>NewBreakHeight</ou_float>
-      <ou_float>SnagOldBreakHeight</ou_float>
     </ou_deadTreeInfo>
     <ou_deadTreeInfo species="Hybrid_spruce" type="Snag" code="natural">
       <ou_saveFreq>1</ou_saveFreq>
@@ -8121,9 +5837,6 @@
       <ou_float>X</ou_float>
       <ou_float>Y</ou_float>
       <ou_float>DBH</ou_float>
-      <ou_float>Height</ou_float>
-      <ou_float>NewBreakHeight</ou_float>
-      <ou_float>SnagOldBreakHeight</ou_float>
     </ou_deadTreeInfo>
     <ou_deadTreeInfo species="Hybrid_spruce" type="Snag" code="harvest">
       <ou_saveFreq>1</ou_saveFreq>
@@ -8131,9 +5844,6 @@
       <ou_float>X</ou_float>
       <ou_float>Y</ou_float>
       <ou_float>DBH</ou_float>
-      <ou_float>Height</ou_float>
-      <ou_float>NewBreakHeight</ou_float>
-      <ou_float>SnagOldBreakHeight</ou_float>
     </ou_deadTreeInfo>
     <ou_deadTreeInfo species="Lodgepole_Pine" type="Snag" code="natural">
       <ou_saveFreq>1</ou_saveFreq>
@@ -8141,9 +5851,6 @@
       <ou_float>X</ou_float>
       <ou_float>Y</ou_float>
       <ou_float>DBH</ou_float>
-      <ou_float>Height</ou_float>
-      <ou_float>NewBreakHeight</ou_float>
-      <ou_float>SnagOldBreakHeight</ou_float>
     </ou_deadTreeInfo>
     <ou_deadTreeInfo species="Lodgepole_Pine" type="Snag" code="harvest">
       <ou_saveFreq>1</ou_saveFreq>
@@ -8151,9 +5858,6 @@
       <ou_float>X</ou_float>
       <ou_float>Y</ou_float>
       <ou_float>DBH</ou_float>
-      <ou_float>Height</ou_float>
-      <ou_float>NewBreakHeight</ou_float>
-      <ou_float>SnagOldBreakHeight</ou_float>
     </ou_deadTreeInfo>
     <ou_deadTreeInfo species="Trembling_Aspen" type="Snag" code="natural">
       <ou_saveFreq>1</ou_saveFreq>
@@ -8161,9 +5865,6 @@
       <ou_float>X</ou_float>
       <ou_float>Y</ou_float>
       <ou_float>DBH</ou_float>
-      <ou_float>Height</ou_float>
-      <ou_float>NewBreakHeight</ou_float>
-      <ou_float>SnagOldBreakHeight</ou_float>
     </ou_deadTreeInfo>
     <ou_deadTreeInfo species="Trembling_Aspen" type="Snag" code="harvest">
       <ou_saveFreq>1</ou_saveFreq>
@@ -8171,9 +5872,6 @@
       <ou_float>X</ou_float>
       <ou_float>Y</ou_float>
       <ou_float>DBH</ou_float>
-      <ou_float>Height</ou_float>
-      <ou_float>NewBreakHeight</ou_float>
-      <ou_float>SnagOldBreakHeight</ou_float>
     </ou_deadTreeInfo>
     <ou_deadTreeInfo species="Black_Cottonwood" type="Snag" code="natural">
       <ou_saveFreq>1</ou_saveFreq>
@@ -8181,9 +5879,6 @@
       <ou_float>X</ou_float>
       <ou_float>Y</ou_float>
       <ou_float>DBH</ou_float>
-      <ou_float>Height</ou_float>
-      <ou_float>NewBreakHeight</ou_float>
-      <ou_float>SnagOldBreakHeight</ou_float>
     </ou_deadTreeInfo>
     <ou_deadTreeInfo species="Black_Cottonwood" type="Snag" code="harvest">
       <ou_saveFreq>1</ou_saveFreq>
@@ -8191,9 +5886,6 @@
       <ou_float>X</ou_float>
       <ou_float>Y</ou_float>
       <ou_float>DBH</ou_float>
-      <ou_float>Height</ou_float>
-      <ou_float>NewBreakHeight</ou_float>
-      <ou_float>SnagOldBreakHeight</ou_float>
     </ou_deadTreeInfo>
     <ou_deadTreeInfo species="Paper_Birch" type="Snag" code="natural">
       <ou_saveFreq>1</ou_saveFreq>
@@ -8201,9 +5893,6 @@
       <ou_float>X</ou_float>
       <ou_float>Y</ou_float>
       <ou_float>DBH</ou_float>
-      <ou_float>Height</ou_float>
-      <ou_float>NewBreakHeight</ou_float>
-      <ou_float>SnagOldBreakHeight</ou_float>
     </ou_deadTreeInfo>
     <ou_deadTreeInfo species="Paper_Birch" type="Snag" code="harvest">
       <ou_saveFreq>1</ou_saveFreq>
@@ -8211,9 +5900,6 @@
       <ou_float>X</ou_float>
       <ou_float>Y</ou_float>
       <ou_float>DBH</ou_float>
-      <ou_float>Height</ou_float>
-      <ou_float>NewBreakHeight</ou_float>
-      <ou_float>SnagOldBreakHeight</ou_float>
     </ou_deadTreeInfo>
     <ou_gridInfo gridName="Dispersed Seeds">
       <ou_saveFreq>1</ou_saveFreq>
@@ -8295,15 +5981,14 @@
       <ou_float>loggroup2largedecay5</ou_float>
       <ou_float>loggroup3smalldecay5</ou_float>
       <ou_float>loggroup3largedecay5</ou_float>
-      <ou_packageInt>age</ou_packageInt>
     </ou_gridInfo>
-    <ou_gridInfo gridName="Quadrat GLI">
+    <ou_gridInfo gridName="GLI Map 2">
       <ou_saveFreq>1</ou_saveFreq>
       <ou_float>GLI</ou_float>
     </ou_gridInfo>
   </Output>
   <ShortOutput>
-    <so_filename>D:\GitHub\SORTIEparams\Outputs\ICH\JuvGrowth\ICH-CC-A1_L-jp-stoch.out</so_filename>
+    <so_filename>D:\GitHub\SORTIEparams\Outputs\ICH\Snags\ICH-LR-B5-sn_d_init.out</so_filename>
     <so_treeTypeInfo type="Seedling">
       <so_saveRDN save="false"/>
       <so_saveADN save="true"/>

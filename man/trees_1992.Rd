@@ -2,7 +2,7 @@
 % Please edit documentation in R/Trees.R
 \name{trees_1992}
 \alias{trees_1992}
-\title{Clean 1992 tree data - doesn't work as a function b/c of plyr}
+\title{Clean 1992 tree data need to change all ddply to get rid of plyr (replaced by dplyr)}
 \usage{
 trees_1992(
   cruise_data = "./data-raw/Trees/1.1992data.csv",

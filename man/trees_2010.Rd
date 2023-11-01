@@ -4,7 +4,12 @@
 \alias{trees_2010}
 \title{Title}
 \usage{
-trees_2010(data, calc_height = TRUE)
+trees_2010(
+  lrg_trees = "./data-raw/Trees/4.Data Creek 2010 Data large trees.csv",
+  cc_trees = "./data-raw/Trees/5.Trees 10cm and above in clearcut 2010.csv",
+  small_trees = "./data-raw/Trees/6.Date Creek 2010 Trees less than 10 cm tallies.csv",
+  calc_height = TRUE
+)
 }
 \arguments{
 \item{calc_height}{}
