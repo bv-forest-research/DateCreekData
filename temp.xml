@@ -5,8 +5,8 @@
     <rt_timestep>0</rt_timestep>
     <randomSeed>0</randomSeed>
     <yearsPerTimestep>1.0</yearsPerTimestep>
-    <plot_lenX>632</plot_lenX>
-    <plot_lenY>632</plot_lenY>
+    <plot_lenX>736</plot_lenX>
+    <plot_lenY>736</plot_lenY>
     <plot_latitude>55.37</plot_latitude>
     <plot_precip_mm_yr>0.0</plot_precip_mm_yr>
     <plot_seasonal_precipitation>0.0</plot_seasonal_precipitation>
@@ -137,38 +137,38 @@
     </tr_sizeClasses>
     <tr_initialDensities>
       <tr_idVals whatSpecies="Western_Hemlock">
-        <tr_initialDensity sizeClass="Seedling">620</tr_initialDensity>
-        <tr_initialDensity sizeClass="s2.5">0</tr_initialDensity>
-        <tr_initialDensity sizeClass="s5.0">20</tr_initialDensity>
-        <tr_initialDensity sizeClass="s7.5">0</tr_initialDensity>
-        <tr_initialDensity sizeClass="s10.0">0</tr_initialDensity>
-        <tr_initialDensity sizeClass="s12.5">0</tr_initialDensity>
-        <tr_initialDensity sizeClass="s15.0">0</tr_initialDensity>
-        <tr_initialDensity sizeClass="s17.5">31.9884428425932</tr_initialDensity>
-        <tr_initialDensity sizeClass="s20.0">0</tr_initialDensity>
-        <tr_initialDensity sizeClass="s22.5">0</tr_initialDensity>
-        <tr_initialDensity sizeClass="s25.0">32.2122982580899</tr_initialDensity>
-        <tr_initialDensity sizeClass="s27.5">38.9388858485602</tr_initialDensity>
-        <tr_initialDensity sizeClass="s30.0">41.9859119521694</tr_initialDensity>
-        <tr_initialDensity sizeClass="s32.5">36.1260895517483</tr_initialDensity>
-        <tr_initialDensity sizeClass="s35.0">31.2360656709396</tr_initialDensity>
-        <tr_initialDensity sizeClass="s37.5">40.8176611288127</tr_initialDensity>
-        <tr_initialDensity sizeClass="s40.0">29.53800805382</tr_initialDensity>
-        <tr_initialDensity sizeClass="s42.5">21.0816238332922</tr_initialDensity>
-        <tr_initialDensity sizeClass="s45.0">14.0262051728602</tr_initialDensity>
-        <tr_initialDensity sizeClass="s47.5">8.40455118816524</tr_initialDensity>
-        <tr_initialDensity sizeClass="s50.0">3.68630748018993</tr_initialDensity>
+        <tr_initialDensity sizeClass="Seedling">920</tr_initialDensity>
+        <tr_initialDensity sizeClass="s2.5">60</tr_initialDensity>
+        <tr_initialDensity sizeClass="s5.0">240</tr_initialDensity>
+        <tr_initialDensity sizeClass="s7.5">280</tr_initialDensity>
+        <tr_initialDensity sizeClass="s10.0">217.23697808928</tr_initialDensity>
+        <tr_initialDensity sizeClass="s12.5">358.324232517045</tr_initialDensity>
+        <tr_initialDensity sizeClass="s15.0">82.2994610458168</tr_initialDensity>
+        <tr_initialDensity sizeClass="s17.5">218.704609913222</tr_initialDensity>
+        <tr_initialDensity sizeClass="s20.0">194.306133970803</tr_initialDensity>
+        <tr_initialDensity sizeClass="s22.5">118.917539724911</tr_initialDensity>
+        <tr_initialDensity sizeClass="s25.0">164.866211983959</tr_initialDensity>
+        <tr_initialDensity sizeClass="s27.5">44.1210474122128</tr_initialDensity>
+        <tr_initialDensity sizeClass="s30.0">64.5054076090971</tr_initialDensity>
+        <tr_initialDensity sizeClass="s32.5">16.6400876440354</tr_initialDensity>
+        <tr_initialDensity sizeClass="s35.0">27.6565389115291</tr_initialDensity>
+        <tr_initialDensity sizeClass="s37.5">17.581632522288</tr_initialDensity>
+        <tr_initialDensity sizeClass="s40.0">0</tr_initialDensity>
+        <tr_initialDensity sizeClass="s42.5">4.89707517205832</tr_initialDensity>
+        <tr_initialDensity sizeClass="s45.0">4.1407426477967</tr_initialDensity>
+        <tr_initialDensity sizeClass="s47.5">0</tr_initialDensity>
+        <tr_initialDensity sizeClass="s50.0">3.47271812755382</tr_initialDensity>
         <tr_initialDensity sizeClass="s52.5">0</tr_initialDensity>
         <tr_initialDensity sizeClass="s55.0">0</tr_initialDensity>
-        <tr_initialDensity sizeClass="s57.5">2.74184662918637</tr_initialDensity>
-        <tr_initialDensity sizeClass="s60.0">0</tr_initialDensity>
+        <tr_initialDensity sizeClass="s57.5">0</tr_initialDensity>
+        <tr_initialDensity sizeClass="s60.0">2.32916773938565</tr_initialDensity>
         <tr_initialDensity sizeClass="s62.5">0</tr_initialDensity>
-        <tr_initialDensity sizeClass="s65.0">0</tr_initialDensity>
+        <tr_initialDensity sizeClass="s65.0">1.87175150923494</tr_initialDensity>
         <tr_initialDensity sizeClass="s67.5">0</tr_initialDensity>
         <tr_initialDensity sizeClass="s70.0">0</tr_initialDensity>
         <tr_initialDensity sizeClass="s72.5">0</tr_initialDensity>
         <tr_initialDensity sizeClass="s75.0">0</tr_initialDensity>
-        <tr_initialDensity sizeClass="s77.5">0</tr_initialDensity>
+        <tr_initialDensity sizeClass="s77.5">1.3180988988467</tr_initialDensity>
         <tr_initialDensity sizeClass="s80.0">0</tr_initialDensity>
         <tr_initialDensity sizeClass="s82.5">0</tr_initialDensity>
         <tr_initialDensity sizeClass="s85.0">0</tr_initialDensity>
@@ -245,21 +245,21 @@
         <tr_initialDensity sizeClass="s262.5">0</tr_initialDensity>
       </tr_idVals>
       <tr_idVals whatSpecies="Western_redcedar">
-        <tr_initialDensity sizeClass="Seedling">1880</tr_initialDensity>
-        <tr_initialDensity sizeClass="s2.5">500</tr_initialDensity>
-        <tr_initialDensity sizeClass="s5.0">860</tr_initialDensity>
-        <tr_initialDensity sizeClass="s7.5">360</tr_initialDensity>
-        <tr_initialDensity sizeClass="s10.0">237.538924676815</tr_initialDensity>
-        <tr_initialDensity sizeClass="s12.5">419.785788958869</tr_initialDensity>
-        <tr_initialDensity sizeClass="s15.0">205.690174421766</tr_initialDensity>
-        <tr_initialDensity sizeClass="s17.5">102.463282071686</tr_initialDensity>
-        <tr_initialDensity sizeClass="s20.0">71.1589502666152</tr_initialDensity>
-        <tr_initialDensity sizeClass="s22.5">58.3145412850082</tr_initialDensity>
+        <tr_initialDensity sizeClass="Seedling">420</tr_initialDensity>
+        <tr_initialDensity sizeClass="s2.5">60</tr_initialDensity>
+        <tr_initialDensity sizeClass="s5.0">20</tr_initialDensity>
+        <tr_initialDensity sizeClass="s7.5">120</tr_initialDensity>
+        <tr_initialDensity sizeClass="s10.0">187.523897503928</tr_initialDensity>
+        <tr_initialDensity sizeClass="s12.5">133.683477982742</tr_initialDensity>
+        <tr_initialDensity sizeClass="s15.0">0</tr_initialDensity>
+        <tr_initialDensity sizeClass="s17.5">34.8236456679703</tr_initialDensity>
+        <tr_initialDensity sizeClass="s20.0">22.6480525936331</tr_initialDensity>
+        <tr_initialDensity sizeClass="s22.5">0</tr_initialDensity>
         <tr_initialDensity sizeClass="s25.0">0</tr_initialDensity>
-        <tr_initialDensity sizeClass="s27.5">25.3933648952507</tr_initialDensity>
-        <tr_initialDensity sizeClass="s30.0">22.6515443256126</tr_initialDensity>
+        <tr_initialDensity sizeClass="s27.5">11.6803868089225</tr_initialDensity>
+        <tr_initialDensity sizeClass="s30.0">0</tr_initialDensity>
         <tr_initialDensity sizeClass="s32.5">0</tr_initialDensity>
-        <tr_initialDensity sizeClass="s35.0">7.36303861614569</tr_initialDensity>
+        <tr_initialDensity sizeClass="s35.0">0</tr_initialDensity>
         <tr_initialDensity sizeClass="s37.5">0</tr_initialDensity>
         <tr_initialDensity sizeClass="s40.0">0</tr_initialDensity>
         <tr_initialDensity sizeClass="s42.5">0</tr_initialDensity>
@@ -277,9 +277,9 @@
         <tr_initialDensity sizeClass="s72.5">0</tr_initialDensity>
         <tr_initialDensity sizeClass="s75.0">0</tr_initialDensity>
         <tr_initialDensity sizeClass="s77.5">0</tr_initialDensity>
-        <tr_initialDensity sizeClass="s80.0">0</tr_initialDensity>
+        <tr_initialDensity sizeClass="s80.0">1.25864352773534</tr_initialDensity>
         <tr_initialDensity sizeClass="s82.5">0</tr_initialDensity>
-        <tr_initialDensity sizeClass="s85.0">0</tr_initialDensity>
+        <tr_initialDensity sizeClass="s85.0">1.11575467719102</tr_initialDensity>
         <tr_initialDensity sizeClass="s87.5">0</tr_initialDensity>
         <tr_initialDensity sizeClass="s90.0">0</tr_initialDensity>
         <tr_initialDensity sizeClass="s92.5">0</tr_initialDensity>
@@ -461,13 +461,13 @@
         <tr_initialDensity sizeClass="s262.5">0</tr_initialDensity>
       </tr_idVals>
       <tr_idVals whatSpecies="Subalpine_Fir">
-        <tr_initialDensity sizeClass="Seedling">140</tr_initialDensity>
+        <tr_initialDensity sizeClass="Seedling">20</tr_initialDensity>
         <tr_initialDensity sizeClass="s2.5">0</tr_initialDensity>
         <tr_initialDensity sizeClass="s5.0">0</tr_initialDensity>
         <tr_initialDensity sizeClass="s7.5">0</tr_initialDensity>
         <tr_initialDensity sizeClass="s10.0">0</tr_initialDensity>
         <tr_initialDensity sizeClass="s12.5">0</tr_initialDensity>
-        <tr_initialDensity sizeClass="s15.0">0</tr_initialDensity>
+        <tr_initialDensity sizeClass="s15.0">35.7711846023252</tr_initialDensity>
         <tr_initialDensity sizeClass="s17.5">0</tr_initialDensity>
         <tr_initialDensity sizeClass="s20.0">0</tr_initialDensity>
         <tr_initialDensity sizeClass="s22.5">0</tr_initialDensity>
@@ -476,7 +476,7 @@
         <tr_initialDensity sizeClass="s30.0">0</tr_initialDensity>
         <tr_initialDensity sizeClass="s32.5">0</tr_initialDensity>
         <tr_initialDensity sizeClass="s35.0">0</tr_initialDensity>
-        <tr_initialDensity sizeClass="s37.5">0</tr_initialDensity>
+        <tr_initialDensity sizeClass="s37.5">5.78576934316909</tr_initialDensity>
         <tr_initialDensity sizeClass="s40.0">0</tr_initialDensity>
         <tr_initialDensity sizeClass="s42.5">0</tr_initialDensity>
         <tr_initialDensity sizeClass="s45.0">0</tr_initialDensity>
@@ -582,16 +582,16 @@
         <tr_initialDensity sizeClass="s25.0">0</tr_initialDensity>
         <tr_initialDensity sizeClass="s27.5">0</tr_initialDensity>
         <tr_initialDensity sizeClass="s30.0">0</tr_initialDensity>
-        <tr_initialDensity sizeClass="s32.5">0</tr_initialDensity>
+        <tr_initialDensity sizeClass="s32.5">23.6314145482993</tr_initialDensity>
         <tr_initialDensity sizeClass="s35.0">0</tr_initialDensity>
-        <tr_initialDensity sizeClass="s37.5">0</tr_initialDensity>
-        <tr_initialDensity sizeClass="s40.0">5.79535523320511</tr_initialDensity>
-        <tr_initialDensity sizeClass="s42.5">0</tr_initialDensity>
-        <tr_initialDensity sizeClass="s45.0">4.83452183125283</tr_initialDensity>
+        <tr_initialDensity sizeClass="s37.5">5.81734237784326</tr_initialDensity>
+        <tr_initialDensity sizeClass="s40.0">0</tr_initialDensity>
+        <tr_initialDensity sizeClass="s42.5">8.9903305119217</tr_initialDensity>
+        <tr_initialDensity sizeClass="s45.0">3.99254022965381</tr_initialDensity>
         <tr_initialDensity sizeClass="s47.5">0</tr_initialDensity>
-        <tr_initialDensity sizeClass="s50.0">3.89040997709597</tr_initialDensity>
+        <tr_initialDensity sizeClass="s50.0">0</tr_initialDensity>
         <tr_initialDensity sizeClass="s52.5">0</tr_initialDensity>
-        <tr_initialDensity sizeClass="s55.0">0</tr_initialDensity>
+        <tr_initialDensity sizeClass="s55.0">5.4698808640246</tr_initialDensity>
         <tr_initialDensity sizeClass="s57.5">0</tr_initialDensity>
         <tr_initialDensity sizeClass="s60.0">0</tr_initialDensity>
         <tr_initialDensity sizeClass="s62.5">0</tr_initialDensity>
@@ -686,16 +686,16 @@
         <tr_initialDensity sizeClass="s15.0">0</tr_initialDensity>
         <tr_initialDensity sizeClass="s17.5">0</tr_initialDensity>
         <tr_initialDensity sizeClass="s20.0">0</tr_initialDensity>
-        <tr_initialDensity sizeClass="s22.5">0</tr_initialDensity>
-        <tr_initialDensity sizeClass="s25.0">0</tr_initialDensity>
+        <tr_initialDensity sizeClass="s22.5">19.3938770706005</tr_initialDensity>
+        <tr_initialDensity sizeClass="s25.0">14.0680125597768</tr_initialDensity>
         <tr_initialDensity sizeClass="s27.5">0</tr_initialDensity>
-        <tr_initialDensity sizeClass="s30.0">0</tr_initialDensity>
-        <tr_initialDensity sizeClass="s32.5">0</tr_initialDensity>
-        <tr_initialDensity sizeClass="s35.0">8.24354039568777</tr_initialDensity>
-        <tr_initialDensity sizeClass="s37.5">6.91628440372617</tr_initialDensity>
-        <tr_initialDensity sizeClass="s40.0">6.1043873335907</tr_initialDensity>
-        <tr_initialDensity sizeClass="s42.5">0</tr_initialDensity>
-        <tr_initialDensity sizeClass="s45.0">4.51195476633616</tr_initialDensity>
+        <tr_initialDensity sizeClass="s30.0">8.94279615058129</tr_initialDensity>
+        <tr_initialDensity sizeClass="s32.5">7.99775467269576</tr_initialDensity>
+        <tr_initialDensity sizeClass="s35.0">6.940299280128</tr_initialDensity>
+        <tr_initialDensity sizeClass="s37.5">0</tr_initialDensity>
+        <tr_initialDensity sizeClass="s40.0">0</tr_initialDensity>
+        <tr_initialDensity sizeClass="s42.5">4.80058344481749</tr_initialDensity>
+        <tr_initialDensity sizeClass="s45.0">0</tr_initialDensity>
         <tr_initialDensity sizeClass="s47.5">0</tr_initialDensity>
         <tr_initialDensity sizeClass="s50.0">0</tr_initialDensity>
         <tr_initialDensity sizeClass="s52.5">0</tr_initialDensity>
@@ -794,17 +794,17 @@
         <tr_initialDensity sizeClass="s15.0">0</tr_initialDensity>
         <tr_initialDensity sizeClass="s17.5">0</tr_initialDensity>
         <tr_initialDensity sizeClass="s20.0">0</tr_initialDensity>
-        <tr_initialDensity sizeClass="s22.5">0</tr_initialDensity>
-        <tr_initialDensity sizeClass="s25.0">16.0982089811253</tr_initialDensity>
+        <tr_initialDensity sizeClass="s22.5">15.7560382780537</tr_initialDensity>
+        <tr_initialDensity sizeClass="s25.0">13.8325688074523</tr_initialDensity>
         <tr_initialDensity sizeClass="s27.5">0</tr_initialDensity>
-        <tr_initialDensity sizeClass="s30.0">10.3381677023186</tr_initialDensity>
+        <tr_initialDensity sizeClass="s30.0">0</tr_initialDensity>
         <tr_initialDensity sizeClass="s32.5">0</tr_initialDensity>
         <tr_initialDensity sizeClass="s35.0">0</tr_initialDensity>
         <tr_initialDensity sizeClass="s37.5">0</tr_initialDensity>
-        <tr_initialDensity sizeClass="s40.0">6.00913177518763</tr_initialDensity>
+        <tr_initialDensity sizeClass="s40.0">0</tr_initialDensity>
         <tr_initialDensity sizeClass="s42.5">0</tr_initialDensity>
         <tr_initialDensity sizeClass="s45.0">0</tr_initialDensity>
-        <tr_initialDensity sizeClass="s47.5">4.27658954651991</tr_initialDensity>
+        <tr_initialDensity sizeClass="s47.5">0</tr_initialDensity>
         <tr_initialDensity sizeClass="s50.0">0</tr_initialDensity>
         <tr_initialDensity sizeClass="s52.5">0</tr_initialDensity>
         <tr_initialDensity sizeClass="s55.0">0</tr_initialDensity>
@@ -931,7 +931,7 @@
         <tr_initialDensity sizeClass="s87.5">0</tr_initialDensity>
         <tr_initialDensity sizeClass="s90.0">0</tr_initialDensity>
         <tr_initialDensity sizeClass="s92.5">0</tr_initialDensity>
-        <tr_initialDensity sizeClass="s95.0">0</tr_initialDensity>
+        <tr_initialDensity sizeClass="s95.0">0.87368885406963</tr_initialDensity>
         <tr_initialDensity sizeClass="s97.5">0</tr_initialDensity>
         <tr_initialDensity sizeClass="s100.0">0</tr_initialDensity>
         <tr_initialDensity sizeClass="s102.5">0</tr_initialDensity>
@@ -1001,24 +1001,24 @@
         <tr_initialDensity sizeClass="s262.5">0</tr_initialDensity>
       </tr_idVals>
       <tr_idVals whatSpecies="Paper_Birch">
-        <tr_initialDensity sizeClass="Seedling">380</tr_initialDensity>
+        <tr_initialDensity sizeClass="Seedling">0</tr_initialDensity>
         <tr_initialDensity sizeClass="s2.5">0</tr_initialDensity>
         <tr_initialDensity sizeClass="s5.0">0</tr_initialDensity>
         <tr_initialDensity sizeClass="s7.5">0</tr_initialDensity>
         <tr_initialDensity sizeClass="s10.0">0</tr_initialDensity>
         <tr_initialDensity sizeClass="s12.5">0</tr_initialDensity>
-        <tr_initialDensity sizeClass="s15.0">0</tr_initialDensity>
-        <tr_initialDensity sizeClass="s17.5">0</tr_initialDensity>
+        <tr_initialDensity sizeClass="s15.0">82.88932077769</tr_initialDensity>
+        <tr_initialDensity sizeClass="s17.5">31.3864776289589</tr_initialDensity>
         <tr_initialDensity sizeClass="s20.0">0</tr_initialDensity>
-        <tr_initialDensity sizeClass="s22.5">0</tr_initialDensity>
-        <tr_initialDensity sizeClass="s25.0">14.4482540440017</tr_initialDensity>
-        <tr_initialDensity sizeClass="s27.5">13.1404351600378</tr_initialDensity>
-        <tr_initialDensity sizeClass="s30.0">33.1371646590202</tr_initialDensity>
-        <tr_initialDensity sizeClass="s32.5">8.94025651112111</tr_initialDensity>
+        <tr_initialDensity sizeClass="s22.5">33.641661908936</tr_initialDensity>
+        <tr_initialDensity sizeClass="s25.0">0</tr_initialDensity>
+        <tr_initialDensity sizeClass="s27.5">0</tr_initialDensity>
+        <tr_initialDensity sizeClass="s30.0">0</tr_initialDensity>
+        <tr_initialDensity sizeClass="s32.5">0</tr_initialDensity>
         <tr_initialDensity sizeClass="s35.0">0</tr_initialDensity>
         <tr_initialDensity sizeClass="s37.5">0</tr_initialDensity>
         <tr_initialDensity sizeClass="s40.0">0</tr_initialDensity>
-        <tr_initialDensity sizeClass="s42.5">5.42749189374048</tr_initialDensity>
+        <tr_initialDensity sizeClass="s42.5">0</tr_initialDensity>
         <tr_initialDensity sizeClass="s45.0">0</tr_initialDensity>
         <tr_initialDensity sizeClass="s47.5">0</tr_initialDensity>
         <tr_initialDensity sizeClass="s50.0">0</tr_initialDensity>
@@ -1112,18 +1112,18 @@
     <tr_snagInitialDensities>
       <tr_sidVals whatSpecies="Western_Hemlock">
         <tr_snagInitialDensity sizeClass="s7.5">0</tr_snagInitialDensity>
-        <tr_snagInitialDensity sizeClass="s10.0">0</tr_snagInitialDensity>
-        <tr_snagInitialDensity sizeClass="s12.5">0</tr_snagInitialDensity>
+        <tr_snagInitialDensity sizeClass="s10.0">288.673852142713</tr_snagInitialDensity>
+        <tr_snagInitialDensity sizeClass="s12.5">141.258975561632</tr_snagInitialDensity>
         <tr_snagInitialDensity sizeClass="s15.0">0</tr_snagInitialDensity>
         <tr_snagInitialDensity sizeClass="s17.5">0</tr_snagInitialDensity>
-        <tr_snagInitialDensity sizeClass="s20.0">28.4566609946571</tr_snagInitialDensity>
+        <tr_snagInitialDensity sizeClass="s20.0">0</tr_snagInitialDensity>
         <tr_snagInitialDensity sizeClass="s22.5">0</tr_snagInitialDensity>
         <tr_snagInitialDensity sizeClass="s25.0">0</tr_snagInitialDensity>
         <tr_snagInitialDensity sizeClass="s27.5">0</tr_snagInitialDensity>
         <tr_snagInitialDensity sizeClass="s30.0">0</tr_snagInitialDensity>
         <tr_snagInitialDensity sizeClass="s32.5">0</tr_snagInitialDensity>
-        <tr_snagInitialDensity sizeClass="s35.0">0</tr_snagInitialDensity>
-        <tr_snagInitialDensity sizeClass="s37.5">0</tr_snagInitialDensity>
+        <tr_snagInitialDensity sizeClass="s35.0">6.77795871565165</tr_snagInitialDensity>
+        <tr_snagInitialDensity sizeClass="s37.5">5.97915225061301</tr_snagInitialDensity>
         <tr_snagInitialDensity sizeClass="s40.0">0</tr_snagInitialDensity>
         <tr_snagInitialDensity sizeClass="s42.5">0</tr_snagInitialDensity>
         <tr_snagInitialDensity sizeClass="s45.0">0</tr_snagInitialDensity>
@@ -1224,10 +1224,10 @@
         <tr_snagInitialDensity sizeClass="s22.5">0</tr_snagInitialDensity>
         <tr_snagInitialDensity sizeClass="s25.0">0</tr_snagInitialDensity>
         <tr_snagInitialDensity sizeClass="s27.5">0</tr_snagInitialDensity>
-        <tr_snagInitialDensity sizeClass="s30.0">11.2432848338074</tr_snagInitialDensity>
+        <tr_snagInitialDensity sizeClass="s30.0">0</tr_snagInitialDensity>
         <tr_snagInitialDensity sizeClass="s32.5">0</tr_snagInitialDensity>
-        <tr_snagInitialDensity sizeClass="s35.0">8.34531153581536</tr_snagInitialDensity>
-        <tr_snagInitialDensity sizeClass="s37.5">0</tr_snagInitialDensity>
+        <tr_snagInitialDensity sizeClass="s35.0">0</tr_snagInitialDensity>
+        <tr_snagInitialDensity sizeClass="s37.5">6.39617981656597</tr_snagInitialDensity>
         <tr_snagInitialDensity sizeClass="s40.0">0</tr_snagInitialDensity>
         <tr_snagInitialDensity sizeClass="s42.5">0</tr_snagInitialDensity>
         <tr_snagInitialDensity sizeClass="s45.0">0</tr_snagInitialDensity>
@@ -1438,7 +1438,7 @@
         <tr_snagInitialDensity sizeClass="s32.5">0</tr_snagInitialDensity>
         <tr_snagInitialDensity sizeClass="s35.0">0</tr_snagInitialDensity>
         <tr_snagInitialDensity sizeClass="s37.5">0</tr_snagInitialDensity>
-        <tr_snagInitialDensity sizeClass="s40.0">0</tr_snagInitialDensity>
+        <tr_snagInitialDensity sizeClass="s40.0">5.54218557272331</tr_snagInitialDensity>
         <tr_snagInitialDensity sizeClass="s42.5">0</tr_snagInitialDensity>
         <tr_snagInitialDensity sizeClass="s45.0">0</tr_snagInitialDensity>
         <tr_snagInitialDensity sizeClass="s47.5">0</tr_snagInitialDensity>
@@ -1640,10 +1640,10 @@
         <tr_snagInitialDensity sizeClass="s12.5">0</tr_snagInitialDensity>
         <tr_snagInitialDensity sizeClass="s15.0">0</tr_snagInitialDensity>
         <tr_snagInitialDensity sizeClass="s17.5">0</tr_snagInitialDensity>
-        <tr_snagInitialDensity sizeClass="s20.0">0</tr_snagInitialDensity>
+        <tr_snagInitialDensity sizeClass="s20.0">19.7856626734004</tr_snagInitialDensity>
         <tr_snagInitialDensity sizeClass="s22.5">0</tr_snagInitialDensity>
-        <tr_snagInitialDensity sizeClass="s25.0">0</tr_snagInitialDensity>
-        <tr_snagInitialDensity sizeClass="s27.5">0</tr_snagInitialDensity>
+        <tr_snagInitialDensity sizeClass="s25.0">14.0680125597768</tr_snagInitialDensity>
+        <tr_snagInitialDensity sizeClass="s27.5">12.3383098313387</tr_snagInitialDensity>
         <tr_snagInitialDensity sizeClass="s30.0">0</tr_snagInitialDensity>
         <tr_snagInitialDensity sizeClass="s32.5">0</tr_snagInitialDensity>
         <tr_snagInitialDensity sizeClass="s35.0">0</tr_snagInitialDensity>
@@ -1746,7 +1746,7 @@
         <tr_snagInitialDensity sizeClass="s15.0">0</tr_snagInitialDensity>
         <tr_snagInitialDensity sizeClass="s17.5">0</tr_snagInitialDensity>
         <tr_snagInitialDensity sizeClass="s20.0">0</tr_snagInitialDensity>
-        <tr_snagInitialDensity sizeClass="s22.5">0</tr_snagInitialDensity>
+        <tr_snagInitialDensity sizeClass="s22.5">18.2858882944603</tr_snagInitialDensity>
         <tr_snagInitialDensity sizeClass="s25.0">0</tr_snagInitialDensity>
         <tr_snagInitialDensity sizeClass="s27.5">0</tr_snagInitialDensity>
         <tr_snagInitialDensity sizeClass="s30.0">0</tr_snagInitialDensity>
@@ -1873,7 +1873,7 @@
         <tr_snagInitialDensity sizeClass="s70.0">0</tr_snagInitialDensity>
         <tr_snagInitialDensity sizeClass="s72.5">0</tr_snagInitialDensity>
         <tr_snagInitialDensity sizeClass="s75.0">0</tr_snagInitialDensity>
-        <tr_snagInitialDensity sizeClass="s77.5">0</tr_snagInitialDensity>
+        <tr_snagInitialDensity sizeClass="s77.5">1.39294582671881</tr_snagInitialDensity>
         <tr_snagInitialDensity sizeClass="s80.0">0</tr_snagInitialDensity>
         <tr_snagInitialDensity sizeClass="s82.5">0</tr_snagInitialDensity>
         <tr_snagInitialDensity sizeClass="s85.0">0</tr_snagInitialDensity>
@@ -1951,13 +1951,13 @@
       </tr_sidVals>
       <tr_sidVals whatSpecies="Paper_Birch">
         <tr_snagInitialDensity sizeClass="s7.5">0</tr_snagInitialDensity>
-        <tr_snagInitialDensity sizeClass="s10.0">0</tr_snagInitialDensity>
-        <tr_snagInitialDensity sizeClass="s12.5">88.1473530970497</tr_snagInitialDensity>
-        <tr_snagInitialDensity sizeClass="s15.0">0</tr_snagInitialDensity>
-        <tr_snagInitialDensity sizeClass="s17.5">0</tr_snagInitialDensity>
+        <tr_snagInitialDensity sizeClass="s10.0">81.5839262317087</tr_snagInitialDensity>
+        <tr_snagInitialDensity sizeClass="s12.5">0</tr_snagInitialDensity>
+        <tr_snagInitialDensity sizeClass="s15.0">36.2595227696483</tr_snagInitialDensity>
+        <tr_snagInitialDensity sizeClass="s17.5">26.4849928180547</tr_snagInitialDensity>
         <tr_snagInitialDensity sizeClass="s20.0">0</tr_snagInitialDensity>
         <tr_snagInitialDensity sizeClass="s22.5">0</tr_snagInitialDensity>
-        <tr_snagInitialDensity sizeClass="s25.0">15.5616399083839</tr_snagInitialDensity>
+        <tr_snagInitialDensity sizeClass="s25.0">0</tr_snagInitialDensity>
         <tr_snagInitialDensity sizeClass="s27.5">0</tr_snagInitialDensity>
         <tr_snagInitialDensity sizeClass="s30.0">0</tr_snagInitialDensity>
         <tr_snagInitialDensity sizeClass="s32.5">0</tr_snagInitialDensity>
@@ -2951,6 +2951,7 @@
       <ha_timestep>1</ha_timestep>
       <ha_cutType>partial</ha_cutType>
       <ha_cutAmountType>percent of density</ha_cutAmountType>
+      <ha_maxSnagDecayClass>3</ha_maxSnagDecayClass>
       <ha_tallestFirst>1</ha_tallestFirst>
       <ha_dbhRange>
         <ha_low>17.5</ha_low>
@@ -3499,12 +3500,6 @@
       <ha_applyToCell x="23" y="23"/>
     </ha_cutEvent>
   </Harvest1>
-  <GLIMapCreator2>
-    <li_numAziGrids>18</li_numAziGrids>
-    <li_numAltGrids>12</li_numAltGrids>
-    <li_minSunAngle>0.785</li_minSunAngle>
-    <li_mapLightHeight>1.3</li_mapLightHeight>
-  </GLIMapCreator2>
   <GeneralLight>
     <li_lightExtinctionCoefficient>
       <li_lecVal species="Western_Hemlock">0.08</li_lecVal>
@@ -3557,6 +3552,12 @@
     <li_snagAgeClass1>7</li_snagAgeClass1>
     <li_snagAgeClass2>17</li_snagAgeClass2>
   </GeneralLight>
+  <GLIMapCreator2>
+    <li_numAziGrids>18</li_numAziGrids>
+    <li_numAltGrids>12</li_numAltGrids>
+    <li_minSunAngle>0.785</li_minSunAngle>
+    <li_mapLightHeight>1.3</li_mapLightHeight>
+  </GLIMapCreator2>
   <QuadratLight3>
     <li_numAziGrids>18</li_numAziGrids>
     <li_numAltGrids>12</li_numAltGrids>
@@ -4082,8 +4083,8 @@
       <mo_cmVal species="Paper_Birch">4.33E-06</mo_cmVal>
     </mo_CompMort>
     <mo_CompMortMax>
-      <mo_cmmVal species="Western_Hemlock">0.17</mo_cmmVal>
-      <mo_cmmVal species="Western_redcedar">0.17</mo_cmmVal>
+      <mo_cmmVal species="Western_Hemlock">0.1</mo_cmmVal>
+      <mo_cmmVal species="Western_redcedar">0.05</mo_cmmVal>
       <mo_cmmVal species="Amabalis_Fir">0.17</mo_cmmVal>
       <mo_cmmVal species="Subalpine_Fir">0.17</mo_cmmVal>
       <mo_cmmVal species="Hybrid_spruce">0.05</mo_cmmVal>
@@ -4210,22 +4211,22 @@
     </mo_selfThinRadius>
   </DensitySelfThinning15>
   <SnagDecayClassDynamics16>
-    <sd_snagDecompTreefallAlpha>-100.0</sd_snagDecompTreefallAlpha>
+    <sd_snagDecompTreefallAlpha>-10</sd_snagDecompTreefallAlpha>
     <sd_snagDecompTreefallBeta>
-      <sd_sdtbVal species="Western_Hemlock">1.151</sd_sdtbVal>
-      <sd_sdtbVal species="Western_redcedar">1.151</sd_sdtbVal>
-      <sd_sdtbVal species="Amabalis_Fir">1.151</sd_sdtbVal>
-      <sd_sdtbVal species="Subalpine_Fir">1.151</sd_sdtbVal>
-      <sd_sdtbVal species="Hybrid_spruce">1.151</sd_sdtbVal>
-      <sd_sdtbVal species="Lodgepole_Pine">1.151</sd_sdtbVal>
-      <sd_sdtbVal species="Trembling_Aspen">-0.404</sd_sdtbVal>
-      <sd_sdtbVal species="Black_Cottonwood">-0.404</sd_sdtbVal>
-      <sd_sdtbVal species="Paper_Birch">-0.907</sd_sdtbVal>
+      <sd_sdtbVal species="Western_Hemlock">5.75</sd_sdtbVal>
+      <sd_sdtbVal species="Western_redcedar">4.7</sd_sdtbVal>
+      <sd_sdtbVal species="Amabalis_Fir">7.2</sd_sdtbVal>
+      <sd_sdtbVal species="Subalpine_Fir">6.1</sd_sdtbVal>
+      <sd_sdtbVal species="Hybrid_spruce">6.3</sd_sdtbVal>
+      <sd_sdtbVal species="Lodgepole_Pine">4</sd_sdtbVal>
+      <sd_sdtbVal species="Trembling_Aspen">6.1</sd_sdtbVal>
+      <sd_sdtbVal species="Black_Cottonwood">-10</sd_sdtbVal>
+      <sd_sdtbVal species="Paper_Birch">5.5</sd_sdtbVal>
     </sd_snagDecompTreefallBeta>
-    <sd_snagDecompTreefallDelta>-0.016</sd_snagDecompTreefallDelta>
-    <sd_snagDecompTreefallTheta>-0.026</sd_snagDecompTreefallTheta>
-    <sd_snagDecompTreefallIota>3.389</sd_snagDecompTreefallIota>
-    <sd_snagDecompTreefallLambda>-0.084</sd_snagDecompTreefallLambda>
+    <sd_snagDecompTreefallDelta>0</sd_snagDecompTreefallDelta>
+    <sd_snagDecompTreefallTheta>0</sd_snagDecompTreefallTheta>
+    <sd_snagDecompTreefallIota>0</sd_snagDecompTreefallIota>
+    <sd_snagDecompTreefallLambda>0</sd_snagDecompTreefallLambda>
     <sd_snagDecompSnagfallAlpha>5.691</sd_snagDecompSnagfallAlpha>
     <sd_snagDecompSnagfallBeta>
       <sd_sdsbVal species="Western_Hemlock">-0.293</sd_sdsbVal>
@@ -4265,8 +4266,8 @@
     <sd_snagDecomp4To4Prob>0.527</sd_snagDecomp4To4Prob>
     <sd_snagDecomp4To5Prob>0.473</sd_snagDecomp4To5Prob>
     <sd_snagDecomp5To5Prob>1.0</sd_snagDecomp5To5Prob>
-    <sd_minSnagBreakHeight>3.0</sd_minSnagBreakHeight>
-    <sd_maxSnagBreakHeight>10.0</sd_maxSnagBreakHeight>
+    <sd_minSnagBreakHeight>3</sd_minSnagBreakHeight>
+    <sd_maxSnagBreakHeight>10</sd_maxSnagBreakHeight>
     <sd_snagDecomp5To5Prob>1.0</sd_snagDecomp5To5Prob>
     <sd_snagDecompInitialClasses/>
   </SnagDecayClassDynamics16>
@@ -4305,11 +4306,11 @@
       <su_posuVal species="Paper_Birch">0.1</su_posuVal>
     </su_propOfSnagsUproot>
     <su_rootTipupFactor>3.1</su_rootTipupFactor>
-    <su_scarSoilDecayAlpha>-0.0665</su_scarSoilDecayAlpha>
-    <su_scarSoilDecayBeta>1.45</su_scarSoilDecayBeta>
-    <su_tipupDecayAlpha>-0.034</su_tipupDecayAlpha>
-    <su_tipupDecayBeta>1.5</su_tipupDecayBeta>
-    <su_maxNumberDecayYears>20</su_maxNumberDecayYears>
+    <su_scarSoilDecayAlpha>-0.2</su_scarSoilDecayAlpha>
+    <su_scarSoilDecayBeta>1</su_scarSoilDecayBeta>
+    <su_tipupDecayAlpha>-0.15</su_tipupDecayAlpha>
+    <su_tipupDecayBeta>1</su_tipupDecayBeta>
+    <su_maxNumberDecayYears>125</su_maxNumberDecayYears>
     <su_mossProportion>0</su_mossProportion>
     <su_directionalTreeFall>1</su_directionalTreeFall>
     <su_initialScarSoil>0</su_initialScarSoil>
@@ -4325,66 +4326,66 @@
     <su_propFallenSnagsLogDecayClass3>0.78</su_propFallenSnagsLogDecayClass3>
     <su_propFallenSnagsLogDecayClass4>0.1</su_propFallenSnagsLogDecayClass4>
     <su_propFallenSnagsLogDecayClass5>0.06</su_propFallenSnagsLogDecayClass5>
-    <su_logSpGroup1SmallDecayClass1DecayAlpha>-0.0318</su_logSpGroup1SmallDecayClass1DecayAlpha>
-    <su_logSpGroup1SmallDecayClass2DecayAlpha>-0.0318</su_logSpGroup1SmallDecayClass2DecayAlpha>
-    <su_logSpGroup1SmallDecayClass3DecayAlpha>-0.0318</su_logSpGroup1SmallDecayClass3DecayAlpha>
-    <su_logSpGroup1SmallDecayClass4DecayAlpha>-0.0318</su_logSpGroup1SmallDecayClass4DecayAlpha>
-    <su_logSpGroup1SmallDecayClass5DecayAlpha>-0.0318</su_logSpGroup1SmallDecayClass5DecayAlpha>
-    <su_logSpGroup2SmallDecayClass1DecayAlpha>-0.008</su_logSpGroup2SmallDecayClass1DecayAlpha>
-    <su_logSpGroup2SmallDecayClass2DecayAlpha>-0.008</su_logSpGroup2SmallDecayClass2DecayAlpha>
-    <su_logSpGroup2SmallDecayClass3DecayAlpha>-0.008</su_logSpGroup2SmallDecayClass3DecayAlpha>
-    <su_logSpGroup2SmallDecayClass4DecayAlpha>-0.008</su_logSpGroup2SmallDecayClass4DecayAlpha>
-    <su_logSpGroup2SmallDecayClass5DecayAlpha>-0.008</su_logSpGroup2SmallDecayClass5DecayAlpha>
-    <su_logSpGroup3SmallDecayClass1DecayAlpha>-0.051</su_logSpGroup3SmallDecayClass1DecayAlpha>
-    <su_logSpGroup3SmallDecayClass2DecayAlpha>-0.051</su_logSpGroup3SmallDecayClass2DecayAlpha>
-    <su_logSpGroup3SmallDecayClass3DecayAlpha>-0.051</su_logSpGroup3SmallDecayClass3DecayAlpha>
-    <su_logSpGroup3SmallDecayClass4DecayAlpha>-0.051</su_logSpGroup3SmallDecayClass4DecayAlpha>
-    <su_logSpGroup3SmallDecayClass5DecayAlpha>-0.051</su_logSpGroup3SmallDecayClass5DecayAlpha>
-    <su_logSpGroup1LargeDecayClass1DecayAlpha>-0.0318</su_logSpGroup1LargeDecayClass1DecayAlpha>
-    <su_logSpGroup1LargeDecayClass2DecayAlpha>-0.0318</su_logSpGroup1LargeDecayClass2DecayAlpha>
-    <su_logSpGroup1LargeDecayClass3DecayAlpha>-0.0318</su_logSpGroup1LargeDecayClass3DecayAlpha>
-    <su_logSpGroup1LargeDecayClass4DecayAlpha>-0.0318</su_logSpGroup1LargeDecayClass4DecayAlpha>
-    <su_logSpGroup1LargeDecayClass5DecayAlpha>-0.0318</su_logSpGroup1LargeDecayClass5DecayAlpha>
-    <su_logSpGroup2LargeDecayClass1DecayAlpha>-0.008</su_logSpGroup2LargeDecayClass1DecayAlpha>
-    <su_logSpGroup2LargeDecayClass2DecayAlpha>-0.008</su_logSpGroup2LargeDecayClass2DecayAlpha>
-    <su_logSpGroup2LargeDecayClass3DecayAlpha>-0.008</su_logSpGroup2LargeDecayClass3DecayAlpha>
-    <su_logSpGroup2LargeDecayClass4DecayAlpha>-0.008</su_logSpGroup2LargeDecayClass4DecayAlpha>
-    <su_logSpGroup2LargeDecayClass5DecayAlpha>-0.008</su_logSpGroup2LargeDecayClass5DecayAlpha>
-    <su_logSpGroup3LargeDecayClass1DecayAlpha>-0.051</su_logSpGroup3LargeDecayClass1DecayAlpha>
-    <su_logSpGroup3LargeDecayClass2DecayAlpha>-0.051</su_logSpGroup3LargeDecayClass2DecayAlpha>
-    <su_logSpGroup3LargeDecayClass3DecayAlpha>-0.051</su_logSpGroup3LargeDecayClass3DecayAlpha>
-    <su_logSpGroup3LargeDecayClass4DecayAlpha>-0.051</su_logSpGroup3LargeDecayClass4DecayAlpha>
-    <su_logSpGroup3LargeDecayClass5DecayAlpha>-0.051</su_logSpGroup3LargeDecayClass5DecayAlpha>
-    <su_logSpGroup1SmallDecayClass1DecayBeta>0.5</su_logSpGroup1SmallDecayClass1DecayBeta>
-    <su_logSpGroup1SmallDecayClass2DecayBeta>0.5</su_logSpGroup1SmallDecayClass2DecayBeta>
-    <su_logSpGroup1SmallDecayClass3DecayBeta>0.5</su_logSpGroup1SmallDecayClass3DecayBeta>
-    <su_logSpGroup1SmallDecayClass4DecayBeta>0.5</su_logSpGroup1SmallDecayClass4DecayBeta>
-    <su_logSpGroup1SmallDecayClass5DecayBeta>0.5</su_logSpGroup1SmallDecayClass5DecayBeta>
-    <su_logSpGroup2SmallDecayClass1DecayBeta>0.5</su_logSpGroup2SmallDecayClass1DecayBeta>
-    <su_logSpGroup2SmallDecayClass2DecayBeta>0.5</su_logSpGroup2SmallDecayClass2DecayBeta>
-    <su_logSpGroup2SmallDecayClass3DecayBeta>0.5</su_logSpGroup2SmallDecayClass3DecayBeta>
-    <su_logSpGroup2SmallDecayClass4DecayBeta>0.5</su_logSpGroup2SmallDecayClass4DecayBeta>
-    <su_logSpGroup2SmallDecayClass5DecayBeta>0.5</su_logSpGroup2SmallDecayClass5DecayBeta>
-    <su_logSpGroup3SmallDecayClass1DecayBeta>0.5</su_logSpGroup3SmallDecayClass1DecayBeta>
-    <su_logSpGroup3SmallDecayClass2DecayBeta>0.5</su_logSpGroup3SmallDecayClass2DecayBeta>
-    <su_logSpGroup3SmallDecayClass3DecayBeta>0.5</su_logSpGroup3SmallDecayClass3DecayBeta>
-    <su_logSpGroup3SmallDecayClass4DecayBeta>0.5</su_logSpGroup3SmallDecayClass4DecayBeta>
-    <su_logSpGroup3SmallDecayClass5DecayBeta>0.5</su_logSpGroup3SmallDecayClass5DecayBeta>
-    <su_logSpGroup1LargeDecayClass1DecayBeta>0.1</su_logSpGroup1LargeDecayClass1DecayBeta>
-    <su_logSpGroup1LargeDecayClass2DecayBeta>0.1</su_logSpGroup1LargeDecayClass2DecayBeta>
-    <su_logSpGroup1LargeDecayClass3DecayBeta>0.1</su_logSpGroup1LargeDecayClass3DecayBeta>
-    <su_logSpGroup1LargeDecayClass4DecayBeta>0.1</su_logSpGroup1LargeDecayClass4DecayBeta>
-    <su_logSpGroup1LargeDecayClass5DecayBeta>0.1</su_logSpGroup1LargeDecayClass5DecayBeta>
-    <su_logSpGroup2LargeDecayClass1DecayBeta>0.1</su_logSpGroup2LargeDecayClass1DecayBeta>
-    <su_logSpGroup2LargeDecayClass2DecayBeta>0.1</su_logSpGroup2LargeDecayClass2DecayBeta>
-    <su_logSpGroup2LargeDecayClass3DecayBeta>0.1</su_logSpGroup2LargeDecayClass3DecayBeta>
-    <su_logSpGroup2LargeDecayClass4DecayBeta>0.1</su_logSpGroup2LargeDecayClass4DecayBeta>
-    <su_logSpGroup2LargeDecayClass5DecayBeta>0.1</su_logSpGroup2LargeDecayClass5DecayBeta>
-    <su_logSpGroup3LargeDecayClass1DecayBeta>0.1</su_logSpGroup3LargeDecayClass1DecayBeta>
-    <su_logSpGroup3LargeDecayClass2DecayBeta>0.1</su_logSpGroup3LargeDecayClass2DecayBeta>
-    <su_logSpGroup3LargeDecayClass3DecayBeta>0.1</su_logSpGroup3LargeDecayClass3DecayBeta>
-    <su_logSpGroup3LargeDecayClass4DecayBeta>0.1</su_logSpGroup3LargeDecayClass4DecayBeta>
-    <su_logSpGroup3LargeDecayClass5DecayBeta>0.1</su_logSpGroup3LargeDecayClass5DecayBeta>
+    <su_logSpGroup1SmallDecayClass1DecayAlpha>-0.4</su_logSpGroup1SmallDecayClass1DecayAlpha>
+    <su_logSpGroup1SmallDecayClass2DecayAlpha>-0.3</su_logSpGroup1SmallDecayClass2DecayAlpha>
+    <su_logSpGroup1SmallDecayClass3DecayAlpha>-0.02</su_logSpGroup1SmallDecayClass3DecayAlpha>
+    <su_logSpGroup1SmallDecayClass4DecayAlpha>-0.02</su_logSpGroup1SmallDecayClass4DecayAlpha>
+    <su_logSpGroup1SmallDecayClass5DecayAlpha>-0.02</su_logSpGroup1SmallDecayClass5DecayAlpha>
+    <su_logSpGroup2SmallDecayClass1DecayAlpha>-0.2</su_logSpGroup2SmallDecayClass1DecayAlpha>
+    <su_logSpGroup2SmallDecayClass2DecayAlpha>-0.25</su_logSpGroup2SmallDecayClass2DecayAlpha>
+    <su_logSpGroup2SmallDecayClass3DecayAlpha>-0.25</su_logSpGroup2SmallDecayClass3DecayAlpha>
+    <su_logSpGroup2SmallDecayClass4DecayAlpha>-0.2</su_logSpGroup2SmallDecayClass4DecayAlpha>
+    <su_logSpGroup2SmallDecayClass5DecayAlpha>-0.2</su_logSpGroup2SmallDecayClass5DecayAlpha>
+    <su_logSpGroup3SmallDecayClass1DecayAlpha>-1.1</su_logSpGroup3SmallDecayClass1DecayAlpha>
+    <su_logSpGroup3SmallDecayClass2DecayAlpha>-0.6</su_logSpGroup3SmallDecayClass2DecayAlpha>
+    <su_logSpGroup3SmallDecayClass3DecayAlpha>-0.32</su_logSpGroup3SmallDecayClass3DecayAlpha>
+    <su_logSpGroup3SmallDecayClass4DecayAlpha>-0.15</su_logSpGroup3SmallDecayClass4DecayAlpha>
+    <su_logSpGroup3SmallDecayClass5DecayAlpha>-0.15</su_logSpGroup3SmallDecayClass5DecayAlpha>
+    <su_logSpGroup1LargeDecayClass1DecayAlpha>-0.4</su_logSpGroup1LargeDecayClass1DecayAlpha>
+    <su_logSpGroup1LargeDecayClass2DecayAlpha>-0.3</su_logSpGroup1LargeDecayClass2DecayAlpha>
+    <su_logSpGroup1LargeDecayClass3DecayAlpha>-0.02</su_logSpGroup1LargeDecayClass3DecayAlpha>
+    <su_logSpGroup1LargeDecayClass4DecayAlpha>-0.02</su_logSpGroup1LargeDecayClass4DecayAlpha>
+    <su_logSpGroup1LargeDecayClass5DecayAlpha>-0.02</su_logSpGroup1LargeDecayClass5DecayAlpha>
+    <su_logSpGroup2LargeDecayClass1DecayAlpha>-0.2</su_logSpGroup2LargeDecayClass1DecayAlpha>
+    <su_logSpGroup2LargeDecayClass2DecayAlpha>-0.25</su_logSpGroup2LargeDecayClass2DecayAlpha>
+    <su_logSpGroup2LargeDecayClass3DecayAlpha>-0.25</su_logSpGroup2LargeDecayClass3DecayAlpha>
+    <su_logSpGroup2LargeDecayClass4DecayAlpha>-0.2</su_logSpGroup2LargeDecayClass4DecayAlpha>
+    <su_logSpGroup2LargeDecayClass5DecayAlpha>-0.2</su_logSpGroup2LargeDecayClass5DecayAlpha>
+    <su_logSpGroup3LargeDecayClass1DecayAlpha>-1.1</su_logSpGroup3LargeDecayClass1DecayAlpha>
+    <su_logSpGroup3LargeDecayClass2DecayAlpha>-0.6</su_logSpGroup3LargeDecayClass2DecayAlpha>
+    <su_logSpGroup3LargeDecayClass3DecayAlpha>-0.32</su_logSpGroup3LargeDecayClass3DecayAlpha>
+    <su_logSpGroup3LargeDecayClass4DecayAlpha>-0.15</su_logSpGroup3LargeDecayClass4DecayAlpha>
+    <su_logSpGroup3LargeDecayClass5DecayAlpha>-0.15</su_logSpGroup3LargeDecayClass5DecayAlpha>
+    <su_logSpGroup1SmallDecayClass1DecayBeta>0.89</su_logSpGroup1SmallDecayClass1DecayBeta>
+    <su_logSpGroup1SmallDecayClass2DecayBeta>0.9</su_logSpGroup1SmallDecayClass2DecayBeta>
+    <su_logSpGroup1SmallDecayClass3DecayBeta>1.4</su_logSpGroup1SmallDecayClass3DecayBeta>
+    <su_logSpGroup1SmallDecayClass4DecayBeta>1.3</su_logSpGroup1SmallDecayClass4DecayBeta>
+    <su_logSpGroup1SmallDecayClass5DecayBeta>1.3</su_logSpGroup1SmallDecayClass5DecayBeta>
+    <su_logSpGroup2SmallDecayClass1DecayBeta>1</su_logSpGroup2SmallDecayClass1DecayBeta>
+    <su_logSpGroup2SmallDecayClass2DecayBeta>0.9</su_logSpGroup2SmallDecayClass2DecayBeta>
+    <su_logSpGroup2SmallDecayClass3DecayBeta>0.7</su_logSpGroup2SmallDecayClass3DecayBeta>
+    <su_logSpGroup2SmallDecayClass4DecayBeta>0.6</su_logSpGroup2SmallDecayClass4DecayBeta>
+    <su_logSpGroup2SmallDecayClass5DecayBeta>0.6</su_logSpGroup2SmallDecayClass5DecayBeta>
+    <su_logSpGroup3SmallDecayClass1DecayBeta>0.6</su_logSpGroup3SmallDecayClass1DecayBeta>
+    <su_logSpGroup3SmallDecayClass2DecayBeta>0.8</su_logSpGroup3SmallDecayClass2DecayBeta>
+    <su_logSpGroup3SmallDecayClass3DecayBeta>0.9</su_logSpGroup3SmallDecayClass3DecayBeta>
+    <su_logSpGroup3SmallDecayClass4DecayBeta>1</su_logSpGroup3SmallDecayClass4DecayBeta>
+    <su_logSpGroup3SmallDecayClass5DecayBeta>1</su_logSpGroup3SmallDecayClass5DecayBeta>
+    <su_logSpGroup1LargeDecayClass1DecayBeta>0.89</su_logSpGroup1LargeDecayClass1DecayBeta>
+    <su_logSpGroup1LargeDecayClass2DecayBeta>0.9</su_logSpGroup1LargeDecayClass2DecayBeta>
+    <su_logSpGroup1LargeDecayClass3DecayBeta>1.4</su_logSpGroup1LargeDecayClass3DecayBeta>
+    <su_logSpGroup1LargeDecayClass4DecayBeta>1.3</su_logSpGroup1LargeDecayClass4DecayBeta>
+    <su_logSpGroup1LargeDecayClass5DecayBeta>1.3</su_logSpGroup1LargeDecayClass5DecayBeta>
+    <su_logSpGroup2LargeDecayClass1DecayBeta>1</su_logSpGroup2LargeDecayClass1DecayBeta>
+    <su_logSpGroup2LargeDecayClass2DecayBeta>0.9</su_logSpGroup2LargeDecayClass2DecayBeta>
+    <su_logSpGroup2LargeDecayClass3DecayBeta>0.7</su_logSpGroup2LargeDecayClass3DecayBeta>
+    <su_logSpGroup2LargeDecayClass4DecayBeta>0.6</su_logSpGroup2LargeDecayClass4DecayBeta>
+    <su_logSpGroup2LargeDecayClass5DecayBeta>0.6</su_logSpGroup2LargeDecayClass5DecayBeta>
+    <su_logSpGroup3LargeDecayClass1DecayBeta>0.6</su_logSpGroup3LargeDecayClass1DecayBeta>
+    <su_logSpGroup3LargeDecayClass2DecayBeta>0.8</su_logSpGroup3LargeDecayClass2DecayBeta>
+    <su_logSpGroup3LargeDecayClass3DecayBeta>0.9</su_logSpGroup3LargeDecayClass3DecayBeta>
+    <su_logSpGroup3LargeDecayClass4DecayBeta>1</su_logSpGroup3LargeDecayClass4DecayBeta>
+    <su_logSpGroup3LargeDecayClass5DecayBeta>1</su_logSpGroup3LargeDecayClass5DecayBeta>
     <su_initialSmallLogMeanDiameter>14</su_initialSmallLogMeanDiameter>
     <su_initialLargeLogMeanDiameter>32</su_initialLargeLogMeanDiameter>
     <su_initialLogSpGroup1SmallDecayClass1>0.0036</su_initialLogSpGroup1SmallDecayClass1>
@@ -4419,99 +4420,99 @@
     <su_initialLogSpGroup3LargeDecayClass5>0</su_initialLogSpGroup3LargeDecayClass5>
     <su_partialCutScarSoil>0.17</su_partialCutScarSoil>
     <su_partialCutTipup>0.15</su_partialCutTipup>
-    <su_partialCutLogSpGroup1SmallDecayClass1>0.0024</su_partialCutLogSpGroup1SmallDecayClass1>
-    <su_partialCutLogSpGroup1SmallDecayClass2>0.004</su_partialCutLogSpGroup1SmallDecayClass2>
-    <su_partialCutLogSpGroup1SmallDecayClass3>0.0048</su_partialCutLogSpGroup1SmallDecayClass3>
-    <su_partialCutLogSpGroup1SmallDecayClass4>0.0028</su_partialCutLogSpGroup1SmallDecayClass4>
+    <su_partialCutLogSpGroup1SmallDecayClass1>0.005483333</su_partialCutLogSpGroup1SmallDecayClass1>
+    <su_partialCutLogSpGroup1SmallDecayClass2>0.004841667</su_partialCutLogSpGroup1SmallDecayClass2>
+    <su_partialCutLogSpGroup1SmallDecayClass3>0.002788889</su_partialCutLogSpGroup1SmallDecayClass3>
+    <su_partialCutLogSpGroup1SmallDecayClass4>0.000794444</su_partialCutLogSpGroup1SmallDecayClass4>
     <su_partialCutLogSpGroup1SmallDecayClass5>0</su_partialCutLogSpGroup1SmallDecayClass5>
-    <su_partialCutLogSpGroup2SmallDecayClass1>0.00032</su_partialCutLogSpGroup2SmallDecayClass1>
-    <su_partialCutLogSpGroup2SmallDecayClass2>0.00064</su_partialCutLogSpGroup2SmallDecayClass2>
-    <su_partialCutLogSpGroup2SmallDecayClass3>0.0008</su_partialCutLogSpGroup2SmallDecayClass3>
-    <su_partialCutLogSpGroup2SmallDecayClass4>0.00008</su_partialCutLogSpGroup2SmallDecayClass4>
+    <su_partialCutLogSpGroup2SmallDecayClass1>0.000497222</su_partialCutLogSpGroup2SmallDecayClass1>
+    <su_partialCutLogSpGroup2SmallDecayClass2>0.000161111</su_partialCutLogSpGroup2SmallDecayClass2>
+    <su_partialCutLogSpGroup2SmallDecayClass3>0</su_partialCutLogSpGroup2SmallDecayClass3>
+    <su_partialCutLogSpGroup2SmallDecayClass4>0</su_partialCutLogSpGroup2SmallDecayClass4>
     <su_partialCutLogSpGroup2SmallDecayClass5>0</su_partialCutLogSpGroup2SmallDecayClass5>
-    <su_partialCutLogSpGroup3SmallDecayClass1>0.00056</su_partialCutLogSpGroup3SmallDecayClass1>
-    <su_partialCutLogSpGroup3SmallDecayClass2>0.0048</su_partialCutLogSpGroup3SmallDecayClass2>
-    <su_partialCutLogSpGroup3SmallDecayClass3>0.0032</su_partialCutLogSpGroup3SmallDecayClass3>
-    <su_partialCutLogSpGroup3SmallDecayClass4>0.0016</su_partialCutLogSpGroup3SmallDecayClass4>
+    <su_partialCutLogSpGroup3SmallDecayClass1>0.001391667</su_partialCutLogSpGroup3SmallDecayClass1>
+    <su_partialCutLogSpGroup3SmallDecayClass2>0.000494444</su_partialCutLogSpGroup3SmallDecayClass2>
+    <su_partialCutLogSpGroup3SmallDecayClass3>0.000175</su_partialCutLogSpGroup3SmallDecayClass3>
+    <su_partialCutLogSpGroup3SmallDecayClass4>4.17E-05</su_partialCutLogSpGroup3SmallDecayClass4>
     <su_partialCutLogSpGroup3SmallDecayClass5>0</su_partialCutLogSpGroup3SmallDecayClass5>
-    <su_partialCutLogSpGroup1LargeDecayClass1>0.0072</su_partialCutLogSpGroup1LargeDecayClass1>
-    <su_partialCutLogSpGroup1LargeDecayClass2>0.0064</su_partialCutLogSpGroup1LargeDecayClass2>
-    <su_partialCutLogSpGroup1LargeDecayClass3>0.0104</su_partialCutLogSpGroup1LargeDecayClass3>
-    <su_partialCutLogSpGroup1LargeDecayClass4>0.0144</su_partialCutLogSpGroup1LargeDecayClass4>
+    <su_partialCutLogSpGroup1LargeDecayClass1>0.007144444</su_partialCutLogSpGroup1LargeDecayClass1>
+    <su_partialCutLogSpGroup1LargeDecayClass2>0.005313889</su_partialCutLogSpGroup1LargeDecayClass2>
+    <su_partialCutLogSpGroup1LargeDecayClass3>0.005075</su_partialCutLogSpGroup1LargeDecayClass3>
+    <su_partialCutLogSpGroup1LargeDecayClass4>0.003338889</su_partialCutLogSpGroup1LargeDecayClass4>
     <su_partialCutLogSpGroup1LargeDecayClass5>0</su_partialCutLogSpGroup1LargeDecayClass5>
-    <su_partialCutLogSpGroup2LargeDecayClass1>0.0008</su_partialCutLogSpGroup2LargeDecayClass1>
-    <su_partialCutLogSpGroup2LargeDecayClass2>0.0016</su_partialCutLogSpGroup2LargeDecayClass2>
-    <su_partialCutLogSpGroup2LargeDecayClass3>0.0028</su_partialCutLogSpGroup2LargeDecayClass3>
-    <su_partialCutLogSpGroup2LargeDecayClass4>0.00112</su_partialCutLogSpGroup2LargeDecayClass4>
+    <su_partialCutLogSpGroup2LargeDecayClass1>0.000708333</su_partialCutLogSpGroup2LargeDecayClass1>
+    <su_partialCutLogSpGroup2LargeDecayClass2>2.00E-04</su_partialCutLogSpGroup2LargeDecayClass2>
+    <su_partialCutLogSpGroup2LargeDecayClass3>0</su_partialCutLogSpGroup2LargeDecayClass3>
+    <su_partialCutLogSpGroup2LargeDecayClass4>0</su_partialCutLogSpGroup2LargeDecayClass4>
     <su_partialCutLogSpGroup2LargeDecayClass5>0</su_partialCutLogSpGroup2LargeDecayClass5>
-    <su_partialCutLogSpGroup3LargeDecayClass1>0.00128</su_partialCutLogSpGroup3LargeDecayClass1>
-    <su_partialCutLogSpGroup3LargeDecayClass2>0.004</su_partialCutLogSpGroup3LargeDecayClass2>
-    <su_partialCutLogSpGroup3LargeDecayClass3>0.0024</su_partialCutLogSpGroup3LargeDecayClass3>
-    <su_partialCutLogSpGroup3LargeDecayClass4>0.0016</su_partialCutLogSpGroup3LargeDecayClass4>
+    <su_partialCutLogSpGroup3LargeDecayClass1>0.000313889</su_partialCutLogSpGroup3LargeDecayClass1>
+    <su_partialCutLogSpGroup3LargeDecayClass2>0.000286111</su_partialCutLogSpGroup3LargeDecayClass2>
+    <su_partialCutLogSpGroup3LargeDecayClass3>0.000222222</su_partialCutLogSpGroup3LargeDecayClass3>
+    <su_partialCutLogSpGroup3LargeDecayClass4>7.78E-05</su_partialCutLogSpGroup3LargeDecayClass4>
     <su_partialCutLogSpGroup3LargeDecayClass5>0</su_partialCutLogSpGroup3LargeDecayClass5>
     <su_gapCutScarSoil>0.45</su_gapCutScarSoil>
     <su_gapCutTipup>0.34</su_gapCutTipup>
-    <su_gapCutLogSpGroup1SmallDecayClass1>0.001510322</su_gapCutLogSpGroup1SmallDecayClass1>
-    <su_gapCutLogSpGroup1SmallDecayClass2>0.002866952</su_gapCutLogSpGroup1SmallDecayClass2>
-    <su_gapCutLogSpGroup1SmallDecayClass3>0.004074428</su_gapCutLogSpGroup1SmallDecayClass3>
-    <su_gapCutLogSpGroup1SmallDecayClass4>0.003745455</su_gapCutLogSpGroup1SmallDecayClass4>
+    <su_gapCutLogSpGroup1SmallDecayClass1>0.007119444</su_gapCutLogSpGroup1SmallDecayClass1>
+    <su_gapCutLogSpGroup1SmallDecayClass2>0.005077778</su_gapCutLogSpGroup1SmallDecayClass2>
+    <su_gapCutLogSpGroup1SmallDecayClass3>0.002294444</su_gapCutLogSpGroup1SmallDecayClass3>
+    <su_gapCutLogSpGroup1SmallDecayClass4>0.000263889</su_gapCutLogSpGroup1SmallDecayClass4>
     <su_gapCutLogSpGroup1SmallDecayClass5>0</su_gapCutLogSpGroup1SmallDecayClass5>
-    <su_gapCutLogSpGroup2SmallDecayClass1>0.000163288</su_gapCutLogSpGroup2SmallDecayClass1>
-    <su_gapCutLogSpGroup2SmallDecayClass2>7.96E-05</su_gapCutLogSpGroup2SmallDecayClass2>
-    <su_gapCutLogSpGroup2SmallDecayClass3>0.000444714</su_gapCutLogSpGroup2SmallDecayClass3>
-    <su_gapCutLogSpGroup2SmallDecayClass4>0.000500481</su_gapCutLogSpGroup2SmallDecayClass4>
+    <su_gapCutLogSpGroup2SmallDecayClass1>0.001163889</su_gapCutLogSpGroup2SmallDecayClass1>
+    <su_gapCutLogSpGroup2SmallDecayClass2>0.000216667</su_gapCutLogSpGroup2SmallDecayClass2>
+    <su_gapCutLogSpGroup2SmallDecayClass3>0</su_gapCutLogSpGroup2SmallDecayClass3>
+    <su_gapCutLogSpGroup2SmallDecayClass4>0</su_gapCutLogSpGroup2SmallDecayClass4>
     <su_gapCutLogSpGroup2SmallDecayClass5>0</su_gapCutLogSpGroup2SmallDecayClass5>
-    <su_gapCutLogSpGroup3SmallDecayClass1>0.000551551</su_gapCutLogSpGroup3SmallDecayClass1>
-    <su_gapCutLogSpGroup3SmallDecayClass2>0.003433051</su_gapCutLogSpGroup3SmallDecayClass2>
-    <su_gapCutLogSpGroup3SmallDecayClass3>0.006296809</su_gapCutLogSpGroup3SmallDecayClass3>
-    <su_gapCutLogSpGroup3SmallDecayClass4>0.001773475</su_gapCutLogSpGroup3SmallDecayClass4>
+    <su_gapCutLogSpGroup3SmallDecayClass1>0.001847222</su_gapCutLogSpGroup3SmallDecayClass1>
+    <su_gapCutLogSpGroup3SmallDecayClass2>0.000416667</su_gapCutLogSpGroup3SmallDecayClass2>
+    <su_gapCutLogSpGroup3SmallDecayClass3>0.000111111</su_gapCutLogSpGroup3SmallDecayClass3>
+    <su_gapCutLogSpGroup3SmallDecayClass4>0</su_gapCutLogSpGroup3SmallDecayClass4>
     <su_gapCutLogSpGroup3SmallDecayClass5>0</su_gapCutLogSpGroup3SmallDecayClass5>
-    <su_gapCutLogSpGroup1LargeDecayClass1>0.004178403</su_gapCutLogSpGroup1LargeDecayClass1>
-    <su_gapCutLogSpGroup1LargeDecayClass2>0.004177805</su_gapCutLogSpGroup1LargeDecayClass2>
-    <su_gapCutLogSpGroup1LargeDecayClass3>0.011538771</su_gapCutLogSpGroup1LargeDecayClass3>
-    <su_gapCutLogSpGroup1LargeDecayClass4>0.011349749</su_gapCutLogSpGroup1LargeDecayClass4>
+    <su_gapCutLogSpGroup1LargeDecayClass1>0.007536111</su_gapCutLogSpGroup1LargeDecayClass1>
+    <su_gapCutLogSpGroup1LargeDecayClass2>0.007672222</su_gapCutLogSpGroup1LargeDecayClass2>
+    <su_gapCutLogSpGroup1LargeDecayClass3>0.005425</su_gapCutLogSpGroup1LargeDecayClass3>
+    <su_gapCutLogSpGroup1LargeDecayClass4>0.002388889</su_gapCutLogSpGroup1LargeDecayClass4>
     <su_gapCutLogSpGroup1LargeDecayClass5>0</su_gapCutLogSpGroup1LargeDecayClass5>
-    <su_gapCutLogSpGroup2LargeDecayClass1>0.000502246</su_gapCutLogSpGroup2LargeDecayClass1>
-    <su_gapCutLogSpGroup2LargeDecayClass2>0.001920617</su_gapCutLogSpGroup2LargeDecayClass2>
-    <su_gapCutLogSpGroup2LargeDecayClass3>0.005766372</su_gapCutLogSpGroup2LargeDecayClass3>
-    <su_gapCutLogSpGroup2LargeDecayClass4>0.000504035</su_gapCutLogSpGroup2LargeDecayClass4>
+    <su_gapCutLogSpGroup2LargeDecayClass1>0.000380556</su_gapCutLogSpGroup2LargeDecayClass1>
+    <su_gapCutLogSpGroup2LargeDecayClass2>0.000444444</su_gapCutLogSpGroup2LargeDecayClass2>
+    <su_gapCutLogSpGroup2LargeDecayClass3>0</su_gapCutLogSpGroup2LargeDecayClass3>
+    <su_gapCutLogSpGroup2LargeDecayClass4>0</su_gapCutLogSpGroup2LargeDecayClass4>
     <su_gapCutLogSpGroup2LargeDecayClass5>0</su_gapCutLogSpGroup2LargeDecayClass5>
-    <su_gapCutLogSpGroup3LargeDecayClass1>0.00208923</su_gapCutLogSpGroup3LargeDecayClass1>
-    <su_gapCutLogSpGroup3LargeDecayClass2>0.007040738</su_gapCutLogSpGroup3LargeDecayClass2>
-    <su_gapCutLogSpGroup3LargeDecayClass3>0.004176849</su_gapCutLogSpGroup3LargeDecayClass3>
-    <su_gapCutLogSpGroup3LargeDecayClass4>0.001315027</su_gapCutLogSpGroup3LargeDecayClass4>
+    <su_gapCutLogSpGroup3LargeDecayClass1>0.001713889</su_gapCutLogSpGroup3LargeDecayClass1>
+    <su_gapCutLogSpGroup3LargeDecayClass2>0.000241667</su_gapCutLogSpGroup3LargeDecayClass2>
+    <su_gapCutLogSpGroup3LargeDecayClass3>0</su_gapCutLogSpGroup3LargeDecayClass3>
+    <su_gapCutLogSpGroup3LargeDecayClass4>0</su_gapCutLogSpGroup3LargeDecayClass4>
     <su_gapCutLogSpGroup3LargeDecayClass5>0</su_gapCutLogSpGroup3LargeDecayClass5>
     <su_clearCutScarSoil>0.36</su_clearCutScarSoil>
     <su_clearCutTipup>0.34</su_clearCutTipup>
-    <su_clearCutLogSpGroup1SmallDecayClass1>0.001510322</su_clearCutLogSpGroup1SmallDecayClass1>
-    <su_clearCutLogSpGroup1SmallDecayClass2>0.002866952</su_clearCutLogSpGroup1SmallDecayClass2>
-    <su_clearCutLogSpGroup1SmallDecayClass3>0.004074428</su_clearCutLogSpGroup1SmallDecayClass3>
-    <su_clearCutLogSpGroup1SmallDecayClass4>0.003745455</su_clearCutLogSpGroup1SmallDecayClass4>
+    <su_clearCutLogSpGroup1SmallDecayClass1>0.006372222</su_clearCutLogSpGroup1SmallDecayClass1>
+    <su_clearCutLogSpGroup1SmallDecayClass2>0.004130556</su_clearCutLogSpGroup1SmallDecayClass2>
+    <su_clearCutLogSpGroup1SmallDecayClass3>0.002627778</su_clearCutLogSpGroup1SmallDecayClass3>
+    <su_clearCutLogSpGroup1SmallDecayClass4>0.000761111</su_clearCutLogSpGroup1SmallDecayClass4>
     <su_clearCutLogSpGroup1SmallDecayClass5>0</su_clearCutLogSpGroup1SmallDecayClass5>
-    <su_clearCutLogSpGroup2SmallDecayClass1>0.000163288</su_clearCutLogSpGroup2SmallDecayClass1>
-    <su_clearCutLogSpGroup2SmallDecayClass2>7.96E-05</su_clearCutLogSpGroup2SmallDecayClass2>
-    <su_clearCutLogSpGroup2SmallDecayClass3>0.000444714</su_clearCutLogSpGroup2SmallDecayClass3>
-    <su_clearCutLogSpGroup2SmallDecayClass4>0.000500481</su_clearCutLogSpGroup2SmallDecayClass4>
+    <su_clearCutLogSpGroup2SmallDecayClass1>0.002947222</su_clearCutLogSpGroup2SmallDecayClass1>
+    <su_clearCutLogSpGroup2SmallDecayClass2>0.000927778</su_clearCutLogSpGroup2SmallDecayClass2>
+    <su_clearCutLogSpGroup2SmallDecayClass3>0.000180556</su_clearCutLogSpGroup2SmallDecayClass3>
+    <su_clearCutLogSpGroup2SmallDecayClass4>0</su_clearCutLogSpGroup2SmallDecayClass4>
     <su_clearCutLogSpGroup2SmallDecayClass5>0</su_clearCutLogSpGroup2SmallDecayClass5>
-    <su_clearCutLogSpGroup3SmallDecayClass1>0.000551551</su_clearCutLogSpGroup3SmallDecayClass1>
-    <su_clearCutLogSpGroup3SmallDecayClass2>0.003433051</su_clearCutLogSpGroup3SmallDecayClass2>
-    <su_clearCutLogSpGroup3SmallDecayClass3>0.006296809</su_clearCutLogSpGroup3SmallDecayClass3>
-    <su_clearCutLogSpGroup3SmallDecayClass4>0.001773475</su_clearCutLogSpGroup3SmallDecayClass4>
+    <su_clearCutLogSpGroup3SmallDecayClass1>0.004988889</su_clearCutLogSpGroup3SmallDecayClass1>
+    <su_clearCutLogSpGroup3SmallDecayClass2>0.001441667</su_clearCutLogSpGroup3SmallDecayClass2>
+    <su_clearCutLogSpGroup3SmallDecayClass3>0.000261111</su_clearCutLogSpGroup3SmallDecayClass3>
+    <su_clearCutLogSpGroup3SmallDecayClass4>0.000147222</su_clearCutLogSpGroup3SmallDecayClass4>
     <su_clearCutLogSpGroup3SmallDecayClass5>0</su_clearCutLogSpGroup3SmallDecayClass5>
-    <su_clearCutLogSpGroup1LargeDecayClass1>0.004178403</su_clearCutLogSpGroup1LargeDecayClass1>
-    <su_clearCutLogSpGroup1LargeDecayClass2>0.004177805</su_clearCutLogSpGroup1LargeDecayClass2>
-    <su_clearCutLogSpGroup1LargeDecayClass3>0.011538771</su_clearCutLogSpGroup1LargeDecayClass3>
-    <su_clearCutLogSpGroup1LargeDecayClass4>0.011349749</su_clearCutLogSpGroup1LargeDecayClass4>
+    <su_clearCutLogSpGroup1LargeDecayClass1>0.0045</su_clearCutLogSpGroup1LargeDecayClass1>
+    <su_clearCutLogSpGroup1LargeDecayClass2>0.003036111</su_clearCutLogSpGroup1LargeDecayClass2>
+    <su_clearCutLogSpGroup1LargeDecayClass3>0.002705556</su_clearCutLogSpGroup1LargeDecayClass3>
+    <su_clearCutLogSpGroup1LargeDecayClass4>0.001838889</su_clearCutLogSpGroup1LargeDecayClass4>
     <su_clearCutLogSpGroup1LargeDecayClass5>0</su_clearCutLogSpGroup1LargeDecayClass5>
-    <su_clearCutLogSpGroup2LargeDecayClass1>0.000502246</su_clearCutLogSpGroup2LargeDecayClass1>
-    <su_clearCutLogSpGroup2LargeDecayClass2>0.001920617</su_clearCutLogSpGroup2LargeDecayClass2>
-    <su_clearCutLogSpGroup2LargeDecayClass3>0.005766372</su_clearCutLogSpGroup2LargeDecayClass3>
-    <su_clearCutLogSpGroup2LargeDecayClass4>0.000504035</su_clearCutLogSpGroup2LargeDecayClass4>
+    <su_clearCutLogSpGroup2LargeDecayClass1>0.000366667</su_clearCutLogSpGroup2LargeDecayClass1>
+    <su_clearCutLogSpGroup2LargeDecayClass2>0.000805556</su_clearCutLogSpGroup2LargeDecayClass2>
+    <su_clearCutLogSpGroup2LargeDecayClass3>0.000144444</su_clearCutLogSpGroup2LargeDecayClass3>
+    <su_clearCutLogSpGroup2LargeDecayClass4>9.72E-05</su_clearCutLogSpGroup2LargeDecayClass4>
     <su_clearCutLogSpGroup2LargeDecayClass5>0</su_clearCutLogSpGroup2LargeDecayClass5>
-    <su_clearCutLogSpGroup3LargeDecayClass1>0.00208923</su_clearCutLogSpGroup3LargeDecayClass1>
-    <su_clearCutLogSpGroup3LargeDecayClass2>0.007040738</su_clearCutLogSpGroup3LargeDecayClass2>
-    <su_clearCutLogSpGroup3LargeDecayClass3>0.004176849</su_clearCutLogSpGroup3LargeDecayClass3>
-    <su_clearCutLogSpGroup3LargeDecayClass4>0.001315027</su_clearCutLogSpGroup3LargeDecayClass4>
+    <su_clearCutLogSpGroup3LargeDecayClass1>0.005558333</su_clearCutLogSpGroup3LargeDecayClass1>
+    <su_clearCutLogSpGroup3LargeDecayClass2>0.001030556</su_clearCutLogSpGroup3LargeDecayClass2>
+    <su_clearCutLogSpGroup3LargeDecayClass3>0.000183333</su_clearCutLogSpGroup3LargeDecayClass3>
+    <su_clearCutLogSpGroup3LargeDecayClass4>7.22E-05</su_clearCutLogSpGroup3LargeDecayClass4>
     <su_clearCutLogSpGroup3LargeDecayClass5>0</su_clearCutLogSpGroup3LargeDecayClass5>
     <su_partialCutSmallLogMeanDiameter>14</su_partialCutSmallLogMeanDiameter>
     <su_partialCutLargeLogMeanDiameter>32</su_partialCutLargeLogMeanDiameter>
@@ -4951,14 +4952,14 @@
       <pl_applyToSpecies species="Paper_Birch"/>
       <pl_timestep>2</pl_timestep>
       <pl_spaceType>random</pl_spaceType>
-      <pl_distanceOrDensity>332</pl_distanceOrDensity>
+      <pl_distanceOrDensity>430</pl_distanceOrDensity>
       <pl_amountToPlant>
-        <pl_atpVal species="Western_Hemlock">0</pl_atpVal>
-        <pl_atpVal species="Western_redcedar">52</pl_atpVal>
+        <pl_atpVal species="Western_Hemlock">2</pl_atpVal>
+        <pl_atpVal species="Western_redcedar">47</pl_atpVal>
         <pl_atpVal species="Amabalis_Fir">0</pl_atpVal>
-        <pl_atpVal species="Subalpine_Fir">0</pl_atpVal>
+        <pl_atpVal species="Subalpine_Fir">1</pl_atpVal>
         <pl_atpVal species="Hybrid_spruce">48</pl_atpVal>
-        <pl_atpVal species="Lodgepole_Pine">0</pl_atpVal>
+        <pl_atpVal species="Lodgepole_Pine">2</pl_atpVal>
         <pl_atpVal species="Trembling_Aspen">0</pl_atpVal>
         <pl_atpVal species="Black_Cottonwood">0</pl_atpVal>
         <pl_atpVal species="Paper_Birch">0</pl_atpVal>
@@ -5495,7 +5496,7 @@
     </pl_plantEvent>
   </Plant23>
   <Output>
-    <ou_filename>D:\GitHub\SORTIEparams\Outputs\ICH\Snags\ICH-LR-B5-sn_d_init_det.gz.tar</ou_filename>
+    <ou_filename>D:\GitHub\SORTIEparams\Outputs\ICH\CompMort\ICH-LR-A2-cm_det.gz.tar</ou_filename>
     <ou_treeInfo species="Western_Hemlock" type="Seedling">
       <ou_saveFreq>1</ou_saveFreq>
       <ou_float>X</ou_float>
@@ -5988,7 +5989,7 @@
     </ou_gridInfo>
   </Output>
   <ShortOutput>
-    <so_filename>D:\GitHub\SORTIEparams\Outputs\ICH\Snags\ICH-LR-B5-sn_d_init.out</so_filename>
+    <so_filename>D:\GitHub\SORTIEparams\Outputs\ICH\CompMort\ICH-LR-A2-cm.out</so_filename>
     <so_treeTypeInfo type="Seedling">
       <so_saveRDN save="false"/>
       <so_saveADN save="true"/>

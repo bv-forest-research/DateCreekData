@@ -24,8 +24,8 @@ clean_trees_all_yrs <- function(){
 #'
 #'
 #' @examples
-trees_1992 <- function(cruise_data = "./data-raw/Trees/1.1992data.csv",
-                       fixed_data = "./data-raw/Trees/2.1992fixed_radius_data_fromTable20_DateCkHandbook.csv",
+trees_1992 <- function(cruise_data = "./data-raw/Trees/1992data.csv",
+                       fixed_data = "./data-raw/Trees/1992fixed_radius_data_fromTable20_DateCkHandbook.csv",
                        calc_height = TRUE){
   # Read in the data for the cruise plots
   dat.1992.cruise <- read.csv(cruise_data, stringsAsFactors = FALSE)
@@ -43,10 +43,15 @@ trees_1992 <- function(cruise_data = "./data-raw/Trees/1.1992data.csv",
   # Create unique plot names
   dat.1992.cruise <- dat.1992.cruise %>%
     dplyr::mutate(PlotNum = paste0(STRIP, ".", PLOT))
+  # Create STUBYN column and find snags of class 7 or 8 but don't include ones that don't seem like stub equation should be used (too tall)
+  dat.1992.cruise$StubYN<-ifelse(dat.1992.cruise$SnagCode >= 7 & dat.1992.cruise$CRUISED_HEIGHT<=10, "Y", "N" )
+
+  # make sure live trees are not coded as Stubs
+  dat.1992.cruise$StubYN<-ifelse(dat.1992.cruise$Tree.Class <3 , "N", dat.1992.cruise$StubYN )
 
   # Eliminate unwanted columns
   dat.1992.cruise <- dat.1992.cruise %>%
-    dplyr::select(Unit, PlotNum, PrismBands, Spp, DBH, Tree.Class)
+    dplyr::select(Unit, PlotNum, PrismBands, Spp, DBH, Tree.Class, CRUISED_HEIGHT, StubYN)
 
   # Rename species to match other years and functions
   dat.1992.cruise <- dat.1992.cruise %>%
@@ -87,17 +92,19 @@ trees_1992 <- function(cruise_data = "./data-raw/Trees/1.1992data.csv",
 
   length(unique(paste(dat.1992.cruise$Unit,dat.1992.cruise$PlotNum))) #there should be 251 plots
 
-  # Count how many plots there are for each treatment unit
-  # so when averaging carbon/unit later, we can take into account the plots that had zero C
-  labels1992.cruise <- ddply(dat.1992.cruise[c("Unit", "PlotNum",  "DBH")], .(Unit, PlotNum), numcolwise(length))
-  labels1992.cruise$DBH <- NULL # this is really a count of the trees in each plot which we don't need in the labels
-  test.labels <- labels1992.cruise
-  test.labels$count <- rep(1, length(labels1992.cruise$Unit))
-  Plot_in_Units92 <- ddply(test.labels, .(Unit), numcolwise(sum))
 
   # Eliminate  <7.5 measures (should not have been included in cruise)
-  # This will remove plot with no trees, but later it will come back in with the  labels merge
+  # This will remove plot with no trees, but later it will come back in with the labels merge
   dat.1992.cruise <- subset(dat.1992.cruise, dat.1992.cruise$DBH >= 7.5 | dat.1992.cruise$DBH == 0)
+
+  dat.1992.cruise <- dat.1992.cruise %>%
+    mutate(BA = pi*(DBH/200)^2) %>%
+    mutate(PHF = PrismBands/BA)
+
+  dat.1992.cruise <- as.data.table(dat.1992.cruise)
+  # Calculate stems per hectare for the cruise plots
+  #dat.1992.cruise$SPH <- calculateSPH(pBands = dat.1992.cruise$PrismBands,
+  #                                     DBH = dat.1992.cruise$DBH)
 
   ###################
   ### Fixed plots ###
@@ -121,28 +128,79 @@ trees_1992 <- function(cruise_data = "./data-raw/Trees/1.1992data.csv",
                        BA = pi*(DBH/200)^2,
                        PlotNum = 1)]
 
+  dat.1992.fixed[ ,CRUISED_HEIGHT := NA]
+  dat.1992.fixed[ ,StubYN := "N"]
+
+
   ####################
-  ### Cruise Plots ###
+  ### Combine     ###
   ####################
-  dat.1992.cruise <- dat.1992.cruise %>%
-    mutate(BA = pi*(DBH/200)^2) %>%
-    mutate(PHF = PrismBands/BA)
+  dat.1992_all <- rbind(dat.1992.cruise[,.(Unit,PlotNum, Spp, Tree.Class,DBH, BA,
+                                           PHF, CRUISED_HEIGHT, StubYN)],
+                        dat.1992.fixed[,.(Unit,PlotNum, Spp, Tree.Class,DBH,BA,
+                                          PHF, CRUISED_HEIGHT, StubYN)])
 
-  # Calculate stems per hectare for the cruise plots
-  #dat.1992.cruise$SPH <- calculateSPH(pBands = dat.1992.cruise$PrismBands,
-   #                                     DBH = dat.1992.cruise$DBH)
+  if(calc_height){
+    # Calculate tree height
+    dat.1992_all[, Height := treeCalcs::height_dbh(Spp, DBH, BECzone = "ICH"),
+                 by = seq_len(nrow(dat.1992_all))]
 
-  dat.1992.cruise <- as.data.table(dat.1992.cruise)
+    dat.1992_all <- dat.1992_all[,.(Unit,Year=1992, PlotNum, Spp, Tree.Class, DBH, Height, BA, PHF)]
+  }else{
+    dat.1992_all <- dat.1992_all[,.(Unit,Year=1992, PlotNum, Spp, Tree.Class, DBH, BA, PHF)]
+  }
 
-  dat.1992_all <- rbind(dat.1992.cruise[,.(Unit,PlotNum, Spp, Tree.Class,DBH, BA, PHF)],
-                        dat.1992.fixed[,.(Unit,PlotNum, Spp, Tree.Class,DBH,BA,PHF)])
-
-  # Calculate tree height
-  dat.1992_all[, Height := treeCalcs::DiamHgtFN(Spp, DBH, BECzone = "ICH"),
-               by = seq_len(nrow(dat.1992_all))]
-
-  dat.1992_all <- dat.1992_all[,.(Unit,Year=1992, PlotNum, Spp, Tree.Class, DBH, Height, BA, PHF)]
   return(dat.1992_all)
+}
+
+
+#' Title
+#'
+#' @param cruise_data
+#'
+#' @return
+#' @export
+#'
+#' @examples
+make_labels1992<-function(cruise_data = dat.1992.cruise){
+  # Count how many plots there are for each treatment unit
+  # so when averaging carbon/unit later, we can take into account the plots that had zero C
+  dat.1992.cruise <- subset(dat.1992.cruise, dat.1992.cruise$PLOT_TYPE == "M")
+  # Create unique plot names
+  dat.1992.cruise <- dat.1992.cruise %>%
+    dplyr::mutate(PlotNum = paste0(STRIP, ".", PLOT))
+
+  # Rename columns to match other years
+  names(dat.1992.cruise )[names(dat.1992.cruise ) == "BLOCK"] <- "Unit"
+
+  # Rename units to match other years
+  dat.1992.cruise <- dat.1992.cruise %>%
+    dplyr::mutate(Unit = replace(Unit, Unit == "0A1", "A1"),
+                  Unit = replace(Unit, Unit == "0A2", "A2"),
+                  Unit = replace(Unit, Unit == "0A3", "A3"),
+                  Unit = replace(Unit, Unit == "0A4", "A4"),
+                  Unit = replace(Unit, Unit == "0B1", "B1"),
+                  Unit = replace(Unit, Unit == "0B2", "B2"),
+                  Unit = replace(Unit, Unit == "0B3", "B3"),
+                  Unit = replace(Unit, Unit == "0B4", "B4"),
+                  Unit = replace(Unit, Unit == "0B5", "B5"),
+                  Unit = replace(Unit, Unit == "0C1", "C1"),
+                  Unit = replace(Unit, Unit == "0C2", "C2"),
+                  Unit = replace(Unit, Unit == "0C3", "C3"),
+                  Unit = replace(Unit, Unit == "0D2", "D2"),
+                  Unit = replace(Unit, Unit == "0D3", "D3"),
+                  Unit = replace(Unit, Unit == "0D4", "D4"),
+                  Unit = replace(Unit, Unit == "0D5", "D5"))
+
+  # Count how many plots there are for each treatment unit
+  # so when averaging carbon/unit later, we can take into account the plots that had zero C
+  labels1992 <- dat.1992.cruise %>%
+    select(Unit, PlotNum, DBH) %>%
+    group_by(Unit, PlotNum) %>%
+    summarise(count = n()) %>%
+    select(-count)
+
+  return(labels1992)
 }
 
 
@@ -156,7 +214,7 @@ trees_1992 <- function(cruise_data = "./data-raw/Trees/1.1992data.csv",
 #' @export
 #'
 #' @examples
-trees_1993 <- function(data = "./data-raw/Trees/3.SS93forR.csv",
+trees_1993 <- function(data = "./data-raw/Trees/SS93forR.csv",
                        calc_height = TRUE){
   # Read in the data for both fixed radius and cruise plots
   dat.1993 <- read.csv(data, stringsAsFactors = FALSE)
@@ -166,22 +224,9 @@ trees_1993 <- function(data = "./data-raw/Trees/3.SS93forR.csv",
   names(dat.1993)[names(dat.1993) == "SPP"] <- "Spp"
   names(dat.1993)[names(dat.1993) == "TC"] <- "Tree.Class"
 
-
-  # Count how many plots there are for each treatment unit
-  # so when averaging carbon/unit later, we can take into account the plots that had zero C
-  dat.1993$count <- rep(1, length(dat.1993$Unit ))
-  Trees_in_Plots <- ddply(dat.1993[c("Unit", "PlotNum", "count")], .(Unit, PlotNum), numcolwise(sum))
-  Trees_in_Plots$count <- rep(1, length(Trees_in_Plots$Unit ))
-  Plot_in_Units <- ddply(Trees_in_Plots[c("Unit", "count")], .(Unit), numcolwise(sum))
-  #Plot_in_Units #stands should have 23 or 30 plots (30 for 40% retention treatments)
-
-  # Create Labels for all plot numbers within treatments to include plots with no trees later,
-  #after putting zeros
-  labels1993 <- Trees_in_Plots[c("Unit", "PlotNum")]
-
   # Eliminate unwanted columns
   dat.1993 <- dat.1993 %>%
-    dplyr::select(Unit, PlotNum, PrismBands, FixedRad, Spp, DBH, Tree.Class)
+    dplyr::select(Unit, PlotNum, PrismBands, FixedRad, Spp, DBH, HT, Tree.Class)
 
   dat.1993 <- subset(dat.1993, dat.1993$DBH != ".")
 
@@ -199,20 +244,16 @@ trees_1993 <- function(data = "./data-raw/Trees/3.SS93forR.csv",
                   Spp = replace(Spp, Spp == "EP", "Ep"),
                   Spp = replace(Spp, Spp == "HW", "Hw"),
                   Spp = replace(Spp, Spp == "PL", "Pl"),
-                  Spp = replace(Spp, Spp == "SX", "Sx"))
+                  Spp = replace(Spp, Spp == "SX", "Sx"),
+                  Spp = replace(Spp, Spp == "U", "UC"))
 
-
-  # Subset fixed radius plots
-  dat.1993.fixed <- subset(dat.1993, dat.1993$FixedRad != ".")
-  dat.1993.fixed$PrismBands <- NULL
-
-  # Subset cruise plots
-  dat.1993.cruise <- subset(dat.1993, dat.1993$FixedRad == ".")
-  dat.1993.cruise$FixedRad <- NULL
 
   ###################
   ### Fixed Plots ###
   ###################
+  # Subset fixed radius plots
+  dat.1993.fixed <- subset(dat.1993, dat.1993$FixedRad != ".")
+  dat.1993.fixed$PrismBands <- NULL
 
   dat.1993.fixed <- as.data.table(dat.1993.fixed)
 
@@ -226,10 +267,13 @@ trees_1993 <- function(data = "./data-raw/Trees/3.SS93forR.csv",
     mutate(BA = pi*(DBH/200)^2)
 
 
-
-  ####################
+  ###################
   ### Cruise Plots ###
-  ####################
+  ###################
+
+  # Subset cruise plots
+  dat.1993.cruise <- subset(dat.1993, dat.1993$FixedRad == ".")
+  dat.1993.cruise$FixedRad <- NULL
 
   # Calculate stems per hectare for the cruise plots
   dat.1993.cruise <- dat.1993.cruise %>%
@@ -238,25 +282,285 @@ trees_1993 <- function(data = "./data-raw/Trees/3.SS93forR.csv",
     mutate(PHF = PrismBands/BA)
 
   dat.1993.cruise <- as.data.table(dat.1993.cruise)
-  #dat.1993.cruise$SPH <- calculateSPH(pBands = dat.1993.cruise$PrismBands,
-   #                                     DBH = dat.1993.cruise$DBH)
-
 
   ############
   ### Both ###
   ############
 
   # Combine the data from the fixed and cruise plots
-  dat.1993_all <- rbind(dat.1993.fixed[,.(Unit, PlotNum,Spp,Tree.Class,DBH, BA, PHF)],
-                        dat.1993.cruise[,.(Unit, PlotNum,Spp,Tree.Class,DBH, BA, PHF)])
-  # Calculate tree height
-  dat.1993_all[, Height := treeCalcs::DiamHgtFN(Spp, DBH, BECzone = "ICH"),
-               by = seq_len(nrow(dat.1993_all))]
+  dat.1993_all <- rbind(dat.1993.fixed[,.(Unit, PlotNum,Spp,Tree.Class,DBH, HT, BA, PHF)],
+                        dat.1993.cruise[,.(Unit, PlotNum,Spp,Tree.Class,DBH, HT, BA, PHF)])
+  #Make Ht numeric and change "." to NAs
+  dat.1993_all[HT == ".", HT := NA][, HT := as.numeric(HT)]
 
-  dat.1993_all <- dat.1993_all[,.(Unit, Year=1993,PlotNum, Spp, Tree.Class, DBH, Height, BA, PHF)]
+  if(calc_height){
+    # Calculate tree height
+    dat.1993_all[, Height := treeCalcs::height_dbh(Spp, DBH, BECzone = "ICH"),
+                 by = seq_len(nrow(dat.1993_all))]
+
+    dat.1993_all <- dat.1993_all[,.(Unit, Year=1993,PlotNum, Spp, Tree.Class, DBH,
+                                    HT, Height, BA, PHF)]
+
+  }else{
+    dat.1993_all <- dat.1993_all[,.(Unit, Year=1993,PlotNum, Spp, Tree.Class, DBH,
+                                    HT, BA, PHF)]
+  }
 
   return(dat.1993_all)
 
+}
+
+#' Make plot labels for 1993
+#'
+#' @param data
+#'
+#' @return
+#' @export
+#'
+#' @examples
+#'
+#'
+make_labels1993 <- function(data = "./data-raw/Trees/SS93forR.csv"){
+  # Read in the data for both fixed radius and cruise plots
+  dat.1993 <- read.csv(data, stringsAsFactors = FALSE)
+
+  # Rename columns to match other years
+  names(dat.1993)[names(dat.1993) == "Plot_ID"] <- "Unit"
+  dat.1993$count <- rep(1, length(dat.1993$Unit))
+
+  labels1993 <- plyr::ddply(dat.1993[c("Unit", "PlotNum", "count")], .(Unit, PlotNum), numcolwise(sum))
+
+  labels1993 <- dat.1993 %>%
+    select(Unit, PlotNum, DBH) %>%
+    group_by(Unit, PlotNum) %>%
+    summarise(count = n()) %>%
+    select(-count)
+
+  return(labels1993)
+}
+
+
+#' Title
+#'
+#' @param data
+#'
+#' @return
+#' @export
+#' @details
+#' starts a number list of trees thought to be planted
+#'
+#'
+#' @examples
+PlantedTrees_2010 <- function(data = "./data-raw/Trees/Data Creek 2010 Data large trees.csv"){
+
+  # Read in the data for large trees (10+cm DBH) - No Clear Cut plots
+  dat.2010 <- fread(data)
+
+  # Rename columns/ variables to match other years
+  dat.2010[, Unit := as.factor(Unit)]
+  setnames(dat.2010, c("Tree No.","DBH 2010","Gd Pt","Tree Class"),
+           c("Tree.No","DBH","PlotNum","Tree.Class"))
+
+  dat.2010$Spp[which(dat.2010$Spp == "Sw")] <- "Sx"
+  dat.2010 <- subset(dat.2010, dat.2010$Spp != "n/a")
+
+  dat.2010 <- corr_trees_2010(dat.2010)
+
+  #calculate heights to help find planted trees
+  dat.2010[, Height := treeCalcs::height_dbh_Residuals(Species=Spp, DBH=DBH, BECzone = "ICH"),
+           by = seq_len(nrow(dat.2010))]
+
+  #Differentiate planted and residual trees as best as possible from existing data
+  clearcuts <- c("A3", "A1", "B4", "D2")
+  heavyunits <- c("B2", "B3", "C2", "D4")
+  dat.2010[, PlantedYN := ifelse(Unit %in% clearcuts, "Y", "N")]
+  dat.2010[, PlantedYN := ifelse(Height < 20 & Spp ==  "Sx", "Y", PlantedYN)]
+  dat.2010[, PlantedYN := ifelse(DBH < 20 & Unit %in% heavyunits, "Y", PlantedYN)]
+
+  #B3 H050 and J050 are gap plots with fast growing planted spruce
+  exclude_B3 <- c("H050", "J050")
+  #B2 G150 is gap plots with fast growing planted spruce
+  exclude_B2 <- c("G150")
+  #also C2 F300 and I450 and E150 and B050
+  exclude_C2 <- c("F300", "I450", "E150", "B050")
+  #also D4 C350, E300, F350 maybe E200
+  exclude_D4 <- c("C350", "E300", "F350", "E200")
+
+  dat.2010[, PlantedYN := ifelse(Unit == "B3" & PlotNum %in% exclude_B3,  "Y", PlantedYN)]
+  dat.2010[, PlantedYN := ifelse(Unit == "C2" & PlotNum %in% exclude_C2,  "Y", PlantedYN)]
+  dat.2010[, PlantedYN := ifelse(Unit == "D4" & PlotNum %in% exclude_D4,  "Y", PlantedYN)]
+  dat.2010[, PlantedYN := ifelse(Unit == "B2" & PlotNum %in% exclude_B2,  "Y", PlantedYN)]
+  dat.2010[, Unique.Tree.No := paste(Unit, Tree.No, sep= ".")]
+
+  PlantedTrees <- dat.2010$Unique.Tree.No[which(dat.2010$PlantedYN == "Y" & is.na(dat.2010$Tree.No) == FALSE)]
+
+  return(PlantedTrees)
+}
+
+
+
+
+trees_2010 <- function(lrg_trees = "./data-raw/Trees/Data Creek 2010 Data large trees.csv",
+                       cc_trees = "./data-raw/Trees/Trees 10cm and above in clearcut 2010.csv",
+                       small_trees = "./data-raw/Trees/Date Creek 2010 Trees less than 10 cm tallies.csv",
+                       snag_heights = "./data-raw/Trees/SnagHeights2010.csv",
+                       measured_heights2022 = "./data-raw/Trees/StandStructureData_Nov2022_Final.xlsx",
+                       calc_height = TRUE){
+
+  #############################
+  ### LARGE TREES (No CC) ###
+  #############################
+
+  # Read in the data for large trees (10+cm DBH) - No Clear Cut plots
+  dat.2010 <- read.csv(lrg_trees, stringsAsFactors = FALSE, na.strings = "n/a")
+
+  # Rename columns/ variables to match other years
+  dat.2010$Unit <- as.factor(dat.2010$Unit)
+  names(dat.2010)[names(dat.2010) == "Tree.No."] <- "Tree.No" #Rename
+  names(dat.2010)[names(dat.2010) == "DBH.2010"] <- "DBH" #Rename
+  dat.2010$Spp[which(dat.2010$Spp == "Sw")] <- "Sx"
+
+  dat.2010 <- corr_trees_2010(dat.2010)
+  dat.2010 <- remove_plots_trees(dat.2010)
+
+  dat.2010 <- as.data.table(dat.2010)
+  dat.2010[, PHF := 1/(round((pi*Plot.Size^2)/10000,4)), by = seq_len(nrow(dat.2010))]
+
+  #bring in snag heights
+  Snag_hts.2010 <- read.csv(snag_heights, stringsAsFactors = FALSE)
+  Snag_hts.2010$Tree.No <- as.character(Snag_hts.2010$Tree.No)
+  dat.2010 <- merge(dat.2010, Snag_hts.2010,
+                    by = c("Unit", "Gd.Pt", "Tree.No"), all.x = TRUE)
+
+  #############################
+  ### LARGE TREES (CC only) ###
+  #############################
+
+  # For large trees (10+cm DBH) - ONLY in Clear Cut plots
+  # No dead large trees in the clear cut plots
+  #erica commented out for her machine
+  dat.2010.CC<- read.csv(cc_trees, stringsAsFactors = FALSE)
+  #dat.2010.CC <- cc_trees
+
+  # Rename columns to match other years
+  names(dat.2010.CC)[names(dat.2010.CC) == "Species"] <- "Spp" #Rename
+  names(dat.2010.CC)[names(dat.2010.CC) == "Dave"] <- "DBH" #Rename
+
+  # Add tree class
+  # no dead trees found > 10 cm in clear-cuts
+  dat.2010.CC$Tree.Class <- rep(1, length(dat.2010.CC$Unit))
+
+  dat.2010.CC <- as.data.table(dat.2010.CC)
+  dat.2010.CC[, PHF := 1/(round((pi*Plot.Size^2)/10000,4)),by = seq_len(nrow(dat.2010.CC))]
+
+  ###################
+  ### SMALL TREES ###
+  ###################
+
+  # For small trees (5.1-10cm) - All plots
+  #erica commented out for her machine
+  dat.2010.sm <- read.csv(small_trees) #tallied trees with dbh <4
+  #dat.2010.sm <- small_trees
+  dat.2010.sm <- remove_plots_trees(dat.2010.sm)
+
+  # Pivot table from wide to long - both live and dead
+  dat.2010.sm <- as.data.table(dat.2010.sm)
+  dat.2010.sm_l <- melt(dat.2010.sm,
+                        id.vars = c("Unit", "Gd.Pt", "Plot.Size", "Size.Cl"),
+                        measure.vars = c("Hw", "Cw", "Sx", "Pl", "Bl", "Ba", "Ep", "At", "Ac"),
+                        variable.name = "Spp",
+                        value.name = "Tally")
+  dat.2010.sm_l[,Tree.Class := 1]
+
+  dat.2010.sm_d <- melt(dat.2010.sm,
+                        id.vars = c("Unit", "Gd.Pt", "Plot.Size", "Size.Cl"),
+                        measure.vars = c("deadHw", "deadCw", "deadSx", "deadPl",
+                                         "deadBl", "deadBa", "deadEp", "deadAt", "deadAc"),
+                        variable.name = "DSpp",
+                        value.name = "Tally")
+  dat.2010.sm_d[, c("Tree.Class", "Spp") := tstrsplit(DSpp, "ad", fixed=TRUE)]
+  dat.2010.sm_d[, Tree.Class:= 3][,DSpp:=NULL]
+
+  #bring them together
+  dat.2010.sm <- rbind(dat.2010.sm_l,dat.2010.sm_d)
+  dat.2010.sm <- dat.2010.sm[Tally >0]
+
+  # Add average DBH for each size class
+  dat.2010.sm[, DBH := ifelse(Size.Cl == "0-5cm",median(c(0,5)),
+                              ifelse(Size.Cl == "5.1-10cm", median(c(5.1,10)),
+                                     0))]
+
+  #multiply the per hectare factor by the tally - when dividing by the number of plots,
+  dat.2010.sm[, PHF := (1/(round((pi*Plot.Size^2)/10000,4)))*Tally,
+              by = seq_len(nrow(dat.2010.sm))]
+
+
+
+  # Combine Large trees, CC large trees, and small trees
+  dat.2010.CC[, HT.22 := NA]
+  dat.2010.sm[, HT.22 := NA]
+
+  dat.2010[is.na(StubYN), StubYN := "N"]
+  dat.2010.CC[, StubYN := "N"]
+  dat.2010.sm[, StubYN := "N"]
+
+  dat.2010.CC[, Tree.No := NA]
+  dat.2010.sm[, Tree.No := NA]
+
+  dat.2010_all <- rbind(dat.2010[,.(Unit, Gd.Pt, Tree.No, Spp,Tree.Class, DBH, PHF, HT.22, StubYN)],
+                        dat.2010.CC[,.(Unit, Gd.Pt, Tree.No, Spp,Tree.Class, DBH, PHF, HT.22, StubYN)],
+                        dat.2010.sm[,.(Unit, Gd.Pt, Tree.No, Spp,Tree.Class, DBH, PHF, HT.22, StubYN)])
+
+  setnames(dat.2010_all, c("Gd.Pt"),c("PlotNum"))
+
+  #removing n/a which is for plots with no trees
+  dat.2010_all <- subset(dat.2010_all, !is.na(dat.2010_all$Spp))
+
+  # Calculate BA and tree height... using residual height function for all trees then
+  #then plantation height function for clear-cut trees and planted trees in other treatments
+  #as best as possible with available data
+  dat.2010_all[, BA :=  pi*(DBH/200)^2]
+
+  dat.2010_all[, Height := treeCalcs::height_dbh_Residuals(Species=Spp, DBH=DBH, BECzone = "ICH"),
+               by = seq_len(nrow(dat.2010_all))]
+
+  dat.2010_all[, PlantationHeight := treeCalcs::height_dbh_plantations(Species=Spp, DBH=DBH, BECzone = "ICH"),
+               by = seq_len(nrow(dat.2010_all))]
+
+  #Differentiate planted and residual trees as best as possible from existing data
+  #this might
+  dat.2010_all[, Unique.Tree.No := paste(Unit, Tree.No, sep= ".")]
+  clearcuts <- c("A3", "A1", "B4", "D2")
+  heavyunits <- c("B2", "B3", "C2", "D4")
+  dat.2010_all[,PlantedYN := ifelse(Unit %in% clearcuts, "Y", "N")]
+  dat.2010_all[, PlantedYN := ifelse(Height < 20 & Spp ==  "Sx", "Y", PlantedYN)]
+  dat.2010_all[, PlantedYN := ifelse(DBH < 20 & Unit %in%  heavyunits, "Y", PlantedYN)]
+
+  #get the trees that were likely planted
+  PlantedList <- PlantedTrees_2010(lrg_trees)
+
+  dat.2010_all[, PlantedYN := ifelse(Unique.Tree.No %in% PlantedList, "Y", PlantedYN)]
+
+  dat.2010_all$Height <-ifelse(dat.2010_all$PlantedYN == "Y", dat.2010_all$PlantationHeight, dat.2010_all$Height)
+
+  #bring in heights from 2022 to make sure no trees are taller in 2010 than measured in 2022
+  dat.2022
+  measured_heights2022
+
+  measured_heights_live<-subset(measured_heights2022, measured_heights2022$CLASS.22<=2)
+  measured_heights_data<-measured_heights_live[c("Unit", "Gd.Pt", "Tree.No", "HT.22")]
+  measured_heights_data<-subset(measured_heights_data, is.na(measured_heights_data$Tree.No) == FALSE)
+  setnames(measured_heights_data, c("Gd.Pt"),c("PlotNum"))
+  setnames(measured_heights_data, c("HT.22"),c("MeasHt.2022"))
+
+  dat.2010_all<-merge(dat.2010_all, measured_heights_data, by = c("Unit", "PlotNum", "Tree.No"), all.x = TRUE)
+  dat.2010_all$MeasHt.2022[is.na(dat.2010_all$MeasHt.2022)]<- 100
+  dat.2010_all$Height<-ifelse(dat.2010_all$Height <= dat.2010_all$MeasHt.2022, dat.2010_all$Height, dat.2010_all$MeasHt.2022)
+
+  #include only necessary columns in final data
+  dat.2010_all <- dat.2010_all[,.(Unit,Year=2010, PlotNum, Spp, Tree.Class, DBH, Height, BA, PHF, HT.22, StubYN)]
+
+  return(dat.2010_all)
 }
 
 #' Title
@@ -415,6 +719,29 @@ trees_2010 <- function(lrg_trees = "./data-raw/Trees/4.Data Creek 2010 Data larg
   return(dat.2010_all)
 
 }
+
+
+#' Title
+#'
+#' @param data
+#' @param calc_height
+#'
+#' @return
+#' @export
+#'
+#' @examples
+
+make_labels2010<-function(small_trees = dat.2010.tallies){
+  dat.2010.sm <- small_trees
+  dat.2010.sm <- remove_plots_trees(dat.2010.sm)
+
+  dat.2010.sm$count<-rep(1, length(dat.2010.sm$Unit))
+  labels2010<-ddply(dat.2010.sm[c("Unit", "Gd.Pt", "count")], .(Unit, Gd.Pt), numcolwise(sum))
+  labels2010$count<-NULL
+  return(labels2010)
+}
+
+
 
 #' Title
 #'

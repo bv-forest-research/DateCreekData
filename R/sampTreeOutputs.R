@@ -16,6 +16,9 @@
 #' @param plotting TRUE/FALSE - whether or not to display plots with the unit and subplot location
 #'
 #'
+#' @description
+#' simplfy this so that we can pass a single unit instead of all at once
+#'
 subplot_outputs <- function(out_path, run_name, Units_path, yrs, subplot_type = multiple , Units_to_output = "all",
                             dist_edge = 20, num_subplots = 30, size_subplot = 7.98, plotting = TRUE){
 
@@ -43,9 +46,12 @@ subplot_outputs <- function(out_path, run_name, Units_path, yrs, subplot_type = 
     #Forest size
     if(TreatType=="NH"){
       NameEnd <- paste0(run_name,"_nh_det_")
+    }else if(TreatType == "CC"){
+      NameEnd <- paste0(run_name,"_cc_det_")
     }else{
       NameEnd <- paste0(run_name,"_det_")
     }
+
 
     #create sample points here so they are the same for every year
     bb <- st_bbox(st_buffer(spatialBlocks %>% filter(Unit==Unit_i), dist = 10))

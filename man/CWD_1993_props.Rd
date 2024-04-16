@@ -4,10 +4,10 @@
 \alias{CWD_1993_props}
 \title{Calculate CWD proportions after harvest from Date Creek study}
 \usage{
-CWD_1993_props(CWD_dat)
+CWD_1993_props(dat_loc)
 }
 \arguments{
-\item{CWD_dat}{}
+\item{dat_loc}{}
 }
 \description{
 Calculate CWD proportions after harvest from Date Creek study
