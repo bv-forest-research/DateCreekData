@@ -4,11 +4,18 @@
 \alias{CWD_1992_props}
 \title{Title}
 \usage{
-CWD_1992_props(CWD_dat)
+CWD_1992_props(dat_loc)
 }
 \arguments{
 \item{CWD_dat}{}
 }
 \description{
 Title
+}
+\details{
+LePage et al. 2000 substrate covers for log proportions 1.2 and 10.8 are percent cover and 0.2
+is rotten wood for fresh log and moss covered log substrates in full canopy sites at Date Creek
+
+from SORTIE manual, formula to calculate log volume in m2/ha from percent log area (PLA)
+and mean diameter class (MDBH)LV = 1/3 * π * 100 * PLA * (MDBH / 2)
 }

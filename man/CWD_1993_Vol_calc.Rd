@@ -4,10 +4,10 @@
 \alias{CWD_1993_Vol_calc}
 \title{1993 CWD volume calculation}
 \usage{
-CWD_1993_Vol_calc(CWD_dat, out_carbon_comp = FALSE)
+CWD_1993_Vol_calc(CWD_dat, out_carbon_comp = FALSE, size_group = FALSE)
 }
 \arguments{
-\item{CWD_dat}{}
+\item{size_group}{description}
 }
 \description{
 1993 CWD volume calculation

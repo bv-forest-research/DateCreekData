@@ -31,13 +31,13 @@ CWD_vol_calc <- function(dat_loc, incl_sp_decay = FALSE){
 
   if(incl_sp_decay == FALSE){
     cd_cwd_allyears <- rbind(dc_cwd_92[,.(Year,Yrs_Post = 0,Unit, Unique_plot, VolumeHa)],
-                             dc_cwd_93[,.(Year,Yrs_Post = 1,Unit = Stand,Unique_plot, VolumeHa)],
+                             dc_cwd_93[,.(Year,Yrs_Post = 1,Unit = Unit,Unique_plot, VolumeHa)],
                              dc_cwd_11[,.(Year = 2011, Yrs_Post = 19,Unit,Unique_plot, VolumeHa)],
                              dc_cwd_19[,.(Year = 2019, Yrs_Post = 27,Unit, Unique_plot, VolumeHa)])
 
   }else{
     cd_cwd_allyears <- rbind(dc_cwd_92[,.(Year,Yrs_Post = 0,Unit,Unique_plot, Sp, Decay, VolumeHa)],
-                             dc_cwd_93[,.(Year,Yrs_Post = 1,Unit = Stand,Unique_plot,
+                             dc_cwd_93[,.(Year,Yrs_Post = 1,Unit = Unit,Unique_plot,
                                           Sp, Decay, VolumeHa)],
                              dc_cwd_11[,.(Year = 2011, Yrs_Post = 19,Unit,Unique_plot,
                                           Sp, Decay, VolumeHa)],
@@ -68,7 +68,8 @@ CWD_vol_calc <- function(dat_loc, incl_sp_decay = FALSE){
 #' 1992 CWD volume calculation
 #'
 #' @param CWD_dat
-#'
+#' @param size_group description
+#' @param out_carbon_comp description
 #' @return
 #' @export
 #' @details Calculate Volume using the British Columbia Ministry of Forests and Range (2009) formula
@@ -82,23 +83,43 @@ CWD_vol_calc <- function(dat_loc, incl_sp_decay = FALSE){
 #' so that cos (A) = 1 for all pieces in those years.
 #'
 #' @examples
-CWD_1992_Vol_calc <- function(CWD_dat, out_carbon_comp = FALSE){
+CWD_1992_Vol_calc <- function(CWD_dat, out_carbon_comp = FALSE, size_group = FALSE){
   #-----------------------Prepare data -----------------------------------------#
   # Import 1992
-  CWD.1992<- fread(CWD_dat)
+  CWD.1992 <- fread(CWD_dat)
 
   # Square diameter
   CWD.1992[, D2_cosA:= Diam_cm^2, by = seq_len(nrow(CWD.1992))]
 
   # Convert individual piece to plot summary for L (length of total transect horizontal distance)
   if(out_carbon_comp == FALSE){
-    CWD.1992_plot <- CWD.1992[, .(D2cosA = sum(D2_cosA)),
-                              by =c("Year", "Unit", "Block", "Treatment", "Unique_plot")]
+    if(size_group){
+      # Category for small and large logs
+      CWD.1992[, sizeGr:= ifelse(Diam_cm < 15, "small", "large")]
+      CWD.1992_plot <- CWD.1992[, .(D2cosA = sum(D2_cosA)),
+                                by =c("Year", "Unit", "Block", "Treatment", "Unique_plot",
+                                      "sizeGr")]
+    }else {
+      CWD.1992_plot <- CWD.1992[, .(D2cosA = sum(D2_cosA)),
+                                by =c("Year", "Unit", "Block", "Treatment", "Unique_plot")]
+    }
+
   }else{
     #if volume will be used for carbon, need to keep species and decay class columns
-    CWD.1992_plot <- CWD.1992[, .(D2cosA = sum(D2_cosA)),
-                              by =c("Year", "Unit","Sp", "Decay","Block", "Treatment", "Unique_plot")]
-  }
+    if(size_group){
+      # Category for small and large logs
+      CWD.1992[, sizeGr:= ifelse(Diam_cm < 15, "small", "large")]
+      CWD.1992_plot <- CWD.1992[, .(D2cosA = sum(D2_cosA)),
+                                by =c("Year", "Unit","Sp", "Decay","Block", "Treatment",
+                                      "Unique_plot","sizeGr")]
+
+    }else {
+      CWD.1992_plot <- CWD.1992[, .(D2cosA = sum(D2_cosA)),
+                                by =c("Year", "Unit","Sp", "Decay","Block", "Treatment",
+                                      "Unique_plot")]
+
+    }
+      }
 
   # Volume (m3/ha) calculation (includes transect length(90m))
   CWD.1992_plot[, VolumeHa:= (pi^2/(8*90)) * D2cosA]
@@ -112,6 +133,7 @@ CWD_1992_Vol_calc <- function(CWD_dat, out_carbon_comp = FALSE){
 #' @param CWD_dat
 #'
 #' @return
+#'
 #' @export
 #'
 #' @examples
@@ -122,31 +144,21 @@ CWD_1992_diams <- function(CWD_dat){
 
   #### Average diameters
 
-  #small piece average diameter
-  CWD.1992_sm <- CWD.1992[Diam_cm < 20 , .(smLogs_diam = mean(Diam_cm)), by = .(Unit)]
-  CWD.1992_lg <- CWD.1992[Diam_cm >= 20 , .(lgLogs_diam = mean(Diam_cm)), by = .(Unit)]
+  #### Average diameters
 
-  #mean piece size within diameter groups
-  CWD.1992_mnLogs <- merge(CWD.1992_sm, CWD.1992_lg, by ="Unit")
+  # Category for small and large logs
+  CWD.1992[, sizeGr:= ifelse(Diam_cm < 15, "small", "large")]
 
-  #### Proportion of area covered by logs (total by unit)
+  #Species groups
+  Group1 <- c("Hw","Ba", "Bl","Sx","Pl","U")
+  Group3 <- c("At","Ac","Ep")
+  CWD.1992$SpGrp <- ifelse(CWD.1992$Sp %in% Group1, 1,
+                          ifelse(CWD.1992$Sp %in% Group3, 3, 2 ))
 
-  # total area covered by logs
-  # mean of the plot
-  CWD.1992_a <- CWD.1992[, .(totDiam = sum(Diam_cm),
-                             propDiam = sum(Diam_cm)/9000),
-                         by = .(Unit, Unique_plot)]
-  CWD.1992_b <- CWD.1992_a[, .(mnPropDiam = mean(propDiam)), by = c("Unit")]
+  CWD.1992_mnLogs <- CWD.1992[, .(mean_diam = mean(Diam_cm)),
+                              by = .(Unit, sizeGr, SpGrp, Decay)]
 
-  CWD.1992_a <- CWD.1992[, .(totDiam = sum(Diam_cm),
-                             plotArea = length(unique(Plot))*90*100),
-                         by = .(Unit)]
-  CWD.1992_a[, propLogs := totDiam/plotArea, by = seq_len(nrow(CWD.1992_a))]
-
-  CWD_totals <- merge(CWD.1992_mnLogs, CWD.1992_a[,.(Unit,propLogs)], by = "Unit")
-
-
-  return(CWD_totals)
+  return(CWD.1992_mnLogs)
 
 }
 
@@ -157,27 +169,63 @@ CWD_1992_diams <- function(CWD_dat){
 #' @return
 #' @export
 #'
+#' @details
+#' LePage et al. 2000 substrate covers for log proportions 1.2 and 10.8 are percent cover and 0.2
+#' is rotten wood for fresh log and moss covered log substrates in full canopy sites at Date Creek
+#'
+#' from SORTIE manual, formula to calculate log volume in m2/ha from percent log area (PLA)
+#' and mean diameter class (MDBH)LV = 1/3 * π * 100 * PLA * (MDBH / 2)
+#'
+#'
 #' @examples
-CWD_1992_props <- function(CWD_dat){
-  #-----------------------Prepare data -----------------------------------------#
-  # Import 1992
-  CWD.1992<- fread(CWD_dat)
-  CWD.1992[, sizeGr:= ifelse(Diam_cm <20, "small", "large")]
+CWD_1992_props <- function(dat_loc){
 
-  #proportion by species group and decay class:
-  spGroups <- data.table(Sp =c("Hw","Cw","Ba", "Bl","Sx","Pl","At","Ac","Ep","U"),
-                         SpGrp = c(1,2,1,1,1,1,3,3,3,1))
+  # Import 1992 data and calc volume
+  CWD.1992 <- CWD_1992_Vol_calc(CWD_dat = paste0(dat_loc,"CWD_1992.csv"),
+                                out_carbon_comp = TRUE,
+                                size_group  = TRUE)
+
+  # Species groups -----
+  Group1 <- c("Hw","Ba", "Bl","Sx","Pl","U")
+  Group3 <- c("At","Ac","Ep")
+  CWD.1992$SpGrp <- ifelse(CWD.1992$Sp %in% Group1, 1,
+                           ifelse(CWD.1992$Sp %in% Group3, 3, 2 ))
+
+  #for now assuming all Units have 10 plots
+  cwd92_Unit <- CWD.1992[,.(VolumeHa = sum(VolumeHa)/10),
+                         by = .(Unit, SpGrp, sizeGr, Decay)]
+  #check calculations
+  #cwd92_Unit[,.(VolumeHa = sum(VolumeHa)), by = .(Unit)]
+
+  #get mean diameters
+  cwd92_d <- CWD_1992_diams(CWD_dat = paste0(dat_loc,"CWD_1992.csv"))
+
+  cwd92_Unit <- merge(cwd92_Unit, cwd92_d,
+                      by = c("Unit", "sizeGr", "SpGrp", "Decay"),
+                      all.x = TRUE)
+
+  # calculate proportion log area
+  cwd92_Unit[, PLA := VolumeHa /(1/3 * pi * (mean_diam/ 2))]
+
+  # Percent area logs by whole unit...using mean diameters for every combination
+  # these seem realistic compared to LePage et al. 2000
+  cwd92_Unit[,.(PLA = sum(PLA)), by = .(Unit)]
+
+  sp_decay_size <- CJ(Unit = DateCreekData::Treatments$Unit,
+                      SpGrp = c(1,2,3),
+                      sizeGr = c("small","large"),
+                      Decay = c(1,2,3,4,5))
 
 
-  CWD.1992_gr <- merge(CWD.1992[,.(Unit,Sp,Decay,sizeGr, Diam_cm)], spGroups, by = "Sp")
-  CWD.1992_gr_s <- CWD.1992_gr[,.(propLog = sum(Diam_cm)/90000),
-                               by = .(Unit,SpGrp,sizeGr,Decay)]
+  cwd92_Unit_all <- merge(cwd92_Unit,
+                          sp_decay_size,
+                          by = c("Unit","SpGrp","sizeGr","Decay"), all = TRUE)
 
-  CWD.1992_gr_s[,propLog := propLog]
-  CWD.1992_gr_s[,sum(propLog), by ="Unit"]
-  setkey(CWD.1992_gr_s, Unit)
+  setnafill(cwd92_Unit_all, cols = c("VolumeHa", "mean_diam", "PLA"), fill = 0)
 
-  return(CWD.1992_gr_s)
+  cwd92_Unit_all[,propLA := PLA/100]
+
+  return(cwd92_Unit_all)
 
 }
 
@@ -186,6 +234,7 @@ CWD_1992_props <- function(CWD_dat){
 #' 1993 CWD volume calculation
 #'
 #' @param CWD_dat
+#' @param size_group description
 #'
 #' @return
 #' @export
@@ -201,31 +250,54 @@ CWD_1992_props <- function(CWD_dat){
 #'
 #'
 #' @examples
-CWD_1993_Vol_calc <- function(CWD_dat, out_carbon_comp = FALSE){
+CWD_1993_Vol_calc <- function(CWD_dat, out_carbon_comp = FALSE, size_group = FALSE){
 
   CWD.1993 <- fread(CWD_dat)
 
   # Square diameter
-  CWD.1993[, D2_cosA:= Diam_cm^2]
+  CWD.1993[, D2_cosA:= Diam_cm^2, by = seq_len(nrow(CWD.1993))]
 
+  CWD.1993[is.na(Decay)]
+  CWD.1993[is.na(Decay), Decay := round(mean(na.omit(CWD.1993$Decay)))]
   # Convert individual piece to plot summary for L (length of total transect horizontal distance)
   if(out_carbon_comp == FALSE){
-    CWD.1993_plot <- CWD.1993[, .(D2cosA = sum(D2_cosA)),
-                              by =c("Year", "Stand", "Block", "Treatment", "Unique_plot")]
+    if(size_group){
+      # Category for small and large logs
+      CWD.1993[, sizeGr:= ifelse(Diam_cm < 15, "small", "large")]
+      CWD.1993_plot <- CWD.1993[, .(D2cosA = sum(D2_cosA)),
+                                by =c("Year", "Stand", "Block", "Treatment", "Unique_plot",
+                                      "sizeGr")]
+    }else {
+      CWD.1993_plot <- CWD.1993[, .(D2cosA = sum(D2_cosA)),
+                                by =c("Year", "Stand", "Block", "Treatment", "Unique_plot")]
+    }
+
   }else{
     #if volume will be used for carbon, need to keep species and decay class columns
-    CWD.1993_plot <- CWD.1993[, .(D2cosA = sum(D2_cosA)),
-                              by =c("Year", "Stand","Sp", "Decay","Block", "Treatment", "Unique_plot")]
+    if(size_group){
+      # Category for small and large logs
+      CWD.1993[, sizeGr:= ifelse(Diam_cm < 15, "small", "large")]
+      CWD.1993_plot <- CWD.1993[, .(D2cosA = sum(D2_cosA)),
+                                by =c("Year", "Stand","Sp", "Decay","Block", "Treatment",
+                                      "Unique_plot","sizeGr")]
+
+    }else {
+      CWD.1993_plot <- CWD.1993[, .(D2cosA = sum(D2_cosA)),
+                                by =c("Year", "Stand","Sp", "Decay","Block", "Treatment",
+                                      "Unique_plot")]
+
+    }
   }
 
   # Volume (m3/ha) calculation
   CWD.1993_plot[, VolumeHa:= (pi^2/(8*90)) * D2cosA]
 
+  setnames(CWD.1993_plot, "Stand", "Unit")
   return(CWD.1993_plot)
 
 }
 
-#' Calculate CWD proportions after harvest from Date Creek study
+#' 1993 cwd diams
 #'
 #' @param CWD_dat
 #'
@@ -233,26 +305,93 @@ CWD_1993_Vol_calc <- function(CWD_dat, out_carbon_comp = FALSE){
 #' @export
 #'
 #' @examples
-CWD_1993_props <- function(CWD_dat){
+CWD_1993_diams <- function(CWD_dat){
   #-----------------------Prepare data -----------------------------------------#
   # Import 1993
-  CWD.1993 <- fread(CWD_dat)
-  CWD.1993[, sizeGr:= ifelse(Diam_cm <20, "small", "large")]
+  CWD.1993<- fread(CWD_dat)
 
-  #proportion by species group and decay class:
-  spGroups <- data.table(Sp =c("Hw","Cw","Ba", "Bl","Sx","Pl","At","Ac","Ep","U"),
-                         SpGrp = c(1,2,1,1,1,1,3,3,3,1))
+  #### Average diameters
 
-  setnames(CWD.1993, "Stand", "Unit")
-  CWD.1993_gr <- merge(CWD.1993[,.(Unit,Sp,Decay,sizeGr, Diam_cm)], spGroups, by = "Sp")
-  CWD.1993_gr_s <- CWD.1993_gr[,.(propLog = sum(Diam_cm)/90000),
-                               by = .(Unit,SpGrp,sizeGr,Decay)]
+  #### Average diameters
 
-  CWD.1993_gr_s[,propLog := propLog]
+  # Category for small and large logs
+  CWD.1993[, sizeGr:= ifelse(Diam_cm < 15, "small", "large")]
 
-  setkey(CWD.1993_gr_s, Unit)
+  #there's one tree with unknown Decay
+  CWD.1993[is.na(Decay)]
+  #use average decay class?
+  CWD.1993[is.na(Decay), Decay := round(mean(na.omit(CWD.1993$Decay)))]
 
-  return(CWD.1993_gr_s)
+  #Species groups
+  Group1 <- c("Hw","Ba", "Bl","Sx","Pl","U")
+  Group3 <- c("At","Ac","Ep")
+  CWD.1993$SpGrp <- ifelse(CWD.1993$Sp %in% Group1, 1,
+                           ifelse(CWD.1993$Sp %in% Group3, 3, 2 ))
+
+  CWD.1993_mnLogs <- CWD.1993[, .(mean_diam = mean(Diam_cm)),
+                              by = .(Stand, sizeGr, SpGrp, Decay)]
+  setnames(CWD.1993_mnLogs, "Stand", "Unit")
+  return(CWD.1993_mnLogs)
+
+}
+
+#' Calculate CWD proportions after harvest from Date Creek study
+#'
+#' @param dat_loc
+#'
+#' @return
+#' @export
+#'
+#' @examples
+CWD_1993_props <- function(dat_loc){
+  #-----------------------Prepare data -----------------------------------------#
+
+  # Import 1992 data and calc volume
+  CWD.1993 <- CWD_1993_Vol_calc(CWD_dat = paste0(dat_loc,"CWD_1993.csv"),
+                                out_carbon_comp = TRUE,
+                                size_group  = TRUE)
+
+  # Species groups -----
+  Group1 <- c("Hw","Ba", "Bl","Sx","Pl","U")
+  Group3 <- c("At","Ac","Ep")
+  CWD.1993$SpGrp <- ifelse(CWD.1993$Sp %in% Group1, 1,
+                           ifelse(CWD.1993$Sp %in% Group3, 3, 2 ))
+
+
+  #for now assuming all Units have 10 plots
+  cwd93_Unit <- CWD.1993[,.(VolumeHa = sum(VolumeHa)/10),
+                         by = .(Unit, SpGrp, sizeGr, Decay)]
+  #check calculations
+  #cwd92_Unit[,.(VolumeHa = sum(VolumeHa)), by = .(Unit)]
+
+  #get mean diameters
+  cwd93_d <- CWD_1993_diams(CWD_dat = paste0(dat_loc,"CWD_1993.csv"))
+
+  cwd93_Unit <- merge(cwd93_Unit, cwd93_d,
+                      by = c("Unit", "sizeGr", "SpGrp", "Decay"),
+                      all.x = TRUE)
+
+  # calculate proportion log area
+  cwd93_Unit[, PLA := VolumeHa /(1/3 * pi * (mean_diam/ 2))]
+
+  # Percent area logs by whole unit...using mean diameters for every combination
+  # these seem realistic compared to LePage et al. 2000
+  cwd93_Unit[,.(PLA = sum(PLA)), by = .(Unit)]
+
+  sp_decay_size <- CJ(Unit = DateCreekData::Treatments$Unit,
+                      SpGrp = c(1,2,3),
+                      sizeGr = c("small","large"),
+                      Decay = c(1,2,3,4,5))
+
+  cwd93_Unit_all <- merge(cwd93_Unit,
+                          sp_decay_size,
+                          by = c("Unit","SpGrp","sizeGr","Decay"), all = TRUE)
+
+  setnafill(cwd93_Unit_all, cols = c("VolumeHa", "mean_diam", "PLA"), fill = 0)
+
+  cwd93_Unit_all[,propLA := PLA/100]
+
+  return(cwd93_Unit_all)
 
 }
 
