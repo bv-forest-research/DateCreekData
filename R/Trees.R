@@ -10,147 +10,46 @@ clean_trees_all_yrs <- function(){
 }
 
 
-#' Clean 1992 tree data need to change all ddply to get rid of plyr (replaced by dplyr)
+#' Clean 1992 tree data
 #'
 #' @param cruise_data
 #' @param fixed_data
-#' @param calc_height description
+#' @param height "calc" - calculate the height based on allometry in treeCalcs package, "cruise" -
+#' leave the cruised heights and don't calculate height from allometry, "both" - calculate and leave
+#' the cruised heights, "none" drop the height column
 #'
 #' @return
 #' @export
 #' @description
-#' cleans tree data and calculates heights (if height = TRUE)
+#' cleans tree data and calculates heights (if height = "calc")
 #' can't get this working because of ddply - needs to be updated to either dplyr or data.table
 #'
 #'
 #' @examples
 trees_1992 <- function(cruise_data = "./data-raw/Trees/1992data.csv",
                        fixed_data = "./data-raw/Trees/1992fixed_radius_data_fromTable20_DateCkHandbook.csv",
-                       calc_height = TRUE){
-  # Read in the data for the cruise plots
-  dat.1992.cruise <- read.csv(cruise_data, stringsAsFactors = FALSE)
+                       height = "calc"){
 
-  #Data includes count (C) and measure (M) plots from cruise together coded by PLOT_TYPE
-  # Removing C plots for C pool calculation - based on Erica Lilles' data prep script
-  dat.1992.cruise <- subset(dat.1992.cruise, dat.1992.cruise$PLOT_TYPE == "M")
-
-  # Rename columns to match other years
-  names(dat.1992.cruise )[names(dat.1992.cruise ) == "BLOCK"] <- "Unit"
-  names(dat.1992.cruise )[names(dat.1992.cruise ) == "MAIN_BAF"] <- "PrismBands"
-  names(dat.1992.cruise )[names(dat.1992.cruise ) == "SPECIES"] <- "Spp"
-  names(dat.1992.cruise )[names(dat.1992.cruise ) == "TREE_CLASS"] <- "Tree.Class"
-
-  # Create unique plot names
-  dat.1992.cruise <- dat.1992.cruise %>%
-    dplyr::mutate(PlotNum = paste0(STRIP, ".", PLOT))
-  # Create STUBYN column and find snags of class 7 or 8 but don't include ones that don't seem like stub equation should be used (too tall)
-  dat.1992.cruise$StubYN<-ifelse(dat.1992.cruise$SnagCode >= 7 & dat.1992.cruise$CRUISED_HEIGHT<=10, "Y", "N" )
-
-  # make sure live trees are not coded as Stubs
-  dat.1992.cruise$StubYN<-ifelse(dat.1992.cruise$Tree.Class <3 , "N", dat.1992.cruise$StubYN )
-
-  # Eliminate unwanted columns
-  dat.1992.cruise <- dat.1992.cruise %>%
-    dplyr::select(Unit, PlotNum, PrismBands, Spp, DBH, Tree.Class, CRUISED_HEIGHT, StubYN)
-
-  # Rename species to match other years and functions
-  dat.1992.cruise <- dat.1992.cruise %>%
-    dplyr::mutate(Spp = replace(Spp, Spp == "AC", "Ac"),
-                  Spp = replace(Spp, Spp == "CT", "Ac"),
-                  Spp = replace(Spp, Spp == "AT", "At"),
-                  Spp = replace(Spp, Spp == "BA", "Ba"),
-                  Spp = replace(Spp, Spp == "BL", "Bl"),
-                  Spp = replace(Spp, Spp == "CW", "Cw"),
-                  Spp = replace(Spp, Spp == "EP", "Ep"),
-                  Spp = replace(Spp, Spp == "HW", "Hw"),
-                  Spp = replace(Spp, Spp == "PL", "Pl"),
-                  Spp = replace(Spp, Spp == "SX", "Sx"),
-                  Spp = replace(Spp, Spp == "S", "Sx"),
-                  Spp = replace(Spp, Spp == "H", "Hw"),
-                  Spp = replace(Spp, Spp == "B", "Ba"),
-                  Spp = replace(Spp, Spp == "C", "Cw"))
-
-  # Rename units to match other years
-  dat.1992.cruise <- dat.1992.cruise %>%
-    dplyr::mutate(Unit = replace(Unit, Unit == "0A1", "A1"),
-                  Unit = replace(Unit, Unit == "0A2", "A2"),
-                  Unit = replace(Unit, Unit == "0A3", "A3"),
-                  Unit = replace(Unit, Unit == "0A4", "A4"),
-                  Unit = replace(Unit, Unit == "0B1", "B1"),
-                  Unit = replace(Unit, Unit == "0B2", "B2"),
-                  Unit = replace(Unit, Unit == "0B3", "B3"),
-                  Unit = replace(Unit, Unit == "0B4", "B4"),
-                  Unit = replace(Unit, Unit == "0B5", "B5"),
-                  Unit = replace(Unit, Unit == "0C1", "C1"),
-                  Unit = replace(Unit, Unit == "0C2", "C2"),
-                  Unit = replace(Unit, Unit == "0C3", "C3"),
-                  Unit = replace(Unit, Unit == "0D2", "D2"),
-                  Unit = replace(Unit, Unit == "0D3", "D3"),
-                  Unit = replace(Unit, Unit == "0D4", "D4"),
-                  Unit = replace(Unit, Unit == "0D5", "D5"))
+  trees_92 <- read_92_trees(cruise_92 = cruise_data, fixed_92 = fixed_data)
 
 
-  length(unique(paste(dat.1992.cruise$Unit,dat.1992.cruise$PlotNum))) #there should be 251 plots
-
-
-  # Eliminate  <7.5 measures (should not have been included in cruise)
-  # This will remove plot with no trees, but later it will come back in with the labels merge
-  dat.1992.cruise <- subset(dat.1992.cruise, dat.1992.cruise$DBH >= 7.5 | dat.1992.cruise$DBH == 0)
-
-  dat.1992.cruise <- dat.1992.cruise %>%
-    mutate(BA = pi*(DBH/200)^2) %>%
-    mutate(PHF = PrismBands/BA)
-
-  dat.1992.cruise <- as.data.table(dat.1992.cruise)
-  # Calculate stems per hectare for the cruise plots
-  #dat.1992.cruise$SPH <- calculateSPH(pBands = dat.1992.cruise$PrismBands,
-  #                                     DBH = dat.1992.cruise$DBH)
-
-  ###################
-  ### Fixed plots ###
-  ###################
-
-  # Read in the data for the fixed radius plots
-  dat.1992.fixed <- fread(fixed_data, stringsAsFactors = FALSE)
-  dat.1992.fixed[,V1:=NULL]
-  data.table::setnames(dat.1992.fixed,  c("Init.Dens.1.3Ht", "Init.Dens.2.5",
-                                       "Init.Dens.5", "Init.Dens.0-7.5"),
-                       c("1","2.5","5","7.5"))
-  dat.1992.fixed <- data.table::melt(dat.1992.fixed, id.vars =c("Unit","Spp"),
-                                    variable.name = "DiamClass",
-                                    value.name = "PHF")
-  # get the median diameter for each class
-  dat.1992.fixed[, DBH := ifelse(DiamClass == "1", NA,
-                          ifelse(DiamClass == "2.5", median(c(1,2.5)),
-                            ifelse(DiamClass == "5", median(c(2.5,5)),
-                                   median(c(5,7.5)))))]
-  dat.1992.fixed[,`:=`(Tree.Class = 1,
-                       BA = pi*(DBH/200)^2,
-                       PlotNum = 1)]
-
-  dat.1992.fixed[ ,CRUISED_HEIGHT := NA]
-  dat.1992.fixed[ ,StubYN := "N"]
-
-
-  ####################
-  ### Combine     ###
-  ####################
-  dat.1992_all <- rbind(dat.1992.cruise[,.(Unit,PlotNum, Spp, Tree.Class,DBH, BA,
-                                           PHF, CRUISED_HEIGHT, StubYN)],
-                        dat.1992.fixed[,.(Unit,PlotNum, Spp, Tree.Class,DBH,BA,
-                                          PHF, CRUISED_HEIGHT, StubYN)])
-
-  if(calc_height){
+  if(height == "calc"){
     # Calculate tree height
-    dat.1992_all[, Height := treeCalcs::height_dbh(Spp, DBH, BECzone = "ICH"),
-                 by = seq_len(nrow(dat.1992_all))]
+    trees_92[, Height := treeCalcs::height_dbh(Spp, DBH, BECzone = "ICH"),
+                 by = seq_len(nrow(trees_92))]
 
-    dat.1992_all <- dat.1992_all[,.(Unit,Year=1992, PlotNum, Spp, Tree.Class, DBH, Height, BA, PHF)]
+    trees_92 <- trees_92[,.(Unit,Year=1992, PlotNum, Spp, Tree.Class, DBH, Height, BA, SPH)]
+  }else if(height == "cruise"){
+    trees_92 <- trees_92[,.(Unit,Year=1992, PlotNum, Spp, Tree.Class, DBH, cruise_hgt,
+                                    BA, SPH)]
+  }else if(height == "both"){
+    trees_92 <- trees_92[,.(Unit,Year=1992, PlotNum, Spp, Tree.Class, DBH, cruise_hgt,
+                                    Height, BA, SPH)]
   }else{
-    dat.1992_all <- dat.1992_all[,.(Unit,Year=1992, PlotNum, Spp, Tree.Class, DBH, BA, PHF)]
+    trees_92 <- trees_92[,.(Unit,Year=1992, PlotNum, Spp, Tree.Class, DBH, BA, SPH)]
   }
 
-  return(dat.1992_all)
+  return(trees_92)
 }
 
 
@@ -162,9 +61,10 @@ trees_1992 <- function(cruise_data = "./data-raw/Trees/1992data.csv",
 #' @export
 #'
 #' @examples
-make_labels1992<-function(cruise_data = dat.1992.cruise){
+get_all_plots_92<-function(cruise_data = "./data-raw/Trees/1992data.csv"){
   # Count how many plots there are for each treatment unit
   # so when averaging carbon/unit later, we can take into account the plots that had zero C
+  dat.1992.cruise <- read.csv(cruise_data, stringsAsFactors = FALSE)
   dat.1992.cruise <- subset(dat.1992.cruise, dat.1992.cruise$PLOT_TYPE == "M")
   # Create unique plot names
   dat.1992.cruise <- dat.1992.cruise %>%
@@ -1023,107 +923,62 @@ trees_2022 <- function(large_trees = "./data-raw/Trees/11.2022 large trees.csv",
 #' the Date Creek Silvicultural Trial. This tree list from the 1992 pre-treatment data can be used to initiate forest
 #' models such as SORTIE. Use
 #' @param diam_sizeClass
-#' @param dateCreek92_data
-#' @param dateCreek_92_tallies
+#' @param cruise_data
+#' @param fixed_data
 #' @param liveTrees
 #'
 #'
 #' @export
 #'
 #'
-calc_sph_92data <- function(diam_sizeClass = 2.5, dateCreek92_data, dateCreek_92_tallies, liveTrees = TRUE){
-  #### read in the data
-  dat92 <- data.table::fread(dateCreek92_data)
-  dat92_tally <- data.table::fread(dateCreek_92_tallies)
+unit_sph_92 <- function(diam_sizeClass = 2.5, cruise_data, fixed_data, liveTrees = TRUE){
 
-  #### tree data:
-  #add plot numbers
-  dat92[,PlotNum := paste(STRIP, PLOT, sep = ".")]
-  #Data includes count (C) and measure (M) plots from cruise together coded by PLOT_TYPE. Removing C plots for C pool calculation
-  dat92 <- subset(dat92, dat92$PLOT_TYPE == "M")
 
-  #keep only needed columns and rename to match 2018 data
-  dat92 <- dat92[,.(Unit = BLOCK, PrismBands = MAIN_BAF, Ht = CRUISED_HEIGHT,
-                    Spp = SPECIES,DBH, TC = TREE_CLASS,PlotNum)]
+  trees_92 <- read_92_trees(cruise_data = cruise_data, fixed_data = fixed_data)
 
-  #cleaning Spp codes to match 2018 data
-  dat92$Spp[which(dat92$Spp == "AC")] <- "Ac"
-  dat92$Spp[which(dat92$Spp == "CT")] <- "Ac"
-  dat92$Spp[which(dat92$Spp == "AT")] <- "At"
-  dat92$Spp[which(dat92$Spp == "BA")] <- "Ba"
-  dat92$Spp[which(dat92$Spp == "BL")] <- "Bl"
-  dat92$Spp[which(dat92$Spp == "CW")] <- "Cw"
-  dat92$Spp[which(dat92$Spp == "EP")] <- "Ep"
-  dat92$Spp[which(dat92$Spp == "HW")] <- "Hw"
-  dat92$Spp[which(dat92$Spp == "PL")] <- "Pl"
-  dat92$Spp[which(dat92$Spp == "SX")] <- "Sx"
-  dat92$Spp[which(dat92$Spp == "C")] <- "Cw"
-  dat92$Spp[which(dat92$Spp == "H")] <- "Hw"
-  dat92$Spp[which(dat92$Spp == "E")] <- "Ep"
-  dat92$Spp[which(dat92$Spp == "S")] <- "Sx"
-  #Guessing that plain "B" entries by lazy cruiser in A and B units are Ba
-  dat92$Spp[which(dat92$Spp == "B")] <- "Ba"
+  trees_92[, DBH_2 := ifelse(is.na(DBH), 1,
+                          ifelse(DBH == median(c(1,2.5)),2.5,
+                                ifelse(DBH == median(c(2.5,5)), 5,
+                                    ifelse(DBH == median(c(5,7.5)), 7.5,
+                                          DBH))))]
 
-  #cleaning unit codes to match 2018 data
-  dat92$Unit[which(dat92$Unit == "0A1")]<-"A1"
-  dat92$Unit[which(dat92$Unit == "0A2")]<-"A2"
-  dat92$Unit[which(dat92$Unit == "0A3")]<-"A3"
-  dat92$Unit[which(dat92$Unit == "0A4")]<-"A4"
-  dat92$Unit[which(dat92$Unit == "0B1")]<-"B1"
-  dat92$Unit[which(dat92$Unit == "0B2")]<-"B2"
-  dat92$Unit[which(dat92$Unit == "0B3")]<-"B3"
-  dat92$Unit[which(dat92$Unit == "0B4")]<-"B4"
-  dat92$Unit[which(dat92$Unit == "0B5")]<-"B5"
-  dat92$Unit[which(dat92$Unit == "0C1")]<-"C1"
-  dat92$Unit[which(dat92$Unit == "0C2")]<-"C2"
-  dat92$Unit[which(dat92$Unit == "0C3")]<-"C3"
-  dat92$Unit[which(dat92$Unit == "0D2")]<-"D2"
-  dat92$Unit[which(dat92$Unit == "0D3")]<-"D3"
-  dat92$Unit[which(dat92$Unit == "0D4")]<-"D4"
-  dat92$Unit[which(dat92$Unit == "0D5")]<-"D5"
-
-  #Create Labels for all plot numbers within treatments to include plots with no trees later, after putting zeros
-  #for 1992 data, dbh classes from 8-10, 10-12, etc will work. 7.5 cm trees and below were measured in fixed radius plots
+  #just work with cruise data first, then tallies:
+  trees_92_over7.5 <- trees_92[DBH >= 7.5 & PlotType == "V"]
+  #assign the diameter class
   sizeClasses <- seq(10,262.5, by = diam_sizeClass)
-  labels92 <- unique(dat92[,.(Unit,PlotNum)])
+  data.table::setDT(trees_92_over7.5)[,"DiamClass":= cut(DBH, breaks = c(0,sizeClasses),
+                                                         labels = sizeClasses, right = FALSE)]
+
+  #trees_92_under7.5 <- trees_92[DBH <= median(c(5,7.5))| is.na(DBH)]
+  trees_92_under7.5 <- trees_92[PlotType == "F"| is.na(DBH)]
+  trees_92_under7.5[, DiamClass := ifelse(DBH_2 == 1, "Init.Dens_1",
+                                          ifelse(DBH_2 == 2.5, "Init.Dens_2.5",
+                                                 ifelse(DBH_2 == 5, "Init.Dens_5",
+                                                        "Init.Dens_7.5")))]
+
+  #Unit, Plot, Species and Diam class labels --------------------------------------------------------
+  #Create Labels for all plot numbers within treatments to include plots with no trees later,
+  #after putting zeros. < 7.5 cm trees were measured in fixed radius plots
+  labels92 <- unique(trees_92[,.(Unit,PlotNum)])
   #write.csv(labels92, "./data-raw/Unit_Plot_Labels.csv", row.names = FALSE)
-  #add species to every plot
-  Spp_labels <- rep(unique(dat92$Spp)[!is.na(unique(dat92$Spp))], nrow(labels92))
-  labels92 <- labels92[rep(seq(.N), length(unique(dat92$Spp)[!is.na(unique(dat92$Spp))]))]
+  #add species to every plot - for variable plots
+  Spp_labels <- rep(unique(trees_92$Spp)[!is.na(unique(trees_92$Spp))], nrow(labels92))
+  labels92 <- labels92[rep(seq(.N), length(unique(trees_92$Spp)[!is.na(unique(trees_92$Spp))]))]
   labels92[, Spp:= Spp_labels]
 
-  #add diameter class to every species in every plot
+  #add diameter class to every species in every plot - for variable plots
   diam_labels <- rep(sizeClasses, nrow(labels92))
   labels92 <- labels92[rep(seq(.N), length(sizeClasses))]
   data.table::setorder(labels92, Unit, PlotNum, Spp)
   labels92[, DiamClass:= diam_labels]
   labels92[, DiamClass := as.factor(DiamClass)]
 
-  #This will remove plot with no trees, and the 2.1 DBH tree from plot C1, which should not have been included in prism sweep
-  # the empty plot will come back in with the labels merge. All trees > or = to 7.5 included in the prism data
-  dat92 <- dat92[!is.na(Spp) & DBH >= 7.5]
-  #zero height checking
-  #zero <- dat92[Ht ==0] #one plot in A4 had half heights missed, and one dead useless in C1.
-  #can't tell if C1 should be removed but leaving in because it isn't clear
-
-  ### Are we summarizing the live trees or snags?
-  # if snags, we want to keep the Tree class, if live, we don't
   if(liveTrees == TRUE){
     ### LIVE TREES
-    dat92 <- dat92[TC <= 2]
-    ### Summarize prism plots (trees > 7.5cm)
-    #Calculate SPH for each treatment unit and dbh class
-    #the prism bands number is the BAF for metric prisms
-
-    dat92[,SPH:= calculateSPH(dat92$PrismBands, dat92$DBH)]
-
-    #assign the diameter class
-    data.table::setDT(dat92)[,"DiamClass":= cut(DBH, breaks = c(0,sizeClasses),
-                                                labels = sizeClasses, right = FALSE)]
+    trees_92_over7.5 <- trees_92_over7.5[Tree.Class <= 2]
 
     # sum by species by diameter class within each plot within each unit
-    dat92_plot <- dat92[,sum(SPH), by=.(Unit,PlotNum,Spp, DiamClass)]
-    data.table::setnames(dat92_plot, "V1", "SPH")
+    dat92_plot <- trees_92_over7.5[,.(SPH = sum(SPH)), by=.(Unit,PlotNum,Spp, DiamClass)]
 
     ## merge with labels, all species in all diam classes to get plots with 0s:
     # add all species to every plot - empty plot is added back here
@@ -1131,64 +986,117 @@ calc_sph_92data <- function(diam_sizeClass = 2.5, dateCreek92_data, dateCreek_92
     dat92_plot[is.na(SPH), SPH := 0]
 
     # Now take the mean of SPH by species and diameter class across plots to get a unit-level summary
-    dat92_unit <- dat92_plot[,mean(SPH), by=.(Unit, Spp, DiamClass)]
-    data.table::setnames(dat92_unit, "V1", "SPH")
+    dat92_unit <- dat92_plot[,.(SPH = mean(SPH)), by=.(Unit, Spp, DiamClass)]
 
     #output does not match data from table 16 in the Date Ck handbook but that is OK because erica checked through
     #cruise comp reports from 1992 and there were data entry mistakes in them, so our numbers might be better
     #also the treatment unit totals were adjusted for the double sampling ratio which doesn't make sense to do
     #for the SORTIE output
-    ### Finally got it to work without plyr/ddply!
-
 
     ### Summarize fixed area tallies (trees < 7.5cm)
     #now we will add the fixed area tallies: the tallies in fixed radius plots were from Date Ck Handbook table 20
-    dat92_tally[,V1:=NULL]
-    data.table::setnames(dat92_tally,  c("Init.Dens.1.3Ht", "Init.Dens.2.5", "Init.Dens.5", "Init.Dens.0-7.5"),
-                         c("1","2.5","5","7.5"))
-    dat92_tally_m <- data.table::melt(dat92_tally, id=c("Unit","Spp"),
-                                      variable.name = "DiamClass",
-                                      value.name = "SPH")
+    trees_92_under7.5 <- trees_92_under7.5[,.(Unit, Spp, DiamClass, SPH)]
 
     # outputs
-    dat92_sph_diamClass <- rbind(dat92_tally_m, dat92_unit)
+    dat92_sph_diamClass <- rbind(trees_92_under7.5, dat92_unit)
   }else{
     ### SNAGS
-    dat92 <- dat92[TC > 2]
-    ### Summarize prism plots (trees > 7.5cm)
-    #Calculate SPH for each treatment unit and dbh class
-    #the prism bands number is the BAF for metric prisms
-
-    dat92[,SPH:= calculateSPH(dat92$PrismBands, dat92$DBH)]
-
-    #assign the diameter class
-    data.table::setDT(dat92)[,"DiamClass":= cut(DBH, breaks = c(0,sizeClasses),
-                                                labels = sizeClasses, right = FALSE)]
-
-    # sum by species by diameter class within each plot within each unit
-    dat92_plot <- dat92[,sum(SPH), by=.(Unit,PlotNum,Spp, TC,DiamClass)]
-    data.table::setnames(dat92_plot, "V1", "SPH")
+    trees_92_over7.5 <- trees_92_over7.5[Tree.Class > 2]
 
     ## merge with labels, all species in all diam classes in all decay classes to get plots with 0s:
     # add all species to every plot - empty plot is added back here
     TC_labels <- rep(seq(1,5), nrow(labels92))
     labels92 <- labels92[rep(seq(.N), length(seq(1,5)))]
     data.table::setorder(labels92, Unit, PlotNum, Spp, DiamClass)
-    labels92[, TC := TC_labels]
-
-    dat92_plot <- merge(labels92, dat92_plot, by =c("Unit","PlotNum","Spp","DiamClass","TC"), all.x=TRUE)
+    labels92[, Tree.Class := TC_labels]
+    labels92_d <- labels92[Tree.Class > 2]
+    dat92_plot <- merge(labels92_d, trees_92_over7.5, by = c("Unit","PlotNum","Spp",
+                                                           "DiamClass","Tree.Class"),
+                        all.x=TRUE)
     dat92_plot[is.na(SPH), SPH := 0]
 
     # Now take the mean of SPH by species and diameter class across plots to get a unit-level summary
-    dat92_sph_diamClass <- dat92_plot[,mean(SPH), by=.(Unit, Spp, DiamClass,TC)]
-    data.table::setnames(dat92_sph_diamClass, "V1", "SPH")
+    dat92_sph_diamClass <- dat92_plot[,.(SPH = mean(SPH)), by=.(Unit, Spp,
+                                                                DiamClass,Tree.Class)]
 
-    #there are no dead trees in the tally plots, so assume it is zero
-    #final table needs total SPH in each size class by species, and then the proportion in each decay class
   }
-
 
   return(dat92_sph_diamClass)
 
 }
 
+
+#' Create an initial tree list for SORTIE
+#'
+#' @param diam_sizeClass what size diameter classes to use for SORTIE. Default set to 2.5. If changing to 2, this code
+#' will be inaccurate as the lower DBH limit for the prism plots was 7.5.
+#' @param cruise_data filename (and pathway) for the 1992 Date Creek prism data
+#' @param fixed_data file name (and pathway) for the 1992 Date Creek small tree fixed radius plots data
+#' @param liveTrees Do you want live trees (TRUE = default) or snags (FALSE)
+#'
+#' @description This function creates an output compatible with SORTIE from dat92_sph_diamClass datatable. You can either
+#' pass the output data table explicitly, or this function will run the dat92_sph_diamClass function if not already available
+#'
+#' If you change how the species are spelled in a SORTIE parameter file (i.e. Western_Hemlock become westernHemlock),
+#' you would have to change it here - the species spelling is hard coded here and MUST MATCH EXACTLY what is in the
+#' associated parameter file
+#' @param
+#'
+#' @return
+#' @export
+#'
+#' @examples
+createTreeListSortie <- function(diam_sizeClass = 2.5, cruise_data, fixed_data, liveTrees = TRUE){
+
+  SummaryDataTable <- unit_sph_92(cruise_data = cruise_data,
+                                  fixed_data = fixed_data,
+                                  liveTrees = liveTrees)
+
+  #keep only needed columns and rename to match 2018 data
+  #dat92 <- dat92[,.(Unit = BLOCK, PrismBands = MAIN_BAF, Ht = CRUISED_HEIGHT,
+  #                 Spp = SPECIES,DBH, TC = TREE_CLASS,PlotNum)]
+
+  SummaryDataTable[,Spp:=ifelse(Spp=="Hw","Western_Hemlock",
+                                ifelse(Spp=="Cw","Western_redcedar",
+                                       ifelse(Spp=="Ba","Amabalis_Fir",
+                                              ifelse(Spp=="Bl","Subalpine_Fir",
+                                                     ifelse(Spp =="Sx","Hybrid_spruce",
+                                                            ifelse(Spp=="Pl","Lodgepole_Pine",
+                                                                   ifelse(Spp=="At","Trembling_Aspen",
+                                                                          ifelse(Spp=="Ac","Black_Cottonwood",
+                                                                                 ifelse(Spp=="Ep","Paper_Birch",Spp)))))))))]
+
+  SummaryDataTable[,Spp:=as.factor(Spp)][,Unit:=as.factor(Unit)]
+
+  if(liveTrees==TRUE){
+    DC_dat2 <- data.table::dcast(SummaryDataTable, Unit + DiamClass ~ Spp, value.var = "SPH")
+  }else{
+    #sizeClasses <- 7.5 #can't have snags <5-7.5cm diameter class
+    #labels92 <- Unit_Plot_Labels
+    #labels_unit <- unique(labels92[,.(Unit)])
+    #add species to every plot
+    #Spp_labels <- rep(unique(SummaryDataTable$Spp)[!is.na(unique(SummaryDataTable$Spp))], nrow(labels_unit))
+    #labels_unit <- labels_unit[rep(seq(.N), length(unique(SummaryDataTable$Spp)[!is.na(unique(SummaryDataTable$Spp))]))]
+    #labels_unit[, Spp:= Spp_labels]
+
+    #add diameter class to every species in every plot
+    #diam_labels <- rep(sizeClasses, nrow(labels_unit))
+    #labels_unit <- labels_unit[rep(seq(.N), length(sizeClasses))]
+    #data.table::setorder(labels_unit, Unit, Spp)
+    #labels_unit[, DiamClass:= diam_labels]
+    #labels_unit[, DiamClass := as.factor(DiamClass)]
+
+    #TC_labels <- rep(seq(1,5), nrow(labels_unit))
+    #labels_unit <- labels_unit[rep(seq(.N), length(seq(1,5)))]
+    #data.table::setorder(labels_unit, Unit, Spp, DiamClass)
+    #labels_unit[, TC := TC_labels]
+
+    #DC_dat <- merge(labels_unit, SummaryDataTable, by =c("Unit","Spp","DiamClass","TC"), all =TRUE)
+    #DC_dat[is.na(SPH), SPH := 0]
+
+    DC_dat2 <- data.table::dcast(SummaryDataTable, Unit + DiamClass + Tree.Class ~ Spp, value.var = "SPH")
+  }
+
+
+  return(DC_dat2)
+}

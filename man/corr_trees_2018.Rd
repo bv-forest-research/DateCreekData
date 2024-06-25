@@ -5,10 +5,14 @@
 \title{Internal function to correct 2018 tree data}
 \usage{
 corr_trees_2018(dat)
+
+corr_trees_2018(dat)
 }
 \arguments{
 \item{dat}{}
 }
 \description{
+Internal function to correct 2018 tree data
+
 Internal function to correct 2018 tree data
 }

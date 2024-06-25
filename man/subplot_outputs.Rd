@@ -42,7 +42,5 @@ subplot_outputs(
 \item{plotting}{TRUE/FALSE - whether or not to display plots with the unit and subplot location}
 }
 \description{
-subplot_outputs
-
-subplot_outputs
+simplfy this so that we can pass a single unit instead of all at once
 }

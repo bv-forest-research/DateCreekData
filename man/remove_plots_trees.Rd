@@ -2,7 +2,7 @@
 % Please edit documentation in R/Tree_Fielderror_corrections.R
 \name{remove_plots_trees}
 \alias{remove_plots_trees}
-\title{Remove trees or plots from 2018/19 data}
+\title{Remove trees or plots from data}
 \usage{
 remove_plots_trees(dat)
 }
@@ -10,8 +10,8 @@ remove_plots_trees(dat)
 \item{dat}{}
 }
 \description{
-Remove trees or plots from 2018/19 data
+Remove trees or plots from data
 }
 \details{
-eliminates trees or plots from 2018/19 data to match missing plots from other years
+eliminates trees or plots from data to match missing plots from other years
 }

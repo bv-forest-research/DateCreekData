@@ -928,4 +928,24 @@ corr_trees_2019 <- function(dat){
 }
 
 
+#' Internal function to correct 2022 tree data
+#'
+#' @param dat
+#'
+#' @return
+#'
+#' @examples
+corr_trees_2022 <- function(dat){
+  #data corrections based on 2010 and 2018 data
+
+  #dbh corrections
+  dat.2022$DBH.22[which(dat.2022$Unit == "C1" & dat.2022$Tree.No ==88)]<-29.3 #guessing that 39 should have been 29
+
+
+
+  return(dat.2022)
+
+}
+
+
 
