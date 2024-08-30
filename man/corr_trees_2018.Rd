@@ -2,7 +2,7 @@
 % Please edit documentation in R/Tree_Fielderror_corrections.R
 \name{corr_trees_2018}
 \alias{corr_trees_2018}
-\title{Internal function to correct 2018 tree data}
+\title{Title}
 \usage{
 corr_trees_2018(dat)
 
@@ -12,7 +12,7 @@ corr_trees_2018(dat)
 \item{dat}{}
 }
 \description{
-Internal function to correct 2018 tree data
+Title
 
-Internal function to correct 2018 tree data
+Title
 }

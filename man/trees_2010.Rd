@@ -5,15 +5,17 @@
 \title{Title}
 \usage{
 trees_2010(
-  lrg_trees = "./data-raw/Trees/4.Data Creek 2010 Data large trees.csv",
-  cc_trees = "./data-raw/Trees/5.Trees 10cm and above in clearcut 2010.csv",
-  small_trees = "./data-raw/Trees/6.Date Creek 2010 Trees less than 10 cm tallies.csv",
+  lrg_trees = "./data-raw/Trees/Data Creek 2010 Data large trees.csv",
+  cc_trees = "./data-raw/Trees/Trees 10cm and above in clearcut 2010.csv",
+  small_trees = "./data-raw/Trees/Date Creek 2010 Trees less than 10 cm tallies.csv",
+  snag_heights = "./data-raw/Trees/SnagHeights2010.csv",
+  measured_heights2022 = "./data-raw/Trees/StandStructureData_Nov2022_Final.xlsx",
   calc_height = TRUE
 )
 }
-\arguments{
-\item{calc_height}{}
-}
 \description{
 Title
+}
+\details{
+note plantation height decision is embedded in this code
 }

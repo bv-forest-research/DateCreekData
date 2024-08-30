@@ -5,14 +5,19 @@
 \title{2022 data}
 \usage{
 trees_2022(
-  large_trees = "./data-raw/Trees/11.2022 large trees.csv",
-  inter_trees = "./data-raw/Trees/12.2022 intermediate trees.csv",
-  small_trees = "./data-raw/Trees/13.2022 small trees.csv",
+  data_file = "./data-raw/Trees/StandStructureData_Nov2022_Final.xlsx",
+  large_trees = "Large",
+  inter_trees = "Inter",
+  small_trees = "Small",
   calc_height = TRUE
 )
 }
 \arguments{
-\item{calc_height}{}
+\item{large_trees}{name of sheet with large trees}
+
+\item{inter_trees}{name of sheet with intermediate trees}
+
+\item{small_trees}{name of sheet with small trees}
 }
 \description{
 2022 data

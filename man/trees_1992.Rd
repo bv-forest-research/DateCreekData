@@ -7,15 +7,15 @@
 trees_1992(
   cruise_data = "./data-raw/Trees/1992data.csv",
   fixed_data = "./data-raw/Trees/1992fixed_radius_data_fromTable20_DateCkHandbook.csv",
-  height = "calc"
+  calc_height = TRUE
 )
 }
 \arguments{
-\item{height}{"calc" - calculate the height based on allometry in treeCalcs package, "cruise" -
-leave the cruised heights and don't calculate height from allometry, "both" - calculate and leave
-the cruised heights, "none" drop the height column}
+\item{fixed_data}{}
+
+\item{calc_height}{can be TRUE, "cruise" or "both"}
 }
 \description{
-cleans tree data and calculates heights (if height = "calc")
-can't get this working because of ddply - needs to be updated to either dplyr or data.table
+cleans tree data and calculates heights (if calc_height = TRUE)
+Note - there are 2 trees in 1992 that are dead (tree class 4) that are stubs with a height of 0
 }

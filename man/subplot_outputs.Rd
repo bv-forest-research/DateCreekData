@@ -5,6 +5,7 @@
 \title{subplot_outputs}
 \usage{
 subplot_outputs(
+  det_out_path,
   out_path,
   run_name,
   Units_path,
@@ -18,6 +19,7 @@ subplot_outputs(
 )
 
 subplot_outputs(
+  det_out_path,
   out_path,
   run_name,
   Units_path,
@@ -31,6 +33,8 @@ subplot_outputs(
 )
 }
 \arguments{
+\item{out_path}{where to locate the subplotted outputs}
+
 \item{Units_to_output}{a vector of character names for which units to include for subplotting outputs}
 
 \item{dist_edge}{\code{\link[=numeric]{numeric()}} how far from unit boundary to allow subplots (in m)}

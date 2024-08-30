@@ -12,6 +12,7 @@ remove_plots_trees(dat)
 \description{
 Remove trees or plots from data
 }
-\details{
+\examples{
 eliminates trees or plots from data to match missing plots from other years
+
 }
