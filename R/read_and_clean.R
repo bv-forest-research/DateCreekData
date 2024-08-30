@@ -31,11 +31,12 @@ read_92_trees <- function(cruise_data, fixed_data){
   # Create unique plot names
   cruise_92 <- cruise_92 %>%
     dplyr::mutate(PlotNum = paste0(STRIP, ".", PLOT))
-  # Create STUBYN column and find snags of class 7 or 8 but don't include ones that don't seem like stub equation should be used (too tall)
+  # Create STUBYN column and find snags of class 7 or 8 but don't include ones that don't seem
+  # like stub equation should be used (too tall)
   cruise_92$StubYN <- ifelse(cruise_92$SnagCode >= 7 & cruise_92$CRUISED_HEIGHT <= 10,
                                    "Y", "N" )
 
-  # make sure live trees are not coded as Stubs
+  # make sure live trees are not coded as Stubs - fix from Nov 30, 2024
   cruise_92$StubYN <- ifelse(cruise_92$Tree.Class <3 , "N", cruise_92$StubYN )
 
   # Eliminate unwanted columns

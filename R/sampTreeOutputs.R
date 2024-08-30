@@ -1,11 +1,12 @@
 
-#'subplot_outputs
+#'subplot_outputs for trees
 #'
 #'
 #' @export
 #'
 #'
-#' @param out_path
+#' @param det_out_path
+#' @param out_path where to locate the subplotted outputs
 #' @param run_name
 #' @param Units_path
 #' @param yrs
@@ -19,8 +20,10 @@
 #' @description
 #' simplfy this so that we can pass a single unit instead of all at once
 #'
-subplot_outputs <- function(out_path, run_name, Units_path, yrs, subplot_type = multiple , Units_to_output = "all",
-                            dist_edge = 20, num_subplots = 30, size_subplot = 7.98, plotting = TRUE){
+subplot_outputs <- function(det_out_path, out_path, run_name, Units_path, yrs,
+                            subplot_type = multiple , Units_to_output = "all",
+                            dist_edge = 20, num_subplots = 30, size_subplot = 7.98,
+                            plotting = TRUE){
 
   # Reading in unit boundaries and creating shapefiles group by removal class
 
@@ -89,7 +92,7 @@ subplot_outputs <- function(out_path, run_name, Units_path, yrs, subplot_type = 
 
     for(i in 1:length(yrs)){
 
-      file_to_read <- paste0(out_path,"ext_ICH-",TreatType,"-",Unit_i,NameEnd,yrs[i])
+      file_to_read <- paste0(det_out_path,"ext_ICH-",TreatType,"-",Unit_i,NameEnd,yrs[i])
 
       if(file.exists(file_to_read)){
         dt <- fread(file_to_read,sep="\t", header=T,na.strings = "--", skip=1)

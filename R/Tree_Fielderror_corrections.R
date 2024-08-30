@@ -159,15 +159,17 @@ corr_trees_2010 <- function(dat){
 
 }
 
+
 #' Remove trees or plots from data
 #'
 #' @param dat
 #'
 #' @return
-#' @details
-#' eliminates trees or plots from data to match missing plots from other years
+#' @export
 #'
 #' @examples
+#' eliminates trees or plots from data to match missing plots from other years
+#'
 remove_plots_trees <- function(dat){
 
   #Eliminate plots C2 J050  which could not be found
@@ -220,11 +222,13 @@ remove_plots_trees <- function(dat){
 
 
 
-#' Internal function to correct 2018 tree data
+
+#' Title
 #'
 #' @param dat
 #'
 #' @return
+#' @export
 #'
 #' @examples
 corr_trees_2018 <- function(dat){
@@ -528,11 +532,13 @@ corr_trees_2018 <- function(dat){
 
 
 
-#' Internal function to correct 2018 tree data
+
+#' Title
 #'
 #' @param dat
 #'
 #' @return
+#' @export
 #'
 #' @examples
 corr_trees_2018 <- function(dat){
@@ -907,6 +913,7 @@ corr_trees_2018 <- function(dat){
 #' @param dat
 #'
 #' @return
+#' @export
 #'
 #' @examples
 corr_trees_2019 <- function(dat){

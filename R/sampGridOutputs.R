@@ -51,7 +51,7 @@ maskGrids <- function(Blocks = DateCreekData::Treatments$Unit,
       #mask by unit
       UnitBounds_l <- UnitBounds %>% dplyr::filter(Unit== Blocks[ii])
       rasts_i <- rast_g[[Blocks[ii]]]
-      crs(rasts_i) <- crs(UnitBounds_l)
+      terra::crs(rasts_i) <- terra::crs(UnitBounds_l)
       #mask by the unit boundaries - all units
       rast_unit <- terra::mask(rasts_i, UnitBounds_l)
 

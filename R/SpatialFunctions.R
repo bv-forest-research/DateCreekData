@@ -81,69 +81,6 @@ ReadSpatialBounds <- function(Units_path){
 
 
 
-#' Modify the Date Creek treatment boundaries for heavy and light removals
-#'
-#' @param Gaps_path The directory with the kmls and kmzs that define the cuts
-#' @export
-#'
-#' @return an sf object
-#' @examples
-#'
-modifyPartCuts <- function(Gaps_path){
-
-  LR<-c("A2", "B5", "C3", "D5") # light removal (30% BasalArea)
-  HR<-c("B2", "B3", "C2", "D4") #heavy removal (60% BasalArea)
-
-  ######### Reading in cut boundaries for heavy and light removal that were stored as kmz
-  kmz_blocks <- list()
-  for(ii in 1:length(c(HR,LR))){
-    kmz_blocks[[ii]] <- paste0(paste0(Gaps_path,c(HR,LR)[ii],"_openings.kmz"))
-  }
-  kmz_list <- list()
-  for(ii in 1:length(kmz_blocks)){
-    target_file <- '.temp.kml.zip'
-    fs::file_copy(kmz_blocks[[ii]], target_file, overwrite = T)
-    unzip(target_file, overwrite = T)
-    kmz_list[[ii]] <- sf::read_sf('doc.kml')
-    fs::file_delete(grep(".xsl",list.files(getwd()), value = TRUE))
-    fs::file_delete('.temp.kml.zip')
-    fs::file_delete('doc.kml')
-    kmz_list[[ii]]$Id <- c(HR,LR)[ii]
-  }
-
-  ##### Cleaning heavy removal polygons
-  HR_Cuts <- do.call(rbind.data.frame, kmz_list[1:4])
-  HR_Cuts <- HR_Cuts %>%
-    dplyr::select(Id,geometry) %>%
-    sf::st_transform(.,crs=3005)
-  #For B2, need to remove row 9 - but might lose a few openings
-  HR_Cuts_B2 <- HR_Cuts %>% filter(Id=="B2")
-  HR_Cuts_B2 <- HR_Cuts_B2[-2,]
-
-  #For B3, need to remove row 9 - but might lose a few openings
-  HR_Cuts_B3 <- HR_Cuts %>% filter(Id=="B3")
-  HR_Cuts_B3 <- HR_Cuts_B3[-9,]
-
-  #For C2, need to remove row 16 - but might loss an opening that is attached
-  HR_Cuts_C2 <- HR_Cuts %>% filter(Id=="C2")
-  HR_Cuts_C2 <- HR_Cuts_C2[-16,]
-
-  #For D4, need to remove row 16 - but might loss an opening that is attached
-  HR_Cuts_D4 <- HR_Cuts %>% filter(Id=="D4")
-  HR_Cuts_D4 <- HR_Cuts_D4[-c(7,16),]
-
-  #### Light removals gaps
-  #we are going to ignore the gap boundaries, but use unit boundaries to harvest BA within
-  LR_Cuts <- do.call(rbind.data.frame, kmz_list[5:8])
-
-  HR_Cuts_clean <- rbind(HR_Cuts_B2,HR_Cuts_B3,HR_Cuts_C2,HR_Cuts_D4)
-
-  return(HR_Cuts_clean)
-
-}
-
-
-
 #'subplot_outputs
 #'
 #'
@@ -289,7 +226,7 @@ maskGrids <- function(Blocks = DateCreekData::Treatments$Unit,
                       grid_dat, output = "table",
                       grid_to_output){
 
-
+  copy_grid <- grid_dat
   UnitBounds <- ReadSpatialBounds(Units_path = Units_path)
   HR_gaps <- modifyPartCuts(Gaps_path = Gaps_path)
 
@@ -298,18 +235,18 @@ maskGrids <- function(Blocks = DateCreekData::Treatments$Unit,
   for(i in 1:length(Blocks)){
     UnitBounds_l <- UnitBounds %>% filter(Unit== Blocks[i])
     bb <- st_bbox(UnitBounds_l)
-    grid_dat[Unit==Blocks[i],
+    copy_grid[Unit==Blocks[i],
              ':='(x_utm = bb[1]+(x*8), y_utm = bb[2]+(y*8))]
   }
-  grid_dat[,':='(x = NULL, y = NULL)]
-  setnames(grid_dat, c("x_utm","y_utm"), c("x","y"))
+  copy_grid[,':='(x = NULL, y = NULL)]
+  setnames(copy_grid, c("x_utm","y_utm"), c("x","y"))
 
   rast_l <- list()
   rast_table <- list()
   for(j in 1:length(grid_to_output)){
     rast_t_dt <- c()
 
-    rast_g <- grid_dat[colnames == grid_to_output[j]] %>%
+    rast_g <- copy_grid[colnames == grid_to_output[j]] %>%
       arrange(.$timestep) %>%
       split(.$Unit) %>%
       lapply(., function(x) {x <- x %>% tidyr::pivot_wider(names_from = timestep, values_from = values)})%>%

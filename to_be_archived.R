@@ -1,4 +1,159 @@
+#' Title
+#'
+#' @param data
+#' @param calc_height
+#'
+#' @return
+#' @export
+#'
+#' @examples
+trees_2010 <- function(lrg_trees = "./data-raw/Trees/4.Data Creek 2010 Data large trees.csv",
+                       cc_trees = "./data-raw/Trees/5.Trees 10cm and above in clearcut 2010.csv",
+                       small_trees = "./data-raw/Trees/6.Date Creek 2010 Trees less than 10 cm tallies.csv",
+                       calc_height = TRUE){
 
+  #############################
+  ### LARGE TREES (No CC) ###
+  #############################
+
+  # Read in the data for large trees (10+cm DBH) - No Clear Cut plots
+  dat.2010 <- read.csv(lrg_trees, stringsAsFactors = FALSE, na.strings = "n/a")
+
+  # Rename columns/ variables to match other years
+  dat.2010$Unit <- as.factor(dat.2010$Unit)
+  names(dat.2010)[names(dat.2010) == "Tree.No."] <- "Tree.No" #Rename
+  names(dat.2010)[names(dat.2010) == "DBH.2010"] <- "DBH" #Rename
+  dat.2010$Spp[which(dat.2010$Spp == "Sw")] <- "Sx"
+
+  dat.2010 <- corr_trees_2010(dat.2010)
+  # Count how many plots there are for each treatment unit
+  # so when averaging carbon/unit later, we can take into account the plots that had zero C
+  dat.2010$count<-rep(1, length(dat.2010$Unit ))
+  Trees_in_Plots<-ddply(dat.2010[c("Unit", "Gd.Pt","Plot.Size", "count")], .(Unit, Gd.Pt,Plot.Size), numcolwise(sum))
+  Trees_in_Plots$count<-rep(1, length(Trees_in_Plots$Unit ))
+  Plot_in_Units<-ddply(Trees_in_Plots[c("Unit", "count")], .(Unit), numcolwise(sum))
+  Plot_in_Units #stands should have 20 or 30 plots (30 for 40% and 70% retention treatments)
+  # C2 is down 2 plots
+  #no clear-cut large tree plots
+
+  # Eliminate unwanted columns
+  #dat.2010 <- dat.2010 %>%
+  # dplyr::select(Unit, Gd.Pt, Plot.Size, Spp, DBH, Tree.Class)
+
+
+  dat.2010 <- as.data.table(dat.2010)
+  dat.2010[, PHF := 1/(round((pi*Plot.Size^2)/10000,4)), by = seq_len(nrow(dat.2010))]
+
+  #############################
+  ### LARGE TREES (CC only) ###
+  #############################
+
+  # For large trees (10+cm DBH) - ONLY in Clear Cut plots
+  # No dead large trees in the clear cut plots
+  dat.2010.CC<- read.csv(cc_trees, stringsAsFactors = FALSE)
+
+  # Rename columns to match other years
+  names(dat.2010.CC)[names(dat.2010.CC) == "Species"] <- "Spp" #Rename
+  names(dat.2010.CC)[names(dat.2010.CC) == "Dave"] <- "DBH" #Rename
+
+  # Add tree class
+  # no dead trees found > 10 cm in clear-cuts
+  dat.2010.CC$Tree.Class <- rep(1, length(dat.2010.CC$Unit))
+
+  # Add plots per unit for clear cut units
+  Plot_in_Units.CC <- data.frame(Unit = c("A1", "A3", "B4", "D2"), count = rep(20, 4))
+
+  Plot_in_Units <- rbind(Plot_in_Units, Plot_in_Units.CC)
+
+  # Eliminate unwanted columns
+  #dat.2010.CC <- dat.2010.CC %>%
+  # dplyr::select(Unit, Gd.Pt, Plot.Size, Spp, DBH, Tree.Class)
+
+  dat.2010.CC <- as.data.table(dat.2010.CC)
+  dat.2010.CC[, PHF := 1/(round((pi*Plot.Size^2)/10000,4)),by = seq_len(nrow(dat.2010.CC))]
+
+  ###################
+  ### SMALL TREES ###
+  ###################
+
+  # For small trees (5.1-10cm) - All plots
+  dat.2010.sm <- read.csv(small_trees) #tallied trees with dbh <4
+
+  #Eliminate plots C2 J050 and J300, which could not be found
+  #dat.2010.sm <- subset(dat.2010.sm, dat.2010.sm$Unit != "C2"| dat.2010.sm$Gd.Pt != "J050")
+  #dat.2010.sm <- subset(dat.2010.sm, dat.2010.sm$Unit != "C2"| dat.2010.sm$Gd.Pt != "J300")
+
+  #dat.2010.sm <- subset(dat.2010.sm, dat.2010.sm$Size.Cl == "5.1-10cm")
+
+  # Eliminate unwanted columns
+  #dat.2010.sm <- dat.2010.sm %>%
+  # dplyr::select(Unit, Gd.Pt, Plot.Size, Hw, Cw, Sx, Pl, Bl, Ba, Ep, At, Ac)
+
+  # Pivot table from wide to long - both live and dead
+  dat.2010.sm <- as.data.table(dat.2010.sm)
+  dat.2010.sm_l <- melt(dat.2010.sm,
+                        id.vars = c("Unit", "Gd.Pt", "Plot.Size", "Size.Cl"),
+                        measure.vars = c("Hw", "Cw", "Sx", "Pl", "Bl", "Ba", "Ep", "At", "Ac"),
+                        variable.name = "Spp",
+                        value.name = "Tally")
+  dat.2010.sm_l[,Tree.Class := 1]
+
+  dat.2010.sm_d <- melt(dat.2010.sm,
+                        id.vars = c("Unit", "Gd.Pt", "Plot.Size", "Size.Cl"),
+                        measure.vars = c("dead.Hw", "deadCw", "deadSx", "deadPl",
+                                         "deadBl", "deadBa", "deadEp", "deadAt", "deadAc"),
+                        variable.name = "DSpp",
+                        value.name = "Tally")
+  dat.2010.sm_d[, c("Tree.Class", "Spp") := tstrsplit(DSpp, "ad", fixed=TRUE)]
+  dat.2010.sm_d$Spp <- gsub(".Hw","Hw", dat.2010.sm_d$Spp)
+  dat.2010.sm_d[, Tree.Class:= 3][,DSpp:=NULL]
+
+  #bring them together
+  dat.2010.sm <- rbind(dat.2010.sm_l,dat.2010.sm_d)
+  dat.2010.sm <- dat.2010.sm[Tally >0]
+
+  # Duplicate rows for the number of tallies that it has
+  #dup.times <- dat.2010.sm$Tally
+  #idx <- rep(1:nrow(dat.2010.sm), dup.times)
+  #dat.2010.sm <- dat.2010.sm[idx,]
+  #dat.2010.sm$tally <- NULL
+
+  # Add average DBH for each size class
+  dat.2010.sm[, DBH := ifelse(Size.Cl == "0-5cm",median(c(0,5)),
+                              ifelse(Size.Cl == "5.1-10cm", median(c(5.1,10)),
+                                     0))]
+
+  #multiply the per hectare factor by the tally - when dividing by the number of plots,
+  #should get SPH --- ERICA CAN YOU CHECK THIS MAKES SENSE ---
+  dat.2010.sm[, PHF := (1/(round((pi*Plot.Size^2)/10000,4)))*Tally,
+              by = seq_len(nrow(dat.2010.sm))]
+
+  # Combine Large trees, CC large trees, and small trees
+  dat.2010_all <- rbind(dat.2010[,.(Unit, Gd.Pt,Spp,Tree.Class, DBH, PHF)],
+                        dat.2010.CC[,.(Unit, Gd.Pt,Spp,Tree.Class, DBH, PHF)],
+                        dat.2010.sm[,.(Unit,Gd.Pt,Spp,Tree.Class, DBH, PHF)])
+
+  setnames(dat.2010_all, c("Gd.Pt"),c("PlotNum"))
+
+  dat.2010_all[, BA :=  pi*(DBH/200)^2]
+
+  # use "U" for n/a species in large tree data
+  dat.2010_all[is.na(Spp), Spp := "U"]
+
+  # Calculate tree height
+  dat.2010_all[, Height := treeCalcs::DiamHgtFN(Spp, DBH, BECzone = "ICH"),
+               by = seq_len(nrow(dat.2010_all))]
+
+  #Eliminate plots C2 J050 and J300, which could not be found in 2018-19
+  #This step is optional and is only done to match 2010 and 2018 data more closely
+  dat.2010_all <- subset(dat.2010_all, dat.2010_all$Unit != "C2"| dat.2010_all$PlotNum != "J050")
+  dat.2010_all <- subset(dat.2010_all, dat.2010_all$Unit != "C2"| dat.2010_all$PlotNum != "J300")
+
+  dat.2010_all <- dat.2010_all[,.(Unit,Year=2010, PlotNum, Spp, Tree.Class, DBH, Height, BA, PHF)]
+
+  return(dat.2010_all)
+
+}
 
 #### read in the data
 dat92 <- data.table::fread(dateCreek92_data)
