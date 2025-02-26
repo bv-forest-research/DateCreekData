@@ -48,11 +48,11 @@ subplot_outputs <- function(det_out_path, out_path, run_name, Units_path, yrs,
                    ifelse(Unit_i=="A1"||Unit_i=="A3"||Unit_i=="B4"||Unit_i=="D2","CC","NH")))
     #Forest size
     if(TreatType=="NH"){
-      NameEnd <- paste0(run_name,"_nh_det_")
+      NameEnd <- paste0(run_name,"nh_det_")
     }else if(TreatType == "CC"){
-      NameEnd <- paste0(run_name,"_cc_det_")
+      NameEnd <- paste0(run_name,"cc_det_")
     }else{
-      NameEnd <- paste0(run_name,"_det_")
+      NameEnd <- paste0(run_name,"hh_lh_det_")
     }
 
 
