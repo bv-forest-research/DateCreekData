@@ -5,10 +5,19 @@
 \title{Title}
 \usage{
 trees_2010(
-  lrg_trees = "./data-raw/Trees/4.Data Creek 2010 Data large trees.csv",
-  cc_trees = "./data-raw/Trees/5.Trees 10cm and above in clearcut 2010.csv",
-  small_trees = "./data-raw/Trees/6.Date Creek 2010 Trees less than 10 cm tallies.csv",
-  calc_height = TRUE
+  lrg_trees = "./data-raw/Trees/Data Creek 2010 Data large trees.csv",
+  cc_trees = "./data-raw/Trees/Trees 10cm and above in clearcut 2010.csv",
+  small_trees = "./data-raw/Trees/Date Creek 2010 Trees less than 10 cm tallies.csv",
+  snag_heights = "./data-raw/Trees/SnagHeights2010.csv",
+  measured_heights2022 = "./data-raw/Trees/StandStructureData_Nov2022_Final.xlsx",
+  calc_height = TRUE,
+  use_standard = FALSE,
+  id_gap_trees = TRUE,
+  use_size = TRUE,
+  planted_hgt = 20,
+  planted_diam = 20,
+  sp_plant = "Sx",
+  use_cc = TRUE
 )
 }
 \arguments{
@@ -16,4 +25,8 @@ trees_2010(
 }
 \description{
 Title
+}
+\details{
+cruised_hgt in the output is only relevant for dead trees (snags) - these heights are actually
+from 2022 measurements.
 }

@@ -2,18 +2,20 @@
 % Please edit documentation in R/Trees.R
 \name{trees_1992}
 \alias{trees_1992}
-\title{Clean 1992 tree data need to change all ddply to get rid of plyr (replaced by dplyr)}
+\title{Clean 1992 tree data}
 \usage{
 trees_1992(
-  cruise_data = "./data-raw/Trees/1.1992data.csv",
-  fixed_data = "./data-raw/Trees/2.1992fixed_radius_data_fromTable20_DateCkHandbook.csv",
+  cruise_data = "./data-raw/Trees/1992data.csv",
+  fixed_data = "./data-raw/Trees/1992fixed_radius_data_fromTable20_DateCkHandbook.csv",
   calc_height = TRUE
 )
 }
 \arguments{
-\item{calc_height}{description}
+\item{fixed_data}{}
+
+\item{calc_height}{can be TRUE, "cruise" or "both"}
 }
 \description{
-cleans tree data and calculates heights (if height = TRUE)
-can't get this working because of ddply - needs to be updated to either dplyr or data.table
+cleans tree data and calculates heights (if calc_height = TRUE)
+Note - there are 2 trees in 1992 that are dead (tree class 4) that are stubs with a height of 0
 }

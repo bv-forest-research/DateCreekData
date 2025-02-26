@@ -7,6 +7,5 @@
 #' @import terra
 #' @import sf
 #' @importFrom raster crs
-#' @importFrom plyr ddply
 ## usethis namespace: end
 NULL

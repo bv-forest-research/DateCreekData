@@ -81,190 +81,6 @@ ReadSpatialBounds <- function(Units_path){
 
 
 
-#' Modify the Date Creek treatment boundaries for heavy and light removals
-#'
-#' @param Gaps_path The directory with the kmls and kmzs that define the cuts
-#' @export
-#'
-#' @return an sf object
-#' @examples
-#'
-modifyPartCuts <- function(Gaps_path){
-
-  LR<-c("A2", "B5", "C3", "D5") # light removal (30% BasalArea)
-  HR<-c("B2", "B3", "C2", "D4") #heavy removal (60% BasalArea)
-
-  ######### Reading in cut boundaries for heavy and light removal that were stored as kmz
-  kmz_blocks <- list()
-  for(ii in 1:length(c(HR,LR))){
-    kmz_blocks[[ii]] <- paste0(paste0(Gaps_path,c(HR,LR)[ii],"_openings.kmz"))
-  }
-  kmz_list <- list()
-  for(ii in 1:length(kmz_blocks)){
-    target_file <- '.temp.kml.zip'
-    fs::file_copy(kmz_blocks[[ii]], target_file, overwrite = T)
-    unzip(target_file, overwrite = T)
-    kmz_list[[ii]] <- sf::read_sf('doc.kml')
-    fs::file_delete(grep(".xsl",list.files(getwd()), value = TRUE))
-    fs::file_delete('.temp.kml.zip')
-    fs::file_delete('doc.kml')
-    kmz_list[[ii]]$Id <- c(HR,LR)[ii]
-  }
-
-  ##### Cleaning heavy removal polygons
-  HR_Cuts <- do.call(rbind.data.frame, kmz_list[1:4])
-  HR_Cuts <- HR_Cuts %>%
-    dplyr::select(Id,geometry) %>%
-    sf::st_transform(.,crs=3005)
-  #For B2, need to remove row 9 - but might lose a few openings
-  HR_Cuts_B2 <- HR_Cuts %>% filter(Id=="B2")
-  HR_Cuts_B2 <- HR_Cuts_B2[-2,]
-
-  #For B3, need to remove row 9 - but might lose a few openings
-  HR_Cuts_B3 <- HR_Cuts %>% filter(Id=="B3")
-  HR_Cuts_B3 <- HR_Cuts_B3[-9,]
-
-  #For C2, need to remove row 16 - but might loss an opening that is attached
-  HR_Cuts_C2 <- HR_Cuts %>% filter(Id=="C2")
-  HR_Cuts_C2 <- HR_Cuts_C2[-16,]
-
-  #For D4, need to remove row 16 - but might loss an opening that is attached
-  HR_Cuts_D4 <- HR_Cuts %>% filter(Id=="D4")
-  HR_Cuts_D4 <- HR_Cuts_D4[-c(7,16),]
-
-  #### Light removals gaps
-  #we are going to ignore the gap boundaries, but use unit boundaries to harvest BA within
-  LR_Cuts <- do.call(rbind.data.frame, kmz_list[5:8])
-
-  HR_Cuts_clean <- rbind(HR_Cuts_B2,HR_Cuts_B3,HR_Cuts_C2,HR_Cuts_D4)
-
-  return(HR_Cuts_clean)
-
-}
-
-
-
-#'subplot_outputs
-#'
-#'
-#' @export
-#'
-#'
-#' @param out_path
-#' @param run_name
-#' @param Units_path
-#' @param yrs
-#' @param Units_to_output a vector of character names for which units to include for subplotting outputs
-#' @param dist_edge [numeric()] how far from unit boundary to allow subplots (in m)
-#' @param num_subplots [numeric()] how many subplots
-#' @param size_subplot [numeric()] radius of plot (standard is 7.98m)
-#' @param plotting TRUE/FALSE - whether or not to display plots with the unit and subplot location
-#'
-#'
-subplot_outputs <- function(out_path, run_name, Units_path, yrs, subplot_type = multiple , Units_to_output = "all",
-                            dist_edge = 20, num_subplots = 30, size_subplot = 7.98, plotting = TRUE){
-
-  # Reading in unit boundaries and creating shapefiles group by removal class
-
-  #to add: run through the output names and see which years are missing
-  #to add: instead of passing years as a parameter, get it from the file names (would solve the above)
-
-  spatialBlocks <- ReadSpatialBounds(Units_path)
-
-  if(any(Units_to_output == "all")){
-    Blocks <- spatialBlocks$Unit
-
-  }else{
-    Blocks <- Units_to_output
-  }
-
-  for(ij in 1:length(Blocks)){
-    dt_table <- data.table()
-    #restrict trees to within the treatment
-    Unit_i <- Blocks[ij]
-    TreatType <- ifelse(Unit_i=="A2"||Unit_i=="B5"||Unit_i== "C3"||Unit_i== "D5","LR",
-                        ifelse(Unit_i=="B2"||Unit_i=="B3"||Unit_i=="C2"||Unit_i=="D4","HR",
-                               ifelse(Unit_i=="A1"||Unit_i=="A3"||Unit_i=="B4"||Unit_i=="D2","CC","NH")))
-    #Forest size
-    if(TreatType=="NH"){
-      NameEnd <- paste0(run_name,"_nh_det_")
-    }else{
-      NameEnd <- paste0(run_name,"_det_")
-    }
-
-    #create sample points here so they are the same for every year
-    bb <- st_bbox(st_buffer(spatialBlocks %>% filter(Unit==Unit_i), dist = 10))
-    Unit_b <- spatialBlocks %>%
-                dplyr::filter(Unit==Unit_i)
-
-
-    if(num_subplots == 1){
-      size_subplot <- 56.41897 #1ha central plot
-      xp <-unname(bb$xmin + (bb$xmax - bb$xmin)/2)
-      yp <- unname(bb$ymin +(bb$ymax - bb$ymin)/2)
-      sampPtsSF <- sf::st_as_sf(data.table(pt=1,x = xp, y = yp), coords = c("x","y"),
-                                crs = crs(Unit_b))
-      sampPtsSFP <- st_buffer(sampPtsSF, dist=size_subplot)
-
-    }else{
-      Unit_b_edge <- st_buffer(Unit_b, dist=-dist_edge) #20m from the edge
-      sampPts <- sp::spsample(as_Spatial(Unit_b_edge),n=num_subplots,type="regular")
-      sampPtsSF <- st_as_sf(sampPts)
-      sampPtsSFP <- st_buffer(sampPtsSF, dist=size_subplot)
-    }
-
-    if(plotting == TRUE){
-      plot(Unit_b$geometry)
-      #plot(Unit_b_edge$geometry, add=TRUE)
-      #plot(sampPts,add=TRUE)
-      plot(sampPtsSF$geometry,add=TRUE)
-      plot(sampPtsSFP$geometry,add=TRUE)
-    }
-
-    #add subplot label
-    sampPtsDT <- as.data.table(sampPtsSFP)
-    sampPtsDT[,SubPlot:=seq(1:nrow(sampPtsSF))]
-    sampPts <- st_as_sf(sampPtsDT)
-
-    for(i in 1:length(yrs)){
-
-      file_to_read <- paste0(out_path,"ext_ICH-",TreatType,"-",Unit_i,NameEnd,yrs[i])
-
-      if(file.exists(file_to_read)){
-        dt <- fread(file_to_read,sep="\t", header=T,na.strings = "--", skip=1)
-        dt[, ':='(timestep = yrs[i],Treatment = TreatType, Unit=Unit_i)]
-        dt[, ':='(x_utm =bb[1]+X ,y_utm=bb[2]+Y)] #put the SORTIE outputs in the coordinates of sf
-        TreeXY <- st_as_sf(dt, coords = c("x_utm","y_utm"), crs=crs(spatialBlocks))
-        plot_trees <- st_intersection(TreeXY,sampPts) #this is the slow part
-        print(paste(TreatType,Unit_i,"year",yrs[i],"sampled"))
-
-        if(nrow(plot_trees)==0){ #if no trees (i.e in a clearcut before a plant)
-          plot_trees <- as.data.table(plot_trees)
-          plot_trees <- rbind(data.table(Species="NA"),plot_trees,fill=TRUE)
-          plot_trees[, ':='(timestep = yrs[i],Treatment = TreatType, Unit=Unit_i)]
-          plot_trees[,geometry:=NULL]
-          print(paste(TreatType,Unit_i,"year",yrs[i],"No trees"))
-        }else{
-          plot_trees <- as.data.table(plot_trees)
-          subPl_area <- length(unique(plot_trees$SubPlot))*(pi*size_subplot^2)
-          print(paste(TreatType,Unit_i,"year",yrs[i],"Subplot BA =",
-                      round(sum(plot_trees[!is.na(DBH),pi*(DBH/2)^2])/subPl_area,0)))
-
-          plot_trees[,geometry:=NULL]
-        }
-        dt_table <- rbind(dt_table,plot_trees)
-
-      }else{
-        print(paste(file_to_read,"does not exist"))
-        dt_table <- dt_table
-      }
-
-    }
-    write.csv(dt_table,
-              paste0(out_path,TreatType,"-",Unit_i,run_name,".csv"), row.names = FALSE)
-  }
-}
-
 
 
 
@@ -289,7 +105,7 @@ maskGrids <- function(Blocks = DateCreekData::Treatments$Unit,
                       grid_dat, output = "table",
                       grid_to_output){
 
-
+  copy_grid <- grid_dat
   UnitBounds <- ReadSpatialBounds(Units_path = Units_path)
   HR_gaps <- modifyPartCuts(Gaps_path = Gaps_path)
 
@@ -298,18 +114,18 @@ maskGrids <- function(Blocks = DateCreekData::Treatments$Unit,
   for(i in 1:length(Blocks)){
     UnitBounds_l <- UnitBounds %>% filter(Unit== Blocks[i])
     bb <- st_bbox(UnitBounds_l)
-    grid_dat[Unit==Blocks[i],
+    copy_grid[Unit==Blocks[i],
              ':='(x_utm = bb[1]+(x*8), y_utm = bb[2]+(y*8))]
   }
-  grid_dat[,':='(x = NULL, y = NULL)]
-  setnames(grid_dat, c("x_utm","y_utm"), c("x","y"))
+  copy_grid[,':='(x = NULL, y = NULL)]
+  setnames(copy_grid, c("x_utm","y_utm"), c("x","y"))
 
   rast_l <- list()
   rast_table <- list()
   for(j in 1:length(grid_to_output)){
     rast_t_dt <- c()
 
-    rast_g <- grid_dat[colnames == grid_to_output[j]] %>%
+    rast_g <- copy_grid[colnames == grid_to_output[j]] %>%
       arrange(.$timestep) %>%
       split(.$Unit) %>%
       lapply(., function(x) {x <- x %>% tidyr::pivot_wider(names_from = timestep, values_from = values)})%>%

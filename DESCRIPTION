@@ -10,13 +10,12 @@ Description: Functions to prepare Date Creek data for common summaries and
 License: `use_gpl3_license()` 
 Encoding: UTF-8
 Roxygen: list(markdown = TRUE)
-RoxygenNote: 7.2.3
+RoxygenNote: 7.3.1
 Imports: 
     data.table,
     dplyr,
     stringr,
     sf,
-    plyr,
     raster,
     fasterize,
     knitr,
@@ -24,5 +23,7 @@ Imports:
     testthat (>= 3.0.0)
 Config/testthat/edition: 3
 Depends: 
-    R (>= 2.10)
+    R (>= 2.10),
+    data.table,
+    dplyr
 LazyData: true

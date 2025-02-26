@@ -4,7 +4,7 @@
 \alias{trees_1993}
 \title{Clean 1993 tree data}
 \usage{
-trees_1993(data = "./data-raw/Trees/3.SS93forR.csv", calc_height = TRUE)
+trees_1993(data = "./data-raw/Trees/SS93forR.csv", calc_height = TRUE)
 }
 \arguments{
 \item{calc_height}{}
