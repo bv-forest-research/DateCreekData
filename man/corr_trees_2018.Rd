@@ -5,14 +5,10 @@
 \title{Title}
 \usage{
 corr_trees_2018(dat)
-
-corr_trees_2018(dat)
 }
 \arguments{
 \item{dat}{}
 }
 \description{
-Title
-
 Title
 }

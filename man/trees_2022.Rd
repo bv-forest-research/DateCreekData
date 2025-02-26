@@ -18,7 +18,12 @@ trees_2022(
 \item{inter_trees}{name of sheet with intermediate trees}
 
 \item{small_trees}{name of sheet with small trees}
+
+\item{calc_height}{will only be applied to trees with NA for height. Standard dbh-height allometry}
 }
 \description{
 2022 data
+}
+\details{
+the measured heights are considered good here, so we are using them unless the height is NA
 }
